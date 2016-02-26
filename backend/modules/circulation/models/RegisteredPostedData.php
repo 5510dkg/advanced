@@ -127,6 +127,10 @@ class RegisteredPostedData extends \yii\db\ActiveRecord
             return $titles;
                 
     }
+    public function allrec($id,$oo,$ii) {
+        return $this->find()->where(['post_id'=>$id])->limit($oo)->offset($ii);
+        
+    }
 
 
 
