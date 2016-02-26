@@ -8,10 +8,14 @@ $request=Yii::$app->request;
 $id= $request->get('id');
 $model= new RegisteredPostedData();
 $data=$model->find()->where(['post_id'=>$id])->all();
+$count = $model->find()->where(['post_id'=>$id])->count();
 //print_r($data);
 $i=1;$r=1;
-foreach ($data as $key => $value) {
-	if(($value->pjy)>($value->org)){ $k=$value->pjy;}else{ $k=$value->org;}?>
+$digit=$count/9;
+$tot=  floor($digit);
+for($k=0;$k<$digit;$digit++){
+//foreach ($data as $key => $value) {
+//	if(($value->pjy)>($value->org)){ $k=$value->pjy;}else{ $k=$value->org;}?>
 <div style="width:100%;height:100%; border:1px solid black; padding:0;margin:0;">
 <div style="width:100%;height:10px;border-bottom:1px solid black;">
 	<div style="margin-left:35%; font-size:10;"><strong>DEPARTMENT OF POSTS, INDIA</strong><br/>
@@ -54,5 +58,5 @@ foreach ($data as $key => $value) {
 </div> -->
 
 </div>
-<?php  }
+<?php } // }
 //echo $data->_attributes['id'];
