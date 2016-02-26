@@ -360,30 +360,45 @@ class AgencyController extends Controller
                   if($row==1){
                     continue;
                   }
-                  $user = new Users;
-                  $user_id=$rowData[0][0];
-                  $user->name=$rowData[0][1];
-                  $user->username=$rowData[0][2];
-                  $user->auth_key=date("ymdhis");
-                  $user->password_hash=$rowData[0][3];
-                  $user->password_reset_token=date("ymdhis");
-                  $user->email=$rowData[0][4];
-                  $user->mobile=$rowData[0][5];
-                  $user->extension_no=$rowData[0][6];
-                  $user->department_id=$rowData[0][7];
-                  $user->designation_id=$rowData[0][8];
-                  $user->role_group_id=$rowData[0][9];
-                  $user->created_at=date("Ymdhis");;
-
-                  $user->status='1';
-
-                  $user->save(false);
+                  $agency=new Agency();
+                  $agency->id                 =$rowData[0][0];
+                  $agency->name               =$rowData[0][1];
+                  $agency->route_id           =$rowData[0][2];
+                  $agency->vehicle_id         =$rowData[0][3];
+                  $agency->reference          =$rowData[0][4];
+                  $agency->email              =$rowData[0][5];
+                  $agency->landline_no        =$rowData[0][6];
+                  $agency->mobile_no          =$rowData[0][7];
+                  $agency->status             =$rowData[0][8];
+                  $agency->security_amt       =$rowData[0][9];
+                  $agency->address_status     =$rowData[0][10];
+                  $agency->mail_house_no      =$rowData[0][11];
+                  $agency->mail_street_address=$rowData[0][12];
+                  $agency->mail_p_office      =$rowData[0][13];
+                  $agency->mail_country_id    =$rowData[0][14];
+                  $agency->mail_state_id      =$rowData[0][15];
+                  $agency->mail_district_id   =$rowData[0][16];
+                  $agency->mail_pincode       =$rowData[0][17];
+                  $agency->panchjanya         =$rowData[0][18];
+                  $agency->organiser          =$rowData[0][19];
+                  $agency->add_house_no       =$rowData[0][20];
+                  $agency->add_street_address =$rowData[0][21];
+                  $agency->add_p_office       =$rowData[0][22];
+                  $agency->add_country_id     =$rowData[0][23];
+                  $agency->add_state_id       =$rowData[0][24];
+                  $agency->add_district_id    =$rowData[0][25];
+                  $agency->add_pincode        =$rowData[0][26];
+                  $agency->commission         =$rowData[0][27];
+                  $agency->issue_start_date   =$rowData[0][28];
+                  $agency->comment            =$rowData[0][29];
+                  $agency->agency_type        =$rowData[0][30];
+                  $agency->train_no           =$rowData[0][31];
+                  $agency->source             =$rowData[0][32];
+                  $agency->train_name         =$rowData[0][33];
+                  $agency->save();
 
     //              print_r($user->getErrors());
                 }
-
-
-
 
               //file reading ends here
             }else{
@@ -418,6 +433,10 @@ class AgencyController extends Controller
 
     }
     }
+
+  /*
+  *
+  */
 
 
 

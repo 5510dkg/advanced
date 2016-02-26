@@ -26,20 +26,28 @@ return [
     [
         'class' => 'kartik\grid\ActionColumn',
         'dropdown' => false,
-        'template'=>'{view}{info}',
+        'template'=>'{view}{info}{slip}',
         'vAlign'=>'middle',
-       
+
         'buttons' => [
         'info' => function ($url, $model) {
-            return Html::a('<span></span><span class="glyphicon glyphicon glyphicon-print"></span>', $url, [
+            return Html::a('<span>|</span><span class="glyphicon glyphicon glyphicon-print"></span>', $url, [
                         'title' => Yii::t('app', 'Info'),
             ]);
-         }
+         },
+         'slip' => function ($url, $model) {
+             return Html::a('<span>|</span><span class="glyphicon  glyphicon glyphicon-file"></span>', $url, [
+                         'title' => Yii::t('app', 'Slip'),
+             ]);
+          }
         ],
-         'urlCreator' => function($action, $model, $key, $index) { 
+         'urlCreator' => function($action, $model, $key, $index) {
           if ($action === 'info') {
                             return Url::toRoute(['registered-posted-data/print', 'id' => $model->id]);
-                        } else {
+                        } elseif ($action=='slip') {
+                            return Url::toRoute(['registered-posted-data/slip', 'id' => $model->id]);
+                        }
+                        else{
                             return Url::toRoute([$action, 'id' => $model->id]);
                         }
 
@@ -47,12 +55,12 @@ return [
 
         'viewOptions'=>['role'=>'modal-remote','title'=>'View','data-toggle'=>'tooltip'],
         'updateOptions'=>['role'=>'modal-remote','title'=>'Update', 'data-toggle'=>'tooltip'],
-        'deleteOptions'=>['role'=>'modal-remote','title'=>'Delete', 
+        'deleteOptions'=>['role'=>'modal-remote','title'=>'Delete',
                           'data-confirm'=>false, 'data-method'=>false,// for overide yii data api
                           'data-request-method'=>'post',
                           'data-toggle'=>'tooltip',
                           'data-confirm-title'=>'Are you sure?',
-                          'data-confirm-message'=>'Are you sure want to delete this item'], 
+                          'data-confirm-message'=>'Are you sure want to delete this item'],
     ],
 
-];   
+];

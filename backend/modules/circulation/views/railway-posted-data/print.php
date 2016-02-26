@@ -1,4 +1,7 @@
+
+
 <?php
+
 ini_set('memory_limit', '-1');
 ini_set('max_execution_time', 300);
 //use Yii;
@@ -48,5 +51,16 @@ foreach ($data as $key => $value) {
 	<div style="height: 20px;"><div><strong>PJY:<?= $value->pjy;?> + ORG : <?= $value->org; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $value->wt.' KGS/'.$j?></strong></div></div>
 	</div>
 
-<?php } }
+<?php } }?>
+
 //echo $data->_attributes['id'];
+<script>
+$('.loading')
+    .hide()  // hide it initially
+    .ajaxStart(function() {
+        $(this).show();
+    })
+    .ajaxStop(function() {
+        $(this).hide();
+    });
+</script>

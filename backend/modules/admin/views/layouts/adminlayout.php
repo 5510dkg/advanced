@@ -122,6 +122,15 @@ AppAsset::register($this);
                               ['label'=>'Ordinary Post','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/ordinary-post-data'],
                               ],
                             ],
+                            [
+                             'label' => 'Forwarding Slips',
+                             'icon'=>'glyphicon',
+                             'items'=>[
+                             ['label'=>'Registred Post','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/registered-post-data'],
+                             ['label'=>'Railways Labels','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/railway-post-data'],
+                             ['label'=>'Ordinary Post','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/ordinary-post-data'],
+                             ],
+                           ],
 
                         ],
                     ],
