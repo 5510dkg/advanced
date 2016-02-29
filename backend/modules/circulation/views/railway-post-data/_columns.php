@@ -55,7 +55,7 @@ return [
                             return Url::toRoute([$action, 'id' => $model->id]);
                         }
 
-        },
+        },   
 
         'viewOptions'=>['role'=>'modal-remote','title'=>'View','data-toggle'=>'tooltip'],
         'updateOptions'=>['role'=>'modal-remote','title'=>'Update', 'data-toggle'=>'tooltip'],
