@@ -58,7 +58,7 @@ class RegisteredPostData extends \yii\db\ActiveRecord
                 $wt=$this->weight($value['panchjanya'],$value['organiser']);
                 $postage->wt=$wt;
                 $postage->postage=$this->postage($wt);
-                $postage->address_bar=$value['mail_pincode'];
+                $postage->address_bar=$value['name'].' ,'.$value['mail_street_address'];
                 $postage->sn=$lid++;
                 $postage->pjy=$value['panchjanya'];
                 $postage->org=$value['organiser'];
@@ -200,6 +200,7 @@ class RegisteredPostData extends \yii\db\ActiveRecord
         //return Agency::find()->where('route_id=2')->all();
 
     }
+   
 
     /**
      * @inheritdoc

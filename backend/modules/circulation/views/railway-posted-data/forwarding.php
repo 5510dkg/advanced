@@ -1,5 +1,3 @@
-
-
 <?php
 
 ini_set('memory_limit', '-1');
@@ -23,7 +21,7 @@ foreach ($data as $key => $value) {
 	// echo 'this'.$j;
 	//echo $value->wt.'//';
 	 //$floor=floor($num);
-	for($r=1;$r<$j+1;$r++){
+	//for($r=1;$r<$j+1;$r++){
 	?>
 
 	<div style="margin-left: 25px;margin-bottom: 25px;margin-right: -90px; width: 490px;float: left; height: 290px;">
@@ -51,9 +49,10 @@ foreach ($data as $key => $value) {
 	<div style="height: 20px;"><div><strong>PJY:<?= $value->pjy;?> + ORG : <?= $value->org; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $value->wt.' KGS/'.$j?></strong></div></div>
 	</div>
 
-<?php } }?>
+<?php //} 
+}?>
 
-//echo $data->_attributes['id'];
+
 <script>
 $('.loading')
     .hide()  // hide it initially

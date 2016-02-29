@@ -45,7 +45,7 @@ return [
           if ($action === 'info') {
                             return Url::toRoute(['registered-posted-data/print', 'id' => $model->id]);
                         } elseif ($action=='slip') {
-                            return Url::toRoute(['registered-posted-data/slip', 'id' => $model->id]);
+                            return Url::toRoute(['registered-posted-data/slip', 'id' => $model->id,'date'=>$model->date]);
                         }
                         else{
                             return Url::toRoute([$action, 'id' => $model->id]);

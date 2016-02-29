@@ -30,7 +30,7 @@ return [
      [
         'class' => 'kartik\grid\ActionColumn',
         'dropdown' => false,
-        'template'=>'{view}{info}',
+        'template'=>'{view}{info}{slip}',
         'vAlign'=>'middle',
        
         'buttons' => [
@@ -38,12 +38,20 @@ return [
             return Html::a('<span></span><span class="glyphicon glyphicon glyphicon-print"></span>', $url, [
                         'title' => Yii::t('app', 'Info'),
             ]);
-         }
+         },
+         'slip' => function ($url, $model) {
+             return Html::a('<span>|</span><span class="glyphicon  glyphicon glyphicon-file"></span>', $url, [
+                         'title' => Yii::t('app', 'Slip'),
+             ]);
+          }
         ],
          'urlCreator' => function($action, $model, $key, $index) { 
           if ($action === 'info') {
                             return Url::toRoute(['railway-posted-data/print', 'id' => $model->id]);
-                        } else {
+                        }elseif ($action=='slip') {
+                            return Url::toRoute(['railway-posted-data/slip', 'id' => $model->id,'date'=>$model->date]);
+                        }
+                        else {
                             return Url::toRoute([$action, 'id' => $model->id]);
                         }
 

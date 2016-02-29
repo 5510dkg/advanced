@@ -128,8 +128,20 @@ class RegisteredPostedData extends \yii\db\ActiveRecord
                 
     }
     public function allrec($id,$oo,$ii) {
-        return $this->find()->where(['post_id'=>$id])->limit($oo)->offset($ii);
+        //echo $oo;echo $ii;
         
+             $query = (new \yii\db\Query())->select(['*'])->from('registered_posted_data')->where(['post_id'=>$id])->limit($oo)->offset($ii);
+             $command = $query->createCommand();
+          return   $data = $command->queryAll();
+        
+        
+        
+        
+       // return $this->find()->where(['post_id'=>$id])->limit($oo)->offset($ii);
+//        echo '<pre>';
+//        print_r($val);
+//        echo '</pre>';exit;
+       // echo count($val);exit;
     }
 
 
