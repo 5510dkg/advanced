@@ -23,9 +23,10 @@ $count = $model->find()->where(['post_id'=>$id])->count();
 //}
 $i=1;$r=1;
 $digit=$count/9;
-echo $digit;
-$tot=  floor($digit);
-for($k=1;$k<=$digit;$digit++){
+//echo $digit;
+$tot=  ceil($digit);
+//echo $tot;
+//for($k=1;$k<=$digit;$digit++){
 //foreach ($data as $key => $value) {
 //	if(($value->pjy)>($value->org)){ $k=$value->pjy;}else{ $k=$value->org;}?>
 <div style="width:100%;height:100%; border:1px solid black; padding:0;margin:0;">
@@ -50,10 +51,12 @@ for($k=1;$k<=$digit;$digit++){
 		<td style=" width:33px;">Weight</td>
 		<td style=" ">Postage</td>
 	</tr>
-	<?php $oo=$k*9;
+	<?php $k=1;
+        echo $oo=$k*9;echo '|||';
                if($k==1){$ii=0;}else{$ii=($k-1)*9;}
-               
-        $data=$model->allrec($id,$oo, $ii);    
+        echo $ii; echo '|||';      
+        $data=$model->allrec($id,$oo, $ii); 
+        echo count($data);
         
         foreach ($data as $key => $value) { ?>
 
@@ -75,5 +78,5 @@ for($k=1;$k<=$digit;$digit++){
 </div> -->
 
 </div>
-<?php } // }
+<?php // } // }
 //echo $data->_attributes['id'];
