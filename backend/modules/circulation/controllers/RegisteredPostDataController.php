@@ -135,7 +135,7 @@ class RegisteredPostDataController extends Controller
             }
         }
        
-    }
+    }  
 
     /**
      * Updates an existing RegisteredPostData model.
