@@ -114,7 +114,7 @@ AppAsset::register($this);
                               ],
                             ],
                              [
-                              'label' => 'Generate Labels',
+                              'label' => 'Lebels And Forwarding Slips',
                               'icon'=>'glyphicon',
                               'items'=>[
                               ['label'=>'Registred Post','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/registered-post-data'],
@@ -122,15 +122,32 @@ AppAsset::register($this);
                               ['label'=>'Ordinary Post','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/ordinary-post-data'],
                               ],
                             ],
+
+
+                        ],
+                    ],
+                    [
+                        'label' => 'Billing ',
+                        'icon' => 'glyphicon glyphicon-refresh',
+                        'items' => [
                             [
-                             'label' => 'Forwarding Slips',
-                             'icon'=>'glyphicon',
-                             'items'=>[
-                             ['label'=>'Registred Post','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/registered-post-data'],
-                             ['label'=>'Railways Labels','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/railway-post-data'],
-                             ['label'=>'Ordinary Post','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/ordinary-post-data'],
-                             ],
-                           ],
+                              'label' => 'Agency',
+                              'icon'=>'glyphicon',
+                              'items'=>[
+                              ['label'=>'','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/agency'],
+                              ['label'=>'Upload Multiple','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/agency/upload'],
+                              ],
+                            ],
+                             [
+                              'label' => 'Cluster',
+                              'icon'=>'glyphicon',
+                              'items'=>[
+                              ['label'=>'Registred Post','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/registered-post-data'],
+                              ['label'=>'Railways Labels','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/railway-post-data'],
+                              ['label'=>'Ordinary Post','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/ordinary-post-data'],
+                              ],
+                            ],
+
 
                         ],
                     ],
