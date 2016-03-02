@@ -62,10 +62,20 @@ class MagazineRecordBookController extends Controller
     {
         $this->layout='adminlayout';
         $model = new MagazineRecordBook();
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        
+        if ($model->load(Yii::$app->request->post())) {
+            $check=Yii::$app->request->post();
+            //echo $check['submit'];
+            //print_r($check);exit;
+            if($check['submit']=='Create & Add New'){
+            $model->save();
+             return $this->redirect('index.php?r=circulation/magazine-record-book/create');
+        }
+        else{
+             $model->save();
             return $this->redirect(['view', 'id' => $model->id]);
-        } else {
+        }
+        }else {
             return $this->render('create', [
                 'model' => $model,
             ]);
