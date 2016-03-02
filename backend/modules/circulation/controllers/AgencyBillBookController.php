@@ -38,10 +38,10 @@ class AgencyBillBookController extends Controller
         $curdate=date('Y-m-d');
  //       echo $date=strtotime('last Sunday', strtotime($curdate));
          $date=date('Y-m-d', strtotime('last Sunday', strtotime($curdate)));
-        $count=$issue->find()->where(['date '=>$date])->count();
+       echo $count=$issue->find()->where(['<=', 'date', $date])->count();
        // print_r($count);
-       exit;
-        if($count<1){
+       //exit;
+        if($count<=0){
             return $this->redirect('index.php?r=circulation/magazine-record-book/create');  
             
         }
