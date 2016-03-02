@@ -60,6 +60,7 @@ class MagazineRecordBookController extends Controller
      */
     public function actionCreate()
     {
+        $this->layout='adminlayout';
         $model = new MagazineRecordBook();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {

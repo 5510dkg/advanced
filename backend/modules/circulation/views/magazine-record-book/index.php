@@ -28,6 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'date',
             'issue_type',
+            'price',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

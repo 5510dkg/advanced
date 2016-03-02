@@ -20,6 +20,7 @@ class MagazineRecordBookSearch extends MagazineRecordBook
         return [
             [['id'], 'integer'],
             [['date', 'issue_type'], 'safe'],
+            [['price'], 'number'],
         ];
     }
 
@@ -58,6 +59,7 @@ class MagazineRecordBookSearch extends MagazineRecordBook
         $query->andFilterWhere([
             'id' => $this->id,
             'date' => $this->date,
+            'price' => $this->price,
         ]);
 
         $query->andFilterWhere(['like', 'issue_type', $this->issue_type]);
