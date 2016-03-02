@@ -126,6 +126,31 @@ AppAsset::register($this);
 
                         ],
                     ],
+                    [
+                        'label' => 'Billing ',
+                        'icon' => 'glyphicon glyphicon-refresh',
+                        'items' => [
+                            [
+                              'label' => 'Agency Billing',
+                              'icon'=>'glyphicon',
+                              'items'=>[
+                              ['label'=>'Agency Record Book','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/agency-bill-book'],
+                              ['label'=>'Upload Multiple','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/agency/upload'],
+                              ],
+                            ],
+                             [
+                              'label' => 'Cluster',
+                              'icon'=>'glyphicon',
+                              'items'=>[
+                              ['label'=>'Registred Post','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/registered-post-data'],
+                              ['label'=>'Railways Labels','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/railway-post-data'],
+                              ['label'=>'Ordinary Post','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/ordinary-post-data'],
+                              ],
+                            ],
+
+
+                        ],
+                    ],
                 ],
             ]);  ?>
         </div>

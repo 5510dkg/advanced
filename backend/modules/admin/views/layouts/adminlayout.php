@@ -131,10 +131,10 @@ AppAsset::register($this);
                         'icon' => 'glyphicon glyphicon-refresh',
                         'items' => [
                             [
-                              'label' => 'Agency',
+                              'label' => 'Agency Billing',
                               'icon'=>'glyphicon',
                               'items'=>[
-                              ['label'=>'','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/agency'],
+                              ['label'=>'Agency Record Book','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/agency-bill-book'],
                               ['label'=>'Upload Multiple','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/agency/upload'],
                               ],
                             ],
