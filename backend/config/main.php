@@ -36,6 +36,9 @@ return [
         'authManager' => [
             'class' => 'yii\rbac\DbManager',
         ],
+        'mycomponent'=>[
+            'class'=>'backend\components\MyComponent'
+        ],
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,

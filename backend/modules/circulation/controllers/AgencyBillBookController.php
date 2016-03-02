@@ -38,9 +38,10 @@ class AgencyBillBookController extends Controller
         $curdate=date('Y-m-d');
  //       echo $date=strtotime('last Sunday', strtotime($curdate));
          $date=date('Y-m-d', strtotime('last Sunday', strtotime($curdate)));
-       echo $count=$issue->find()->where(['<=', 'date', $date])->count();
+         $count=$issue->find()->where(['<=', 'date', $date])->count();
+         //Yii::$app->mycomponent->calsunday();
        // print_r($count);
-       //exit;
+      // exit;
         if($count<=0){
             return $this->redirect('index.php?r=circulation/magazine-record-book/create');  
             
