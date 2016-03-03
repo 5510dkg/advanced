@@ -60,6 +60,7 @@ class Agency extends \yii\db\ActiveRecord
     {
         return 'agency';
     }
+    const SCENARIO_CREATE = 'create';
 
     /**
      * @inheritdoc
@@ -76,6 +77,14 @@ class Agency extends \yii\db\ActiveRecord
             [['account_id','email','address_status'], 'string', 'max' => 110],
             [['reference', 'mail_house_no', 'mail_p_office', 'add_house_no', 'add_p_office'], 'string', 'max' => 255]
         ];
+    }
+    
+    public function scenarios()
+    {
+        $scenarios = parent::scenarios();
+        $scenarios[self::SCENARIO_CREATE] = [];
+
+        return $scenarios;
     }
 
     /**

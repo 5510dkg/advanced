@@ -273,8 +273,10 @@ class AgencyReceiptController extends Controller
     public function actionSearchform()
 {
     $this->layout='adminlayout';    
+    
     $model = new \backend\modules\circulation\models\Agency();
-
+    $model->scenario = \backend\modules\circulation\models\Agency::SCENARIO_CREATE;
+   // $model->scenario = 'scenario';
     if ($model->load(Yii::$app->request->post())) {
         if ($model->validate()) {
             // form inputs are valid, do something here
