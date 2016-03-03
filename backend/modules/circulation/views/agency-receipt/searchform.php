@@ -24,7 +24,7 @@ use yii\widgets\ActiveForm;
         </div>    
     </div>    
         
-    
+     <!-- Submit button -->                           
         <div class="form-group">
             <?= Html::submitButton('Submit', ['class' => 'btn btn-primary']) ?>
         </div>
