@@ -268,4 +268,25 @@ class AgencyCreditNoteController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+    
+    public function actionSearchform()
+{
+        $this->layout='adminlayout';
+    $model = new \backend\modules\circulation\models\Agency();
+    
+
+    if ($model->load(Yii::$app->request->post())) {
+        if ($model->validate()) {
+            // form inputs are valid, do something here
+            return;
+        }
+    }
+
+    return $this->render('searchform', [
+        'model' => $model,
+    ]);
+}
+
+
+
 }
