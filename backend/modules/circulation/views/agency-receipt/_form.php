@@ -12,9 +12,14 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'agency_id')->textInput(['value'=>'121']) ?>
+    <?= $form->field($model, 'agency_id')->textInput(['value'=>$id,'type'=>'readonly']) ?>
 
-    <?= $form->field($model, 'rcpt_date')->textInput() ?>
+    <?= $form->field($model, 'rcpt_date')->widget(\dosamigos\datepicker\DatePicker::className(),
+            [
+                'clientOptions'=>[
+                'autoclose'=>true
+                    ],
+            ]) ?>
 
     <?= $form->field($model, 'cr_amt')->textInput(['maxlength' => true]) ?>
 

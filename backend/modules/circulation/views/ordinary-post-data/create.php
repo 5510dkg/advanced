@@ -10,5 +10,6 @@ use yii\helpers\Html;
 <div class="ordinary-post-data-create">
     <?= $this->render('_form', [
         'model' => $model,
+       // 'id'=>$id,
     ]) ?>
 </div>

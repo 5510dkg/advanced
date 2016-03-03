@@ -163,7 +163,7 @@ return [
         ],
          'urlCreator' => function($action, $model, $key, $index) { 
           if ($action === 'info') {
-                            return Url::toRoute(['ordinary-posted-data/print', 'id' => $model->id]);
+                            return Url::toRoute(['agency-receipt/create','id' => $model->id]);
                         } else {
                             return Url::toRoute([$action, 'id' => $model->id]);
                         }
