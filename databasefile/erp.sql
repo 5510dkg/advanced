@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 01, 2016 at 01:51 PM
+-- Generation Time: Mar 03, 2016 at 04:46 PM
 -- Server version: 5.5.47-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.14
 
@@ -82,6 +82,30 @@ INSERT INTO `agency` (`id`, `name`, `account_id`, `route_id`, `vehicle_id`, `ref
 (40, 'top ramen2', 'GJ|S|0004', 2, 1, '12', 'tos@njasjd.c', 901831230, 2147483647, 'Suspended', 100.00, '1', '47/8', 'asjdasdnaskjn', '1311213', 1, 12, 141, 1210146, 100, 20, '47/8', 'asjdasdnaskjn', '1311213', 1, 12, 141, 1210146, '2016-02-21', 'Single', 'asdsa', '5', '', '', '', ''),
 (41, 'Sh Gabbar Ji', 'DL|S|0010', 5, 2, 'Thakur', 'gab@gab.com', 12100321, 2147483647, 'Suspended', 15000.00, '1', '45/8', 'S/O SH RAJNATH RAM, NEAR DR. GANDHI''S HOUSE\r\nISHWAR NAGAR, SHYMALDAS LANE', 'Ishwar Nagar', 1, 10, 133, 110065, 100, 50, '45/8', 'S/O SH RAJNATH RAM, NEAR DR. GANDHI''S HOUSE\r\nISHWAR NAGAR, SHYMALDAS LANE', 'Ishwar Nagar', 1, 10, 133, 110065, '2016-02-22', 'Single', 'New Agency', '5', '', 'NDLS', '12556', 'Vaishali Express'),
 (42, 'asdasa', 'KA|S|0011', 1, 12312, '12312', 'sdasda', 231231231, 23123123, 'Suspended', 1299.00, '1', 'asdasdas', 'dasdasdasd', 'asdasda', 1, 17, 253, 123123, 11000, 2000, 'asdasdas', 'dasdasdasd', 'asdasda', 1, 17, 253, 123123, '2016-02-01', 'Single', '12312', '123123', '', 'Sel', '', '123123');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `agency_bill_book`
+--
+
+CREATE TABLE IF NOT EXISTS `agency_bill_book` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `agency_id` int(11) NOT NULL,
+  `issue_date` date NOT NULL,
+  `pjy` int(11) NOT NULL,
+  `org` int(11) NOT NULL,
+  `total_copies` varchar(30) NOT NULL,
+  `price_per_piece` varchar(40) NOT NULL,
+  `total_price` varchar(50) NOT NULL,
+  `discount` decimal(10,2) NOT NULL,
+  `discounted_amt` decimal(10,2) NOT NULL,
+  `final_total` decimal(10,2) NOT NULL,
+  `credit_amt` decimal(10,2) DEFAULT NULL,
+  `credited_date` date DEFAULT NULL,
+  `created_on` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -197,6 +221,64 @@ INSERT INTO `agency_creation_updation_records` (`agency_id`, `date`, `status`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `agency_credit_note`
+--
+
+CREATE TABLE IF NOT EXISTS `agency_credit_note` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `agency_id` int(11) NOT NULL,
+  `return_date` int(11) NOT NULL,
+  `issue_type` int(11) NOT NULL,
+  `pjy` int(11) NOT NULL,
+  `org` int(11) NOT NULL,
+  `issue_date` int(11) NOT NULL,
+  `return_type` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `agency_receipt`
+--
+
+CREATE TABLE IF NOT EXISTS `agency_receipt` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `agency_id` int(11) NOT NULL,
+  `rcpt_date` date NOT NULL,
+  `cr_amt` decimal(10,0) NOT NULL,
+  `payment_mode` int(11) NOT NULL,
+  `comment` text NOT NULL,
+  `created_on` date NOT NULL,
+  `created_on_time` time NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `agency_receipt`
+--
+
+INSERT INTO `agency_receipt` (`id`, `agency_id`, `rcpt_date`, `cr_amt`, `payment_mode`, `comment`, `created_on`, `created_on_time`) VALUES
+(1, 32, '2016-03-01', 1000, 1, 'New', '2016-03-03', '08:57:04');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `agency_security_amt`
+--
+
+CREATE TABLE IF NOT EXISTS `agency_security_amt` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `agency_id` int(11) NOT NULL,
+  `amount` decimal(10,2) NOT NULL,
+  `date` date NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `agency_id` (`agency_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `auth_assignment`
 --
 
@@ -284,6 +366,42 @@ CREATE TABLE IF NOT EXISTS `auth_rule` (
 
 INSERT INTO `auth_rule` (`name`, `data`, `created_at`, `updated_at`) VALUES
 ('Default', NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `commission_cal`
+--
+
+CREATE TABLE IF NOT EXISTS `commission_cal` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `lower_limit` int(11) NOT NULL,
+  `upper_limit` int(11) NOT NULL,
+  `amt` float(10,2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `magazine_record_book`
+--
+
+CREATE TABLE IF NOT EXISTS `magazine_record_book` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` date NOT NULL,
+  `issue_type` enum('Regular','Special Edition') NOT NULL,
+  `price` decimal(10,2) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `date` (`date`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `magazine_record_book`
+--
+
+INSERT INTO `magazine_record_book` (`id`, `date`, `issue_type`, `price`) VALUES
+(1, '2016-02-21', 'Special Edition', 25.00);
 
 -- --------------------------------------------------------
 
@@ -1467,7 +1585,17 @@ CREATE TABLE IF NOT EXISTS `_payment_mode` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(110) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `_payment_mode`
+--
+
+INSERT INTO `_payment_mode` (`id`, `name`) VALUES
+(1, 'PNB Online'),
+(2, 'By Cash'),
+(3, 'By Money Order'),
+(4, 'By Cash');
 
 -- --------------------------------------------------------
 
