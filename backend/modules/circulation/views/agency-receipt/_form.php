@@ -23,14 +23,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'cr_amt')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'payment_mode')->textInput() ?>
+    <?= $form->field($model, 'payment_mode')->dropDownList(\yii\helpers\ArrayHelper::map(backend\modules\settings\models\PaymentMode::find()->all(),'id','name'),['prompt'=>'Please Select Payment Mode']) ?>
 
     <?= $form->field($model, 'comment')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'created_on')->textInput() ?>
-
-    <?= $form->field($model, 'created_on_time')->textInput() ?>
-
+    
   
 	<?php if (!Yii::$app->request->isAjax){ ?>
 	  	<div class="form-group">
