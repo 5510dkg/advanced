@@ -97,43 +97,9 @@ class AgencyCreditNoteController extends Controller
     {
         $request = Yii::$app->request;
         $model = new AgencyCreditNote();  
+        $id=$request->get('id');
 
-        if($request->isAjax){
-            /*
-            *   Process for ajax request
-            */
-            Yii::$app->response->format = Response::FORMAT_JSON;
-            if($request->isGet){
-                return [
-                    'title'=> "Create new AgencyCreditNote",
-                    'content'=>$this->renderAjax('create', [
-                        'model' => $model,
-                    ]),
-                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
-                                Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
-        
-                ];         
-            }else if($model->load($request->post()) && $model->save()){
-                return [
-                    'forceReload'=>'#crud-datatable-pjax',
-                    'title'=> "Create new AgencyCreditNote",
-                    'content'=>'<span class="text-success">Create AgencyCreditNote success</span>',
-                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
-                            Html::a('Create More',['create'],['class'=>'btn btn-primary','role'=>'modal-remote'])
-        
-                ];         
-            }else{           
-                return [
-                    'title'=> "Create new AgencyCreditNote",
-                    'content'=>$this->renderAjax('create', [
-                        'model' => $model,
-                    ]),
-                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
-                                Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
-        
-                ];         
-            }
-        }else{
+      
             /*
             *   Process for non-ajax request
             */
@@ -142,9 +108,10 @@ class AgencyCreditNoteController extends Controller
             } else {
                 return $this->render('create', [
                     'model' => $model,
+                    'id'=>$id,
                 ]);
             }
-        }
+        
        
     }
 

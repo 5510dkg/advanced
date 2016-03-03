@@ -10,5 +10,6 @@ use yii\helpers\Html;
 <div class="agency-credit-note-create">
     <?= $this->render('_form', [
         'model' => $model,
+        'id'=>$id,
     ]) ?>
 </div>
