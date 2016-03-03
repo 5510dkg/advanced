@@ -38,6 +38,7 @@ class AgencyReceiptController extends Controller
      */
     public function actionIndex()
     {    
+        $this->layout='adminlayout';
         $searchModel = new AgencyReceiptSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -45,6 +46,18 @@ class AgencyReceiptController extends Controller
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
+    }
+    public function actionList() {
+        $this->layout='adminlayout';
+        
+        $searchModel = new \backend\modules\circulation\models\AgencySearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('list', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+        
     }
 
 
@@ -268,28 +281,4 @@ class AgencyReceiptController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
-    
-    
-    public function actionSearchform()
-{
-    $this->layout='adminlayout';    
-    
-    $model = new \backend\modules\circulation\models\Agency();
-    $model->scenario = \backend\modules\circulation\models\Agency::SCENARIO_CREATE;
-   // $model->scenario = 'scenario';
-    if ($model->load(Yii::$app->request->post())) {
-        if ($model->validate()) {
-            
-            // form inputs are valid, do something here
-            return ;
-        }
-    }
-
-    return $this->render('searchform', [
-        'model' => $model,
-    ]);
-}
-
-
-
 }

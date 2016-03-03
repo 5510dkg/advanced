@@ -6,6 +6,7 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model backend\modules\circulation\models\Agency */
 /* @var $form ActiveForm */
+$this->title="Search Agency";
 ?>
 <div class="searchform">
 

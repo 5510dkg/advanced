@@ -5,13 +5,14 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model backend\modules\circulation\models\AgencyReceipt */
 /* @var $form yii\widgets\ActiveForm */
+
 ?>
 
 <div class="agency-receipt-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'agency_id')->textInput() ?>
+    <?= $form->field($model, 'agency_id')->textInput(['value'=>'121']) ?>
 
     <?= $form->field($model, 'rcpt_date')->textInput() ?>
 
