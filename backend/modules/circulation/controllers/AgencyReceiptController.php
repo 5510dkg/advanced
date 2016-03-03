@@ -279,8 +279,9 @@ class AgencyReceiptController extends Controller
    // $model->scenario = 'scenario';
     if ($model->load(Yii::$app->request->post())) {
         if ($model->validate()) {
+            
             // form inputs are valid, do something here
-            return;
+            return ;
         }
     }
 
