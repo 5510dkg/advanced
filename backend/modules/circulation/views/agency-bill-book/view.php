@@ -23,11 +23,6 @@ use yii\widgets\DetailView;
             'final_total',
             'credit_amt',
             'credited_date',
-            'pay_method',
-            'issue_type',
-            'previous_security_amt',
-            'received_security_amt',
-            'final_security_amt',
             'created_on',
         ],
     ]) ?>

@@ -10,7 +10,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use \yii\web\Response;
 use yii\helpers\Html;
-use backend\modules\circulation\models\MagazineRecordBook;
+
 /**
  * AgencyBillBookController implements the CRUD actions for AgencyBillBook model.
  */

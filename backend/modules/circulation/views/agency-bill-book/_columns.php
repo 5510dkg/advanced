@@ -64,26 +64,6 @@ return [
     // ],
     // [
         // 'class'=>'\kartik\grid\DataColumn',
-        // 'attribute'=>'pay_method',
-    // ],
-    // [
-        // 'class'=>'\kartik\grid\DataColumn',
-        // 'attribute'=>'issue_type',
-    // ],
-    // [
-        // 'class'=>'\kartik\grid\DataColumn',
-        // 'attribute'=>'previous_security_amt',
-    // ],
-    // [
-        // 'class'=>'\kartik\grid\DataColumn',
-        // 'attribute'=>'received_security_amt',
-    // ],
-    // [
-        // 'class'=>'\kartik\grid\DataColumn',
-        // 'attribute'=>'final_security_amt',
-    // ],
-    // [
-        // 'class'=>'\kartik\grid\DataColumn',
         // 'attribute'=>'created_on',
     // ],
     [

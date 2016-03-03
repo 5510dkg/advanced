@@ -136,6 +136,7 @@ AppAsset::register($this);
                               'label' => 'Agency Billing',
                               'icon'=>'glyphicon',
                               'items'=>[
+                               ['label'=>'Generate bill','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/agency-bill-book'],
                               ['label'=>'Add Receipt','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/agency-receipt/list'],
                               ['label'=>'Add Credit Note','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/agency-credit-note/list'],
                               ],

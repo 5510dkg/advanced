@@ -18,9 +18,9 @@ class AgencyBillBookSearch extends AgencyBillBook
     public function rules()
     {
         return [
-            [['id', 'agency_id', 'pjy', 'org', 'pay_method'], 'integer'],
-            [['issue_date', 'total_copies', 'price_per_piece', 'total_price', 'credited_date', 'issue_type', 'created_on'], 'safe'],
-            [['discount', 'discounted_amt', 'final_total', 'credit_amt', 'previous_security_amt', 'received_security_amt', 'final_security_amt'], 'number'],
+            [['id', 'agency_id', 'pjy', 'org'], 'integer'],
+            [['issue_date', 'total_copies', 'price_per_piece', 'total_price', 'credited_date', 'created_on'], 'safe'],
+            [['discount', 'discounted_amt', 'final_total', 'credit_amt'], 'number'],
         ];
     }
 
@@ -67,17 +67,12 @@ class AgencyBillBookSearch extends AgencyBillBook
             'final_total' => $this->final_total,
             'credit_amt' => $this->credit_amt,
             'credited_date' => $this->credited_date,
-            'pay_method' => $this->pay_method,
-            'previous_security_amt' => $this->previous_security_amt,
-            'received_security_amt' => $this->received_security_amt,
-            'final_security_amt' => $this->final_security_amt,
             'created_on' => $this->created_on,
         ]);
 
         $query->andFilterWhere(['like', 'total_copies', $this->total_copies])
             ->andFilterWhere(['like', 'price_per_piece', $this->price_per_piece])
-            ->andFilterWhere(['like', 'total_price', $this->total_price])
-            ->andFilterWhere(['like', 'issue_type', $this->issue_type]);
+            ->andFilterWhere(['like', 'total_price', $this->total_price]);
 
         return $dataProvider;
     }

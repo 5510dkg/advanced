@@ -20,14 +20,7 @@ use Yii;
  * @property string $final_total
  * @property string $credit_amt
  * @property string $credited_date
- * @property integer $pay_method
- * @property string $issue_type
- * @property string $previous_security_amt
- * @property string $received_security_amt
- * @property string $final_security_amt
  * @property string $created_on
- *
- * @property PaymentMode $payMethod
  */
 class AgencyBillBook extends \yii\db\ActiveRecord
 {
@@ -45,11 +38,10 @@ class AgencyBillBook extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['agency_id', 'issue_date', 'pjy', 'org', 'total_copies', 'price_per_piece', 'total_price', 'discount', 'discounted_amt', 'final_total', 'issue_type', 'previous_security_amt', 'final_security_amt', 'created_on'], 'required'],
-            [['agency_id', 'pjy', 'org', 'pay_method'], 'integer'],
+            [['agency_id', 'issue_date', 'pjy', 'org', 'total_copies', 'price_per_piece', 'total_price', 'discount', 'discounted_amt', 'final_total', 'created_on'], 'required'],
+            [['agency_id', 'pjy', 'org'], 'integer'],
             [['issue_date', 'credited_date', 'created_on'], 'safe'],
-            [['discount', 'discounted_amt', 'final_total', 'credit_amt', 'previous_security_amt', 'received_security_amt', 'final_security_amt'], 'number'],
-            [['issue_type'], 'string'],
+            [['discount', 'discounted_amt', 'final_total', 'credit_amt'], 'number'],
             [['total_copies'], 'string', 'max' => 30],
             [['price_per_piece'], 'string', 'max' => 40],
             [['total_price'], 'string', 'max' => 50]
@@ -75,20 +67,7 @@ class AgencyBillBook extends \yii\db\ActiveRecord
             'final_total' => 'Final Total',
             'credit_amt' => 'Credit Amt',
             'credited_date' => 'Credited Date',
-            'pay_method' => 'Pay Method',
-            'issue_type' => 'Issue Type',
-            'previous_security_amt' => 'Previous Security Amt',
-            'received_security_amt' => 'Received Security Amt',
-            'final_security_amt' => 'Final Security Amt',
             'created_on' => 'Created On',
         ];
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getPayMethod()
-    {
-        return $this->hasOne(PaymentMode::className(), ['id' => 'pay_method']);
     }
 }

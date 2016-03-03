@@ -35,16 +35,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'credited_date')->textInput() ?>
 
-    <?= $form->field($model, 'pay_method')->textInput() ?>
-
-    <?= $form->field($model, 'issue_type')->dropDownList([ 'Regular' => 'Regular', 'Special Edition' => 'Special Edition', ], ['prompt' => '']) ?>
-
-    <?= $form->field($model, 'previous_security_amt')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'received_security_amt')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'final_security_amt')->textInput(['maxlength' => true]) ?>
-
     <?= $form->field($model, 'created_on')->textInput() ?>
 
   
