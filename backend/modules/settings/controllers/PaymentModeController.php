@@ -37,7 +37,7 @@ class PaymentModeController extends Controller
      * @return mixed
      */
     public function actionIndex()
-    {    
+    {    $this->layout="adminlayout";
         $searchModel = new PaymentModeSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 

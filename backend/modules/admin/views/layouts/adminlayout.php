@@ -90,7 +90,9 @@ AppAsset::register($this);
                             ['label' => 'Postage Rate', 'icon'=>'glyphicon', 'url'=>'index.php?r=settings/postage-rate'],
                             ['label' => 'Delivery Methods', 'icon'=>'glyphicon', 'url'=>'index.php?r=settings/delivery-methods'],
                             ['label' => 'Bundle Size', 'icon'=>'glyphicon', 'url'=>'index.php?r=settings/bundle-size'],
+                            ['label' => 'Payment Mode', 'icon'=>'glyphicon', 'url'=>'index.php?r=settings/payment-mode'],
                         ],
+                            
                     ],
                      [
                         'label' => 'Location Master',
@@ -134,8 +136,8 @@ AppAsset::register($this);
                               'label' => 'Agency Billing',
                               'icon'=>'glyphicon',
                               'items'=>[
-                              ['label'=>'Agency Record Book','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/agency-bill-book'],
-                              ['label'=>'Upload Multiple','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/agency/upload'],
+                              ['label'=>'Add Receipt','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/agency-receipt/list'],
+                              ['label'=>'Add Credit Note','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/agency-credit-note/list'],
                               ],
                             ],
                              [
