@@ -39,7 +39,7 @@ CrudAsset::register($this);
             'responsive' => true,          
             'panel' => [
                 'type' => 'primary', 
-                'heading' => '<i class="glyphicon glyphicon-list"></i> Agencies Receipt',
+                'heading' => '<i class="glyphicon glyphicon-list"></i>Agencies Credit Note',
                 
                                         
                         '<div class="clearfix"></div>',

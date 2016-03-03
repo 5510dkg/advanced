@@ -46,6 +46,20 @@ class AgencyCreditNoteController extends Controller
             'dataProvider' => $dataProvider,
         ]);
     }
+    
+    
+     public function actionList() {
+        $this->layout='adminlayout';
+        
+        $searchModel = new \backend\modules\circulation\models\AgencySearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('list', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+        
+    }
 
 
     /**

@@ -17,7 +17,8 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'rcpt_date')->widget(\dosamigos\datepicker\DatePicker::className(),
             [
                 'clientOptions'=>[
-                'autoclose'=>true
+                'autoclose'=>true,
+                'format' => 'yyyy-mm-dd'
                     ],
             ]) ?>
 
