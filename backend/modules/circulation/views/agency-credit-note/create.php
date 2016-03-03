@@ -2,13 +2,13 @@
 
 use yii\helpers\Html;
 
-/* @var $this yii\web\View */
-/* @var $model backend\modules\circulation\models\AgencyBillBook */
-?>
-<div class="agency-bill-book-update">
 
+/* @var $this yii\web\View */
+/* @var $model backend\modules\circulation\models\AgencyCreditNote */
+
+?>
+<div class="agency-credit-note-create">
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>
-
 </div>

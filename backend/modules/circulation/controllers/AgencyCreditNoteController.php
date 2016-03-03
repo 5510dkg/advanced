@@ -3,18 +3,18 @@
 namespace backend\modules\circulation\controllers;
 
 use Yii;
-use backend\modules\circulation\models\AgencyBillBook;
-use backend\modules\circulation\models\AgencyBillBookSearch;
+use backend\modules\circulation\models\AgencyCreditNote;
+use backend\modules\circulation\models\AgencyCreditNoteSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use \yii\web\Response;
 use yii\helpers\Html;
-use backend\modules\circulation\models\MagazineRecordBook;
+
 /**
- * AgencyBillBookController implements the CRUD actions for AgencyBillBook model.
+ * AgencyCreditNoteController implements the CRUD actions for AgencyCreditNote model.
  */
-class AgencyBillBookController extends Controller
+class AgencyCreditNoteController extends Controller
 {
     /**
      * @inheritdoc
@@ -33,13 +33,12 @@ class AgencyBillBookController extends Controller
     }
 
     /**
-     * Lists all AgencyBillBook models.
+     * Lists all AgencyCreditNote models.
      * @return mixed
      */
     public function actionIndex()
     {    
-        $this->layout='adminlayout';
-        $searchModel = new AgencyBillBookSearch();
+        $searchModel = new AgencyCreditNoteSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -50,7 +49,7 @@ class AgencyBillBookController extends Controller
 
 
     /**
-     * Displays a single AgencyBillBook model.
+     * Displays a single AgencyCreditNote model.
      * @param integer $id
      * @return mixed
      */
@@ -60,7 +59,7 @@ class AgencyBillBookController extends Controller
         if($request->isAjax){
             Yii::$app->response->format = Response::FORMAT_JSON;
             return [
-                    'title'=> "AgencyBillBook #".$id,
+                    'title'=> "AgencyCreditNote #".$id,
                     'content'=>$this->renderAjax('view', [
                         'model' => $this->findModel($id),
                     ]),
@@ -75,7 +74,7 @@ class AgencyBillBookController extends Controller
     }
 
     /**
-     * Creates a new AgencyBillBook model.
+     * Creates a new AgencyCreditNote model.
      * For ajax request will return json object
      * and for non-ajax request if creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
@@ -83,7 +82,7 @@ class AgencyBillBookController extends Controller
     public function actionCreate()
     {
         $request = Yii::$app->request;
-        $model = new AgencyBillBook();  
+        $model = new AgencyCreditNote();  
 
         if($request->isAjax){
             /*
@@ -92,7 +91,7 @@ class AgencyBillBookController extends Controller
             Yii::$app->response->format = Response::FORMAT_JSON;
             if($request->isGet){
                 return [
-                    'title'=> "Create new AgencyBillBook",
+                    'title'=> "Create new AgencyCreditNote",
                     'content'=>$this->renderAjax('create', [
                         'model' => $model,
                     ]),
@@ -103,15 +102,15 @@ class AgencyBillBookController extends Controller
             }else if($model->load($request->post()) && $model->save()){
                 return [
                     'forceReload'=>'#crud-datatable-pjax',
-                    'title'=> "Create new AgencyBillBook",
-                    'content'=>'<span class="text-success">Create AgencyBillBook success</span>',
+                    'title'=> "Create new AgencyCreditNote",
+                    'content'=>'<span class="text-success">Create AgencyCreditNote success</span>',
                     'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
                             Html::a('Create More',['create'],['class'=>'btn btn-primary','role'=>'modal-remote'])
         
                 ];         
             }else{           
                 return [
-                    'title'=> "Create new AgencyBillBook",
+                    'title'=> "Create new AgencyCreditNote",
                     'content'=>$this->renderAjax('create', [
                         'model' => $model,
                     ]),
@@ -136,7 +135,7 @@ class AgencyBillBookController extends Controller
     }
 
     /**
-     * Updates an existing AgencyBillBook model.
+     * Updates an existing AgencyCreditNote model.
      * For ajax request will return json object
      * and for non-ajax request if update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
@@ -154,7 +153,7 @@ class AgencyBillBookController extends Controller
             Yii::$app->response->format = Response::FORMAT_JSON;
             if($request->isGet){
                 return [
-                    'title'=> "Update AgencyBillBook #".$id,
+                    'title'=> "Update AgencyCreditNote #".$id,
                     'content'=>$this->renderAjax('update', [
                         'model' => $model,
                     ]),
@@ -164,7 +163,7 @@ class AgencyBillBookController extends Controller
             }else if($model->load($request->post()) && $model->save()){
                 return [
                     'forceReload'=>'#crud-datatable-pjax',
-                    'title'=> "AgencyBillBook #".$id,
+                    'title'=> "AgencyCreditNote #".$id,
                     'content'=>$this->renderAjax('view', [
                         'model' => $model,
                     ]),
@@ -173,7 +172,7 @@ class AgencyBillBookController extends Controller
                 ];    
             }else{
                  return [
-                    'title'=> "Update AgencyBillBook #".$id,
+                    'title'=> "Update AgencyCreditNote #".$id,
                     'content'=>$this->renderAjax('update', [
                         'model' => $model,
                     ]),
@@ -196,7 +195,7 @@ class AgencyBillBookController extends Controller
     }
 
     /**
-     * Delete an existing AgencyBillBook model.
+     * Delete an existing AgencyCreditNote model.
      * For ajax request will return json object
      * and for non-ajax request if deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
@@ -224,7 +223,7 @@ class AgencyBillBookController extends Controller
     }
 
      /**
-     * Delete multiple existing AgencyBillBook model.
+     * Delete multiple existing AgencyCreditNote model.
      * For ajax request will return json object
      * and for non-ajax request if deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
@@ -255,15 +254,15 @@ class AgencyBillBookController extends Controller
     }
 
     /**
-     * Finds the AgencyBillBook model based on its primary key value.
+     * Finds the AgencyCreditNote model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return AgencyBillBook the loaded model
+     * @return AgencyCreditNote the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = AgencyBillBook::findOne($id)) !== null) {
+        if (($model = AgencyCreditNote::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
