@@ -18,7 +18,7 @@ class MagazineRecordBookSearch extends MagazineRecordBook
     public function rules()
     {
         return [
-            [['id'], 'integer'],
+            [['id', 'status'], 'integer'],
             [['date', 'issue_type'], 'safe'],
             [['price'], 'number'],
         ];
@@ -60,6 +60,7 @@ class MagazineRecordBookSearch extends MagazineRecordBook
             'id' => $this->id,
             'date' => $this->date,
             'price' => $this->price,
+            'status' => $this->status,
         ]);
 
         $query->andFilterWhere(['like', 'issue_type', $this->issue_type]);

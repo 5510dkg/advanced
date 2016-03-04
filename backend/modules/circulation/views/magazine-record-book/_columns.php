@@ -23,6 +23,14 @@ return [
         'attribute'=>'issue_type',
     ],
     [
+        'class'=>'\kartik\grid\DataColumn',
+        'attribute'=>'price',
+    ],
+//    [
+//        'class'=>'\kartik\grid\DataColumn',
+//        'attribute'=>'status',
+//    ],
+    [
         'class' => 'kartik\grid\ActionColumn',
         'dropdown' => false,
         'vAlign'=>'middle',

@@ -11,6 +11,7 @@ use Yii;
  * @property string $date
  * @property string $issue_type
  * @property string $price
+ * @property integer $status
  */
 class MagazineRecordBook extends \yii\db\ActiveRecord
 {
@@ -28,10 +29,11 @@ class MagazineRecordBook extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['date', 'issue_type', 'price'], 'required'],
+            [['date', 'issue_type', 'price', 'status'], 'required'],
             [['date'], 'safe'],
             [['issue_type'], 'string'],
             [['price'], 'number'],
+            [['status'], 'integer'],
             [['date'], 'unique']
         ];
     }
@@ -46,6 +48,7 @@ class MagazineRecordBook extends \yii\db\ActiveRecord
             'date' => 'Date',
             'issue_type' => 'Issue Type',
             'price' => 'Price',
+            'status' => 'Status',
         ];
     }
 }
