@@ -8,7 +8,7 @@ use yii\widgets\ActiveForm;
 ?>
 
 <div class="agency-bill-book-form">
-
+ 
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'agency_id')->textInput() ?>
