@@ -112,9 +112,21 @@ class AgencyCreditNoteController extends Controller
                 $ip=$model->get_agency($pid, $dt);
                 
                 $customer = \backend\modules\circulation\models\AgencyBillBook::findOne($ip);
-                
-                $customer->name = $name;
-                $customer->email = $email;
+                if($method=='cut'){
+                    //$pricem=$qty*0.10;
+                    $pc=$model->get_agency_copy_price($pid, $dt);
+                    $tprice=$pc-0.10;
+                    $amt=$qty*$tprice;
+                }
+                else{
+                    $pc=$model->get_agency_copy_price($pid, $dt);
+                    $tprice=$pc;
+                    $amt=$qty*$tprice;
+                }
+                $total=$model->total($pid, $dt);
+                $customer->credit_amt = $amt;;
+                $customer->credited_date = date('Y-m-d');
+                $customer->final_total=$total-$amt;
                 $customer->update();
                 
 //               $query = (new \yii\db\Query())->select(['id'])->from('agency_bill_book')->where(['agency_id' =>$id,'issue'=>$date]);

@@ -40,12 +40,32 @@ class AgencyCreditNote extends \yii\db\ActiveRecord
     
     
     public function get_agency($id,$date){
-            $query = (new \yii\db\Query())->select(['id'])->from('agency_bill_book')->where(['agency_id' =>$id,'issue'=>$date]);
+            $query = (new \yii\db\Query())->select(['id'])->from('agency_bill_book')->where(['agency_id' =>$id,'issue_date'=>$date]);
              $command = $query->createCommand();
              $data = $command->queryAll();
              $titles = '';
              foreach($data as $row) {
                   $titles= $row['id'];
+             }
+             return $titles;
+    }
+     public function get_agency_copy_price($id,$date){
+            $query = (new \yii\db\Query())->select(['price_per_piece'])->from('agency_bill_book')->where(['agency_id' =>$id,'issue_date'=>$date]);
+             $command = $query->createCommand();
+             $data = $command->queryAll();
+             $titles = '';
+             foreach($data as $row) {
+                  $titles= $row['price_per_piece'];
+             }
+             return $titles;
+    }
+     public function total($id,$date){
+            $query = (new \yii\db\Query())->select(['final_total'])->from('agency_bill_book')->where(['agency_id' =>$id,'issue_date'=>$date]);
+             $command = $query->createCommand();
+             $data = $command->queryAll();
+             $titles = '';
+             foreach($data as $row) {
+                  $titles= $row['final_total'];
              }
              return $titles;
     }
