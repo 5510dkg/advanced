@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 03, 2016 at 04:46 PM
+-- Generation Time: Mar 08, 2016 at 05:35 PM
 -- Server version: 5.5.47-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.14
 
@@ -72,16 +72,16 @@ CREATE TABLE IF NOT EXISTS `agency` (
 
 INSERT INTO `agency` (`id`, `name`, `account_id`, `route_id`, `vehicle_id`, `reference`, `email`, `landline_no`, `mobile_no`, `status`, `security_amt`, `address_status`, `mail_house_no`, `mail_street_address`, `mail_p_office`, `mail_country_id`, `mail_state_id`, `mail_district_id`, `mail_pincode`, `panchjanya`, `organiser`, `add_house_no`, `add_street_address`, `add_p_office`, `add_country_id`, `add_state_id`, `add_district_id`, `add_pincode`, `issue_start_date`, `agency_type`, `comment`, `commission`, `agency_combined_id`, `source`, `train_no`, `train_name`) VALUES
 (32, 'NEW agncy', 'AR|C|0003', 5, 7, 'koijij', 'uuiu@g.com', 897456210, 2147483647, 'Active', 989.00, '1', 'yui', 'cfcfcf ytf vttydrt ct', '123123321321', 1, 3, 17, 123654, 78, 789, 'yui', 'cfcfcf ytf vttydrt ct', '123123321321', 1, 3, 17, 123654, '2016-02-26', 'Combined', 'iomomomom', '897', 'AS|09|78', 'ANVT', '12154', 'SAMPOORN KRANTI'),
-(33, 'Old Agency', 'GJ|C|0002', 1, 9, 'Potyiop', 'io', 987456874, 2147483647, 'Suspended', 987.00, '1', '78/9', 'Pto bhiuo nhufgc vgvg  vyctr yvrdrd', 'tyreing', 1, 12, 150, 987456, 988, 78, '78/9', 'Pto bhiuo nhufgc vgvg  vyctr yvrdrd', 'tyreing', 1, 12, 150, 987456, '2016-02-09', 'Single', 'Post Office near', '890789', 'AS|C|004', '', '', ''),
-(34, 'aer', 'HR|C|0004', 2, 9, 'uioplkjh', 'sres@sr.com', 76678686, 646546546, 'Suspended', 9878.00, '1', '876876', 'crtcrcrcrdrd rd tr tr trdt rdsresaew', 'yrytrytr', 1, 13, 183, 5656565, 98, 87, '876876', 'crtcrcrcrdrd rd tr tr trdt rdsresaew', 'yrytrytr', 1, 13, 183, 5656565, '2016-02-11', 'Combined', 'PJY', '8978', '77577657', '', '', ''),
-(35, 'top ramen', 'GJ|S|0004', 2, 1, '12', 'tos@njasjd.c', 901831230, 2147483647, 'Suspended', 100.00, '1', '47/8', 'asjdasdnaskjn', '1311213', 1, 12, 141, 1210146, 100, 20, '47/8', 'asjdasdnaskjn', '1311213', 1, 12, 141, 1210146, '2016-02-21', 'Single', 'asdsa', '5', '', '', '', ''),
-(36, 'patanjali', 'HR|C|0005', 2, 1, 'asdasdas', 'nja@nd.com', 2147483647, 2147483647, 'Suspended', 1020.00, '1', 'd9-0912', 'indasndakjn', '9090909090', 1, 13, 176, 121003, 1002, 1050, 'd9-0912', 'indasndakjn', '9090909090', 1, 13, 176, 121003, '2016-02-14', 'Combined', 'asdasdssdasdasdsdsdsd', '20', '019238', '', '', ''),
+(33, 'Old Agency', 'GJ|C|0002', 1, 9, 'Potyiop', 'io', 987456874, 2147483647, 'Active', 987.00, '1', '78/9', 'Pto bhiuo nhufgc vgvg  vyctr yvrdrd', 'tyreing', 1, 12, 150, 987456, 988, 78, '78/9', 'Pto bhiuo nhufgc vgvg  vyctr yvrdrd', 'tyreing', 1, 12, 150, 987456, '2016-02-09', 'Single', 'Post Office near', '890789', 'AS|C|004', '', '', ''),
+(34, 'aer', 'HR|C|0004', 2, 9, 'uioplkjh', 'sres@sr.com', 76678686, 646546546, 'Active', 9878.00, '1', '876876', 'crtcrcrcrdrd rd tr tr trdt rdsresaew', 'yrytrytr', 1, 13, 183, 5656565, 98, 87, '876876', 'crtcrcrcrdrd rd tr tr trdt rdsresaew', 'yrytrytr', 1, 13, 183, 5656565, '2016-02-11', 'Combined', 'PJY', '8978', '77577657', '', '', ''),
+(35, 'top ramen', 'GJ|S|0004', 2, 1, '12', 'tos@njasjd.c', 901831230, 2147483647, 'Active', 100.00, '1', '47/8', 'asjdasdnaskjn', '1311213', 1, 12, 141, 1210146, 100, 20, '47/8', 'asjdasdnaskjn', '1311213', 1, 12, 141, 1210146, '2016-02-21', 'Single', 'asdsa', '5', '', '', '', ''),
+(36, 'patanjali', 'HR|C|0005', 2, 1, 'asdasdas', 'nja@nd.com', 2147483647, 2147483647, 'Active', 1020.00, '1', 'd9-0912', 'indasndakjn', '9090909090', 1, 13, 176, 121003, 1002, 1050, 'd9-0912', 'indasndakjn', '9090909090', 1, 13, 176, 121003, '2016-02-14', 'Combined', 'asdasdssdasdasdsdsdsd', '20', '019238', '', '', ''),
 (37, 'NEW agncy2', 'AR|C|0003', 2, 7, 'koijij', 'uuiu@g.com', 897456210, 2147483647, 'Active', 989.00, '1', 'yui', 'cfcfcf ytf vttydrt ct', '123123321321', 1, 3, 17, 123654, 789, 789, 'yui', 'cfcfcf ytf vttydrt ct', '123123321321', 1, 3, 17, 123654, '2016-02-26', 'Combined', 'iomomomom', '897', 'AS|09|78', '', '', ''),
-(38, 'patanjali', 'HR|C|0005', 2, 1, 'asdasdas', 'nja@nd.com', 2147483647, 2147483647, 'Suspended', 1020.00, '1', 'd9-0912', 'indasndakjn', '9090909090', 1, 13, 176, 121003, 1002, 1050, 'd9-0912', 'indasndakjn', '9090909090', 1, 13, 176, 121003, '2016-02-14', 'Combined', 'asdasdssdasdasdsdsdsd', '20', '019238', '', '', ''),
-(39, 'Old Agency2', 'GJ|C|0002', 2, 9, 'Potyiop', 'io', 987456874, 2147483647, 'Suspended', 987.00, '1', '78/9', 'Pto bhiuo nhufgc vgvg  vyctr yvrdrd', 'tyreing', 1, 12, 150, 987456, 98, 78, '78/9', 'Pto bhiuo nhufgc vgvg  vyctr yvrdrd', 'tyreing', 1, 12, 150, 987456, '2016-02-09', 'Combined', 'Post Office near', '890789', 'AS|C|004', '', '', ''),
-(40, 'top ramen2', 'GJ|S|0004', 2, 1, '12', 'tos@njasjd.c', 901831230, 2147483647, 'Suspended', 100.00, '1', '47/8', 'asjdasdnaskjn', '1311213', 1, 12, 141, 1210146, 100, 20, '47/8', 'asjdasdnaskjn', '1311213', 1, 12, 141, 1210146, '2016-02-21', 'Single', 'asdsa', '5', '', '', '', ''),
-(41, 'Sh Gabbar Ji', 'DL|S|0010', 5, 2, 'Thakur', 'gab@gab.com', 12100321, 2147483647, 'Suspended', 15000.00, '1', '45/8', 'S/O SH RAJNATH RAM, NEAR DR. GANDHI''S HOUSE\r\nISHWAR NAGAR, SHYMALDAS LANE', 'Ishwar Nagar', 1, 10, 133, 110065, 100, 50, '45/8', 'S/O SH RAJNATH RAM, NEAR DR. GANDHI''S HOUSE\r\nISHWAR NAGAR, SHYMALDAS LANE', 'Ishwar Nagar', 1, 10, 133, 110065, '2016-02-22', 'Single', 'New Agency', '5', '', 'NDLS', '12556', 'Vaishali Express'),
-(42, 'asdasa', 'KA|S|0011', 1, 12312, '12312', 'sdasda', 231231231, 23123123, 'Suspended', 1299.00, '1', 'asdasdas', 'dasdasdasd', 'asdasda', 1, 17, 253, 123123, 11000, 2000, 'asdasdas', 'dasdasdasd', 'asdasda', 1, 17, 253, 123123, '2016-02-01', 'Single', '12312', '123123', '', 'Sel', '', '123123');
+(38, 'patanjali', 'HR|C|0005', 2, 1, 'asdasdas', 'nja@nd.com', 2147483647, 2147483647, 'Active', 1020.00, '1', 'd9-0912', 'indasndakjn', '9090909090', 1, 13, 176, 121003, 1002, 1050, 'd9-0912', 'indasndakjn', '9090909090', 1, 13, 176, 121003, '2016-02-14', 'Combined', 'asdasdssdasdasdsdsdsd', '20', '019238', '', '', ''),
+(39, 'Old Agency2', 'GJ|C|0002', 2, 9, 'Potyiop', 'io', 987456874, 2147483647, 'Active', 987.00, '1', '78/9', 'Pto bhiuo nhufgc vgvg  vyctr yvrdrd', 'tyreing', 1, 12, 150, 987456, 98, 78, '78/9', 'Pto bhiuo nhufgc vgvg  vyctr yvrdrd', 'tyreing', 1, 12, 150, 987456, '2016-02-09', 'Combined', 'Post Office near', '890789', 'AS|C|004', '', '', ''),
+(40, 'top ramen2', 'GJ|S|0004', 2, 1, '12', 'tos@njasjd.c', 901831230, 2147483647, 'Active', 100.00, '1', '47/8', 'asjdasdnaskjn', '1311213', 1, 12, 141, 1210146, 100, 20, '47/8', 'asjdasdnaskjn', '1311213', 1, 12, 141, 1210146, '2016-02-21', 'Single', 'asdsa', '5', '', '', '', ''),
+(41, 'Sh Gabbar Ji', 'DL|S|0010', 5, 2, 'Thakur', 'gab@gab.com', 12100321, 2147483647, 'Active', 15000.00, '1', '45/8', 'S/O SH RAJNATH RAM, NEAR DR. GANDHI''S HOUSE\r\nISHWAR NAGAR, SHYMALDAS LANE', 'Ishwar Nagar', 1, 10, 133, 110065, 100, 50, '45/8', 'S/O SH RAJNATH RAM, NEAR DR. GANDHI''S HOUSE\r\nISHWAR NAGAR, SHYMALDAS LANE', 'Ishwar Nagar', 1, 10, 133, 110065, '2016-02-22', 'Single', 'New Agency', '5', '', 'NDLS', '12556', 'Vaishali Express'),
+(42, 'asdasa', 'KA|S|0011', 1, 12312, '12312', 'sdasda', 231231231, 23123123, 'Active', 1299.00, '1', 'asdasdas', 'dasdasdasd', 'asdasda', 1, 17, 253, 123123, 11000, 2000, 'asdasdas', 'dasdasdasd', 'asdasda', 1, 17, 253, 123123, '2016-02-01', 'Single', '12312', '123123', '', 'Sel', '', '123123');
 
 -- --------------------------------------------------------
 
@@ -91,19 +91,19 @@ INSERT INTO `agency` (`id`, `name`, `account_id`, `route_id`, `vehicle_id`, `ref
 
 CREATE TABLE IF NOT EXISTS `agency_bill_book` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `agency_id` int(11) NOT NULL,
-  `issue_date` date NOT NULL,
-  `pjy` int(11) NOT NULL,
-  `org` int(11) NOT NULL,
-  `total_copies` varchar(30) NOT NULL,
-  `price_per_piece` varchar(40) NOT NULL,
-  `total_price` varchar(50) NOT NULL,
-  `discount` decimal(10,2) NOT NULL,
-  `discounted_amt` decimal(10,2) NOT NULL,
-  `final_total` decimal(10,2) NOT NULL,
+  `agency_id` int(11) DEFAULT NULL,
+  `issue_date` date DEFAULT NULL,
+  `pjy` int(11) DEFAULT NULL,
+  `org` int(11) DEFAULT NULL,
+  `total_copies` varchar(30) DEFAULT NULL,
+  `price_per_piece` varchar(40) DEFAULT NULL,
+  `total_price` varchar(50) DEFAULT NULL,
+  `discount` decimal(10,2) DEFAULT NULL,
+  `discounted_amt` decimal(10,2) DEFAULT NULL,
+  `final_total` decimal(10,2) DEFAULT NULL,
   `credit_amt` decimal(10,2) DEFAULT NULL,
   `credited_date` date DEFAULT NULL,
-  `created_on` datetime NOT NULL,
+  `created_on` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -227,14 +227,22 @@ INSERT INTO `agency_creation_updation_records` (`agency_id`, `date`, `status`, `
 CREATE TABLE IF NOT EXISTS `agency_credit_note` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `agency_id` int(11) NOT NULL,
-  `return_date` int(11) NOT NULL,
-  `issue_type` int(11) NOT NULL,
+  `return_date` date NOT NULL,
+  `issue_type` enum('Regular Edition','Special Edition') NOT NULL,
   `pjy` int(11) NOT NULL,
   `org` int(11) NOT NULL,
-  `issue_date` int(11) NOT NULL,
+  `issue_date` date NOT NULL,
   `return_type` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `agency_credit_note`
+--
+
+INSERT INTO `agency_credit_note` (`id`, `agency_id`, `return_date`, `issue_type`, `pjy`, `org`, `issue_date`, `return_type`) VALUES
+(1, 32, '2016-03-20', 'Regular Edition', 12, 12, '2016-02-21', 0),
+(2, 32, '2016-03-06', 'Regular Edition', 12, 22, '2016-02-21', 0);
 
 -- --------------------------------------------------------
 
@@ -252,14 +260,15 @@ CREATE TABLE IF NOT EXISTS `agency_receipt` (
   `created_on` date NOT NULL,
   `created_on_time` time NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `agency_receipt`
 --
 
 INSERT INTO `agency_receipt` (`id`, `agency_id`, `rcpt_date`, `cr_amt`, `payment_mode`, `comment`, `created_on`, `created_on_time`) VALUES
-(1, 32, '2016-03-01', 1000, 1, 'New', '2016-03-03', '08:57:04');
+(1, 32, '2016-03-01', 1000, 1, 'New', '2016-03-03', '08:57:04'),
+(2, 32, '2016-03-14', 2406, 1, 'new', '2016-03-08', '10:34:40');
 
 -- --------------------------------------------------------
 
@@ -379,7 +388,17 @@ CREATE TABLE IF NOT EXISTS `commission_cal` (
   `upper_limit` int(11) NOT NULL,
   `amt` float(10,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `commission_cal`
+--
+
+INSERT INTO `commission_cal` (`id`, `lower_limit`, `upper_limit`, `amt`) VALUES
+(1, 0, 50, 10.00),
+(2, 51, 100, 33.00),
+(3, 101, 500, 33.00),
+(4, 501, 5000000, 33.00);
 
 -- --------------------------------------------------------
 
@@ -392,16 +411,19 @@ CREATE TABLE IF NOT EXISTS `magazine_record_book` (
   `date` date NOT NULL,
   `issue_type` enum('Regular','Special Edition') NOT NULL,
   `price` decimal(10,2) NOT NULL,
+  `status` int(11) DEFAULT NULL COMMENT '1: bill generated, 0:pending',
   PRIMARY KEY (`id`),
   UNIQUE KEY `date` (`date`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `magazine_record_book`
 --
 
-INSERT INTO `magazine_record_book` (`id`, `date`, `issue_type`, `price`) VALUES
-(1, '2016-02-21', 'Special Edition', 25.00);
+INSERT INTO `magazine_record_book` (`id`, `date`, `issue_type`, `price`, `status`) VALUES
+(1, '2016-02-21', 'Special Edition', 25.00, 0),
+(2, '2016-03-06', 'Regular', 25.00, 0),
+(3, '2016-03-13', 'Special Edition', 25.00, 0);
 
 -- --------------------------------------------------------
 
@@ -445,7 +467,7 @@ CREATE TABLE IF NOT EXISTS `ordinary_posted_data` (
   `license` text,
   `bundle_size` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `ordinary_posted_data`
@@ -453,7 +475,9 @@ CREATE TABLE IF NOT EXISTS `ordinary_posted_data` (
 
 INSERT INTO `ordinary_posted_data` (`id`, `agency_id`, `tempelate_id`, `wt`, `postage`, `address_bar`, `sn`, `pjy`, `org`, `date`, `ord_id`, `license`, `bundle_size`) VALUES
 (1, 33, 1, '74.62', '746.2', '987456', '1', 988, 78, '2016-02-21', 1, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 10),
-(2, 42, 1, '7840', '78400', '123123', '2', 11000, 2000, '2016-02-21', 1, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 10);
+(2, 42, 1, '7840', '78400', '123123', '2', 11000, 2000, '2016-02-21', 1, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 10),
+(3, 33, 1, '74.62', '746.2', '987456', '3', 988, 78, '2016-03-13', 2, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 10),
+(4, 42, 1, '910', '9100', '123123', '4', 11000, 2000, '2016-03-13', 2, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 10);
 
 -- --------------------------------------------------------
 
@@ -467,14 +491,15 @@ CREATE TABLE IF NOT EXISTS `ordinary_post_data` (
   `time` time NOT NULL,
   `generated_date` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `ordinary_post_data`
 --
 
 INSERT INTO `ordinary_post_data` (`id`, `date`, `time`, `generated_date`) VALUES
-(1, '2016-02-21', '08:05:58', '2016-02-19');
+(1, '2016-02-21', '08:05:58', '2016-02-19'),
+(2, '2016-03-13', '09:13:06', '2016-03-08');
 
 -- --------------------------------------------------------
 
@@ -500,7 +525,7 @@ CREATE TABLE IF NOT EXISTS `railway_posted_data` (
   `license` text NOT NULL,
   `bundle_size` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `railway_posted_data`
@@ -510,7 +535,9 @@ INSERT INTO `railway_posted_data` (`id`, `agency_id`, `tempelate_id`, `wt`, `pos
 (1, 32, 1, '60.69', '606.9', '123654', '9', '78', '789', '2016-02-21', 1, '12154', 'SAMPOORN KRANTI', 'ANVT', 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 150),
 (2, 41, 1, '10.5', '105', '110065', '10', '100', '50', '2016-02-21', 1, '12556', 'Vaishali Express', 'NDLS', 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 150),
 (3, 32, 1, '60.69', '606.9', '123654', '9', '78', '789', '2016-02-28', 2, '12154', 'SAMPOORN KRANTI', 'ANVT', 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 150),
-(4, 41, 1, '10.5', '105', '110065', '10', '100', '50', '2016-02-28', 2, '12556', 'Vaishali Express', 'NDLS', 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 150);
+(4, 41, 1, '10.5', '105', '110065', '10', '100', '50', '2016-02-28', 2, '12556', 'Vaishali Express', 'NDLS', 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 150),
+(5, 32, 1, '60.69', '606.9', '123654', '31', '78', '789', '2016-03-13', 3, '12154', 'SAMPOORN KRANTI', 'ANVT', 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 150),
+(6, 41, 1, '10.5', '105', '110065', '32', '100', '50', '2016-03-13', 3, '12556', 'Vaishali Express', 'NDLS', 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 150);
 
 -- --------------------------------------------------------
 
@@ -524,7 +551,7 @@ CREATE TABLE IF NOT EXISTS `railway_post_data` (
   `time` time DEFAULT NULL,
   `generated_date` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `railway_post_data`
@@ -532,7 +559,8 @@ CREATE TABLE IF NOT EXISTS `railway_post_data` (
 
 INSERT INTO `railway_post_data` (`id`, `date`, `time`, `generated_date`) VALUES
 (1, '2016-02-21', '07:18:56', '2016-02-18'),
-(2, '2016-02-28', '07:22:19', '2016-02-18');
+(2, '2016-02-28', '07:22:19', '2016-02-18'),
+(3, '2016-03-13', '09:12:58', '2016-03-08');
 
 -- --------------------------------------------------------
 
@@ -556,7 +584,7 @@ CREATE TABLE IF NOT EXISTS `registered_posted_data` (
   `license` text NOT NULL,
   `bundle_size` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=35 ;
 
 --
 -- Dumping data for table `registered_posted_data`
@@ -589,7 +617,14 @@ INSERT INTO `registered_posted_data` (`id`, `agency_id`, `tempelate_id`, `wt`, `
 (24, 37, 1, '110.46', '1104.6', 'NEW agncy2 ,cfcfcf ytf vttydrt ct', '20', 789, 789, '2016-03-06', '', 3, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
 (25, 38, 1, '143.64', '1436.4', 'patanjali ,indasndakjn', '21', 1002, 1050, '2016-03-06', '', 3, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
 (26, 39, 1, '12.32', '123.2', 'Old Agency2 ,Pto bhiuo nhufgc vgvg  vyctr yvrdrd', '22', 98, 78, '2016-03-06', '', 3, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
-(27, 40, 1, '8.4', '84', 'top ramen2 ,asjdasdnaskjn', '23', 100, 20, '2016-03-06', '', 3, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50);
+(27, 40, 1, '8.4', '84', 'top ramen2 ,asjdasdnaskjn', '23', 100, 20, '2016-03-06', '', 3, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
+(28, 34, 1, '12.95', '129.5', 'aer ,crtcrcrcrdrd rd tr tr trdt rdsresaew', '24', 98, 87, '2016-03-13', '', 4, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
+(29, 35, 1, '8.4', '84', 'top ramen ,asjdasdnaskjn', '25', 100, 20, '2016-03-13', '', 4, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
+(30, 36, 1, '143.64', '1436.4', 'patanjali ,indasndakjn', '26', 1002, 1050, '2016-03-13', '', 4, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
+(31, 37, 1, '110.46', '1104.6', 'NEW agncy2 ,cfcfcf ytf vttydrt ct', '27', 789, 789, '2016-03-13', '', 4, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
+(32, 38, 1, '143.64', '1436.4', 'patanjali ,indasndakjn', '28', 1002, 1050, '2016-03-13', '', 4, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
+(33, 39, 1, '12.32', '123.2', 'Old Agency2 ,Pto bhiuo nhufgc vgvg  vyctr yvrdrd', '29', 98, 78, '2016-03-13', '', 4, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
+(34, 40, 1, '8.4', '84', 'top ramen2 ,asjdasdnaskjn', '30', 100, 20, '2016-03-13', '', 4, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50);
 
 -- --------------------------------------------------------
 
@@ -603,7 +638,7 @@ CREATE TABLE IF NOT EXISTS `registered_post_data` (
   `time` time NOT NULL,
   `generated_date` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `registered_post_data`
@@ -612,7 +647,8 @@ CREATE TABLE IF NOT EXISTS `registered_post_data` (
 INSERT INTO `registered_post_data` (`id`, `date`, `time`, `generated_date`) VALUES
 (1, '2016-02-21', '07:00:57', '2016-02-18'),
 (2, '2016-02-28', '07:22:29', '2016-02-18'),
-(3, '2016-03-06', '06:14:19', '2016-02-29');
+(3, '2016-03-06', '06:14:19', '2016-02-29'),
+(4, '2016-03-13', '09:12:45', '2016-03-08');
 
 -- --------------------------------------------------------
 
