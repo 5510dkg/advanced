@@ -29,7 +29,7 @@ class MagazineRecordBook extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['date', 'issue_type', 'price', 'status'], 'required'],
+            [['date', 'issue_type', 'price'], 'required'],
             [['date'], 'safe'],
             [['issue_type'], 'string'],
             [['price'], 'number'],
