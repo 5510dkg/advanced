@@ -144,7 +144,7 @@ class AgencyBillBookController extends Controller
                     $model->final_total=$discounted;
                     $model->created_on=  date('Y-m-d H:i:s');
                     $model->save(false);
-                    
+                                     
                    
                   //  $i++;
                   }
