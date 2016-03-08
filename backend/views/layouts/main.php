@@ -137,19 +137,20 @@ AppAsset::register($this);
                               'icon'=>'glyphicon',
                               'items'=>[
                                ['label'=>'Generate bill','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/magazine-record-book'],
+                                ['label'=>'Billing List','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/agency-bill-book'],
                               ['label'=>'Add Receipt','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/agency-receipt/list'],
                               ['label'=>'Add Credit Note','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/agency-credit-note/list'],
                               ],
                             ],
-                             [
-                              'label' => 'Cluster',
-                              'icon'=>'glyphicon',
-                              'items'=>[
-                              ['label'=>'Registred Post','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/registered-post-data'],
-                              ['label'=>'Railways Labels','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/railway-post-data'],
-                              ['label'=>'Ordinary Post','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/ordinary-post-data'],
-                              ],
-                            ],
+//                             [
+//                              'label' => 'Cluster',
+//                              'icon'=>'glyphicon',
+//                              'items'=>[
+//                              ['label'=>'Registred Post','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/registered-post-data'],
+//                              ['label'=>'Railways Labels','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/railway-post-data'],
+//                              ['label'=>'Ordinary Post','icon'=>'glyphicon-indent-right','url'=>'index.php?r=circulation/ordinary-post-data'],
+//                              ],
+//                            ],
 
 
                         ],
