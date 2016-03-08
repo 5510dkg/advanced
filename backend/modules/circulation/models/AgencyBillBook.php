@@ -47,6 +47,142 @@ class AgencyBillBook extends \yii\db\ActiveRecord
             [['total_price'], 'string', 'max' => 50]
         ];
     }
+     public function beforeSave($insert)
+    {
+        if (parent::beforeSave($insert)) {
+            if($this->isNewRecord){
+            $dates=$this->getspecialeditiondates();
+            
+            if(!empty($dates)){
+                //$allagencies=Yii::$app->mycomponent->calsunday();
+                $agency=$this->get_all_agencies();
+                
+                
+            
+            }
+            
+            
+            
+        return true;
+        }
+        else{
+
+            return true;
+        } 
+      
+    }
+    }
+    private function get_all_agencies($date){
+          $query = (new \yii\db\Query())->select(['*'])->from('agency')->where(['status' =>'Active']);
+             $command = $query->createCommand();
+             $data = $command->queryAll();
+             $titles = '';
+             foreach($data as $row) {
+                 $titles['agency_id']= $row['agency_id'];
+                 $titles['name']=$row['name'];
+                 $titles['account_id']= $row['account_id'];
+                 $titles['security_amt']=$row['security_amt'];
+                 $titles['mail_post_office']= $row['mail_post_office'];
+                 $titles['mail_state_id']=$row['mail_state_id'];
+                 $titles['mail_country_id']= $row['mail_country_id'];
+                 $titles['mail_district_id']=$row['mail_district_id'];
+                 $titles['mail_pincode']= $row['mail_pincode'];
+                 $titles['panchjanya']=$this->getcopiespjy($date,$row['id'],$row['route_id']);
+                 $titles['organiser']= $this->getcopiesorg($date,$row['id'],$row['route_id']);
+                 $titles['agency_type']=$row['agency_type'];
+                 $titles['commission']=$row['commission'];
+             }
+             return $titles;
+        
+    }
+    private function getcopiespjy($date,$id,$dm) {
+        if($dm=='1'){
+                 $query = (new \yii\db\Query())->select(['pjy'])->from('ordinary_posted_data')->where(['agency_id' =>$id,'date'=>$date]);
+             $command = $query->createCommand();
+             $data = $command->queryAll();
+             $titles = '';
+             foreach($data as $row) {
+                 $titles= $row['pjy'];
+                 
+             }
+             return $titles;
+        }
+        if($dm=='2'){
+                 $query = (new \yii\db\Query())->select(['pjy'])->from('registered_posted_data')->where(['agency_id' =>$id,'date'=>$date]);
+             $command = $query->createCommand();
+             $data = $command->queryAll();
+             $titles = '';
+             foreach($data as $row) {
+                  $titles= $row['pjy'];
+             }
+             return $titles;
+        }
+        if($dm=='5'){
+                 $query = (new \yii\db\Query())->select(['pjy'])->from('railway_posted_data')->where(['agency_id' =>$id,'date'=>$date]);
+             $command = $query->createCommand();
+             $data = $command->queryAll();
+             $titles = '';
+             foreach($data as $row) {
+               $titles= $row['pjy'];
+             }
+             return $titles;
+        }
+       
+    }
+    private function getcopiesorg($date,$id,$dm) {
+          if($dm=='1'){
+                 $query = (new \yii\db\Query())->select(['org'])->from('ordinary_posted_data')->where(['agency_id' =>$id,'date'=>$date]);
+             $command = $query->createCommand();
+             $data = $command->queryAll();
+             $titles = '';
+             foreach($data as $row) {
+                 $titles= $row['org'];
+                 
+             }
+             return $titles;
+        }
+        if($dm=='2'){
+                 $query = (new \yii\db\Query())->select(['org'])->from('registered_posted_data')->where(['agency_id' =>$id,'date'=>$date]);
+             $command = $query->createCommand();
+             $data = $command->queryAll();
+             $titles = '';
+             foreach($data as $row) {
+                  $titles= $row['org'];
+             }
+             return $titles;
+        }
+        if($dm=='5'){
+                 $query = (new \yii\db\Query())->select(['org'])->from('railway_posted_data')->where(['agency_id' =>$id,'date'=>$date]);
+             $command = $query->createCommand();
+             $data = $command->queryAll();
+             $titles = '';
+             foreach($data as $row) {
+               $titles= $row['org'];
+             }
+             return $titles;
+        }
+        
+    }
+
+
+    
+    private function getspecialeditiondates() {
+        //return $statename.name;
+        //     if($state_id!='2'){
+             $query = (new \yii\db\Query())->select(['date'])->from('magazine_record_book')->where(['status' =>'0']);
+             $command = $query->createCommand();
+             $data = $command->queryAll();
+             $titles = '';
+             foreach($data as $row) {
+                 $titles['date']= $row['date'];
+                 $titles['price']=$row['price'];
+             }
+             return $titles;
+            // return rtrim($titles, ', ');
+        
+        
+        
+    }
 
     /**
      * @inheritdoc
