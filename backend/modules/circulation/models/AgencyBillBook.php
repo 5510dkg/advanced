@@ -3,6 +3,7 @@
 namespace backend\modules\circulation\models;
 
 use Yii;
+use backend\modules\circulation\models\Agency;
 //use backend\modules\circulation\models\AgencyBillBook;
 
 /**
@@ -260,5 +261,14 @@ class AgencyBillBook extends \yii\db\ActiveRecord
             'credited_date' => 'Credited Date',
             'created_on' => 'Created On',
         ];
+    }
+    
+    
+     /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getagencyname()
+    {
+        return $this->hasone(Agency::className(), ['id' => 'agency_id']);
     }
 }

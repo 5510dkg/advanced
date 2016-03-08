@@ -43,6 +43,10 @@ return [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
         ],
+         'formatter' => [
+        'class' => 'yii\i18n\Formatter',
+        'nullDisplay' => '-',
+    ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [

@@ -1,15 +1,17 @@
 <?php
 use yii\helpers\Url;
+use dosamigos\datepicker\DatePicker;
+//$searchModel='';
 
 return [
 //    [
 //        'class' => 'kartik\grid\CheckboxColumn',
 //        'width' => '20px',
 //    ],
-//    [
-//        'class' => 'kartik\grid\SerialColumn',
-//        'width' => '30px',
-//    ],
+    [
+        'class' => 'kartik\grid\SerialColumn',
+        'width' => '30px',
+    ],
 //        // [
 //        // 'class'=>'\kartik\grid\DataColumn',
 //        // 'attribute'=>'id',
@@ -17,19 +19,31 @@ return [
     [
         'class'=>'\kartik\grid\DataColumn',
         'attribute'=>'agency_id',
+        'value'=>'agencyname.name',
+    ],
+    [
+        'class'=>'\kartik\grid\DataColumn',
+        'attribute'=>'issue_date',
+//        'filter'=>DatePicker::widget([
+//                    'name'=>'issue_date',
+//                  // 'model' => $searchmodel,
+//                    'attribute' => 'issue_date',
+//                   // 'template' => '{addon}{input}',
+//                    'clientOptions' => [
+//                        'autoclose' => true,
+//                        'format' => 'yyyy-mm-dd',
+//           
+//                ]
+//]),
     ],
 //    [
 //        'class'=>'\kartik\grid\DataColumn',
-//        'attribute'=>'issue_date',
+//        'attribute'=>'pjy',
 //    ],
-    [
-        'class'=>'\kartik\grid\DataColumn',
-        'attribute'=>'pjy',
-    ],
-    [
-        'class'=>'\kartik\grid\DataColumn',
-        'attribute'=>'org',
-    ],
+//    [
+//        'class'=>'\kartik\grid\DataColumn',
+//        'attribute'=>'org',
+//    ],
     [
         'class'=>'\kartik\grid\DataColumn',
         'attribute'=>'total_copies',
@@ -46,22 +60,23 @@ return [
          'class'=>'\kartik\grid\DataColumn',
          'attribute'=>'discount',
      ],
+//     [
+//         'class'=>'\kartik\grid\DataColumn',
+//         'attribute'=>'discounted_amt',
+//     ],
+    
      [
          'class'=>'\kartik\grid\DataColumn',
-         'attribute'=>'discounted_amt',
+         'attribute'=>'credit_amt',
+     ],
+     [
+         'class'=>'\kartik\grid\DataColumn',
+         'attribute'=>'credited_date',
      ],
      [
          'class'=>'\kartik\grid\DataColumn',
          'attribute'=>'final_total',
      ],
-    // [
-        // 'class'=>'\kartik\grid\DataColumn',
-        // 'attribute'=>'credit_amt',
-    // ],
-    // [
-        // 'class'=>'\kartik\grid\DataColumn',
-        // 'attribute'=>'credited_date',
-    // ],
     // [
         // 'class'=>'\kartik\grid\DataColumn',
         // 'attribute'=>'created_on',
