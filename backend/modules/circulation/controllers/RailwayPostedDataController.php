@@ -18,7 +18,7 @@ class RailwayPostedDataController extends \yii\web\Controller
     }
 
     public function actionPrint($id){
-		$this->layout='adminlayout';
+		//$this->layout='adminlayout';
 		$request=Yii::$app->request;
 		 if($request->isAjax){
 
@@ -43,7 +43,7 @@ class RailwayPostedDataController extends \yii\web\Controller
 
 	}
   public function actionSlip($id){
-  $this->layout='adminlayout';
+ // $this->layout='adminlayout';
   $request=Yii::$app->request;
    if($request->isAjax){
 

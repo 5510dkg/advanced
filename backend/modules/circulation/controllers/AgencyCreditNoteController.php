@@ -49,7 +49,7 @@ class AgencyCreditNoteController extends Controller
     
     
      public function actionList() {
-        $this->layout='adminlayout';
+     //   $this->layout='adminlayout';
         
         $searchModel = new \backend\modules\circulation\models\AgencySearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);

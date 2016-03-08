@@ -38,7 +38,7 @@ class OrdinaryPostDataController extends Controller
      */
     public function actionIndex()
     {    
-        $this->layout='adminlayout';
+       // $this->layout='adminlayout';
         $searchModel = new OrdinaryPostDataSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 

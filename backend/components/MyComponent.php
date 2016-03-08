@@ -33,7 +33,7 @@ $tm2 = strtotime($dt2);
 $dt = Array ();
 for($i=$tm1; $i<=$tm2;$i=$i+86400) {
 	if(date("w",$i) == 0) {
-		$dt[] = date("l Y-m-d ", $i);
+		$dt[] = date("Y-m-d ", $i);
 	}
 }
 return $dt;

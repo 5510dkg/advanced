@@ -14,46 +14,46 @@ return [
 //        // 'class'=>'\kartik\grid\DataColumn',
 //        // 'attribute'=>'id',
 //    // ],
-//    [
-//        'class'=>'\kartik\grid\DataColumn',
-//        'attribute'=>'agency_id',
-//    ],
+    [
+        'class'=>'\kartik\grid\DataColumn',
+        'attribute'=>'agency_id',
+    ],
 //    [
 //        'class'=>'\kartik\grid\DataColumn',
 //        'attribute'=>'issue_date',
 //    ],
-//    [
-//        'class'=>'\kartik\grid\DataColumn',
-//        'attribute'=>'pjy',
-//    ],
-//    [
-//        'class'=>'\kartik\grid\DataColumn',
-//        'attribute'=>'org',
-//    ],
-//    [
-//        'class'=>'\kartik\grid\DataColumn',
-//        'attribute'=>'total_copies',
-//    ],
-    // [
-        // 'class'=>'\kartik\grid\DataColumn',
-        // 'attribute'=>'price_per_piece',
-    // ],
-    // [
-        // 'class'=>'\kartik\grid\DataColumn',
-        // 'attribute'=>'total_price',
-    // ],
-    // [
-        // 'class'=>'\kartik\grid\DataColumn',
-        // 'attribute'=>'discount',
-    // ],
-    // [
-        // 'class'=>'\kartik\grid\DataColumn',
-        // 'attribute'=>'discounted_amt',
-    // ],
-    // [
-        // 'class'=>'\kartik\grid\DataColumn',
-        // 'attribute'=>'final_total',
-    // ],
+    [
+        'class'=>'\kartik\grid\DataColumn',
+        'attribute'=>'pjy',
+    ],
+    [
+        'class'=>'\kartik\grid\DataColumn',
+        'attribute'=>'org',
+    ],
+    [
+        'class'=>'\kartik\grid\DataColumn',
+        'attribute'=>'total_copies',
+    ],
+     [
+         'class'=>'\kartik\grid\DataColumn',
+         'attribute'=>'price_per_piece',
+     ],
+     [
+         'class'=>'\kartik\grid\DataColumn',
+         'attribute'=>'total_price',
+     ],
+     [
+         'class'=>'\kartik\grid\DataColumn',
+         'attribute'=>'discount',
+     ],
+     [
+         'class'=>'\kartik\grid\DataColumn',
+         'attribute'=>'discounted_amt',
+     ],
+     [
+         'class'=>'\kartik\grid\DataColumn',
+         'attribute'=>'final_total',
+     ],
     // [
         // 'class'=>'\kartik\grid\DataColumn',
         // 'attribute'=>'credit_amt',

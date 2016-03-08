@@ -38,7 +38,7 @@ class BundleSizeController extends Controller
      */
     public function actionIndex()
     {    
-        $this->layout='adminlayout';
+       // $this->layout='adminlayout';
         $searchModel = new BundleSizeSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 

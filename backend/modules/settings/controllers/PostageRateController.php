@@ -37,7 +37,7 @@ class PostageRateController extends Controller
      * @return mixed
      */
     public function actionIndex()
-    {    $this->layout='adminlayout';
+    {   // $this->layout='adminlayout';
         $searchModel = new PostageRateSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 

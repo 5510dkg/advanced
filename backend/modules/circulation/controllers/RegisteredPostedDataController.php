@@ -16,7 +16,7 @@ class RegisteredPostedDataController extends \yii\web\Controller
 
     public function actionIndex()
     {
-    	$this->layout='adminlayout';
+    	//$this->layout='adminlayout';
         return $this->render('index');
     }
     public function actionPercentage($id)
@@ -55,7 +55,7 @@ class RegisteredPostedDataController extends \yii\web\Controller
 
 	}
   public function actionSlip($id){
-    $this->layout='adminlayout';
+   // $this->layout='adminlayout';
     $request=Yii::$app->request;
      if($request->isAjax){
 

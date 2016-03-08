@@ -38,7 +38,7 @@ class WeightController extends Controller
      */
     public function actionIndex()
     {    
-        $this->layout='adminlayout';
+        //$this->layout='adminlayout';
         $searchModel = new WeightSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 

@@ -41,7 +41,7 @@ class AgencyController extends Controller
      */
     public function actionIndex()
     {
-        $this->layout='adminlayout';
+       // $this->layout='adminlayout';
         $searchModel = new AgencySearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 

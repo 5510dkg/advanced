@@ -38,7 +38,7 @@ class AgencyReceiptController extends Controller
      */
     public function actionIndex()
     {    
-        $this->layout='adminlayout';
+      //  $this->layout='adminlayout';
         $searchModel = new AgencyReceiptSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -48,7 +48,7 @@ class AgencyReceiptController extends Controller
         ]);
     }
     public function actionList() {
-        $this->layout='adminlayout';
+        //$this->layout='adminlayout';
         
         $searchModel = new \backend\modules\circulation\models\AgencySearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
@@ -94,7 +94,7 @@ class AgencyReceiptController extends Controller
      */
     public function actionCreate()
     {
-        $this->layout='adminlayout';
+      //  $this->layout='adminlayout';
         $request = Yii::$app->request;
         $model = new AgencyReceipt();  
         $id=$request->get('id');    

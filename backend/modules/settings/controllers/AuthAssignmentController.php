@@ -38,7 +38,7 @@ class AuthAssignmentController extends Controller
      */
     public function actionIndex()
     {    
-        $this->layout='adminlayout';
+        //$this->layout='adminlayout';
         $searchModel = new AuthAssignmentSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 

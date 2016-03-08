@@ -38,7 +38,7 @@ class DesignationController extends Controller
      */
     public function actionIndex()
     {    
-        $this->layout='adminlayout';
+       // $this->layout='adminlayout';
         $searchModel = new DesignationSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 

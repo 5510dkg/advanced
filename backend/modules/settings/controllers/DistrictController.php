@@ -38,7 +38,7 @@ class DistrictController extends Controller
      */
     public function actionIndex()
     {    
-        $this->layout='adminlayout';
+       // $this->layout='adminlayout';
         $searchModel = new DistrictSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 

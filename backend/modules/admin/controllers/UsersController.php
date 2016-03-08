@@ -40,7 +40,7 @@ class UsersController extends Controller
     public function actionIndex()
     {
 
-        $this->layout = "adminlayout";
+      //  $this->layout = "adminlayout";
         $searchModel = new UsersSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -55,7 +55,7 @@ class UsersController extends Controller
     */
 
     public function actionUpload(){
-      $this->layout="adminlayout";
+     // $this->layout="adminlayout";
     //  echo 'hii';
       return $this->render('upload');
     }

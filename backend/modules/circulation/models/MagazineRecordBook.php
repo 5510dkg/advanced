@@ -37,6 +37,9 @@ class MagazineRecordBook extends \yii\db\ActiveRecord
             [['date'], 'unique']
         ];
     }
+    
+    
+    
 
     /**
      * @inheritdoc

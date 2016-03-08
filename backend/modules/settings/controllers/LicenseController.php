@@ -38,7 +38,7 @@ class LicenseController extends Controller
      */
     public function actionIndex()
     {    
-        $this->layout="adminlayout";
+       // $this->layout="adminlayout";
         $searchModel = new LicenseSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 

@@ -38,6 +38,7 @@ class MagazineRecordBookController extends Controller
      */
     public function actionIndex()
     {    
+     //   $this->layout='adminlayout';
         $searchModel = new MagazineRecordBookSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 

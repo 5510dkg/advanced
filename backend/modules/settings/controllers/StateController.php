@@ -40,7 +40,7 @@ class StateController extends Controller
      */
     public function actionIndex()
     {    
-        $this->layout='adminlayout';
+      //  $this->layout='adminlayout';
         $searchModel = new StateSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 

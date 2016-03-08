@@ -38,7 +38,7 @@ class RegisteredPostController extends Controller
      */
     public function actionIndex()
     {    
-        $this->layout='adminlayout';
+      //  $this->layout='adminlayout';
         $searchModel = new RegisteredPostSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
