@@ -104,6 +104,23 @@ class AgencyCreditNoteController extends Controller
             *   Process for non-ajax request
             */
             if ($model->load($request->post()) && $model->save()) {
+                $pid=$model->agency_id;
+                $dt=$model->issue_date;
+                $method=$model->return_type;
+                $issue=$model->issue_type;
+                $qty=$model->pjy+$model->org;
+                $ip=$model->get_agency($pid, $dt);
+                
+                $customer = \backend\modules\circulation\models\AgencyBillBook::findOne($ip);
+                
+                $customer->name = $name;
+                $customer->email = $email;
+                $customer->update();
+                
+//               $query = (new \yii\db\Query())->select(['id'])->from('agency_bill_book')->where(['agency_id' =>$id,'issue'=>$date]);
+//             $command = $query->createCommand();
+//             $data = $command->queryAll();
+                
                 return $this->redirect(['view', 'id' => $model->id]);
             } else {
                 return $this->render('create', [
@@ -114,6 +131,7 @@ class AgencyCreditNoteController extends Controller
         
        
     }
+    
 
     /**
      * Updates an existing AgencyCreditNote model.

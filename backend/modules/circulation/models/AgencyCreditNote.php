@@ -33,8 +33,21 @@ class AgencyCreditNote extends \yii\db\ActiveRecord
     {
         return [
             [['agency_id', 'return_date', 'issue_type', 'pjy', 'org', 'issue_date', 'return_type'], 'required'],
-            [['agency_id', 'return_date', 'issue_type', 'pjy', 'org', 'issue_date', 'return_type'], 'integer']
+            [['agency_id',  'pjy', 'org'], 'integer'],
+            [['return_date','issue_date','return_type','issue_type'],'string']
         ];
+    }
+    
+    
+    public function get_agency($id,$date){
+            $query = (new \yii\db\Query())->select(['id'])->from('agency_bill_book')->where(['agency_id' =>$id,'issue'=>$date]);
+             $command = $query->createCommand();
+             $data = $command->queryAll();
+             $titles = '';
+             foreach($data as $row) {
+                  $titles= $row['id'];
+             }
+             return $titles;
     }
 
     /**
