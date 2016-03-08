@@ -3,6 +3,7 @@
 namespace backend\modules\circulation\models;
 
 use Yii;
+//use backend\modules\circulation\models\AgencyBillBook;
 
 /**
  * This is the model class for table "agency_bill_book".
@@ -47,71 +48,101 @@ class AgencyBillBook extends \yii\db\ActiveRecord
             [['total_price'], 'string', 'max' => 50]
         ];
     }
-     public function beforeSave($insert)
-    {
-        if (parent::beforeSave($insert)) {
-            if($this->isNewRecord){
-            $dates=$this->getspecialeditiondates();
-            
-            if(!empty($dates)){
-                //$allagencies=Yii::$app->mycomponent->calsunday();
-                foreach($dates as $val){
-                $agency=$this->get_all_agencies($val['date']);
-                
-                
-                
-                }
-                
-                
-            
-            }
-            
-            
-            
-        return true;
-        }
-        else{
-
-            return true;
-        } 
-      
+//     public function beforeSave($insert)
+//    {
+//        if (parent::beforeSave($insert)) {
+//           
+//            $dates=$this->getspecialeditiondates();
+//            
+//            if(!empty($dates)){
+//                //$allagencies=Yii::$app->mycomponent->calsunday();
+//                foreach($dates as $k=>$v){
+//                $agency=$this->get_all_agencies($v['date']);
+//                //echo count($agency);exit;
+//               // echo'<pre>';
+//               // print_r($agency);exit;
+//               // echo '</pre>';
+//                $i=1;
+//                foreach ($agency as $key=> $val) {
+//                   // echo $i;
+//                    $this->isNewRecord = TRUE; 
+//                    $this->agency_id=$val['agency_id'];
+//                    $this->issue_date=$v['date'];
+//                    $this->pjy=$val['panchjanya'];
+//                    $this->org=$val['organiser'];
+//                    $this->total_copies=$val['panchjanya']+$val['organiser'];
+//                    $this->price_per_piece=$v['price'];
+//                    $tot=$val['panchjanya']+$val['organiser'];
+//                    $price=($val['panchjanya']+$val['organiser'])*$v['price'];
+//                    $this->total_price=$price;
+//                    $dsc=$this->get_discount($tot);
+//                    $per=($price*$dsc)/100;
+//                    $this->discount=$dsc;
+//                    $discounted=$price-$per;
+//                    $this->discounted_amt=$per;
+//                    $this->final_total=$discounted;
+//                    $this->created_on=  date('Y-m-d H:i:s');
+//                    
+//                    return TRUE;
+//                  //  $i++;
+//                  }
+//                }
+//            }
+//        }
+//    }
+    
+    public function get_discount($copy) {
+          $query = (new \yii\db\Query())->select(['*'])->from('commission_cal');
+             $command = $query->createCommand();
+             $data = $command->queryAll();
+             $dsc = '';
+             foreach($data as $row) {
+                    if($copy>$row['lower_limit'] && $copy< $row['upper_limit']){
+                        $dsc=$row['amt'];
+                    }
+                 
+             }
+             return $dsc;
+        
+        
     }
-    }
-    private function get_all_agencies($date){
+    public function get_all_agencies($date){
           $query = (new \yii\db\Query())->select(['*'])->from('agency')->where(['status' =>'Active']);
              $command = $query->createCommand();
              $data = $command->queryAll();
              $titles = '';
+             $inc=1;
              foreach($data as $row) {
-                 $titles['agency_id']= $row['agency_id'];
-                 $titles['name']=$row['name'];
-                 $titles['account_id']= $row['account_id'];
-                 $titles['security_amt']=$row['security_amt'];
-                 $titles['mail_post_office']= $row['mail_post_office'];
-                 $titles['mail_state_id']=$row['mail_state_id'];
-                 $titles['mail_country_id']= $row['mail_country_id'];
-                 $titles['mail_district_id']=$row['mail_district_id'];
-                 $titles['mail_pincode']= $row['mail_pincode'];
+                 $id=$row['id'].$inc;
+                 $titles[$id]['agency_id']= $row['id'];
+                 $titles[$id]['name']=$row['name'];
+                 $titles[$id]['account_id']= $row['account_id'];
+                 $titles[$id]['security_amt']=$row['security_amt'];
+                 $titles[$id]['mail_post_office']= $row['mail_p_office'];
+                 $titles[$id]['mail_state_id']=$row['mail_state_id'];
+                 $titles[$id]['mail_country_id']= $row['mail_country_id'];
+                 $titles[$id]['mail_district_id']=$row['mail_district_id'];
+                 $titles[$id]['mail_pincode']= $row['mail_pincode'];
                  $pjy=$this->getcopiespjy($date,$row['id'],$row['route_id']);
                 if($pjy!='Back'){
-                 $titles['panchjanya']=$pjy;  
+                 $titles[$id]['panchjanya']=$pjy;  
                 }else{
-                 $titles['panchjanya']=$row['panchjanya'];
+                 $titles[$id]['panchjanya']=$row['panchjanya'];
                 }
                  $org=$this->getcopiesorg($date,$row['id'],$row['route_id']);
                 if($org!='Back'){
-                 $titles['organiser']=$org;
+                 $titles[$id]['organiser']=$org;
                 }
                 else{
-                 $titles['organiser']=$row['organiser'];;  
+                 $titles[$id]['organiser']=$row['organiser'];;  
                 }
-                 $titles['agency_type']=$row['agency_type'];
-                 $titles['commission']=$row['commission'];
+                 $titles[$id]['agency_type']=$row['agency_type'];
+                 $titles[$id]['commission']=$row['commission'];
              }
              return $titles;
         
     }
-    private function getcopiespjy($date,$id,$dm) {
+    public function getcopiespjy($date,$id,$dm) {
         
         if($dm=='1'){
                  $query = (new \yii\db\Query())->select(['pjy'])->from('ordinary_posted_data')->where(['agency_id' =>$id,'date'=>$date]);
@@ -149,7 +180,7 @@ class AgencyBillBook extends \yii\db\ActiveRecord
         }
        
     }
-    private function getcopiesorg($date,$id,$dm) {
+    public function getcopiesorg($date,$id,$dm) {
           if($dm=='1'){
                  $query = (new \yii\db\Query())->select(['org'])->from('ordinary_posted_data')->where(['agency_id' =>$id,'date'=>$date]);
              $command = $query->createCommand();
@@ -189,16 +220,17 @@ class AgencyBillBook extends \yii\db\ActiveRecord
 
 
     
-    private function getspecialeditiondates() {
+    public function getspecialeditiondates() {
         //return $statename.name;
         //     if($state_id!='2'){
-             $query = (new \yii\db\Query())->select(['date'])->from('magazine_record_book')->where(['status' =>'0']);
+             $query = (new \yii\db\Query())->select(['*'])->from('magazine_record_book')->where(['status' =>'0']);
              $command = $query->createCommand();
              $data = $command->queryAll();
              $titles = '';
              foreach($data as $row) {
-                 $titles['date']= $row['date'];
-                 $titles['price']=$row['price'];
+                 $id=$row['id'];
+                 $titles[$id]['date']= $row['date'];
+                 $titles[$id]['price']=$row['price'];
              }
              return $titles;
             // return rtrim($titles, ', ');
