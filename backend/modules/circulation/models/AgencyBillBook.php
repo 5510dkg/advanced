@@ -55,7 +55,12 @@ class AgencyBillBook extends \yii\db\ActiveRecord
             
             if(!empty($dates)){
                 //$allagencies=Yii::$app->mycomponent->calsunday();
-                $agency=$this->get_all_agencies();
+                foreach($dates as $val){
+                $agency=$this->get_all_agencies($val['date']);
+                
+                
+                
+                }
                 
                 
             
@@ -87,8 +92,19 @@ class AgencyBillBook extends \yii\db\ActiveRecord
                  $titles['mail_country_id']= $row['mail_country_id'];
                  $titles['mail_district_id']=$row['mail_district_id'];
                  $titles['mail_pincode']= $row['mail_pincode'];
-                 $titles['panchjanya']=$this->getcopiespjy($date,$row['id'],$row['route_id']);
-                 $titles['organiser']= $this->getcopiesorg($date,$row['id'],$row['route_id']);
+                 $pjy=$this->getcopiespjy($date,$row['id'],$row['route_id']);
+                if($pjy!='Back'){
+                 $titles['panchjanya']=$pjy;  
+                }else{
+                 $titles['panchjanya']=$row['panchjanya'];
+                }
+                 $org=$this->getcopiesorg($date,$row['id'],$row['route_id']);
+                if($org!='Back'){
+                 $titles['organiser']=$org;
+                }
+                else{
+                 $titles['organiser']=$row['organiser'];;  
+                }
                  $titles['agency_type']=$row['agency_type'];
                  $titles['commission']=$row['commission'];
              }
@@ -96,6 +112,7 @@ class AgencyBillBook extends \yii\db\ActiveRecord
         
     }
     private function getcopiespjy($date,$id,$dm) {
+        
         if($dm=='1'){
                  $query = (new \yii\db\Query())->select(['pjy'])->from('ordinary_posted_data')->where(['agency_id' =>$id,'date'=>$date]);
              $command = $query->createCommand();
@@ -107,7 +124,7 @@ class AgencyBillBook extends \yii\db\ActiveRecord
              }
              return $titles;
         }
-        if($dm=='2'){
+        elseif($dm=='2'){
                  $query = (new \yii\db\Query())->select(['pjy'])->from('registered_posted_data')->where(['agency_id' =>$id,'date'=>$date]);
              $command = $query->createCommand();
              $data = $command->queryAll();
@@ -117,7 +134,7 @@ class AgencyBillBook extends \yii\db\ActiveRecord
              }
              return $titles;
         }
-        if($dm=='5'){
+        elseif($dm=='5'){
                  $query = (new \yii\db\Query())->select(['pjy'])->from('railway_posted_data')->where(['agency_id' =>$id,'date'=>$date]);
              $command = $query->createCommand();
              $data = $command->queryAll();
@@ -126,6 +143,9 @@ class AgencyBillBook extends \yii\db\ActiveRecord
                $titles= $row['pjy'];
              }
              return $titles;
+        }
+        else{
+            return 'Back';
         }
        
     }
@@ -141,7 +161,7 @@ class AgencyBillBook extends \yii\db\ActiveRecord
              }
              return $titles;
         }
-        if($dm=='2'){
+        elseif($dm=='2'){
                  $query = (new \yii\db\Query())->select(['org'])->from('registered_posted_data')->where(['agency_id' =>$id,'date'=>$date]);
              $command = $query->createCommand();
              $data = $command->queryAll();
@@ -151,7 +171,7 @@ class AgencyBillBook extends \yii\db\ActiveRecord
              }
              return $titles;
         }
-        if($dm=='5'){
+        elseif($dm=='5'){
                  $query = (new \yii\db\Query())->select(['org'])->from('railway_posted_data')->where(['agency_id' =>$id,'date'=>$date]);
              $command = $query->createCommand();
              $data = $command->queryAll();
@@ -160,6 +180,9 @@ class AgencyBillBook extends \yii\db\ActiveRecord
                $titles= $row['org'];
              }
              return $titles;
+        }
+        else{
+            return 'Back';
         }
         
     }

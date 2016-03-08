@@ -10,7 +10,7 @@ use yii\widgets\ActiveForm;
 <div class="magazine-record-book-form">
 
     <?php $form = ActiveForm::begin(); ?>
-    <?php echo Html::dropDownList('name','',['0'=>'No','1'=>'Yes'],['id'=>'radioin','class'=>'form-control'])  ?>
+    <?php //echo Html::dropDownList('name','',['0'=>'No','1'=>'Yes'],['id'=>'radioin','class'=>'form-control'])  ?>
     <div class="onediv" id="onediv">
     <?php $comp=Yii::$app->mycomponent->calsunday(); 
    // foreach($comp as $row){
@@ -45,46 +45,46 @@ use yii\widgets\ActiveForm;
     
 </div>
     <script>
-   $(document).ready(function () {
-    
-    //agency-agency_type
-     $('#radioin').on('change', function() {
-      if ( this.value === '1')
-      //.....................^.......
-      {
-        $("#onediv").show();
-      }
-      else
-      {
-        $("#onediv").hide();
-      }
-    });
-  
-
-     if($('#radioin').val()==='1'){
-         $("#onediv").show();
-     }else{
-            $("#onediv").hide();
-       // console.log($('#agency-route_id').val());
-     }
-     
-   
-    
-        
-        
-        
-
-    // if($("#agency-route_id option[value='Rail']")){
-    //     console.log('YES');
-    //      $("#deliveryrail").hide();
-    //   }
-    // else{
-    //     console.log('No');
-    // }
-
-  
-
-
-});
+//   $(document).ready(function () {
+//    
+//    //agency-agency_type
+//     $('#radioin').on('change', function() {
+//      if ( this.value === '1')
+//      //.....................^.......
+//      {
+//        $("#onediv").show();
+//      }
+//      else
+//      {
+//        $("#onediv").hide();
+//      }
+//    });
+//  
+//
+//     if($('#radioin').val()==='1'){
+//         $("#onediv").show();
+//     }else{
+//            $("#onediv").hide();
+//       // console.log($('#agency-route_id').val());
+//     }
+//     
+//   
+//    
+//        
+//        
+//        
+//
+//    // if($("#agency-route_id option[value='Rail']")){
+//    //     console.log('YES');
+//    //      $("#deliveryrail").hide();
+//    //   }
+//    // else{
+//    //     console.log('No');
+//    // }
+//
+//  
+//
+//
+//});
 </script>
 
