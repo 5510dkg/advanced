@@ -150,7 +150,7 @@ class AgencyBillBookController extends Controller
                   }
                 }
             }
-            return $this->actionIndex();
+            return $this->actionShow();
 //               if($model->save(false)){
 //                   return 'hii';
 //               }
@@ -189,6 +189,11 @@ class AgencyBillBookController extends Controller
      * @param integer $id
      * @return mixed
      */
+    public function actionShow() {
+        
+      return $this->render('show'); 
+        
+    }
     public function actionUpdate($id)
     {
         $request = Yii::$app->request;
