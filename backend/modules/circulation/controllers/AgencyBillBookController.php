@@ -84,6 +84,7 @@ class AgencyBillBookController extends Controller
     {
         $request = Yii::$app->request;
         $model = new AgencyBillBook();  
+        $newmodel= new \backend\modules\circulation\models\MagazineRecordBook();
 
         if($request->isAjax){
             /*
@@ -109,7 +110,7 @@ class AgencyBillBookController extends Controller
 //                    'content'=>'<span class="text-success">Create AgencyBillBook success</span>',
 //                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
 //                            Html::a('Create More',['create'],['class'=>'btn btn-primary','role'=>'modal-remote'])
-//        
+//          
 //                ];         
             }else{  
              $dates=$model->getspecialeditiondates();
@@ -144,6 +145,8 @@ class AgencyBillBookController extends Controller
                     $model->final_total=$discounted;
                     $model->created_on=  date('Y-m-d H:i:s');
                     $model->save(false);
+                    
+                    
                                      
                    
                   //  $i++;
