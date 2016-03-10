@@ -22,8 +22,9 @@
         "johnitvn/yii2-ajaxcrud": "*",
         "phpoffice/phpexcel": "dev-develop",
         "kartik-v/yii2-widget-sidenav": "*",
-	      "2amigos/yii2-date-picker-widget" : "~1.0",
-	      "kartik-v/yii2-widget-fileinput": "@dev"
+        "2amigos/yii2-date-picker-widget" : "~1.0",
+	"kartik-v/yii2-widget-fileinput": "@dev",
+        "open-ecommerce/yii2-backuprestore": "dev-master"
 
     },
     "require-dev": {

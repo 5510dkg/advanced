@@ -22,10 +22,10 @@ use yii\widgets\DetailView;
                 'attribute' => 'role_group_id',
                 'value' => $model->roleGroup->name
             ],
-            [
-                'attribute'=>'status',
-                'value'=>$model->status == 10 ? 'Active' : 'Blocked'
-            ],
+//            [
+//                'attribute'=>'status',
+//                'value'=>$model->status == 10 ? 'Active' : 'Blocked'
+//            ],
             'created_at',
             'updated_at',
         ],

@@ -18,9 +18,9 @@ use backend\modules\settings\models\Department;
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
     
     <?= $form->field($model, 'username')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'password_hash')->textInput(['maxlength' => true]) ?>
-    
+    <?php if($model->isNewRecord){ ?>
+    <?= $form->field($model, 'password_hash')->textInput(['hidden' => !$model->isNewRecord]) ?>
+    <?php }?>
     <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
    </div>
      <div class="col-lg-6">

@@ -4,6 +4,11 @@ namespace backend\modules\admin\models;
 use backend\modules\settings\models\Department;
 use backend\modules\settings\models\RoleGroup;
 use backend\modules\settings\models\Designation;
+use common\models\User;
+use yii\base\NotSupportedException;
+use yii\behaviors\TimestampBehavior;
+use yii\db\ActiveRecord;
+use yii\web\IdentityInterface;
 
 use Yii;
 
@@ -36,6 +41,10 @@ class Users extends \yii\db\ActiveRecord
     {
         return 'user';
     }
+//     return array(
+//        array('name, username, email, password', 'required', 'on' => 'create'),
+//        array('name, username, email', 'required', 'on' => 'update'),
+//    );
 
     /**
      * @inheritdoc
@@ -43,7 +52,8 @@ class Users extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['username', 'password_hash', 'email', 'name','department_id','role_group_id','department_id','designation_id','mobile'], 'required'],
+            [['username', 'password_hash', 'email', 'name','department_id','role_group_id','department_id','designation_id','mobile'], 'required','on'=>'create'],
+             [['username', 'email', 'name','department_id','role_group_id','department_id','designation_id','mobile'], 'required','on'=>'update'],
             [['department_id','designation_id', 'role_group_id', 'status'], 'integer'],
             [['deleted_at','extension_no', 'created_at', 'updated_at'], 'safe'],
             [['username', 'password_hash', 'password_reset_token', 'email', 'name'], 'string', 'max' => 255],
@@ -51,6 +61,7 @@ class Users extends \yii\db\ActiveRecord
             [['username'], 'unique'],
             [['email'], 'unique'],
             [['password_reset_token'], 'unique']
+            
         ];
     }
 
@@ -78,6 +89,26 @@ class Users extends \yii\db\ActiveRecord
             'updated_at' => 'Updated At',
         ];
     }
+    
+    public function beforeSave($insert) {
+        $user=new User();
+              if (parent::beforeSave($insert)) {
+            $this->setPassword($this->password_hash);
+            $this->auth_key=$user->generateAuthKey();
+            return true;
+          }
+        
+    }
+    /**
+     * Generates password hash from password and sets it to the model
+     *
+     * @param string $password
+     */
+    public function setPassword($password)
+    {
+        $this->password_hash = Yii::$app->security->generatePasswordHash($password);
+    }
+    
     public function getDepartment()
     {
         return $this->hasOne(Department::className(), ['id' => 'department_id']);

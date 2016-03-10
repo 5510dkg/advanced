@@ -255,9 +255,12 @@ AppAsset::register($this);
                             <a href="index.php?r=admin/"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                        <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i>Configuration</a>
+                            <a href="index.php?r=settings"><i class="fa fa-table fa-fw"></i>Configuration</a>
                         </li>
                         <li>
+                            <a href="index.php?r=admin/users"><i class="fa fa-user fa-user"></i> User Management</a>
+                        </li>
+                          <li>
                             <a href="index.php?r=admin/users"><i class="fa fa-user fa-user"></i> User Management</a>
                         </li>
                         <li>
@@ -339,17 +342,6 @@ AppAsset::register($this);
 
 
     <div id="page-wrapper">
-        <div class="row">
-                <div class="col-lg-12">
-                  <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>  
-                </div>
-                <!-- /.col-lg-12 -->
-            </div> 
-     
-        
-        
         <?= $content ?>
         </div>
 </div>

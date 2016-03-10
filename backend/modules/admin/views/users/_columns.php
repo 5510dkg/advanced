@@ -54,14 +54,14 @@ return [
         // 'class'=>'\kartik\grid\DataColumn',
         // 'attribute'=>'deleted_at',
     // ],
-     [
-         'class'=>'\kartik\grid\DataColumn',
-         'attribute'=>'status',
-         'value' => function ($model) {
-         return $model->status == 10 ? 'Active' : 'Blocked';
-    },
-         
-     ],
+//     [
+//         'class'=>'\kartik\grid\DataColumn',
+//         'attribute'=>'status',
+//         'value' => function ($model) {
+//         return $model->status == 10 ? 'Active' : 'Blocked';
+//    },
+//         
+//     ],
     // [
         // 'class'=>'\kartik\grid\DataColumn',
         // 'attribute'=>'created_at',

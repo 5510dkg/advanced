@@ -28,6 +28,7 @@ class UsersController extends Controller
                 'actions' => [
                     'delete' => ['post'],
                     'bulk-delete' => ['post'],
+                    
                 ],
             ],
         ];
