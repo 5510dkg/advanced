@@ -38,6 +38,7 @@ class AgencyReceiptController extends Controller
      */
     public function actionIndex()
     {    
+        
       //  $this->layout='adminlayout';
         $searchModel = new AgencyReceiptSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);

@@ -38,6 +38,7 @@ class AgencyCreditNoteController extends Controller
      */
     public function actionIndex()
     {    
+         if(Yii::$app->user->can('view-credit-note')){
         $searchModel = new AgencyCreditNoteSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -45,6 +46,10 @@ class AgencyCreditNoteController extends Controller
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
+         }
+         else{
+             throw new \yii\web\ForbiddenHttpException('You do not have permission to access this function');
+         }
     }
     
     
@@ -69,6 +74,7 @@ class AgencyCreditNoteController extends Controller
      */
     public function actionView($id)
     {   
+        
         $request = Yii::$app->request;
         if($request->isAjax){
             Yii::$app->response->format = Response::FORMAT_JSON;
@@ -95,6 +101,7 @@ class AgencyCreditNoteController extends Controller
      */
     public function actionCreate()
     {
+         if(Yii::$app->user->can('upload-credit-note')){
         $request = Yii::$app->request;
         $model = new AgencyCreditNote();  
         $id=$request->get('id');
@@ -140,6 +147,9 @@ class AgencyCreditNoteController extends Controller
                     'id'=>$id,
                 ]);
             }
+         }else{
+             throw new \yii\web\ForbiddenHttpException('You do not have permission to access this function');
+         }
         
        
     }

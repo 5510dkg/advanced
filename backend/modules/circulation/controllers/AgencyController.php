@@ -42,6 +42,7 @@ class AgencyController extends Controller
     public function actionIndex()
     {
        // $this->layout='adminlayout';
+         if(Yii::$app->user->can('view-agency')){
         $searchModel = new AgencySearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -49,6 +50,11 @@ class AgencyController extends Controller
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
+         }
+         else{
+             throw new \yii\web\ForbiddenHttpException('You Dont Have Permission To '
+                     . 'Access This Function');
+         }
     }
 
 
@@ -85,6 +91,7 @@ class AgencyController extends Controller
      */
     public function actionCreate()
     {
+         if(Yii::$app->user->can('create-agency')){
         $request = Yii::$app->request;
         $model = new Agency();
 
@@ -157,6 +164,9 @@ class AgencyController extends Controller
                 ]);
             }
         }
+         }else{
+             throw new \yii\web\ForbiddenHttpException('You do not have permission to access this function');
+         }
 
     }
 
@@ -169,6 +179,7 @@ class AgencyController extends Controller
      */
     public function actionUpdate($id)
     {
+         if(Yii::$app->user->can('update-agency')){
         $request = Yii::$app->request;
         $model = $this->findModel($id);
 
@@ -241,6 +252,9 @@ class AgencyController extends Controller
                 ]);
             }
         }
+         }else{
+             throw new \yii\web\ForbiddenHttpException('You do not have permission to access this function');
+         }
     }
 
     /**
@@ -252,6 +266,7 @@ class AgencyController extends Controller
      */
     public function actionDelete($id)
     {
+         if(Yii::$app->user->can('delete-agency')){
         $request = Yii::$app->request;
         $this->findModel($id)->delete();
 
@@ -267,6 +282,10 @@ class AgencyController extends Controller
             */
             return $this->redirect(['index']);
         }
+         }
+         else{
+             throw new \yii\web\ForbiddenHttpException('You do not have permission to access this function');
+         }
 
 
     }
@@ -280,6 +299,7 @@ class AgencyController extends Controller
      */
     public function actionBulkDelete()
     {
+         if(Yii::$app->user->can('delete-agency')){
         $request = Yii::$app->request;
         $pks = explode(',', $request->post( 'pks' )); // Array or selected records primary keys
         foreach ( $pks as $pk ) {
@@ -299,6 +319,10 @@ class AgencyController extends Controller
             */
             return $this->redirect(['index']);
         }
+         }
+         else{
+             throw new \yii\web\ForbiddenHttpException('You do not have permission to access this function');
+         }
 
     }
 

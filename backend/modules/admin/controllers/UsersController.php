@@ -313,6 +313,7 @@ public function actionDownload() {
      */
     public function actionUpdate($id)
     {
+         if(Yii::$app->user->can('update-user')){
         $request = Yii::$app->request;
         $model = $this->findModel($id);
 
@@ -369,6 +370,10 @@ public function actionDownload() {
                 ]);
             }
         }
+         }
+         else{
+             throw new \yii\web\ForbiddenHttpException;
+         }
     }
 
     /**
@@ -380,6 +385,7 @@ public function actionDownload() {
      */
     public function actionDelete($id)
     {
+         if(Yii::$app->user->can('delete-user')){
         $request = Yii::$app->request;
        $this->findModel($id)->delete();
 
@@ -396,6 +402,10 @@ public function actionDownload() {
             */
             return $this->redirect(['index']);
         }
+         }
+         else{
+             throw new \yii\web\ForbiddenHttpException;
+         }
 
 
     }
@@ -409,6 +419,7 @@ public function actionDownload() {
      */
     public function actionBulkDelete()
     {
+         if(Yii::$app->user->can('delete-user')){
         $request = Yii::$app->request;
         $pks = explode(',', $request->post( 'pks' )); // Array or selected records primary keys
         foreach ( $pks as $pk ) {
@@ -428,6 +439,10 @@ public function actionDownload() {
             */
             return $this->redirect(['index']);
         }
+         }
+         else{
+             throw new \yii\web\ForbiddenHttpException;
+         }
 
     }
 
