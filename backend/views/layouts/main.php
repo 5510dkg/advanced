@@ -261,7 +261,7 @@ AppAsset::register($this);
                             <a href="index.php?r=admin/users"><i class="fa fa-user fa-user"></i> User Management</a>
                         </li>
                           <li>
-                            <a href="index.php?r=rbac/assignment"><i class="fa fa-user fa-user"></i> Access Management</a>
+                            <a href="index.php?r=rbac/assignment"><i class="glyphicon glyphicon-registration-mark"></i> Access Management</a>
                         </li>
                         <li>
                             <a href="index.php?r=backuprestore"><i class="fa fa-edit fa-fw"></i> Database</a>

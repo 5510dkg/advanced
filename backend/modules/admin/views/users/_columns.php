@@ -74,8 +74,20 @@ return [
         'class' => 'kartik\grid\ActionColumn',
         'dropdown' => false,
         'vAlign'=>'middle',
-        'urlCreator' => function($action, $model, $key, $index) { 
-                return Url::to([$action,'id'=>$key]);
+        'template'=>'{view}{update}{info}{delete}',
+        'buttons' => [
+        'info' => function ($url, $model) {
+            return Html::a('<span></span><span class="glyphicon glyphicon-repeat"></span>', $url, [
+                        'title' => Yii::t('app', 'Reset Password'),
+            ]);
+         }],
+        'urlCreator' => function($action, $model, $key, $index) {
+              if ($action === 'info') {
+                            return Url::toRoute(['users/resetform', 'id' => $model->id]);
+                        }else{
+                        return Url::to([$action,'id'=>$key]);
+                        
+                        }
         },
         'viewOptions'=>['role'=>'modal-remote','title'=>'View','data-toggle'=>'tooltip'],
         'updateOptions'=>['role'=>'modal-remote','title'=>'Update', 'data-toggle'=>'tooltip'],

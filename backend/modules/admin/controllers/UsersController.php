@@ -56,10 +56,45 @@ class UsersController extends Controller
     */
 
     public function actionUpload(){
-     // $this->layout="adminlayout";
-    //  echo 'hii';
-      return $this->render('upload');
+        // $this->layout="adminlayout";
+       //  echo 'hii';
+         return $this->render('upload');
     }
+    
+    
+    
+     public function actionResetform(){
+        // $this->layout="adminlayout";
+       //  echo 'hii';
+         $id=Yii::$app->request->get('id');
+         return $this->render('resetform',['id'=>$id]);
+    }
+     
+    
+    public function actionResetpass(){
+       // $user=new Users();
+        
+        if(Yii::$app->request->post()){
+        $id=Yii::$app->request->post('uid');
+        
+        $user = Users::findOne(['id'=>$id]);
+        $user->password_hash=Yii::$app->security->generatePasswordHash(Yii::$app->request->post('pass'));
+        
+        //$user->isNewRecord='False';
+          
+            if($user->update(false)){
+              return  $this->render('success');
+
+            }
+         else{
+                return  $this->render('danger');
+            }
+        }
+        else{
+            return  $this->render('danger');
+        }
+    }
+
     public function actionUploadusers(){
 
       if(empty($_FILES['file'])){
@@ -193,17 +228,17 @@ class UsersController extends Controller
 
 }
 
-public function actionDownload() {
- $path = 'download/format';
+    public function actionDownload() {
+                    $path = 'download/format';
 
- $file = $path . '/useruploadformat.xlsx';
+                    $file = $path . '/useruploadformat.xlsx';
 
- if (file_exists($file)) {
+                    if (file_exists($file)) {
 
- Yii::$app->response->sendFile($file);
+                    Yii::$app->response->sendFile($file);
 
-}
-}
+                   }
+    }
 
     /**
      * Displays a single Users model.
