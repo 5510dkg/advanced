@@ -257,15 +257,23 @@ AppAsset::register($this);
                        <li>
                             <a href="index.php?r=settings"><i class="fa fa-table fa-fw"></i>Configuration</a>
                         </li>
+                      <?php  if(Yii::$app->user->can('create-user')){ ?>
                         <li>
                             <a href="index.php?r=admin/users"><i class="fa fa-user fa-user"></i> User Management</a>
                         </li>
+                        <?php  }
+                        
+                        if(Yii::$app->user->can('access-mgmt')){
+                        ?>
+                       
                           <li>
                             <a href="index.php?r=rbac/assignment"><i class="glyphicon glyphicon-registration-mark"></i> Access Management</a>
                         </li>
+                        <?php  }   if(Yii::$app->user->can('access-mgmt')){?>
                         <li>
                             <a href="index.php?r=backuprestore"><i class="fa fa-edit fa-fw"></i> Database</a>
                         </li>
+                        <?php } ?>
 <!--                        <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
