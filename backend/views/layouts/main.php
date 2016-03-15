@@ -276,6 +276,11 @@ AppAsset::register($this);
                             <a href="index.php?r=backuprestore"><i class="fa fa-edit fa-fw"></i> Database</a>
                         </li>
                         <?php } ?>
+                        <?php  if(Yii::$app->user->can('generate-labels')){?>
+                        <li>
+                            <a href="index.php?r=user/default/dashboard"><i class="fa fa-edit fa-fw"></i> Labels Management</a>
+                        </li>
+                        <?php } ?>
 <!--                        <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
