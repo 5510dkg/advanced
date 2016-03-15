@@ -249,6 +249,9 @@ AppAsset::register($this);
           <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
+                    <li>
+                        <p class="text-success" style="margin-left:20%"><i>Welcome</i> <br/><strong><?= Yii::$app->user->identity->name;?></strong></p>
+                        </li>    
                        
                         <li>
                             <a href="index.php?r=admin/"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>

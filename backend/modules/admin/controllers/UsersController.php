@@ -77,9 +77,10 @@ class UsersController extends Controller
         if(Yii::$app->request->post()){
             $id=Yii::$app->request->post('uid');
 
-            $user = Users::findOne(['id'=>$id]);
+            $user = \common\models\User::findOne(['id'=>$id]);
+            $user->password=Yii::$app->request->post('pass');
            // echo Yii::$app->request->post('pass');exit;
-            $user->password_hash=Yii::$app->security->generatePasswordHash(Yii::$app->request->post('pass'));
+         //   $user->password_hash=Yii::$app->security->generatePasswordHash(Yii::$app->request->post('pass'));
             //$user->isNewRecord='False';
             if($user->update(false)){
                   return  $this->render('success');
