@@ -252,10 +252,26 @@ AppAsset::register($this);
                     <li>
                         <p class="text-success" style="margin-left:20%"><i>Welcome</i> <br/><strong><?= Yii::$app->user->identity->name;?></strong></p>
                         </li>    
-                       
+                       <?php if(Yii::$app->user->identity->role_group_id=='1'){ ?>
                         <li>
                             <a href="index.php?r=admin/"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
+                       <?php } ?>
+                         <?php if(Yii::$app->user->identity->role_group_id=='2'){ ?>
+                        <li>
+                            <a href="index.php?r=user/"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                       <?php } ?>
+                         <?php if(Yii::$app->user->identity->role_group_id=='3'){ ?>
+                        <li>
+                            <a href="index.php?r=approver/"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                       <?php } ?>
+                         <?php if(Yii::$app->user->identity->role_group_id=='4'){ ?>
+                        <li>
+                            <a href="index.php?r=manager/"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                       <?php } ?>
                        <li>
                             <a href="index.php?r=settings"><i class="fa fa-table fa-fw"></i>Configuration</a>
                         </li>
