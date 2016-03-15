@@ -25,90 +25,90 @@ use yii\helpers\Html;
 <?php } ?>
 <?php if(Yii::$app->user->can('add-bundle-size')) {?>
 <div class="col-lg-4">
-                    <div class="panel panel-primary">
+                    <div class="panel panel-success">
                         <div class="panel-heading">
-                            Primary Panel
+                            Bundle Size
                         </div>
                         <div class="panel-body">
-                            <?=Html::a('Bundle Size',['/settings/bundle-size'],['class'=>'btn btn-primary btn-lg btn-block'])?>  
+                            <?=Html::a('Bundle Size',['/settings/bundle-size'],['class'=>'btn btn-success btn-lg btn-block'])?>  
                         </div>
                         <div class="panel-footer">
-                            Panel Footer
+                           Bundle Size
                         </div>
                     </div>
                 </div>
 <?php } ?>
 <?php if(Yii::$app->user->can('add-country')) {?>
 <div class="col-lg-4">
-                    <div class="panel panel-primary">
+                    <div class="panel panel-success">
                         <div class="panel-heading">
-                            Primary Panel
+                           Country
                         </div>
                         <div class="panel-body">
-                            <?=Html::a('Country',['/settings/country'],['class'=>'btn btn-primary btn-lg btn-block'])?>  
+                            <?=Html::a('Country',['/settings/country'],['class'=>'btn btn-success btn-lg btn-block'])?>  
                         </div>
                         <div class="panel-footer">
-                            Panel Footer
+                           Country
                         </div>
                     </div>
                 </div>
 <?php } ?>
 <?php if(Yii::$app->user->can('add-delivery-method')) {?>
 <div class="col-lg-4">
-                    <div class="panel panel-primary">
+                    <div class="panel panel-success">
                         <div class="panel-heading">
-                            Primary Panel
+                            Delivery Method
                         </div>
                         <div class="panel-body">
-                            <?=Html::a('Delivery methods',['/settings/delivery-methods'],['class'=>'btn btn-primary btn-lg btn-block'])?>  
+                            <?=Html::a('Delivery methods',['/settings/delivery-methods'],['class'=>'btn btn-success btn-lg btn-block'])?>  
                         </div>
                         <div class="panel-footer">
-                            Panel Footer
+                            Delivery Method
                         </div>
                     </div>
                 </div>
 <?php } ?>
 <?php if(Yii::$app->user->can('add-department')) {?>
 <div class="col-lg-4">
-                    <div class="panel panel-primary">
+                    <div class="panel panel-success">
                         <div class="panel-heading">
-                            Primary Panel
+                            Department
                         </div>
                         <div class="panel-body">
-                            <?=Html::a('Department',['/settings/department'],['class'=>'btn btn-primary btn-lg btn-block'])?>  
+                            <?=Html::a('Department',['/settings/department'],['class'=>'btn btn-success btn-lg btn-block'])?>  
                         </div>
                         <div class="panel-footer">
-                            Panel Footer
+                            Department
                         </div>
                     </div>
                 </div>
 <?php } ?>
 <?php if(Yii::$app->user->can('add-designation')) {?>
 <div class="col-lg-4">
-                    <div class="panel panel-primary">
+                    <div class="panel panel-success">
                         <div class="panel-heading">
-                            Primary Panel
+                            Designation
                         </div>
                         <div class="panel-body">
-                            <?=Html::a('Designation',['/settings/designation'],['class'=>'btn btn-primary btn-lg btn-block'])?>  
+                            <?=Html::a('Designation',['/settings/designation'],['class'=>'btn btn-success btn-lg btn-block'])?>  
                         </div>
                         <div class="panel-footer">
-                            Panel Footer
+                            Designation
                         </div>
                     </div>
                 </div>
 <?php } ?>
 <?php if(Yii::$app->user->can('add-district')) {?>
 <div class="col-lg-4">
-                    <div class="panel panel-primary">
+                    <div class="panel panel-success">
                         <div class="panel-heading">
-                            Primary Panel
+                            District
                         </div>
                         <div class="panel-body">
-                            <?=Html::a('District',['/settings/license'],['class'=>'btn btn-primary btn-lg btn-block'])?>  
+                            <?=Html::a('District',['/settings/license'],['class'=>'btn btn-success btn-lg btn-block'])?>  
                         </div>
                         <div class="panel-footer">
-                            Panel Footer
+                           District
                         </div>
                     </div>
                 </div>
@@ -116,15 +116,15 @@ use yii\helpers\Html;
 
 <?php if(Yii::$app->user->can('add-payment-mode')) {?>
 <div class="col-lg-4">
-                    <div class="panel panel-primary">
+                    <div class="panel panel-success">
                         <div class="panel-heading">
-                            Primary Panel
+                            Payment Mode
                         </div>
                         <div class="panel-body">
-                            <?=Html::a('Payment Mode',['/settings/patment-mode'],['class'=>'btn btn-primary btn-lg btn-block'])?>  
+                            <?=Html::a('Payment Mode',['/settings/patment-mode'],['class'=>'btn btn-success btn-lg btn-block'])?>  
                         </div>
                         <div class="panel-footer">
-                            Panel Footer
+                            Payment Mode
                         </div>
                     </div>
                 </div>
@@ -132,45 +132,45 @@ use yii\helpers\Html;
 
 <?php if(Yii::$app->user->can('add-postage-rate')) {?>
 <div class="col-lg-4">
-                    <div class="panel panel-primary">
+                    <div class="panel panel-success">
                         <div class="panel-heading">
-                            Primary Panel
+                            Postage Rate
                         </div>
                         <div class="panel-body">
-                            <?=Html::a('Postage Rate',['/settings/license'],['class'=>'btn btn-primary btn-lg btn-block'])?>  
+                            <?=Html::a('Postage Rate',['/settings/license'],['class'=>'btn btn-success btn-lg btn-block'])?>  
                         </div>
                         <div class="panel-footer">
-                            Panel Footer
+                            Postage Rate
                         </div>
                     </div>
                 </div>
 <?php } ?>
 <?php if(Yii::$app->user->can('add-state')) {?>
 <div class="col-lg-4">
-                    <div class="panel panel-primary">
+                    <div class="panel panel-success">
                         <div class="panel-heading">
-                            Primary Panel
+                            State
                         </div>
                         <div class="panel-body">
-                            <?=Html::a('State',['/settings/state'],['class'=>'btn btn-primary btn-lg btn-block'])?>  
+                            <?=Html::a('State',['/settings/state'],['class'=>'btn btn-success btn-lg btn-block'])?>  
                         </div>
                         <div class="panel-footer">
-                            Panel Footer
+                            State
                         </div>
                     </div>
                 </div>
 <?php } ?>
 <?php if(Yii::$app->user->can('add-sub-department')) {?>
 <div class="col-lg-4">
-                    <div class="panel panel-primary">
+                    <div class="panel panel-success">
                         <div class="panel-heading">
-                            Primary Panel
+                            Sub Department
                         </div>
                         <div class="panel-body">
-                            <?=Html::a('State',['/settings/sub-department'],['class'=>'btn btn-primary btn-lg btn-block'])?>  
+                            <?=Html::a('State',['/settings/sub-department'],['class'=>'btn btn-success btn-lg btn-block'])?>  
                         </div>
                         <div class="panel-footer">
-                            Panel Footer
+                           Sub Department
                         </div>
                     </div>
                 </div>
