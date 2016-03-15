@@ -299,6 +299,12 @@ AppAsset::register($this);
                             <a href="index.php?r=user/default/dashboard"><i class="fa fa-edit fa-fw"></i> Labels Management</a>
                         </li>
                         <?php } } ?>
+                        <?php if(Yii::$app->user->identity->role_group_id !=1){ 
+                            if(Yii::$app->user->can('generate-bill')){?>
+                        <li>
+                            <a href="index.php?r=user/default/billingdashboard"><i class="fa fa-edit fa-fw"></i>Billing  </a>
+                        </li>
+                        <?php } } ?>
 <!--                        <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">

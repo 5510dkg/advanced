@@ -13,4 +13,7 @@ class DefaultController extends Controller
     public function actionDashboard() {
         return $this->render('dashboard');
     }
+    public function actionBillingdashboard(){
+        return $this->render('billingdashboard');
+    }
 }
