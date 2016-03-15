@@ -19,7 +19,7 @@ CrudAsset::register($this);
 
 <div class="row">
     <div class="page-header">
-        <h1></h1>
+        <h1>Agency Credit Note</h1>
     </div>
 </div>
 <div class="agency-credit-note-index">
