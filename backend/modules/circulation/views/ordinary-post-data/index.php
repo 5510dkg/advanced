@@ -16,6 +16,12 @@ $this->params['breadcrumbs'][] = $this->title;
 CrudAsset::register($this);
 
 ?>
+
+<div class="row">
+    <div class="page-header">
+        <h1>Ordinary Post</h1>
+    </div>
+</div>
 <div class="ordinary-post-data-index">
     <div id="ajaxCrudDatatable">
         <?=GridView::widget([

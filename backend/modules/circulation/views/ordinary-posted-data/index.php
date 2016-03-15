@@ -10,6 +10,12 @@ use yii\grid\GridView;
 $this->title = 'Ordinary Posted Datas';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
+<div class="row">
+    <div class="page-header">
+        <h1>Ordinary Post</h1>
+    </div>
+</div>
 <div class="ordinary-posted-data-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
