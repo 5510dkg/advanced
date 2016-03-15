@@ -78,6 +78,7 @@ class UsersController extends Controller
         $id=Yii::$app->request->post('uid');
         
         $user = Users::findOne(['id'=>$id]);
+        echo Yii::$app->request->post('pass');exit;
         $user->password_hash=Yii::$app->security->generatePasswordHash(Yii::$app->request->post('pass'));
         
         //$user->isNewRecord='False';
