@@ -7,6 +7,11 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 
 ?>
+<div class="row">
+    <div class="page-header">
+        <h1>Agency Receipt</h1>
+    </div>
+</div>
 
 <div class="agency-receipt-form">
 
