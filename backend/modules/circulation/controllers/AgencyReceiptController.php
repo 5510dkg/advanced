@@ -98,7 +98,7 @@ class AgencyReceiptController extends Controller
       //  $this->layout='adminlayout';
         $request = Yii::$app->request;
         $model = new AgencyReceipt();  
-        $id=$request->get('id');    
+         
         
             /*
             *   Process for non-ajax request
