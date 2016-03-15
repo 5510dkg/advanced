@@ -34,6 +34,10 @@ return [
         'rbac' =>  [
         'class' => 'johnitvn\rbacplus\Module',
     ], 
+          'backuprestore' => [
+        'class' => '\oe\modules\backuprestore\Module',
+        
+    ],
 //        'backuprestore' => [
 //        'class' => '\oe\modules\backuprestore\Module',
 //        //'layout' => '@admin-views/layouts/main', or what ever layout you use
