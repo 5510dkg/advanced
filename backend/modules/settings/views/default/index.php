@@ -9,12 +9,12 @@ use yii\helpers\Html;
                 <!-- /.col-lg-12 -->
             </div>
 <div class="col-lg-4">
-                    <div class="panel panel-primary">
+                    <div class="panel panel-success">
                         <div class="panel-heading">
                             License Management
                         </div>
                         <div class="panel-body">
-                        <?=Html::a('license management',['/settings/license'],['class'=>'btn btn-primary btn-lg'])?>  
+                        <?=Html::a('license management',['/settings/license'],['class'=>'btn btn-success btn-lg btn-block'])?>  
                         </div>
                         <div class="panel-footer">
                            License Management
@@ -27,7 +27,7 @@ use yii\helpers\Html;
                             Primary Panel
                         </div>
                         <div class="panel-body">
-                            <?=Html::a('license management',['/settings/license'],['class'=>'btn btn-primary btn-lg'])?>  
+                            <?=Html::a('license management',['/settings/license'],['class'=>'btn btn-primary btn-lg btn-block'])?>  
                         </div>
                         <div class="panel-footer">
                             Panel Footer
@@ -40,7 +40,7 @@ use yii\helpers\Html;
                             Primary Panel
                         </div>
                         <div class="panel-body">
-                           <?=Html::a('license management',['/settings/license'],['class'=>'btn btn-primary btn-lg'])?>  
+                           <?=Html::a('license management',['/settings/license'],['class'=>'btn btn-primary btn-lg btn-block'])?>  
                         </div>
                         <div class="panel-footer">
                             Panel Footer
@@ -53,7 +53,7 @@ use yii\helpers\Html;
                             Primary Panel
                         </div>
                         <div class="panel-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                      <?=Html::a('license management',['/settings/license'],['class'=>'btn btn-primary btn-lg btn-block'])?> 
                         </div>
                         <div class="panel-footer">
                             Panel Footer
@@ -66,7 +66,7 @@ use yii\helpers\Html;
                             Primary Panel
                         </div>
                         <div class="panel-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                      <?=Html::a('license management',['/settings/license'],['class'=>'btn btn-primary btn-lg btn-block'])?> 
                         </div>
                         <div class="panel-footer">
                             Panel Footer
