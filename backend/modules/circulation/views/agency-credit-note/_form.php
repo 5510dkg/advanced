@@ -7,7 +7,11 @@ use dosamigos\datepicker\DatePicker;
 /* @var $model backend\modules\circulation\models\AgencyCreditNote */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-
+<div class="row">
+    <div class="page-header">
+        <h1>Agency Credit Note</h1>
+    </div>
+</div>
 <div class="agency-credit-note-form">
 
     <?php $form = ActiveForm::begin(); ?>
