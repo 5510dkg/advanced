@@ -264,7 +264,7 @@ AppAsset::register($this);
                             <a href="index.php?r=rbac/assignment"><i class="fa fa-user fa-user"></i> Access Management</a>
                         </li>
                         <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Database</a>
+                            <a href="index.php?r=backuprestore"><i class="fa fa-edit fa-fw"></i> Database</a>
                         </li>
 <!--                        <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
