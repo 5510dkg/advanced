@@ -18,12 +18,12 @@ $this->registerJsFile('@web/bower_components/bootstrap/dist/js/bootstrap.min.js'
                                     <i class="fa fa-user fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">26</div>
-                                    <div>New Comments!</div>
+                                    <div class="huge"><?php echo common\models\User::find()->where('1')->count()?></div>
+                                    <div>Total Employees</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="index.php?r=admin/users">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
