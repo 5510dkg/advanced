@@ -36,7 +36,7 @@ use yii\helpers\Html;
                             Credit Note
                         </div>
                         <div class="panel-body">
-                        <?=Html::a('Credit Note',['/circulation/agency-credit-note'],['class'=>'btn btn-success btn-lg btn-block'])?>  
+                        <?=Html::a('Credit Note',['/circulation/agency-credit-note/list'],['class'=>'btn btn-success btn-lg btn-block'])?>  
                         </div>
                         <div class="panel-footer">
                            Credit Note
@@ -51,7 +51,7 @@ use yii\helpers\Html;
                             Receipt
                         </div>
                         <div class="panel-body">
-                        <?=Html::a('Agency Receipts',['/circulation/agency-receipt'],['class'=>'btn btn-success btn-lg btn-block'])?>  
+                        <?=Html::a('Agency Receipts',['/circulation/agency-receipt/list'],['class'=>'btn btn-success btn-lg btn-block'])?>  
                         </div>
                         <div class="panel-footer">
                           Receipt
