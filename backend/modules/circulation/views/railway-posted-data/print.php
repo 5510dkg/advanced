@@ -53,7 +53,7 @@ foreach ($data as $key => $value) {
 
 <?php } }?>
 
-//echo $data->_attributes['id'];
+
 <script>
 $('.loading')
     .hide()  // hide it initially
