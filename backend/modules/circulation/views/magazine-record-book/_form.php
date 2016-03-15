@@ -31,6 +31,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'issue_type')->dropDownList([ 'Regular' => 'Regular', 'Special Edition' => 'Special Edition', ], ['prompt' => '']) ?>
 
     <?= $form->field($model, 'price')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($model, 'status')->hiddenInput(['value' => '0'])->label(false) ?>
         <?php //} ?>
     
 

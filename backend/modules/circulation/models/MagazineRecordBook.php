@@ -40,6 +40,7 @@ class MagazineRecordBook extends \yii\db\ActiveRecord
     
     
     
+    
 
     /**
      * @inheritdoc
