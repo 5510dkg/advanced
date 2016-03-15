@@ -21,7 +21,7 @@ use yii\helpers\Html;
                             Railway Labels
                         </div>
                         <div class="panel-body">
-                        <?=Html::a('Generate Bill',['/circulation/railway-post-data'],['class'=>'btn btn-success btn-lg btn-block'])?>  
+                        <?=Html::a('Generate Bill',['/circulation/magazine-record-book'],['class'=>'btn btn-success btn-lg btn-block'])?>  
                         </div>
                         <div class="panel-footer">
                            Railway Labels
@@ -36,7 +36,7 @@ use yii\helpers\Html;
                             Credit Note
                         </div>
                         <div class="panel-body">
-                        <?=Html::a('Credit Note',['/circulation/ordinary-post-data'],['class'=>'btn btn-success btn-lg btn-block'])?>  
+                        <?=Html::a('Credit Note',['/circulation/agency-credit-note'],['class'=>'btn btn-success btn-lg btn-block'])?>  
                         </div>
                         <div class="panel-footer">
                            Credit Note
@@ -51,7 +51,7 @@ use yii\helpers\Html;
                             Receipt
                         </div>
                         <div class="panel-body">
-                        <?=Html::a('Agency Receipts',['/circulation/registered-post-data'],['class'=>'btn btn-success btn-lg btn-block'])?>  
+                        <?=Html::a('Agency Receipts',['/circulation/agency-receipt'],['class'=>'btn btn-success btn-lg btn-block'])?>  
                         </div>
                         <div class="panel-footer">
                           Receipt
