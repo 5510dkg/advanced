@@ -2,6 +2,12 @@
 use yii\helpers\Html;
 
 ?>
+
+<div class="row">
+    <div class="page-header">
+        <h1>Agency Billing</h1>
+    </div>
+</div>
 <p>
     The Bill Has been Generated. You can Click Below and view the genrated Bill.
 </p>
