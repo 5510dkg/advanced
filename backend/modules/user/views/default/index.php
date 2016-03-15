@@ -1,4 +1,9 @@
+<?php
+$this->title='Home';
+$this->registerJsFile('@web/bower_components/jquery/dist/jquery.min.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
+$this->registerJsFile('@web/bower_components/bootstrap/dist/js/bootstrap.min.js', ['depends' => [\yii\bootstrap\BootstrapAsset::className()]]);
 
+?>
 <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">Dashboard</h1>
