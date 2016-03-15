@@ -7,6 +7,12 @@ $this->title="Upload Multiple Users";
 
 
  ?>
+
+<div class="row">
+    <div class="page-header">
+        <h1>Upload Multiple Users</h1>
+    </div>
+</div>
  <?php echo FileInput::widget([
    'name'=>'file[]',
    'options'=>[
