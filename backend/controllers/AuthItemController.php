@@ -105,12 +105,13 @@ class AuthItemController extends Controller
     
     
     public function actionList(){
-        $searchModel = new AuthItemSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
+        $items =new AuthItem();
+        $user=Yii::$app->request->post('user');
+        
+        $list=$items->find()->all();    
         return $this->render('list', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'lists' => $list,
+            'user'=>$user,
         ]);
        
         
@@ -125,6 +126,9 @@ class AuthItemController extends Controller
         return $this->render('default');
        
         
+    }
+    public function actionDisplay() {
+        return $this->render('display',['use'=>'create']);
     }
     
 

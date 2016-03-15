@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "37a71832c8f8343b76c0f2e8d655c15c",
-    "content-hash": "133afefd386eb57b050d12b3ce0a3a3d",
+    "hash": "64c9d342d55d193c5ce420d45f59e94a",
+    "content-hash": "aa8fd2f1b223b248feaade3eedc25d91",
     "packages": [
         {
             "name": "2amigos/yii2-date-picker-widget",
@@ -282,16 +282,16 @@
         },
         {
             "name": "bower-asset/yii2-pjax",
-            "version": "v2.0.5",
+            "version": "v2.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/jquery-pjax.git",
-                "reference": "6818718408086db6bdcf33649cecb86b6b4f9b67"
+                "reference": "60728da6ade5879e807a49ce59ef9a72039b8978"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/jquery-pjax/zipball/6818718408086db6bdcf33649cecb86b6b4f9b67",
-                "reference": "6818718408086db6bdcf33649cecb86b6b4f9b67",
+                "url": "https://api.github.com/repos/yiisoft/jquery-pjax/zipball/60728da6ade5879e807a49ce59ef9a72039b8978",
+                "reference": "60728da6ade5879e807a49ce59ef9a72039b8978",
                 "shasum": ""
             },
             "require": {
@@ -304,6 +304,7 @@
                     ".travis.yml",
                     "Gemfile",
                     "Gemfile.lock",
+                    "CONTRIBUTING.md",
                     "vendor/",
                     "script/",
                     "test/"
@@ -419,16 +420,16 @@
         },
         {
             "name": "johnitvn/yii2-ajaxcrud",
-            "version": "2.1.0",
+            "version": "2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnitvn/yii2-ajaxcrud.git",
-                "reference": "51004743169aee572aeb2425db448f752e59287d"
+                "reference": "3a27ede9e1f94173d4af69d8b688b611b1e28d43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnitvn/yii2-ajaxcrud/zipball/51004743169aee572aeb2425db448f752e59287d",
-                "reference": "51004743169aee572aeb2425db448f752e59287d",
+                "url": "https://api.github.com/repos/johnitvn/yii2-ajaxcrud/zipball/3a27ede9e1f94173d4af69d8b688b611b1e28d43",
+                "reference": "3a27ede9e1f94173d4af69d8b688b611b1e28d43",
                 "shasum": ""
             },
             "require": {
@@ -469,26 +470,70 @@
                 "template",
                 "yii2"
             ],
-            "time": "2016-02-16 16:58:34"
+            "time": "2016-02-23 09:33:41"
         },
         {
-            "name": "kartik-v/bootstrap-fileinput",
-            "version": "v4.3.0",
+            "name": "johnitvn/yii2-rbac-plus",
+            "version": "1.0.6",
             "source": {
                 "type": "git",
-                "url": "https://github.com/kartik-v/bootstrap-fileinput.git",
-                "reference": "cde72929649da55470e0a81a5e85921f80f28f29"
+                "url": "https://github.com/johnitvn/yii2-rbac-plus.git",
+                "reference": "693b137ad6e5fd1919f9c025c7bf25ce3ee611b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/bootstrap-fileinput/zipball/cde72929649da55470e0a81a5e85921f80f28f29",
-                "reference": "cde72929649da55470e0a81a5e85921f80f28f29",
+                "url": "https://api.github.com/repos/johnitvn/yii2-rbac-plus/zipball/693b137ad6e5fd1919f9c025c7bf25ce3ee611b1",
+                "reference": "693b137ad6e5fd1919f9c025c7bf25ce3ee611b1",
+                "shasum": ""
+            },
+            "require": {
+                "johnitvn/yii2-ajaxcrud": ">=2.0.0",
+                "yiisoft/yii2": ">=2.0.4"
+            },
+            "suggest": {
+                "johnitvn/yii2-user-plus": "High flexible user management extension for yii2"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "bootstrap": "johnitvn\\rbacplus\\Bootstrap"
+            },
+            "autoload": {
+                "psr-4": {
+                    "johnitvn\\rbacplus\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "John Martin",
+                    "email": "john.itvn@gmail.com",
+                    "homepage": "https://github.com/johnitvn?tab=repositories"
+                }
+            ],
+            "description": "Database role base access control manager for yii2",
+            "time": "2016-02-16 16:57:33"
+        },
+        {
+            "name": "kartik-v/bootstrap-fileinput",
+            "version": "v4.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kartik-v/bootstrap-fileinput.git",
+                "reference": "32b0ccb2562b9c83f12222ddd1406986a45450d1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kartik-v/bootstrap-fileinput/zipball/32b0ccb2562b9c83f12222ddd1406986a45450d1",
+                "reference": "32b0ccb2562b9c83f12222ddd1406986a45450d1",
                 "shasum": ""
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.2.x-dev"
+                    "dev-master": "4.3.x-dev"
                 }
             },
             "autoload": {
@@ -522,7 +567,7 @@
                 "progress",
                 "upload"
             ],
-            "time": "2016-01-25 16:55:20"
+            "time": "2016-02-28 02:23:49"
         },
         {
             "name": "kartik-v/bootstrap-popover-x",
@@ -665,12 +710,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-grid.git",
-                "reference": "574c0e310bda692253c1ba0eac9a94c699b299d5"
+                "reference": "aee1795980be62974a5c35a61fd596c61c0fae6b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-grid/zipball/574c0e310bda692253c1ba0eac9a94c699b299d5",
-                "reference": "574c0e310bda692253c1ba0eac9a94c699b299d5",
+                "url": "https://api.github.com/repos/kartik-v/yii2-grid/zipball/aee1795980be62974a5c35a61fd596c61c0fae6b",
+                "reference": "aee1795980be62974a5c35a61fd596c61c0fae6b",
                 "shasum": ""
             },
             "require": {
@@ -706,7 +751,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2016-02-19 18:29:46"
+            "time": "2016-03-08 04:08:06"
         },
         {
             "name": "kartik-v/yii2-krajee-base",
@@ -949,17 +994,59 @@
             "time": "2014-11-09 08:07:23"
         },
         {
+            "name": "open-ecommerce/yii2-backuprestore",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/open-ecommerce/yii2-backuprestore.git",
+                "reference": "1ea6e80ba161af3d68a8b8d0eb725d034fb22e5d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/open-ecommerce/yii2-backuprestore/zipball/1ea6e80ba161af3d68a8b8d0eb725d034fb22e5d",
+                "reference": "1ea6e80ba161af3d68a8b8d0eb725d034fb22e5d",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "oe\\modules\\backuprestore\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "open-ecommerce.org",
+                    "email": "info@open-ecommerce.org"
+                }
+            ],
+            "description": "Database Backup and Restore functionality",
+            "keywords": [
+                "backup",
+                "database",
+                "restore",
+                "yii2"
+            ],
+            "time": "2015-04-07 17:03:01"
+        },
+        {
             "name": "phpoffice/phpexcel",
             "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPOffice/PHPExcel.git",
-                "reference": "6ae1056fb2145f599434c831b645adff35ebfc1a"
+                "reference": "bf2b74b57eb0fc72423ed7edfd8bd14743100f1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPOffice/PHPExcel/zipball/6ae1056fb2145f599434c831b645adff35ebfc1a",
-                "reference": "6ae1056fb2145f599434c831b645adff35ebfc1a",
+                "url": "https://api.github.com/repos/PHPOffice/PHPExcel/zipball/bf2b74b57eb0fc72423ed7edfd8bd14743100f1a",
+                "reference": "bf2b74b57eb0fc72423ed7edfd8bd14743100f1a",
                 "shasum": ""
             },
             "require": {
@@ -1007,7 +1094,7 @@
                 "xls",
                 "xlsx"
             ],
-            "time": "2016-01-13 22:38:20"
+            "time": "2016-03-07 07:59:19"
         },
         {
             "name": "phpspec/php-diff",
@@ -1589,7 +1676,8 @@
     "stability-flags": {
         "kartik-v/yii2-grid": 20,
         "phpoffice/phpexcel": 20,
-        "kartik-v/yii2-widget-fileinput": 20
+        "kartik-v/yii2-widget-fileinput": 20,
+        "open-ecommerce/yii2-backuprestore": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
