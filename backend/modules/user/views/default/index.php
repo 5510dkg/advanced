@@ -13,65 +13,39 @@ $this->registerJsFile('@web/bower_components/bootstrap/dist/js/bootstrap.min.js'
 <div class="col-lg-4">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            Primary Panel
+                            Notifications
                         </div>
                         <div class="panel-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                            <p>Top Notifications will Appear here</p>
                         </div>
                         <div class="panel-footer">
-                            Panel Footer
+                            View All
                         </div>
                     </div>
                 </div>
 <div class="col-lg-4">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            Primary Panel
+                            Scheduled Tasks 
                         </div>
                         <div class="panel-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                            <p> Scheduled Tasks Will Appear here.</p>
                         </div>
                         <div class="panel-footer">
-                            Panel Footer
+                            View All
                         </div>
                     </div>
                 </div>
 <div class="col-lg-4">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            Primary Panel
+                            Department Messages
                         </div>
                         <div class="panel-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                            <p>Department messages will appear here</p>
                         </div>
                         <div class="panel-footer">
-                            Panel Footer
-                        </div>
-                    </div>
-                </div>
-<div class="col-lg-4">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            Primary Panel
-                        </div>
-                        <div class="panel-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
-                        </div>
-                        <div class="panel-footer">
-                            Panel Footer
-                        </div>
-                    </div>
-                </div>
-<div class="col-lg-4">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            Primary Panel
-                        </div>
-                        <div class="panel-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
-                        </div>
-                        <div class="panel-footer">
-                            Panel Footer
+                            View all
                         </div>
                     </div>
                 </div>
