@@ -56,3 +56,20 @@ use backend\modules\settings\models\Department;
     <?php ActiveForm::end(); ?>
     
 </div>
+<script>
+   $(document).ready(function () {
+    $("#users-name").on('change', function() {
+     // $('#autohideid').fadeToggle();
+        var ui=$('#users-name').val();
+        var newvar =ui.replace(/\s*,\s*|\s+(?=\S+$)/g, '.');
+        
+        $('#users-username').val(newvar);
+       
+    });
+    
+
+  
+
+
+});
+</script>
