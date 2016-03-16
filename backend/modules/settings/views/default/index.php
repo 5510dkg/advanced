@@ -143,7 +143,7 @@ use yii\helpers\Html;
                             Postage Rate
                         </div>
                         <div class="panel-body">
-                            <?=Html::a('Postage Rate',['/settings/license'],['class'=>'btn btn-success btn-lg btn-block'])?>  
+                            <?=Html::a('Postage Rate',['/settings/postage-rate'],['class'=>'btn btn-success btn-lg btn-block'])?>  
                         </div>
                         <div class="panel-footer">
                             Postage Rate
