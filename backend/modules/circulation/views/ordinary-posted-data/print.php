@@ -23,7 +23,7 @@ foreach ($data as $key => $value) {
 	for($r=1;$r<$j+1;$r++){
 	?>
 
-	<div style="margin-left: 25px;margin-bottom: 25px;margin-right: -90px; width: 490px;float: left; height: 290px;">
+	<div style="margin-left: 25px;margin-bottom: 25px;margin-right: -90px; width: 490px;float: left; height: 390px;">
 	<div style="height: 20px">
 	<p style="font-size:9px"><?= $value->license;?>, Issue Dt: <?= $value->date;?>.
 1/1 Sanskriti Bhavan, D. B. Gupta Marg, Jhandewalan, N.D-55. <?php if(($value->pjy)>'0'){ echo 'PANCHJANYA';}else{echo "ORGANISER";} ?></p>
