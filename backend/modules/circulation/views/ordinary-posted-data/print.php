@@ -25,14 +25,14 @@ foreach ($data as $key => $value) {
 
 	<div style="margin-left: 25px;margin-bottom: 25px;margin-right: -90px; width: 490px;float: left; height: 290px;">
 	<div style="height: 20px">
-	<p style="font-size:15px"><?= $value->license;?>, Issue Dt: <?= $value->date;?>.
+	<p style="font-size:9px"><?= $value->license;?>, Issue Dt: <?= $value->date;?>.
 1/1 Sanskriti Bhavan, D. B. Gupta Marg, Jhandewalan, N.D-55. <?php if(($value->pjy)>'0'){ echo 'PANCHJANYA';}else{echo "ORGANISER";} ?></p>
 	</div>
 	<?php $t=$model->Agencyname($value->agency_id);?>
 
 
 
-	<div style="height: 100px">
+	<div style="height: 90px">
 
 		<strong><?=$t['name'];?></strong><br/>
 		H. No.: <?= $t['hno'];?><br/>
@@ -44,7 +44,7 @@ foreach ($data as $key => $value) {
 
 
 	</div>
-	<div style="height: 40px;"><div><strong>PJY:<?= $value->pjy;?> + ORG : <?= $value->org; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?=$r.'/'.$j?></strong></div></div>
+	<div style="height: 20px;"><div><strong>PJY:<?= $value->pjy;?> + ORG : <?= $value->org; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?=$r.'/'.$j?></strong></div></div>
 	</div>
 
 <?php } }
