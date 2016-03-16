@@ -285,11 +285,13 @@ AppAsset::register($this);
                             <a href="index.php?r=backuprestore"><i class="fa fa-edit fa-fw"></i> Database</a>
                         </li>
                         <?php } ?>
-                        <?php  if(Yii::$app->user->can('create-agency')){?>
+                        <?php  if(Yii::$app->user->identity->role_group_id !=1){
+                            
+                         if(Yii::$app->user->can('create-agency')){?>
                         <li>
                             <a href="index.php?r=circulation/agency"><i class="fa fa-edit fa-fw"></i> Agency Management</a>
                         </li>
-                        <?php } ?>
+                        <?php }} ?>
                         
                         <?php if(Yii::$app->user->identity->role_group_id !=1){ 
                             if(Yii::$app->user->can('generate-labels')){?>
