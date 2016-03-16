@@ -156,7 +156,7 @@ class AgencyBillBookController extends Controller
             }
                   $mz= new \backend\modules\circulation\models\MagazineRecordBook();
                   $mz->updateAll(array( 'status' => 1 ), 'status = 0');
-            return $this->actionShow();
+                  return $this->actionShow();
 //               if($model->save(false)){
 //                   return 'hii';
 //               }
