@@ -71,7 +71,7 @@ AppAsset::register($this);
                 </li>
                  <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-clone fa-fw"></i>OPERATION
+                        <i class="fa fa-gavel fa-fw"></i>OPERATION
                     </a>
                 </li>
                  <li class="dropdown">

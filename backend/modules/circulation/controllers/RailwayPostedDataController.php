@@ -27,6 +27,7 @@ class RailwayPostedDataController extends \yii\web\Controller
 		    $pdf = new Pdf([
         'mode' => Pdf::MODE_UTF8, // leaner size using standard fonts
         'orientation'=>'L',
+        'filename' => 'railways.pdf',
 
         'content' =>$this->renderPartial('print'),
         'options' => [
