@@ -61,7 +61,7 @@ CrudAsset::register($this);
 
 <script>
    function campaignList(){
-        $("#wrapper").html("<img src='332.gif'>"); // show the ajax loader
+        $("#page-wrapper").html("<img src='332.gif'>"); // show the ajax loader
         $.ajax({
             type:'post',
             url:'index.php?r=circulation/agency-bill-book/create',
