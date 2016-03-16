@@ -39,6 +39,7 @@ AppAsset::register($this);
                 <a class="navbar-brand" href="index.php?r=">BPDL</a>
             </div>
              <ul class="nav navbar-top-links navbar-right">
+                 <?php if(Yii::$app->user->identity->role_group_id!='1'){?>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-bookmark fa-fw"></i>HR
@@ -79,6 +80,7 @@ AppAsset::register($this);
                         <i class="fa fa-newspaper-o fa-fw"></i>ADVERTISEMENT
                     </a>
                 </li>
+                 <?php } ?>
                 
                 <!-- /.dropdown -->
 <!--                <li class="dropdown">
