@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 08, 2016 at 05:35 PM
+-- Generation Time: Mar 16, 2016 at 12:41 PM
 -- Server version: 5.5.47-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.14
 
@@ -71,17 +71,17 @@ CREATE TABLE IF NOT EXISTS `agency` (
 --
 
 INSERT INTO `agency` (`id`, `name`, `account_id`, `route_id`, `vehicle_id`, `reference`, `email`, `landline_no`, `mobile_no`, `status`, `security_amt`, `address_status`, `mail_house_no`, `mail_street_address`, `mail_p_office`, `mail_country_id`, `mail_state_id`, `mail_district_id`, `mail_pincode`, `panchjanya`, `organiser`, `add_house_no`, `add_street_address`, `add_p_office`, `add_country_id`, `add_state_id`, `add_district_id`, `add_pincode`, `issue_start_date`, `agency_type`, `comment`, `commission`, `agency_combined_id`, `source`, `train_no`, `train_name`) VALUES
-(32, 'NEW agncy', 'AR|C|0003', 5, 7, 'koijij', 'uuiu@g.com', 897456210, 2147483647, 'Active', 989.00, '1', 'yui', 'cfcfcf ytf vttydrt ct', '123123321321', 1, 3, 17, 123654, 78, 789, 'yui', 'cfcfcf ytf vttydrt ct', '123123321321', 1, 3, 17, 123654, '2016-02-26', 'Combined', 'iomomomom', '897', 'AS|09|78', 'ANVT', '12154', 'SAMPOORN KRANTI'),
-(33, 'Old Agency', 'GJ|C|0002', 1, 9, 'Potyiop', 'io', 987456874, 2147483647, 'Active', 987.00, '1', '78/9', 'Pto bhiuo nhufgc vgvg  vyctr yvrdrd', 'tyreing', 1, 12, 150, 987456, 988, 78, '78/9', 'Pto bhiuo nhufgc vgvg  vyctr yvrdrd', 'tyreing', 1, 12, 150, 987456, '2016-02-09', 'Single', 'Post Office near', '890789', 'AS|C|004', '', '', ''),
+(32, 'NEW agncy', 'AR|C|0003', 1, 7, 'koijij', 'uuiu@g.com', 897456210, 2147483647, 'Active', 989.00, '1', 'yui', 'cfcfcf ytf vttydrt ct', '123123321321', 1, 3, 17, 123654, 7800, 78, 'yui', 'cfcfcf ytf vttydrt ct', '123123321321', 1, 3, 17, 123654, '2016-02-26', 'Combined', 'iomomomom', '897', 'AS|09|78', 'ANVT', '12154', 'SAMPOORN KRANTI'),
+(33, 'Old Agency', 'GJ|C|0002', 1, 9, 'Potyiop', 'io', 987456874, 2147483647, 'Active', 987.00, '1', '78/9', 'Pto bhiuo nhufgc vgvg  vyctr yvrdrd', 'tyreing', 1, 12, 150, 987456, 98, 78, '78/9', 'Pto bhiuo nhufgc vgvg  vyctr yvrdrd', 'tyreing', 1, 12, 150, 987456, '2016-02-09', 'Single', 'Post Office near', '890789', 'AS|C|004', '', '', ''),
 (34, 'aer', 'HR|C|0004', 2, 9, 'uioplkjh', 'sres@sr.com', 76678686, 646546546, 'Active', 9878.00, '1', '876876', 'crtcrcrcrdrd rd tr tr trdt rdsresaew', 'yrytrytr', 1, 13, 183, 5656565, 98, 87, '876876', 'crtcrcrcrdrd rd tr tr trdt rdsresaew', 'yrytrytr', 1, 13, 183, 5656565, '2016-02-11', 'Combined', 'PJY', '8978', '77577657', '', '', ''),
 (35, 'top ramen', 'GJ|S|0004', 2, 1, '12', 'tos@njasjd.c', 901831230, 2147483647, 'Active', 100.00, '1', '47/8', 'asjdasdnaskjn', '1311213', 1, 12, 141, 1210146, 100, 20, '47/8', 'asjdasdnaskjn', '1311213', 1, 12, 141, 1210146, '2016-02-21', 'Single', 'asdsa', '5', '', '', '', ''),
-(36, 'patanjali', 'HR|C|0005', 2, 1, 'asdasdas', 'nja@nd.com', 2147483647, 2147483647, 'Active', 1020.00, '1', 'd9-0912', 'indasndakjn', '9090909090', 1, 13, 176, 121003, 1002, 1050, 'd9-0912', 'indasndakjn', '9090909090', 1, 13, 176, 121003, '2016-02-14', 'Combined', 'asdasdssdasdasdsdsdsd', '20', '019238', '', '', ''),
+(36, 'patanjali', 'HR|C|0005', 2, 1, 'asdasdas', 'nja@nd.com', 2147483647, 2147483647, 'Active', 1020.00, '1', 'd9-0912', 'indasndakjn', '9090909090', 1, 13, 176, 121003, 100, 105, 'd9-0912', 'indasndakjn', '9090909090', 1, 13, 176, 121003, '2016-02-14', 'Combined', 'asdasdssdasdasdsdsdsd', '20', '019238', '', '', ''),
 (37, 'NEW agncy2', 'AR|C|0003', 2, 7, 'koijij', 'uuiu@g.com', 897456210, 2147483647, 'Active', 989.00, '1', 'yui', 'cfcfcf ytf vttydrt ct', '123123321321', 1, 3, 17, 123654, 789, 789, 'yui', 'cfcfcf ytf vttydrt ct', '123123321321', 1, 3, 17, 123654, '2016-02-26', 'Combined', 'iomomomom', '897', 'AS|09|78', '', '', ''),
-(38, 'patanjali', 'HR|C|0005', 2, 1, 'asdasdas', 'nja@nd.com', 2147483647, 2147483647, 'Active', 1020.00, '1', 'd9-0912', 'indasndakjn', '9090909090', 1, 13, 176, 121003, 1002, 1050, 'd9-0912', 'indasndakjn', '9090909090', 1, 13, 176, 121003, '2016-02-14', 'Combined', 'asdasdssdasdasdsdsdsd', '20', '019238', '', '', ''),
+(38, 'patanjali', 'HR|C|0005', 2, 1, 'asdasdas', 'nja@nd.com', 2147483647, 2147483647, 'Active', 1020.00, '1', 'd9-0912', 'indasndakjn', '9090909090', 1, 13, 176, 121003, 100, 105, 'd9-0912', 'indasndakjn', '9090909090', 1, 13, 176, 121003, '2016-02-14', 'Combined', 'asdasdssdasdasdsdsdsd', '20', '019238', '', '', ''),
 (39, 'Old Agency2', 'GJ|C|0002', 2, 9, 'Potyiop', 'io', 987456874, 2147483647, 'Active', 987.00, '1', '78/9', 'Pto bhiuo nhufgc vgvg  vyctr yvrdrd', 'tyreing', 1, 12, 150, 987456, 98, 78, '78/9', 'Pto bhiuo nhufgc vgvg  vyctr yvrdrd', 'tyreing', 1, 12, 150, 987456, '2016-02-09', 'Combined', 'Post Office near', '890789', 'AS|C|004', '', '', ''),
 (40, 'top ramen2', 'GJ|S|0004', 2, 1, '12', 'tos@njasjd.c', 901831230, 2147483647, 'Active', 100.00, '1', '47/8', 'asjdasdnaskjn', '1311213', 1, 12, 141, 1210146, 100, 20, '47/8', 'asjdasdnaskjn', '1311213', 1, 12, 141, 1210146, '2016-02-21', 'Single', 'asdsa', '5', '', '', '', ''),
 (41, 'Sh Gabbar Ji', 'DL|S|0010', 5, 2, 'Thakur', 'gab@gab.com', 12100321, 2147483647, 'Active', 15000.00, '1', '45/8', 'S/O SH RAJNATH RAM, NEAR DR. GANDHI''S HOUSE\r\nISHWAR NAGAR, SHYMALDAS LANE', 'Ishwar Nagar', 1, 10, 133, 110065, 100, 50, '45/8', 'S/O SH RAJNATH RAM, NEAR DR. GANDHI''S HOUSE\r\nISHWAR NAGAR, SHYMALDAS LANE', 'Ishwar Nagar', 1, 10, 133, 110065, '2016-02-22', 'Single', 'New Agency', '5', '', 'NDLS', '12556', 'Vaishali Express'),
-(42, 'asdasa', 'KA|S|0011', 1, 12312, '12312', 'sdasda', 231231231, 23123123, 'Active', 1299.00, '1', 'asdasdas', 'dasdasdasd', 'asdasda', 1, 17, 253, 123123, 11000, 2000, 'asdasdas', 'dasdasdasd', 'asdasda', 1, 17, 253, 123123, '2016-02-01', 'Single', '12312', '123123', '', 'Sel', '', '123123');
+(42, 'asdasa', 'KA|S|0011', 1, 12312, '12312', 'sdasda', 231231231, 23123123, 'Active', 1299.00, '1', 'asdasdas', 'dasdasdasd', 'asdasda', 1, 17, 253, 123123, 110, 20, 'asdasdas', 'dasdasdasd', 'asdasda', 1, 17, 253, 123123, '2016-02-01', 'Single', '12312', '123123', '', 'Sel', '', '123123');
 
 -- --------------------------------------------------------
 
@@ -104,8 +104,26 @@ CREATE TABLE IF NOT EXISTS `agency_bill_book` (
   `credit_amt` decimal(10,2) DEFAULT NULL,
   `credited_date` date DEFAULT NULL,
   `created_on` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uniqueindex` (`agency_id`,`issue_date`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+
+--
+-- Dumping data for table `agency_bill_book`
+--
+
+INSERT INTO `agency_bill_book` (`id`, `agency_id`, `issue_date`, `pjy`, `org`, `total_copies`, `price_per_piece`, `total_price`, `discount`, `discounted_amt`, `final_total`, `credit_amt`, `credited_date`, `created_on`) VALUES
+(1, 32, '2016-03-20', 78, 78, '156', '15.00', '2340', 33.00, 772.20, 1567.80, NULL, NULL, '2016-03-16 05:31:17'),
+(2, 33, '2016-03-20', NULL, NULL, '0', '15.00', '0', NULL, 0.00, 0.00, NULL, NULL, '2016-03-16 05:31:17'),
+(3, 34, '2016-03-20', NULL, NULL, '0', '15.00', '0', NULL, 0.00, 0.00, NULL, NULL, '2016-03-16 05:31:17'),
+(4, 35, '2016-03-20', NULL, NULL, '0', '15.00', '0', NULL, 0.00, 0.00, NULL, NULL, '2016-03-16 05:31:17'),
+(5, 36, '2016-03-20', NULL, NULL, '0', '15.00', '0', NULL, 0.00, 0.00, NULL, NULL, '2016-03-16 05:31:17'),
+(6, 37, '2016-03-20', NULL, NULL, '0', '15.00', '0', NULL, 0.00, 0.00, NULL, NULL, '2016-03-16 05:31:17'),
+(7, 38, '2016-03-20', NULL, NULL, '0', '15.00', '0', NULL, 0.00, 0.00, NULL, NULL, '2016-03-16 05:31:17'),
+(8, 39, '2016-03-20', NULL, NULL, '0', '15.00', '0', NULL, 0.00, 0.00, NULL, NULL, '2016-03-16 05:31:17'),
+(9, 40, '2016-03-20', NULL, NULL, '0', '15.00', '0', NULL, 0.00, 0.00, NULL, NULL, '2016-03-16 05:31:17'),
+(10, 41, '2016-03-20', 100, 50, '150', '15.00', '2250', 33.00, 742.50, 1507.50, NULL, NULL, '2016-03-16 05:31:18'),
+(11, 42, '2016-03-20', NULL, NULL, '0', '15.00', '0', NULL, 0.00, 0.00, NULL, NULL, '2016-03-16 05:31:18');
 
 -- --------------------------------------------------------
 
@@ -120,7 +138,7 @@ CREATE TABLE IF NOT EXISTS `agency_commission` (
   `date` date NOT NULL,
   PRIMARY KEY (`id`),
   KEY `agency_id` (`agency_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
 
 --
 -- Dumping data for table `agency_commission`
@@ -141,7 +159,8 @@ INSERT INTO `agency_commission` (`id`, `agency_id`, `amount`, `date`) VALUES
 (12, 33, '890789', '2016-02-18'),
 (13, 42, '123123', '2016-02-19'),
 (14, 42, '123123', '2016-02-19'),
-(15, 42, '123123', '2016-02-19');
+(15, 42, '123123', '2016-02-19'),
+(16, 32, '897', '2016-03-16');
 
 -- --------------------------------------------------------
 
@@ -158,7 +177,7 @@ CREATE TABLE IF NOT EXISTS `agency_copies_records` (
   PRIMARY KEY (`id`),
   KEY `date` (`date`),
   KEY `agency_id` (`agency_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
 
 --
 -- Dumping data for table `agency_copies_records`
@@ -179,7 +198,8 @@ INSERT INTO `agency_copies_records` (`agency_id`, `date`, `pachjanya`, `organise
 (33, '2016-02-18', 988, 78, 12),
 (42, '2016-02-19', 11, 2000, 13),
 (42, '2016-02-19', 11, 2000, 14),
-(42, '2016-02-19', 110000, 2000, 15);
+(42, '2016-02-19', 110000, 2000, 15),
+(32, '2016-03-16', 7800, 78, 16);
 
 -- --------------------------------------------------------
 
@@ -195,7 +215,7 @@ CREATE TABLE IF NOT EXISTS `agency_creation_updation_records` (
   `time` time NOT NULL,
   PRIMARY KEY (`id`),
   KEY `agency_id` (`agency_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
 
 --
 -- Dumping data for table `agency_creation_updation_records`
@@ -216,7 +236,8 @@ INSERT INTO `agency_creation_updation_records` (`agency_id`, `date`, `status`, `
 (33, '2016-02-18', 1, 12, '09:38:53'),
 (42, '2016-02-19', 0, 13, '07:15:26'),
 (42, '2016-02-19', 1, 14, '07:15:43'),
-(42, '2016-02-19', 1, 15, '07:16:55');
+(42, '2016-02-19', 1, 15, '07:16:55'),
+(32, '2016-03-16', 1, 16, '06:05:10');
 
 -- --------------------------------------------------------
 
@@ -303,7 +324,73 @@ CREATE TABLE IF NOT EXISTS `auth_assignment` (
 --
 
 INSERT INTO `auth_assignment` (`item_name`, `user_id`, `created_at`) VALUES
-('create-user', '1', NULL);
+('access-mgmt', '1', 1458027851),
+('add-bundle-size', '1', 1458027851),
+('add-bundle-size', '16', 1458108218),
+('add-country', '1', 1458027851),
+('add-delivery-method', '1', 1458027851),
+('add-department', '1', 1458027851),
+('add-designation', '1', 1458027851),
+('add-district', '1', 1458027851),
+('add-license', '1', 1458027851),
+('add-payment-mode', '1', 1458027851),
+('add-postage-rate', '1', 1458027851),
+('add-state', '1', 1458027851),
+('add-sub-department', '1', 1458027851),
+('add-weight', '1', 1458027851),
+('Admin', '1', 1458027851),
+('agency-commission', '1', 1458027851),
+('create-agency', '1', 1458027851),
+('create-agency', '16', 1458108218),
+('create-user', '1', 1458027851),
+('deactivate-agency', '1', 1458027851),
+('deactivate-agency', '16', 1458108218),
+('delete-agency', '1', 1458027851),
+('delete-agency', '16', 1458108218),
+('delete-agency-copies', '1', 1458027851),
+('delete-agency-copies', '16', 1458108218),
+('delete-bundle-size', '1', 1458027851),
+('delete-bundle-size', '16', 1458108218),
+('delete-country', '1', 1458027851),
+('delete-delivery-method', '1', 1458027851),
+('delete-department', '1', 1458027851),
+('delete-designation', '1', 1458027852),
+('delete-district', '1', 1458027852),
+('delete-license', '1', 1458027852),
+('delete-payment-mode', '1', 1458027852),
+('delete-state', '1', 1458027852),
+('delete-sub-department', '1', 1458027852),
+('delete-user', '1', 1458027852),
+('delete-weight', '1', 1458027852),
+('generate-bill', '1', 1458027852),
+('generate-bill', '16', 1458108219),
+('generate-labels', '1', 1458027852),
+('generate-labels', '16', 1458108219),
+('update-agency', '1', 1458027852),
+('update-agency', '16', 1458108219),
+('update-agency-copies', '1', 1458027852),
+('update-agency-copies', '16', 1458108219),
+('update-agency-delivery-method', '1', 1458027852),
+('update-agency-delivery-method', '16', 1458108219),
+('update-bundle-size', '1', 1458027852),
+('update-bundle-size', '16', 1458108219),
+('update-country', '1', 1458027852),
+('update-delivery-method', '1', 1458027852),
+('update-department', '1', 1458027852),
+('update-designation', '1', 1458027852),
+('update-district', '1', 1458027852),
+('update-license', '1', 1458027852),
+('update-payment-mode', '1', 1458027852),
+('update-postage-rate', '1', 1458027853),
+('update-state', '1', 1458027853),
+('update-sub-department', '1', 1458027853),
+('update-user', '1', 1458027853),
+('update-weight', '1', 1458027853),
+('upload-credit-note', '1', 1458027853),
+('upload-credit-note', '16', 1458108219),
+('upload-receipt', '1', 1458027853),
+('upload-receipt', '16', 1458108219),
+('view-agency', '16', 1458108219);
 
 -- --------------------------------------------------------
 
@@ -329,11 +416,59 @@ CREATE TABLE IF NOT EXISTS `auth_item` (
 --
 
 INSERT INTO `auth_item` (`name`, `type`, `description`, `rule_name`, `data`, `created_at`, `updated_at`) VALUES
+('access-mgmt', 1, 'Access Management', NULL, 'NuLL', 0, 0),
+('add-bundle-size', 1, 'add-bundle-size', NULL, 'NuLL', 0, 0),
+('add-country', 1, 'add-country', NULL, 'NuLL', 0, 0),
+('add-delivery-method', 1, 'add-delivery-method', NULL, 'NuLL', 0, 0),
+('add-department', 1, 'add-department', NULL, 'NuLL', 0, 0),
+('add-designation', 1, 'add-designation', NULL, 'NuLL', 0, 0),
+('add-district', 1, 'add-district', NULL, 'NuLL', 0, 0),
+('add-license', 1, 'add-license', NULL, 'NuLL', 0, 0),
+('add-payment-mode', 1, 'add-payment-mode', NULL, 'NuLL', 0, 0),
+('add-postage-rate', 1, 'add-postage-rate', NULL, 'NuLL', 0, 0),
+('add-state', 1, 'add-state', NULL, 'NuLL', 0, 0),
+('add-sub-department', 1, 'add-sub-department', NULL, 'NuLL', 0, 0),
+('add-weight', 1, 'add-weight', NULL, 'NuLL', 0, 0),
 ('Admin', 1, 'Admin can do anything', NULL, NULL, NULL, NULL),
+('agency-commission', 1, 'agency-commission', NULL, 'NuLL', 0, 0),
+('create-agency', 1, 'create-agency', NULL, 'NuLL', 0, 0),
 ('create-user', 1, 'Create User/Employee', NULL, NULL, NULL, NULL),
+('deactivate-agency', 1, 'deactivate-agency', NULL, 'NuLL', 0, 0),
+('delete-agency', 1, 'delete-agency', NULL, 'NuLL', 0, 0),
+('delete-agency-copies', 1, 'delete-agency-copies', NULL, 'NuLL', 0, 0),
+('delete-bundle-size', 1, 'delete-bundle-size', NULL, 'NuLL', 0, 0),
+('delete-country', 1, 'delete-country', NULL, 'NuLL', 0, 0),
+('delete-delivery-method', 1, 'delete-delivery-method', NULL, 'NuLL', 0, 0),
+('delete-department', 1, 'delete-department', NULL, 'NuLL', 0, 0),
+('delete-designation', 1, 'delete-designation', NULL, 'NuLL', 0, 0),
+('delete-district', 1, 'delete-district', NULL, 'NuLL', 0, 0),
+('delete-license', 1, 'delete-license', NULL, 'NuLL', 0, 0),
+('delete-payment-mode', 1, 'delete-payment-mode', NULL, 'NuLL', 0, 0),
+('delete-state', 1, 'delete-state', NULL, 'NuLL', 0, 0),
+('delete-sub-department', 1, 'delete-sub-department', NULL, 'NuLL', 0, 0),
 ('delete-user', 1, 'gives permission to delete users', NULL, NULL, NULL, NULL),
-('module-add', 1, 'rights to add module', 'Default', '', NULL, NULL),
-('update-user', 1, 'gives permission to update users', NULL, NULL, NULL, NULL);
+('delete-weight', 1, 'delete-weight', NULL, 'NuLL', 0, 0),
+('generate-bill', 1, 'generate-bill', NULL, 'NuLL', 0, 0),
+('generate-labels', 1, 'generate-labels', NULL, 'NuLL', 0, 0),
+('update-agency', 1, 'update-agency', NULL, 'NuLL', 0, 0),
+('update-agency-copies', 1, 'update-agency-copies', NULL, 'NuLL', 0, 0),
+('update-agency-delivery-method', 1, 'update-agency-delivery-method', NULL, 'NuLL', 0, 0),
+('update-bundle-size', 1, 'update-bundle-size', NULL, 'NuLL', 0, 0),
+('update-country', 1, 'update-country', NULL, 'NuLL', 0, 0),
+('update-delivery-method', 1, 'update-delivery-method', NULL, 'NuLL', 0, 0),
+('update-department', 1, 'update-department', NULL, 'NuLL', 0, 0),
+('update-designation', 1, 'update-designation', NULL, 'NuLL', 0, 0),
+('update-district', 1, 'update-district', NULL, 'NuLL', 0, 0),
+('update-license', 1, 'update-license', NULL, 'NuLL', 0, 0),
+('update-payment-mode', 1, 'update-payment-mode', NULL, 'NuLL', 0, 0),
+('update-postage-rate', 1, 'update-postage-rate', NULL, 'NuLL', 0, 0),
+('update-state', 1, 'update-state', NULL, 'NuLL', 0, 0),
+('update-sub-department', 1, 'update-sub-department', NULL, 'NuLL', 0, 0),
+('update-user', 1, 'gives permission to update users', NULL, NULL, NULL, NULL),
+('update-weight', 1, 'update-weight', NULL, 'NuLL', 0, 0),
+('upload-credit-note', 1, 'upload-credit-note', NULL, 'NuLL', 0, 0),
+('upload-receipt', 1, 'upload-receipt', NULL, 'NuLL', 0, 0),
+('view-agency', 1, 'view agency', NULL, 'NuLL', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -368,13 +503,6 @@ CREATE TABLE IF NOT EXISTS `auth_rule` (
   `updated_at` int(11) DEFAULT NULL,
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `auth_rule`
---
-
-INSERT INTO `auth_rule` (`name`, `data`, `created_at`, `updated_at`) VALUES
-('Default', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -414,16 +542,14 @@ CREATE TABLE IF NOT EXISTS `magazine_record_book` (
   `status` int(11) DEFAULT NULL COMMENT '1: bill generated, 0:pending',
   PRIMARY KEY (`id`),
   UNIQUE KEY `date` (`date`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `magazine_record_book`
 --
 
 INSERT INTO `magazine_record_book` (`id`, `date`, `issue_type`, `price`, `status`) VALUES
-(1, '2016-02-21', 'Special Edition', 25.00, 0),
-(2, '2016-03-06', 'Regular', 25.00, 0),
-(3, '2016-03-13', 'Special Edition', 25.00, 0);
+(2, '2016-03-20', 'Regular', 15.00, 1);
 
 -- --------------------------------------------------------
 
@@ -467,17 +593,20 @@ CREATE TABLE IF NOT EXISTS `ordinary_posted_data` (
   `license` text,
   `bundle_size` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `ordinary_posted_data`
 --
 
 INSERT INTO `ordinary_posted_data` (`id`, `agency_id`, `tempelate_id`, `wt`, `postage`, `address_bar`, `sn`, `pjy`, `org`, `date`, `ord_id`, `license`, `bundle_size`) VALUES
-(1, 33, 1, '74.62', '746.2', '987456', '1', 988, 78, '2016-02-21', 1, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 10),
-(2, 42, 1, '7840', '78400', '123123', '2', 11000, 2000, '2016-02-21', 1, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 10),
-(3, 33, 1, '74.62', '746.2', '987456', '3', 988, 78, '2016-03-13', 2, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 10),
-(4, 42, 1, '910', '9100', '123123', '4', 11000, 2000, '2016-03-13', 2, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 10);
+(1, 33, 1, '12.32', '123.2', '987456', '1', 98, 78, '2016-03-20', 1, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 10),
+(2, 42, 1, '9.1', '91', '123123', '2', 110, 20, '2016-03-20', 1, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 10),
+(3, 33, 1, '12.32', '123.2', '987456', '3', 98, 78, '2016-03-27', 2, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 10),
+(4, 42, 1, '9.1', '91', '123123', '4', 110, 20, '2016-03-27', 2, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 10),
+(5, 32, 1, '551.46', '5514.6', '123654', '5', 7800, 78, '2016-04-03', 3, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 10),
+(6, 33, 1, '12.32', '123.2', '987456', '6', 98, 78, '2016-04-03', 3, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 10),
+(7, 42, 1, '9.1', '91', '123123', '7', 110, 20, '2016-04-03', 3, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 10);
 
 -- --------------------------------------------------------
 
@@ -491,15 +620,16 @@ CREATE TABLE IF NOT EXISTS `ordinary_post_data` (
   `time` time NOT NULL,
   `generated_date` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `ordinary_post_data`
 --
 
 INSERT INTO `ordinary_post_data` (`id`, `date`, `time`, `generated_date`) VALUES
-(1, '2016-02-21', '08:05:58', '2016-02-19'),
-(2, '2016-03-13', '09:13:06', '2016-03-08');
+(1, '2016-03-20', '05:48:54', '2016-03-16'),
+(2, '2016-03-27', '05:48:59', '2016-03-16'),
+(3, '2016-04-03', '06:05:22', '2016-03-16');
 
 -- --------------------------------------------------------
 
@@ -525,19 +655,17 @@ CREATE TABLE IF NOT EXISTS `railway_posted_data` (
   `license` text NOT NULL,
   `bundle_size` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `railway_posted_data`
 --
 
 INSERT INTO `railway_posted_data` (`id`, `agency_id`, `tempelate_id`, `wt`, `postage`, `address_bar`, `sn`, `pjy`, `org`, `date`, `rail_id`, `train_no`, `train_name`, `source`, `license`, `bundle_size`) VALUES
-(1, 32, 1, '60.69', '606.9', '123654', '9', '78', '789', '2016-02-21', 1, '12154', 'SAMPOORN KRANTI', 'ANVT', 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 150),
-(2, 41, 1, '10.5', '105', '110065', '10', '100', '50', '2016-02-21', 1, '12556', 'Vaishali Express', 'NDLS', 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 150),
-(3, 32, 1, '60.69', '606.9', '123654', '9', '78', '789', '2016-02-28', 2, '12154', 'SAMPOORN KRANTI', 'ANVT', 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 150),
-(4, 41, 1, '10.5', '105', '110065', '10', '100', '50', '2016-02-28', 2, '12556', 'Vaishali Express', 'NDLS', 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 150),
-(5, 32, 1, '60.69', '606.9', '123654', '31', '78', '789', '2016-03-13', 3, '12154', 'SAMPOORN KRANTI', 'ANVT', 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 150),
-(6, 41, 1, '10.5', '105', '110065', '32', '100', '50', '2016-03-13', 3, '12556', 'Vaishali Express', 'NDLS', 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 150);
+(1, 32, 1, '10.92', '109.2', '123654', '1', '78', '78', '2016-03-20', 4, '12154', 'SAMPOORN KRANTI', 'ANVT', 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 150),
+(2, 41, 1, '10.5', '105', '110065', '2', '100', '50', '2016-03-20', 4, '12556', 'Vaishali Express', 'NDLS', 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 150),
+(3, 32, 1, '10.92', '109.2', '123654', '1', '78', '78', '2016-03-27', 5, '12154', 'SAMPOORN KRANTI', 'ANVT', 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 150),
+(4, 41, 1, '10.5', '105', '110065', '2', '100', '50', '2016-03-27', 5, '12556', 'Vaishali Express', 'NDLS', 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 150);
 
 -- --------------------------------------------------------
 
@@ -551,16 +679,15 @@ CREATE TABLE IF NOT EXISTS `railway_post_data` (
   `time` time DEFAULT NULL,
   `generated_date` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `railway_post_data`
 --
 
 INSERT INTO `railway_post_data` (`id`, `date`, `time`, `generated_date`) VALUES
-(1, '2016-02-21', '07:18:56', '2016-02-18'),
-(2, '2016-02-28', '07:22:19', '2016-02-18'),
-(3, '2016-03-13', '09:12:58', '2016-03-08');
+(4, '2016-03-20', '10:49:58', '2016-03-15'),
+(5, '2016-03-27', '10:50:03', '2016-03-15');
 
 -- --------------------------------------------------------
 
@@ -584,47 +711,7 @@ CREATE TABLE IF NOT EXISTS `registered_posted_data` (
   `license` text NOT NULL,
   `bundle_size` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=35 ;
-
---
--- Dumping data for table `registered_posted_data`
---
-
-INSERT INTO `registered_posted_data` (`id`, `agency_id`, `tempelate_id`, `wt`, `postage`, `address_bar`, `sn`, `pjy`, `org`, `date`, `total_price`, `post_id`, `license`, `bundle_size`) VALUES
-(1, 33, 1, '74.62', '746.2', '987456', '1', 988, 78, '2016-02-21', '', 1, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', NULL),
-(2, 34, 1, '12.95', '129.5', '5656565', '2', 98, 87, '2016-02-21', '', 1, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', NULL),
-(3, 35, 1, '8.4', '84', '1210146', '3', 100, 20, '2016-02-21', '', 1, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', NULL),
-(4, 36, 1, '143.64', '1436.4', '121003', '4', 1002, 1050, '2016-02-21', '', 1, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', NULL),
-(5, 37, 1, '110.46', '1104.6', '123654', '5', 789, 789, '2016-02-21', '', 1, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', NULL),
-(6, 38, 1, '143.64', '1436.4', '121003', '6', 1002, 1050, '2016-02-21', '', 1, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', NULL),
-(7, 39, 1, '12.32', '123.2', '987456', '7', 98, 78, '2016-02-21', '', 1, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', NULL),
-(8, 40, 1, '8.4', '84', '1210146', '8', 100, 20, '2016-02-21', '', 1, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', NULL),
-(9, 33, 1, '74.62', '746.2', '987456', '9', 988, 78, '2016-02-28', '', 2, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
-(10, 34, 1, '12.95', '129.5', '5656565', '10', 98, 87, '2016-02-28', '', 2, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
-(11, 35, 1, '8.4', '84', '1210146', '11', 100, 20, '2016-02-28', '', 2, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
-(12, 36, 1, '143.64', '1436.4', '121003', '12', 1002, 1050, '2016-02-28', '', 2, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
-(13, 37, 1, '110.46', '1104.6', '123654', '13', 789, 789, '2016-02-28', '', 2, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
-(14, 38, 1, '143.64', '1436.4', '121003', '14', 1002, 1050, '2016-02-28', '', 2, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
-(15, 39, 1, '12.32', '123.2', '987456', '15', 98, 78, '2016-02-28', '', 2, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
-(16, 40, 1, '8.4', '84', '1210146', '16', 100, 20, '2016-02-28', '', 2, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
-(17, 40, 1, '8.4', '84', '1210146', '16', 100, 20, '2016-02-28', '', 2, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
-(18, 40, 1, '8.4', '84', '1210146', '16', 100, 20, '2016-02-28', '', 2, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
-(19, 40, 1, '8.4', '84', '1210146', '16', 100, 20, '2016-02-28', '', 2, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
-(20, 40, 1, '8.4', '84', '1210146', '16', 100, 20, '2016-02-28', '', 2, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
-(21, 34, 1, '12.95', '129.5', 'aer ,crtcrcrcrdrd rd tr tr trdt rdsresaew', '17', 98, 87, '2016-03-06', '', 3, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
-(22, 35, 1, '8.4', '84', 'top ramen ,asjdasdnaskjn', '18', 100, 20, '2016-03-06', '', 3, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
-(23, 36, 1, '143.64', '1436.4', 'patanjali ,indasndakjn', '19', 1002, 1050, '2016-03-06', '', 3, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
-(24, 37, 1, '110.46', '1104.6', 'NEW agncy2 ,cfcfcf ytf vttydrt ct', '20', 789, 789, '2016-03-06', '', 3, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
-(25, 38, 1, '143.64', '1436.4', 'patanjali ,indasndakjn', '21', 1002, 1050, '2016-03-06', '', 3, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
-(26, 39, 1, '12.32', '123.2', 'Old Agency2 ,Pto bhiuo nhufgc vgvg  vyctr yvrdrd', '22', 98, 78, '2016-03-06', '', 3, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
-(27, 40, 1, '8.4', '84', 'top ramen2 ,asjdasdnaskjn', '23', 100, 20, '2016-03-06', '', 3, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
-(28, 34, 1, '12.95', '129.5', 'aer ,crtcrcrcrdrd rd tr tr trdt rdsresaew', '24', 98, 87, '2016-03-13', '', 4, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
-(29, 35, 1, '8.4', '84', 'top ramen ,asjdasdnaskjn', '25', 100, 20, '2016-03-13', '', 4, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
-(30, 36, 1, '143.64', '1436.4', 'patanjali ,indasndakjn', '26', 1002, 1050, '2016-03-13', '', 4, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
-(31, 37, 1, '110.46', '1104.6', 'NEW agncy2 ,cfcfcf ytf vttydrt ct', '27', 789, 789, '2016-03-13', '', 4, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
-(32, 38, 1, '143.64', '1436.4', 'patanjali ,indasndakjn', '28', 1002, 1050, '2016-03-13', '', 4, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
-(33, 39, 1, '12.32', '123.2', 'Old Agency2 ,Pto bhiuo nhufgc vgvg  vyctr yvrdrd', '29', 98, 78, '2016-03-13', '', 4, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50),
-(34, 40, 1, '8.4', '84', 'top ramen2 ,asjdasdnaskjn', '30', 100, 20, '2016-03-13', '', 4, 'PRESS PACKET: DL(C)-01/1102/2015-17, lic.pre.pay. U(C) – 87/2015-17, RNI-32543/77', 50);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -638,17 +725,7 @@ CREATE TABLE IF NOT EXISTS `registered_post_data` (
   `time` time NOT NULL,
   `generated_date` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
-
---
--- Dumping data for table `registered_post_data`
---
-
-INSERT INTO `registered_post_data` (`id`, `date`, `time`, `generated_date`) VALUES
-(1, '2016-02-21', '07:00:57', '2016-02-18'),
-(2, '2016-02-28', '07:22:29', '2016-02-18'),
-(3, '2016-03-06', '06:14:19', '2016-02-29'),
-(4, '2016-03-13', '09:12:45', '2016-03-08');
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -677,23 +754,23 @@ CREATE TABLE IF NOT EXISTS `user` (
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `password_reset_token` (`password_reset_token`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=56 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=60 ;
 
 --
 -- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `name`, `username`, `password_hash`, `email`, `mobile`, `extension_no`, `department_id`, `designation_id`, `role_group_id`, `deleted_at`, `status`, `created_at`, `updated_at`, `password_reset_token`, `auth_key`) VALUES
-(1, 'Administrator', 'admin', '$2y$13$lcE0OlOdfI.dqE66vOY7UeEc0fJ1RwT8VMjjlyiQLdSUL1WgLWGWq', 'admin@admin.com', NULL, '', 10, 0, 1, NULL, 10, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 'VBP2C27T0RDl4ILutaDF_JYTsSPt3WD3'),
-(8, 'Sh. Parmanand Moharaiya', 'param', 'param123', 'param.mohariya@bpdl.in ', '9810198101', '225', 10, 2, 1, NULL, 10, NULL, NULL, NULL, NULL),
-(9, 'Sh. Jitender Mehta', 'jm', 'jm', 'gm@bpdl.in', '9958801666', '', 10, 3, 1, NULL, 10, NULL, NULL, NULL, NULL),
-(10, 'SH. DINESH KUMAR BHARTI', 'dinesh', 'dinesh', 'dinesh.kumar@bpdl.in', '9958505350', '', 9, 4, 2, NULL, 10, NULL, NULL, NULL, NULL),
+(1, 'Administrator', 'admin', '$2y$13$3yxj61lVqFYRW1C28Pj4T.cbm87Cyl0phYmaH6lGyvnacK1IwTl5a', 'admin@admin.com', NULL, '', 10, 0, 1, NULL, 10, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, NULL),
+(8, 'Sh. Parmanand Moharaiya', 'param', '$2y$13$JOwpdqVQ2G5ClJqqoKgJ8OSg084Ze9VxNmZD2YHIvrZYTTzQkCg1O', 'param.mohariya@bpdl.in ', '9810198101', '225', 10, 2, 1, NULL, 10, NULL, '2016-03-10 07:11:44', NULL, NULL),
+(9, 'Sh. Jitender Mehta', 'jm', '$2y$13$dhLFfyFs4s8bFI.bvRXnK.KpcyxL9ArxfFjb2yH5l59X1fHK0ulpW', 'gm@bpdl.in', '9958801666', '', 10, 3, 1, NULL, 10, NULL, '0000-00-00 00:00:00', NULL, NULL),
+(10, 'SH. DINESH KUMAR BHARTI', 'dinesh', '$2y$13$HcrYdV7ELyGg.8pM4JbB6ujD/6tm8x47w5TsD.AWgcROtZCSuuzNy', 'dinesh.kumar@bpdl.in', '9958505350', '', 9, 4, 2, NULL, 10, NULL, NULL, NULL, NULL),
 (11, 'SMT. ANJALI SINGH', 'anjali', 'anjali', 'anjali.singh@bpdl.in', '9868116043', '', 9, 5, 2, NULL, 10, NULL, NULL, NULL, NULL),
 (12, 'SH. SAURABH TYAGI', 'saurabh', 'saurabh', 'saurabh.tyagi@bpdl.in', '8447729883', '', 9, 6, 2, NULL, 10, NULL, NULL, NULL, NULL),
 (13, 'SH.SHASHI PRAKASH', 'shashi', 'shashi', 'shashi.prakasah@bpdl.in', '9958077979', '', 9, 7, 2, NULL, 10, NULL, NULL, NULL, NULL),
 (14, 'SH. SOHAN PAL SHARMA', 'sohan', 'sohan', 'sohan.sharma@bpdl.in', '9868481196', '202', 3, 8, 2, NULL, 10, NULL, NULL, NULL, NULL),
 (15, 'SH D S MATHUR', 'dsmathur', 'dsmathur', 'dinesh.mathur@bpdl.in ', '9911172592', '', 3, 9, 2, NULL, 10, NULL, NULL, NULL, NULL),
-(16, 'SH. SUNDER LAL', 'sunder', 'sunder', 'sunder.lal@bpdl.in', '9313588321', '', 3, 10, 2, NULL, 10, NULL, NULL, NULL, NULL),
+(16, 'SH. SUNDER LAL', 'sunder', '$2y$13$l1kwF0/TIBGLB9JDvIDIteKC.qdILE.0BLLugooIAxHR2TlpelL7S', 'sunder.lal@bpdl.in', '9313588321', '', 3, 10, 2, NULL, 10, NULL, '0000-00-00 00:00:00', NULL, NULL),
 (17, 'SH. YOGINDER KUMAR', 'yoginder', 'yoginder', 'yoginder@noemail.in', '9717745162', '', 3, 10, 2, NULL, 10, NULL, NULL, NULL, NULL),
 (18, 'AJAY', 'ajay', 'ajay', 'ajay@noemail.com', '9212327150', '', 3, 11, 2, NULL, 10, NULL, NULL, NULL, NULL),
 (19, 'VIJAY', 'vijay1', 'vijay1', 'noemail@co.in', '9810098100', '', 3, 11, 2, NULL, 10, NULL, NULL, NULL, NULL),
@@ -732,7 +809,8 @@ INSERT INTO `user` (`id`, `name`, `username`, `password_hash`, `email`, `mobile`
 (52, 'SH. RAHUL SHARMA', 'rahulsharma', 'rahulsharma', 'rahul.panchjanya@bpdl.in', '9810835459', '', 1, 33, 2, NULL, 10, NULL, NULL, NULL, NULL),
 (53, 'SH. ASWANI KUMAR MISHRA', 'aswani', 'aswani', 'ashwani.panchjanya@bpdl.in', '9015093657', '', 1, 32, 2, NULL, 10, NULL, NULL, NULL, NULL),
 (54, 'SH. ALOK GOSWAMI', 'alok', 'alok', 'alok.panchjanya@bpdl.in', '9810040656', '', 1, 38, 2, NULL, 10, NULL, NULL, NULL, NULL),
-(55, 'SH. ARUN KUMAR SINGH', 'aruns', 'aruns', 'aruns.panchjanya@bpdl.in', '9873794585', '', 1, 39, 2, NULL, 10, NULL, NULL, NULL, NULL);
+(55, 'SH. ARUN KUMAR SINGH', 'aruns', 'aruns', 'aruns.panchjanya@bpdl.in', '9873794585', '', 1, 39, 2, NULL, 10, NULL, NULL, NULL, NULL),
+(59, '', 'admin123', '$2y$13$s3UyrsQAq5hLGKWablAeZ.JJB6fAVOAZnmQW7NGexU5k.qY2TgGay', 'admin123@g.com', NULL, NULL, NULL, 0, NULL, NULL, 10, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, '78yYq6QEnD9yHiNjdTiuvob7TDMWS5QF');
 
 -- --------------------------------------------------------
 
