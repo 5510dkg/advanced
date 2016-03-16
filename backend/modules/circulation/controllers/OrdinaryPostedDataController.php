@@ -46,7 +46,7 @@ class OrdinaryPostedDataController extends Controller
     }
 
      public function actionPrint($id){
-        $this->layout='adminlayout';
+       // $this->layout='adminlayout';
         $request=Yii::$app->request;
          if($request->isAjax){
 
