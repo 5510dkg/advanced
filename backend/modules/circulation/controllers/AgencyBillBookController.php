@@ -151,8 +151,11 @@ class AgencyBillBookController extends Controller
                    
                   //  $i++;
                   }
+                
                 }
             }
+                  $mz= new \backend\modules\circulation\models\MagazineRecordBook();
+                  $mz->updateAll(array( 'status' => 1 ), 'status = 0');
             return $this->actionShow();
 //               if($model->save(false)){
 //                   return 'hii';

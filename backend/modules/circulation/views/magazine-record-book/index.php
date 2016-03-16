@@ -67,7 +67,7 @@ CrudAsset::register($this);
             url:'index.php?r=circulation/agency-bill-book/create',
             data:{},
             success:function(data){
-                console.log(data);
+               // console.log(data);
                 $("#wrapper").html(data);  // this will hide the loader and replace it with the data                            
             }
         });
