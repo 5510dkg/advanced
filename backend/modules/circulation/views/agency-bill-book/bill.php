@@ -37,7 +37,7 @@ use yii\helpers\Url;
             <td><?=$row['final_amt'];?></td>
             <td><?php echo HTML::a('<span class="glyphicon glyphicon-eye-open"></span>',['/circulation/agency-bill-book/detail','agency_id'=>$row['agencyid'],'month'=>$row['month']]) ?>
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <?php echo HTML::a('<span class="glyphicon glyphicon-print"></span>',['']) ?>
+            <?php echo HTML::a('<span class="glyphicon glyphicon-print"></span>',['/circulation']) ?>
             </td>
             
             
