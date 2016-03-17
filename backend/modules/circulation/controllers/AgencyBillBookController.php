@@ -56,7 +56,8 @@ class AgencyBillBookController extends Controller
         $bill=new AgencyBillBook();
         $total=$bill->getBill($month);
         return $this->render('bill',[
-            'rs'=>$total
+            'rs'=>$total,
+            'month'=>$month
         ]);
     }
     

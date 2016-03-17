@@ -7,7 +7,7 @@ use yii\helpers\Url;
 
 <div class="row">
     <div class="page-header">
-        <h1>Agency Billing</h1>
+        <h3>Agency Billing for the month of <?php echo $month; ?> </h3>
     </div>
 </div>
 <div class="col-lg-12">
@@ -19,7 +19,6 @@ use yii\helpers\Url;
             <th>ORG</th>
             <th>Total Copies</th>
             <th>Net Amount</th>
-            
             <th>Discounted Amt.</th>
             <th>Final Amount</th>
             <th>Options</th>
