@@ -143,6 +143,15 @@ class AgencyBillBook extends \yii\db\ActiveRecord
              return $titles;
         
     }
+    public function getBill($month){
+             $query = (new \yii\db\Query())->select(['SUM()'])->from('agency_bill_book')->where('DATE_FORMAT(issue_date,"%y%m")="'.$month.'"')->groupBy('agency_id');
+             $command = $query->createCommand();
+             $data = $command->queryAll();
+             $titles = '';
+             foreach ($data as $row) {
+                 
+             }
+    }
     public function getcopiespjy($date,$id,$dm) {
         
         if($dm=='1'){

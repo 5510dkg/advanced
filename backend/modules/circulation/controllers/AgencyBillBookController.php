@@ -48,7 +48,12 @@ class AgencyBillBookController extends Controller
         ]);
     }
     public function actionBill()
-    {    
+    {    $month=Yii::$app->request->get('month');
+        $bill=new AgencyBillBook();
+        $total=$bill->getBill($month);
+        return $this->render('bill',[
+            'rs'=>$total
+        ]);
        // $this->layout='adminlayout';
 //        $searchModel = new AgencyBillBookSearch();
 //        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
