@@ -56,7 +56,8 @@ class AgencyBillBookController extends Controller
             'rs'=>$total
         ]);
     }
-
+             
+    
 
     /**
      * Displays a single AgencyBillBook model.
