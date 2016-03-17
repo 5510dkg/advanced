@@ -291,7 +291,7 @@ AppAsset::register($this);
                             
                          if(Yii::$app->user->can('create-agency')){?>
                         <li>
-                            <a href="index.php?r=circulation/agency"><i class="fa fa-edit fa-fw"></i> Agency Management</a>
+                            <a href="index.php?r=circulation/agency/list"><i class="fa fa-edit fa-fw"></i> Agency Management</a>
                         </li>
                         <?php }} ?>
                         
