@@ -146,7 +146,7 @@ class AgencyBillBook extends \yii\db\ActiveRecord
     }
     public function getBill($month){
                 $month=date('Ym');
-             $query = (new \yii\db\Query())->select(['agency.name as name,SUM(PJY) as pjy,SUM(org) as org,SUM(total_copies) as total_copies,SUM(total_price) as total_price,SUM(discounted_amt) as discounted_amt,SUM(final_total) as final_amt'])->from('agency_bill_book')->innerJoin('agency','agency.id=agency_bill_book.agency_id')->where('DATE_FORMAT(issue_date,"%Y%m")="'.$month.'"')->groupBy('agency_id');
+             $query = (new \yii\db\Query())->select(['DATE_FORMAT(issue_date,"%Y%m") as month,agency.id as agencyid,agency.name as name,SUM(PJY) as pjy,SUM(org) as org,SUM(total_copies) as total_copies,SUM(total_price) as total_price,SUM(discounted_amt) as discounted_amt,SUM(final_total) as final_amt'])->from('agency_bill_book')->innerJoin('agency','agency.id=agency_bill_book.agency_id')->where('DATE_FORMAT(issue_date,"%Y%m")="'.$month.'"')->groupBy('agency_id');
              $command = $query->createCommand();
              return $data = $command->queryAll();
             // $titles = '';
