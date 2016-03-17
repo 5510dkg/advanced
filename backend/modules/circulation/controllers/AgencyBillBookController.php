@@ -55,14 +55,8 @@ class AgencyBillBookController extends Controller
         return $this->render('bill',[
             'rs'=>$total
         ]);
-       // $this->layout='adminlayout';
-//        $searchModel = new AgencyBillBookSearch();
-//        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-//
-//        return $this->render('index', [
-//            'searchModel' => $searchModel,
-//            'dataProvider' => $dataProvider,
-//        ]);
+      
+        
         
     }
 
