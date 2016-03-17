@@ -47,6 +47,18 @@ class AgencyBillBookController extends Controller
             'dataProvider' => $dataProvider,
         ]);
     }
+    public function actionBill()
+    {    
+       // $this->layout='adminlayout';
+//        $searchModel = new AgencyBillBookSearch();
+//        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+//
+//        return $this->render('index', [
+//            'searchModel' => $searchModel,
+//            'dataProvider' => $dataProvider,
+//        ]);
+        
+    }
 
 
     /**
