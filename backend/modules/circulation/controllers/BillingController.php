@@ -29,4 +29,8 @@ Class BillingController extends Controller{
         return $this->render('welcome');
     }
     
+    public function actionBill(){
+        
+    }
+    
 }
