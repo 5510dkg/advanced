@@ -113,6 +113,7 @@ class AgencyBillBook extends \yii\db\ActiveRecord
              $data = $command->queryAll();
              $titles = '';
              $inc=1;
+             
              foreach($data as $row) {
                  $id=$row['id'].$inc;
                  $titles[$id]['agency_id']= $row['id'];
