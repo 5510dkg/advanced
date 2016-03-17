@@ -59,6 +59,13 @@ class AgencyBillBookController extends Controller
             'rs'=>$total
         ]);
     }
+    
+    public function actionDetail() {
+        $agency_id=Yii::$app->request->get('agency_id');
+        $month=Yii::$app->request->get('month');
+        
+        
+    }
              
     
 
