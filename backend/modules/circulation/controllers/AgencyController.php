@@ -35,6 +35,9 @@ class AgencyController extends Controller
         ];
     }
 
+    public function actionList(){
+        return $this->render('list');
+    }
     /**
      * Lists all Agency models.
      * @return mixed
@@ -179,6 +182,7 @@ class AgencyController extends Controller
      */
     public function actionUpdate($id)
     {
+        
          if(Yii::$app->user->can('update-agency')){
         $request = Yii::$app->request;
         $model = $this->findModel($id);
