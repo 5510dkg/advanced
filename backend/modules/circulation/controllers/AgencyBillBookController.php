@@ -55,9 +55,6 @@ class AgencyBillBookController extends Controller
         return $this->render('bill',[
             'rs'=>$total
         ]);
-      
-        
-        
     }
 
 
