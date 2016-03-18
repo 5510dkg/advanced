@@ -6,7 +6,9 @@ use yii\widgets\ActiveForm;
 /* @var $model backend\modules\circulation\models\AgencyPayment */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-
+<div class="row">
+    
+</div>
 <div class="agency-payment-form">
 
     <?php $form = ActiveForm::begin(); ?>
