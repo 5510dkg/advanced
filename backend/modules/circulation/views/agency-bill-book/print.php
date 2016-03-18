@@ -13,13 +13,12 @@ $data=$agency->getPrintdetails($month, $agency_id);
 $i=1;$r=1;?>
 
 
-	<div style="margin-left: 25px;margin-bottom: 40px;margin-right: -90px; width: 100%;float: left; height: 300px;">
+	<div style="margin-left: 25px;margin-bottom: 40px;margin-right: -30px; width: 100%;float: left; height: 300px;">
             <div style="height: 130px; width: 100%; border: 1px solid black;">
                 hii
             </div>
             <div style="width: 100%;height: 15px;">
              Code:&nbsp;&nbsp;&nbsp;&nbsp;<?=$data[0]['account_id']?> 
-             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -36,12 +35,11 @@ $i=1;$r=1;?>
                 <?=$data[0]['name'];?><br/>
                 <?=$data[0]['add_house_no']?><br/>
                 <?=$data[0]['add_street_address']?><br/>
-                <?=$data[0]['add_p_office']?><br/>
-                <?=$data[0]['add_pincode']?><br/>
+                <?=$data[0]['add_p_office']?> &nbsp;&nbsp;&nbsp;&nbsp;<?=$data[0]['add_pincode']?>,<br/>
                 <?php $state= State::getName($data[0]['add_state_id']) ?>
                 <?php $district=  District::getName($data[0]['add_district_id']) ?>
+                <?=$district[0]['name'];?>,
                 <?=$state[0]['name'];?><br/>
-                <?=$district[0]['name'];?>
                 
             </div>
             

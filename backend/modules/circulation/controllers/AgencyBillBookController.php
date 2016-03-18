@@ -89,7 +89,7 @@ class AgencyBillBookController extends Controller
                             }else{
             $pdf = new Pdf([
         'mode' => Pdf::MODE_UTF8, // leaner size using standard fonts
-        'orientation'=>'L',
+        'orientation'=>'P',
         'destination' => Pdf::DEST_BROWSER,
         'filename' => 'bill.pdf',
 
