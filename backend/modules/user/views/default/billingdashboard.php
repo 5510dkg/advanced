@@ -50,7 +50,7 @@ use yii\helpers\Html;
                            Agency Payment
                         </div>
                         <div class="panel-body">
-                        <?=Html::a('Agency Payment',['/circulation/agency-payment'],['class'=>'btn btn-success btn-lg btn-block'])?>  
+                        <?=Html::a('Agency Payment',['/circulation/agency-payment/list'],['class'=>'btn btn-success btn-lg btn-block'])?>  
                         </div>
                         <div class="panel-footer">
                          Agency Payment
