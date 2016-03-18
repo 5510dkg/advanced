@@ -39,8 +39,9 @@ $i=1;$r=1;?>
                 <?=$data[0]['add_p_office']?><br/>
                 <?=$data[0]['add_pincode']?><br/>
                 <?php $state= State::getName($data[0]['add_state_id']) ?>
-                <?=$state[0]['name'];?>
-                <?php //$state->name;?>
+                <?php $district=  District::getName($data[0]['add_district_id']) ?>
+                <?=$state[0]['name'];?><br/>
+                <?=$district[0]['name'];?>
                 
             </div>
             
