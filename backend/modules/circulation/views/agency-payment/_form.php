@@ -28,7 +28,9 @@ $this->title='Agency Payment';
             [
                 'clientOptions'=>[
                 'autoclose'=>true,
-                'format' => 'yyyy-mm'
+                'format'=> "yyyy-mm",
+                'startView'=> "months", 
+                'minViewMode'=>"months"
                     ],
             ]) ?>
 
