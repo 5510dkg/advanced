@@ -12,7 +12,8 @@ $i=1;$r=1;?>
 
 
 	<div style="margin-left: 25px;margin-bottom: 40px;margin-right: -90px; width: 490px;float: left; height: 300px;">
-            <img src="logoa.png" width="100%">
+            <img src="logoa.png">
+            
 	
 	</div>
 
