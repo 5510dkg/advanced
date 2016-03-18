@@ -30,7 +30,7 @@ $i=1;$r=1;?>
              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
              Bill Number: 24
             </div>
-            <div style="width: 40%;margin-left: 120px; float: left; border:1px solid black;">
+            <div style="width: 40%;margin-left: 120px; float: left; ">
                 <br/>
                 <?=$data[0]['name'];?><br/>
                 <?=$data[0]['add_house_no']?><br/>
@@ -42,12 +42,32 @@ $i=1;$r=1;?>
                 <?=$state[0]['name'];?><br/>
                 
             </div>
-            <div style="width: 40%;margin-left:20px; float: left; border:1px solid black;">
+            <div style="width: 40%;margin-left:30px; float: left; ">
                 <br/>
-                 <?=$data[0]['months']?> 
+                 <?=$data[0]['months']?><br/>
+                 Security Amt: Rs: &nbsp;&nbsp;<?=$data[0]['security_amt']?>/=
                 <br/>
                 
-            </div>
+            </div><br/>
+            <br/>
+            BILLING DETAILS<br/>
+            <table class="" style="width: 100%;border: 1px solid black;">
+                <tr>
+                    <td>ISSUE DATE</td>
+                    <td>PANCHJANYA SUPPLY</td>
+                    <td>ORGANISER SUPPLY</td>
+                    <td>UNIT PRICE</td>
+                </tr>
+                <?php foreach ($data as $row):?>
+                <tr>
+                    <td><?=$row['issue_date']?></td>
+                    <td><?=$row['pjy']?></td>
+                    <td><?=$row['org']?></td>
+                    <td><?=$row['price_per_piece']?></td>
+                </tr>
+                <?php   endforeach;?>
+                
+            </table>
             
 	
 	</div>
