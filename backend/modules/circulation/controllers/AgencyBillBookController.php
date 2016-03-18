@@ -168,7 +168,7 @@ class AgencyBillBookController extends Controller
                     $model->created_on=  date('Y-m-d H:i:s');
                     $model->save(false);
                     
-                    
+                    $dd=$v['date'];
                                      
                    
                   //  $i++;
@@ -177,9 +177,12 @@ class AgencyBillBookController extends Controller
                 }      
                 //update
             }
+            $dd=date('Y-m-d');
+                  $month=date( "Ym", strtotime( "$dd" ) );
+              //    echo $month;exit;
                   $mz= new \backend\modules\circulation\models\MagazineRecordBook();
                   $mz->updateAll(array( 'status' => 1 ), 'status = 0');
-                  return $this->actionShow();
+                  return $this->actionShow($month);
 //               if($model->save(false)){
 //                   return 'hii';
 //               }
@@ -218,9 +221,9 @@ class AgencyBillBookController extends Controller
      * @param integer $id
      * @return mixed
      */
-    public function actionShow() {
+    public function actionShow($month=NULL) {
         
-      return $this->render('show'); 
+      return $this->render('show',['month'=>$month]); 
         
     }
     public function actionUpdate($id)
