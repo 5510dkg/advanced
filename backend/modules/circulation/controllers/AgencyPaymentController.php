@@ -97,6 +97,7 @@ class AgencyPaymentController extends Controller
     {
         $request = Yii::$app->request;
         $model = new AgencyPayment();  
+        $id=$request->get('id');
 
         if($request->isAjax){
             /*
@@ -142,6 +143,7 @@ class AgencyPaymentController extends Controller
             } else {
                 return $this->render('create', [
                     'model' => $model,
+                    'id'=>$id,
                 ]);
             }
         }
