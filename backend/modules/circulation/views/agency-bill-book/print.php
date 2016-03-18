@@ -50,8 +50,8 @@ $i=1;$r=1;?>
                 
             </div><br/>
             <br/>
-            BILLING DETAILS<br/>
-            <table class="" style="width: 100%;border: 1px solid black;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BILLING DETAILS<br/>
+            <table class="table table-striped table-bordered table-hover dataTable no-footer dtr-inline" style="width: 100%;border: 1px solid black;">
                 <tr>
                     <td>ISSUE DATE</td>
                     <td>PANCHJANYA SUPPLY</td>
