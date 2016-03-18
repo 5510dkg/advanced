@@ -58,7 +58,10 @@ class State extends \yii\db\ActiveRecord
     }
     
     public function getName($id) {
-        
+         $query = (new \yii\db\Query())->select(['*'])->from('_state')->where(['id' =>$id]);
+             $command = $query->createCommand();
+             return $data = $command->queryAll();
+             
     }
 
     /**

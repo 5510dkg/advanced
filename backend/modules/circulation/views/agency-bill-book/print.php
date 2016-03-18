@@ -38,8 +38,8 @@ $i=1;$r=1;?>
                 <?=$data[0]['add_street_address']?><br/>
                 <?=$data[0]['add_p_office']?><br/>
                 <?=$data[0]['add_pincode']?><br/>
-                <?php $state= State::find()->where(['id'=>$data[0]['add_state_id']]); ?>
-                <?php print_r($state);?>
+                <?php $state= State::getName($data[0]['add_state_id']) ?>
+                <?=$state[0]['name'];?>
                 <?php //$state->name;?>
                 
             </div>
