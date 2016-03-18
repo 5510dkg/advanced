@@ -3,7 +3,7 @@ $this->title='Agency Billing';
 $inc=1;
 use yii\helpers\Html;
 use yii\helpers\Url;
-  $new =date( "M-Y", strtotime( "$month" ) );
+$new =date( "M-Y", strtotime( "$month" ) );
 ?>
 
 <div class="row">
