@@ -44,14 +44,8 @@ $i=1;$r=1;?>
             </div>
             <div style="width: 40%;margin-left:20px; float: left; border:1px solid black;">
                 <br/>
-                <?=$data[0]['name'];?><br/>
-                <?=$data[0]['add_house_no']?><br/>
-                <?=$data[0]['add_street_address']?><br/>
-                <?=$data[0]['add_p_office']?> &nbsp;&nbsp;&nbsp;&nbsp;<?=$data[0]['add_pincode']?>,<br/>
-                <?php $state= State::getName($data[0]['add_state_id']) ?>
-                <?php $district=  District::getName($data[0]['add_district_id']) ?>
-                <?=$district[0]['name'];?>,
-                <?=$state[0]['name'];?><br/>
+                
+                <br/>
                 
             </div>
             
