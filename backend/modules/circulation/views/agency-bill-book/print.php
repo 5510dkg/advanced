@@ -44,7 +44,7 @@ $i=1;$r=1;?>
             </div>
             <div style="width: 40%;margin-left:20px; float: left; border:1px solid black;">
                 <br/>
-                 
+                 <?=$data[0]['months']?> 
                 <br/>
                 
             </div>
