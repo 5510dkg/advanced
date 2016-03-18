@@ -46,6 +46,12 @@ class District extends \yii\db\ActiveRecord
             'state_id' => 'State ID',
         ];
     }
+    public function getName($id) {
+         $query = (new \yii\db\Query())->select(['*'])->from('_district')->where(['id' =>$id]);
+             $command = $query->createCommand();
+             return $data = $command->queryAll();
+             
+    }
 
     /**
      * @return \yii\db\ActiveQuery
