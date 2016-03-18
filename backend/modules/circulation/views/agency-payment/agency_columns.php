@@ -163,7 +163,7 @@ return [
         ],
          'urlCreator' => function($action, $model, $key, $index) { 
           if ($action === 'info') {
-                            return Url::toRoute(['agency-credit-note/create','id' => $model->id]);
+                            return Url::toRoute(['agency-payment/create','id' => $model->id]);
                         } else {
                             return Url::toRoute([$action, 'id' => $model->id]);
                         }
