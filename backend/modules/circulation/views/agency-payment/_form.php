@@ -5,6 +5,7 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model backend\modules\circulation\models\AgencyPayment */
 /* @var $form yii\widgets\ActiveForm */
+$this->title='Agency Payment';
 ?>
 <div class="row">
     <div class="page-header">
