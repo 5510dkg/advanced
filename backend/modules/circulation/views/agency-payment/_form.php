@@ -24,7 +24,13 @@ $this->title='Agency Payment';
 
     <?= $form->field($model, 'amount')->textInput() ?>
 
-    <?= $form->field($model, 'month')->textInput() ?>
+    <?= $form->field($model, 'month')->widget(\dosamigos\datepicker\DatePicker::className(),
+            [
+                'clientOptions'=>[
+                'autoclose'=>true,
+                'format' => 'yyyy-mm'
+                    ],
+            ]) ?>
 
     <?= $form->field($model, 'balance')->textInput() ?>
     </div>
