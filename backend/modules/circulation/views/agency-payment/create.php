@@ -10,5 +10,6 @@ use yii\helpers\Html;
 <div class="agency-payment-create">
     <?= $this->render('_form', [
         'model' => $model,
+        'id'=>$id,
     ]) ?>
 </div>
