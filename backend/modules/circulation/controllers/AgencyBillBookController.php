@@ -65,12 +65,11 @@ class AgencyBillBookController extends Controller
     public function actionDetail() {
         $agency_id=Yii::$app->request->get('agency_id');
         $month=Yii::$app->request->get('month');
-        
-        
+        $agency=new AgencyBillBook();
+        $data=$agency->getDetails($month, $agency_id);
         return $this->render('detail',[
             'data'=>$data,
             'month'=>$month,
-            'agency'=>$agency
         ]);
         
         
