@@ -44,6 +44,19 @@ use yii\helpers\Html;
                     </div>
                 </div> 
 <?php } ?>
+<div class="col-lg-4">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                           Agency Payment
+                        </div>
+                        <div class="panel-body">
+                        <?=Html::a('Agency Payment',['/circulation/agency-payment'],['class'=>'btn btn-success btn-lg btn-block'])?>  
+                        </div>
+                        <div class="panel-footer">
+                         Agency Payment
+                        </div>
+                    </div>
+                </div> 
 <?php  if(Yii::$app->user->can('upload-receipt')){ ?>
 <div class="col-lg-4">
                     <div class="panel panel-success">
