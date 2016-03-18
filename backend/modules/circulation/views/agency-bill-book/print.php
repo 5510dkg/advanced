@@ -1,8 +1,12 @@
 <?php
 ini_set('memory_limit', '-1');
 ini_set('max_execution_time', 6000);
-
-//print_r($data);
+use backend\modules\circulation\models\AgencyBillBook;
+$agency_id=Yii::$app->request->get('agency_id');
+$month=Yii::$app->request->get('month');
+$agency=new AgencyBillBook();
+$data=$agency->getPrintdetails($month, $agency_id);
+print_r($data);
 
 $i=1;$r=1;?>
 
