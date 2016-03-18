@@ -3,11 +3,12 @@ $this->title='Agency Billing';
 $inc=1;
 use yii\helpers\Html;
 use yii\helpers\Url;
+  $new =date( "M-Y", strtotime( "$month" ) );
 ?>
 
 <div class="row">
     <div class="page-header">
-        <h3>Agency Billing for the month of <?php echo $month; ?> </h3>
+        <h3>Agency Billing for the month of <?php echo $new; ?> </h3>
     </div>
 </div>
 <div class="col-lg-12">

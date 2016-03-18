@@ -52,7 +52,8 @@ class AgencyBillBookController extends Controller
     
     
     public function actionBill()
-    {    $month=Yii::$app->request->get('month');
+    {    $month=$_GET[1]['month'];
+    //echo $month;exit;
         $bill=new AgencyBillBook();
         $total=$bill->getBill($month);
         return $this->render('bill',[
