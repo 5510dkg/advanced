@@ -152,6 +152,7 @@ class AgencyBillBook extends \yii\db\ActiveRecord
             // $titles = '';
              
     }
+    
     public function getcopiespjy($date,$id,$dm) {
         
         if($dm=='1'){
