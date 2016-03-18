@@ -7,6 +7,9 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 <div class="row">
+    <div class="page-header">
+        
+    </div>
     
 </div>
 <div class="agency-payment-form">
