@@ -56,6 +56,10 @@ class State extends \yii\db\ActiveRecord
     {
         return $this->hasMany(District::className(), ['state_id' => 'id']);
     }
+    
+    public function getName($id) {
+        
+    }
 
     /**
      * @return \yii\db\ActiveQuery
