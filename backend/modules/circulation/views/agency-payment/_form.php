@@ -8,7 +8,7 @@ use yii\widgets\ActiveForm;
 ?>
 <div class="row">
     <div class="page-header">
-        
+        <h1>Agency Payment</h1>
     </div>
     
 </div>
