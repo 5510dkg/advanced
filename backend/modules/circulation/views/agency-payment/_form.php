@@ -13,7 +13,7 @@ use yii\widgets\ActiveForm;
     
 </div>
 <div class="agency-payment-form">
-
+    <div class="col-lg-8">
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'agency_id')->textInput(['value'=>$id]) ?>
@@ -26,7 +26,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'balance')->textInput() ?>
 
-    <?= $form->field($model, 'payment_mode')->textInput() ?>
+    <?= $form->field($model, 'payment_mode')->dropDownList(yii\helpers\ArrayHelper::map(\backend\modules\settings\models\PaymentMode::find()->all(),'id','name'),['prompt'=>'Select Payment Mode']) ?>
 
     <?= $form->field($model, 'payment_detail')->textarea(['rows' => 6]) ?>
 
@@ -40,5 +40,6 @@ use yii\widgets\ActiveForm;
 	<?php } ?>
 
     <?php ActiveForm::end(); ?>
+    </div>
     
 </div>
