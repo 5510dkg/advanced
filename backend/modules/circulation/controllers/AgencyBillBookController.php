@@ -72,7 +72,16 @@ class AgencyBillBookController extends Controller
             'month'=>$month,
         ]);
     }
-    
+    public function actionPrint(){
+        $agency_id=Yii::$app->request->get('agency_id');
+        $month=Yii::$app->request->get('month');
+        $agency=new AgencyBillBook();
+        $data=$agency->getDetails($month, $agency_id);
+        return $this->render('print',[
+            'data'=>$data,
+            'month'=>$month,
+        ]);
+    }
              
     
 
