@@ -71,9 +71,8 @@ class AgencyBillBookController extends Controller
             'data'=>$data,
             'month'=>$month,
         ]);
-        
-        
     }
+    
              
     
 
