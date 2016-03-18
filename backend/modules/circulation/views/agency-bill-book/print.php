@@ -51,7 +51,7 @@ $i=1;$r=1;?>
             </div><br/>
             <br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BILLING DETAILS<br/>
-            <table class="table table-striped table-bordered table-hover dataTable no-footer dtr-inline" style="width: 100%;border: 1px solid black;">
+            <table  class="table-bordered" style="width: 100%; border-collapse: collapse;">
                 <tr>
                     <td>ISSUE DATE</td>
                     <td>PANCHJANYA SUPPLY</td>
@@ -64,10 +64,30 @@ $i=1;$r=1;?>
                     <td><?=$row['pjy']?></td>
                     <td><?=$row['org']?></td>
                     <td><?=$row['price_per_piece']?></td>
+                    <?php $pjy[]=$row['pjy']; ?>
+                    <?php $org[]=$row['org'];?>
+                    <?php
+                        $total_amt[]=$row['total_price'];
+                        $final_total[]=$row['final_total'];
+                        $discounted_amt[]=$row['discounted_amt'];
+                        $receipts[]=$row['credit_amt'];
+                        
+                    ?>
                 </tr>
                 <?php   endforeach;?>
+                <tr>
+                    <td><strong>TOTAL SUPPLY</strong></td>
+                    <td><?=array_sum($pjy);?></td>
+                    <td><?=array_sum($org);?></td>
+                    <td>&nbsp;</td>
+                </tr>
                 
-            </table>
+            </table><br/><br/><br/>
+            <div style="width: 100%; margin-left: 25px;" class="col-lg-offset-3">
+                (A) TOTAL AMOUNT : Rs:&nbsp;&nbsp;<?=array_sum($total_amt)?>/=<br/>
+                (B) NET AMOUNT(TOTAL AMOUNT - COMMISSION): Rs:&nbsp;&nbsp;<?=array_sum($final_total)?>/=<br/>
+                (C) LAST MONTH'S BALANCE: Rs: 0/=
+            </div>
             
 	
 	</div>
