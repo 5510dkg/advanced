@@ -44,6 +44,10 @@ class AgencyController extends Controller
      */
     public function actionIndex()
     {
+        if(isset($_GET[1]['q'])){
+             $q=$_GET[1]['q']; 
+        }
+        else $q=NULL;
        // $this->layout='adminlayout';
          if(Yii::$app->user->can('view-agency')){
         $searchModel = new AgencySearch();
@@ -52,6 +56,7 @@ class AgencyController extends Controller
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'q'=>$q,
         ]);
          }
          else{
@@ -182,8 +187,11 @@ class AgencyController extends Controller
      */
     public function actionUpdate($id)
     {
-        
-         if(Yii::$app->user->can('update-agency')){
+        if(isset($_GET['q'])){
+             $q=$_GET['q']; 
+        }
+        else $q='no';
+        if(Yii::$app->user->can('update-agency')){
         $request = Yii::$app->request;
         $model = $this->findModel($id);
 
@@ -197,6 +205,7 @@ class AgencyController extends Controller
                     'title'=> "Update Agency #".$id,
                     'content'=>$this->renderAjax('update', [
                         'model' => $model,
+                        'q'=>$q,
                     ]),
                     'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
                                 Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
@@ -239,6 +248,7 @@ class AgencyController extends Controller
                     'title'=> "Update Agency #".$id,
                     'content'=>$this->renderAjax('update', [
                         'model' => $model,
+                        'q'=>$q,
                     ]),
                     'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
                                 Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
@@ -253,6 +263,7 @@ class AgencyController extends Controller
             } else {
                 return $this->render('update', [
                     'model' => $model,
+                    'q'=>$q,
                 ]);
             }
         }

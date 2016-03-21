@@ -153,7 +153,11 @@ return [
         'dropdown' => false,
         'vAlign'=>'middle',
         'urlCreator' => function($action, $model, $key, $index) { 
-                return Url::to([$action,'id'=>$key]);
+                         if(isset($_GET[1]['q'])){
+             $q=$_GET[1]['q']; 
+        }
+        else $q='no';
+                return Url::to([$action,'id'=>$key,'q'=>$q]);
         },
         'viewOptions'=>['role'=>'modal-remote','title'=>'View','data-toggle'=>'tooltip'],
         'updateOptions'=>['role'=>'modal-remote','title'=>'Update', 'data-toggle'=>'tooltip'],
