@@ -35,6 +35,7 @@ Class BillingController extends Controller{
         $request=Yii::$app->request;
        // echo $request['time'];
         $dates=$request->post('date1');
+        $dd=$request->post('date');
         $prices=$request->post('price');
         //print_r($dates);exit;
         
@@ -78,10 +79,14 @@ Class BillingController extends Controller{
                     $model->created_on=  date('Y-m-d H:i:s');
                     $model->save(false);
                     
-                    $dd=$date;
+                    
         }
+        $this->actionShow($dd);
         
     }
+    }
+    public function actionShow($dd){
+        $this->render('show',['month'=>$dd]);
     }
     
 }
