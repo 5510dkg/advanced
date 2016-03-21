@@ -17,12 +17,14 @@ use dosamigos\datepicker\DatePicker;
     <?= DatePicker::widget([
     'name' => 'date',
     //'value' => '02-16-2012',
+       
     'template' => '{addon}{input}',
         'clientOptions' => [
             'autoclose' => true,
             'format'=> "yyyy-mm",
             'viewMode'=> "months", 
-            'minViewMode'=> "months"
+            'minViewMode'=> "months",
+           
         ]
 ]); ?>
     <br/>
@@ -271,7 +273,7 @@ use dosamigos\datepicker\DatePicker;
     </div>
     
     
-    <input type="submit" name="submit" value="Generate" checked="btn btn-lg-success"/>
+    <input type="submit" name="submit" value="Generate" class="btn btn-primary"/>
     <?php ActiveForm::end(); ?>
     
 </div>

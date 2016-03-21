@@ -36,11 +36,12 @@ Class BillingController extends Controller{
        // echo $request['time'];
         $dates=$request->post('date1[]');
         $prices=$request->post('price[]');
+        print_r($dates);exit;
         
         $alldate=Yii::$app->mycomponent->calsunday();
        // print_r($alldate);
         foreach ($alldate as $date){
-            $agency=$model->get_all_agencies($v['date']);
+            $agency=$model->get_all_agencies($date);
                 //echo count($agency);exit;
                // echo'<pre>';
                // print_r($agency);exit;
@@ -51,20 +52,22 @@ Class BillingController extends Controller{
                     $model->id=NULL;
                     $model->isNewRecord = TRUE; 
                     $model->agency_id=$val['agency_id'];
-                    $model->issue_date=$v['date'];
+                    $model->issue_date=$date;
                     $model->pjy=$val['panchjanya'];
                     $model->org=$val['organiser'];
                     $model->total_copies=$val['panchjanya']+$val['organiser'];
-                    if(in_array($date, $date1)){
-                        $key = array_search($date, $date1); 
+                    if(in_array($date, $dates)){
+                        $key = array_search($date, $dates); 
                     $model->price_per_piece=$prices[$key];
+                    $price=$prices[$key];
                     }
                     else
                     {
-                      $model->price_per_piece=$v['price']; 
+                        $price='15';
+                      $model->price_per_piece='15'; 
                     }
                     $tot=$val['panchjanya']+$val['organiser'];
-                    $price=($val['panchjanya']+$val['organiser'])*$v['price'];
+                    $price=($val['panchjanya']+$val['organiser'])*$price;
                     $model->total_price=$price;
                     $dsc=$model->get_discount($tot);
                     $per=($price*$dsc)/100;
