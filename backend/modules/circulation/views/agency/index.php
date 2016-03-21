@@ -14,7 +14,7 @@ $this->title = 'Agencies';
 $this->params['breadcrumbs'][] = $this->title;
 
 CrudAsset::register($this);
-
+ 
 ?>
 
 <div class="row">
@@ -32,7 +32,7 @@ CrudAsset::register($this);
             'columns' => require(__DIR__.'/_columns.php'),
             'toolbar'=> [
                 ['content'=>
-                    Html::a('<i class="glyphicon glyphicon-plus"></i>', ['create'],
+                    Html::a('<i class="glyphicon glyphicon-plus"></i>', ['create',['q'=>'no']],
                     ['role'=>'modal-remote','title'=> 'Create new Agencies','class'=>'btn btn-default']).
                     Html::a('<i class="glyphicon glyphicon-repeat"></i>', [''],
                     ['data-pjax'=>1, 'class'=>'btn btn-default', 'title'=>'Reset Grid']).

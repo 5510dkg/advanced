@@ -47,7 +47,7 @@ class AgencyController extends Controller
         if(isset($_GET[1]['q'])){
              $q=$_GET[1]['q']; 
         }
-        else $q=NULL;
+        else $q='no';
        // $this->layout='adminlayout';
          if(Yii::$app->user->can('view-agency')){
         $searchModel = new AgencySearch();
@@ -99,6 +99,10 @@ class AgencyController extends Controller
      */
     public function actionCreate()
     {
+         if(isset($_GET[1]['q'])){
+             $q=$_GET[1]['q']; 
+        }
+        else $q='no';
          if(Yii::$app->user->can('create-agency')){
         $request = Yii::$app->request;
         $model = new Agency();
@@ -113,6 +117,7 @@ class AgencyController extends Controller
                     'title'=> "Create new Agency",
                     'content'=>$this->renderAjax('create', [
                         'model' => $model,
+                        'q'=>$q,
                     ]),
                     'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
                                 Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
@@ -154,6 +159,7 @@ class AgencyController extends Controller
                     'title'=> "Create new Agency",
                     'content'=>$this->renderAjax('create', [
                         'model' => $model,
+                        'q'=>$q,
                     ]),
                     'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
                                 Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
@@ -169,6 +175,7 @@ class AgencyController extends Controller
             } else {
                 return $this->render('create', [
                     'model' => $model,
+                    'q'=>$q,
                 ]);
             }
         }

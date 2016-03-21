@@ -150,14 +150,7 @@ use dosamigos\datepicker\DatePicker;
             
             
             
-            
-            
-            
-            
-            
-            
-            
-            <!-- address ends here -->
+           <!-- address ends here -->
             <!--copies starts here -->
             
              <?php if($q=='add'){?>
@@ -282,14 +275,7 @@ use dosamigos\datepicker\DatePicker;
     </div>
                 <?php } ?>
             
-            
-            
-            
-            
-            
-            
-            
-            <!-- copies ends here -->
+         <!-- copies ends here -->
             
             <!-- Delivery method starts here-->
             
@@ -415,10 +401,137 @@ use dosamigos\datepicker\DatePicker;
          </div>
     </div>
                 <?php } ?>
-            
-            
-            
             <!-- delivery method ends here-->
+            <!-- Deactivate Agency -->
+            
+            <?php if($q=='deactive'){?>
+                <?= $form->field($model, 'name')->textInput(['readonly'=>'readonly']) ?>
+                <?= $form->field($model, 'email')->hiddenInput()->label(false) ?>
+                 <?= $form->field($model,'agency_type')->hiddenInput([ 'Select agency type'=>'','Single' => 'Single', 'Combined' => 'Combined' ])->label(false);?>
+        </div>
+        <div class="col-lg-6" style="display: none">
+                <?= $form->field($model, 'landline_no')->hiddenInput()->label(FALSE) ?>
+                <?= $form->field($model, 'mobile_no')->hiddenInput()->label(FALSE) ?>
+                <div id='agencytypeshow' style="display:none">
+                <?= $form->field($model,'agency_combined_id')->hiddenInput()->label(FALSE)?>    
+                </div>
+
+        </div>
+
+    </div>
+
+    <div class="row" style="display: none">
+        <div class="col-lg-12" style="display: none">
+        <h4><em>Mailing Address Details</em></h4>
+        </div>
+        <div class="col-lg-6">
+                <?= $form->field($model, 'mail_house_no')->textInput(['maxlength' => true]) ?>
+                <?= $form->field($model, 'mail_street_address')->textarea(['rows' => 4]) ?>
+                <?= $form->field($model, 'mail_p_office')->textInput(['maxlength' => true]) ?>
+               
+        </div>
+         <div class="col-lg-6">
+                <?= $form->field($model, 'mail_country_id')->dropDownList(ArrayHelper::map(Country::find()->all(),'id','name')) ?>
+                <?= $form->field($model, 'mail_state_id')->dropDownList(ArrayHelper::map(State::find()->all(),'id','name'),
+                    [
+                        'prompt'=>'Please Select',
+                        'onchange'=>'$.post( "index.php?r=settings/state/lists&id='.'"+$(this).val(), function( data ){
+                                         $( "select#agency-mail_district_id" ).html( data );
+                                           });'
+                    ]) ?>
+                <?= $form->field($model, 'mail_district_id')->dropDownList(ArrayHelper::map(District::find()->all(),'id','name'),['prompt'=>'Select District']) ?>
+                <?= $form->field($model, 'mail_pincode')->textInput() ?>
+        </div>
+    </div>
+    <div class="row" style="display: none">
+        <div class="col-lg-12" style="display: none">
+        <h4><em>Billing Address Details</em></h4>
+        </div>
+         <div class="col-lg-12">
+                <?= $form->field($model, 'address_status')->checkbox(['value' => true])->label(false) ?>
+        </div>
+        <div id="autohideid">
+        <div class="col-lg-6">
+                <?= $form->field($model, 'add_house_no')->textInput(['maxlength' => true]) ?>
+                <?= $form->field($model, 'add_street_address')->textarea(['rows' => 4]) ?>
+                <?= $form->field($model, 'add_p_office')->textInput(['maxlength' => true]) ?>
+            
+        </div>
+            <div class="col-lg-6" style="display: none;">
+                <?= $form->field($model, 'add_country_id')->dropDownList(ArrayHelper::map(Country::find()->all(),'id','name')) ?>
+                <?= $form->field($model, 'add_state_id')->dropDownList(ArrayHelper::map(State::find()->all(),'id','name'),
+                    [
+                        'prompt'=>'Please Select',
+                        'onchange'=>'$.post( "index.php?r=settings/state/lists&id='.'"+$(this).val(), function( data ){
+                                         $( "select#agency-add_district_id" ).html( data );
+                                           });'
+                    ]) ?>
+                <?= $form->field($model, 'add_district_id')->dropDownList(ArrayHelper::map(District::find()->all(),'id','name'),['prompt'=>'Select District']) ?>
+                <?= $form->field($model, 'add_pincode')->textInput() ?>
+        </div>
+        </div>
+    </div>
+    <div class="row" style="display: none">
+        <div class="col-lg-12">
+        <h4><em>Copies Detail</em></h4>
+        </div>
+        <div class="col-lg-6">
+                <?= $form->field($model, 'panchjanya')->textInput() ?>
+              
+        </div>
+         <div class="col-lg-6">
+                <?= $form->field($model, 'organiser')->textInput() ?>
+        </div>
+    </div>
+   
+    <div class="row" style="display: none">
+<!--         <div class="col-lg-12">
+         <h4><em>Other Details</em></h4>
+         </div>-->
+<div class="col-lg-6">
+             <?= $form->field($model, 'route_id')->dropDownList(ArrayHelper::map(DeliveryMethods::find()->all(),'id','name'),['prompt'=>'Select Delivery Method']) ?>
+             <?= $form->field($model, 'security_amt')->hiddenInput()->label(FALSE) ?>
+
+
+             <?= $form->field($model,'comment')->hiddenInput()->label(FALSE) ?>
+             <?= $form->field($model, 'vehicle_id')->hiddenInput()->label(false) ?>
+         </div>
+           <div id="deliveryrail" class="col-lg-6" >
+           
+                <?= $form->field($model,'source')->textInput()?>
+                <?= $form->field($model,'train_no')->textInput()?>
+                <?= $form->field($model,'train_name')->textInput()?>
+        
+             
+         </div>
+<div class="col-lg-6">
+    <?= $form->field($model, 'status')->dropDownList([ 'Suspended' => 'Suspended', 'Active' => 'Active', 'Inactive' => 'Inactive', ]) ?>
+</div>
+
+          
+        <div class="col-lg-6" style="display: none">
+             
+             <?= $form->field($model,'issue_start_date')->widget( DatePicker::className(), [
+                                                                        // inline too, not bad
+                                                                         'inline' => false, 
+                                                                         // modify template for custom rendering
+                                                                       // 'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
+                                                                        'clientOptions' => [
+                                                                            'autoclose' => true,
+                                                                            'format' => 'yyyy-mm-dd',
+                                                                            'startDate'=>date('Y-m-d'),
+                                                                        ]
+                        ]); ?>
+             <?= $form->field($model,'commission')->hiddenInput(['maxlength'=>true])?>
+             
+             <?= $form->field($model, 'reference')->hiddenInput(['maxlength' => true]) ?>
+            
+         </div>
+
+    </div>
+                <?php } ?>
+            
+            <!-- deactivate agency ends here-->
                 <?php if($q=='no'){?>
                 <?= $form->field($model, 'name')->textInput() ?>
                 <?= $form->field($model, 'email')->textInput() ?>
