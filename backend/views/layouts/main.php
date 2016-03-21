@@ -382,7 +382,7 @@ AppAsset::register($this);
 
 
 
-    <div id="page-wrapper">
+    <div id="page-wrapper" style="min-height: 950px;">
         <?= $content ?>
         </div>
 </div>

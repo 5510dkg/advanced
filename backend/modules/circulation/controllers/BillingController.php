@@ -29,7 +29,9 @@ Class BillingController extends Controller{
         return $this->render('welcome');
     }
     
-    public function actionBill(){
+    public function actionCreate(){
+        $request=Yii::$app->request->post();
+        print_r($request);exit;
         
     }
     
