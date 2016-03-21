@@ -40,7 +40,9 @@ Class BillingController extends Controller{
         //print_r($dates);exit;
         
         $alldate=Yii::$app->mycomponent->calsunday();
-       // print_r($alldate);
+       // print_r($alldate);  
+        //
+        
         foreach ($alldate as $date){
             $agency=$model->get_all_agencies($date);
                 //echo count($agency);exit;
