@@ -12,5 +12,7 @@ use yii\helpers\Html;
         'model' => $model,
         //'rail'=>$rail,
         'q'=>$q,
+        'data'=>$data,
+        'acc'=>$acc,
     ]) ?>
 </div>

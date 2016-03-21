@@ -69,8 +69,8 @@ class Agency extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'email', 'landline_no','agency_type','mobile_no', 'mail_house_no', 'mail_street_address', 'mail_p_office', 'mail_country_id', 'mail_state_id', 'mail_district_id', 'mail_pincode','commission','agency_type','route_id'], 'required'],
-            [['name', 'status','agency_type','commission','comment','issue_start_date','mail_street_address', 'add_street_address','agency_combined_id','train_no','train_name','source'], 'string'],
-            [['route_id', 'vehicle_id',  'landline_no', 'mobile_no', 'mail_country_id', 'mail_state_id', 'mail_district_id', 'mail_pincode', 'panchjanya', 'organiser', 'add_country_id', 'add_state_id', 'add_district_id', 'add_pincode'], 'integer'],
+            [['name','vehicle_id' ,'status','agency_type','commission','comment','issue_start_date','mail_street_address', 'add_street_address','agency_combined_id','train_no','train_name','source'], 'string'],
+            [['route_id',  'landline_no', 'mobile_no', 'mail_country_id', 'mail_state_id', 'mail_district_id', 'mail_pincode', 'panchjanya', 'organiser', 'add_country_id', 'add_state_id', 'add_district_id', 'add_pincode'], 'integer'],
             [['security_amt'], 'number'],
 
            

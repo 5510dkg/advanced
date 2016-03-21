@@ -118,6 +118,8 @@ class AgencyController extends Controller
                     'content'=>$this->renderAjax('create', [
                         'model' => $model,
                         'q'=>$q,
+                        'data'=>$this->actionReferencesList(),
+                        'acc'=>$this->actionAccountList(),
                     ]),
                     'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
                                 Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
@@ -160,6 +162,8 @@ class AgencyController extends Controller
                     'content'=>$this->renderAjax('create', [
                         'model' => $model,
                         'q'=>$q,
+                        'data'=>$this->actionReferencesList(),
+                        'acc'=>$this->actionAccountList(),
                     ]),
                     'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
                                 Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
@@ -176,6 +180,8 @@ class AgencyController extends Controller
                 return $this->render('create', [
                     'model' => $model,
                     'q'=>$q,
+                    'data'=>$this->actionReferencesList(),
+                    'acc'=>$this->actionAccountList(),
                 ]);
             }
         }
@@ -213,6 +219,8 @@ class AgencyController extends Controller
                     'content'=>$this->renderAjax('update', [
                         'model' => $model,
                         'q'=>$q,
+                        'data'=>$this->actionReferencesList(),
+                        'acc'=>$this->actionAccountList(),
                     ]),
                     'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
                                 Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
@@ -489,6 +497,51 @@ class AgencyController extends Controller
 
     // agency multiple upload section ends here
 
+    
+    
+    /** 
+ * Your controller action to fetch the list
+ */
+public function actionReferenceList($q = null) {
+    $query = new Query;
+    
+    $query->select('reference')
+        ->from('agency')
+        ->where('reference LIKE "%' . $q .'%"')
+        ->orderBy('reference');
+    $command = $query->createCommand();
+    $data = $command->queryAll();
+    $out = [];
+    foreach ($data as $d) {
+        $out[] = ['value' => $d['reference']];
+    }
+    echo Json::encode($out);
+}public function actionReferencesList() {
+    $query = new \yii\db\Query;
+    
+    $query->select('reference')
+        ->from('agency')->orderBy('reference');
+    $command = $query->createCommand();
+    $data = $command->queryAll();
+    $out = [];
+    foreach ($data as $d) {
+        $out[] = $d['reference'];
+    }
+    return $out;
+}
+public function actionAccountList() {
+    $query = new \yii\db\Query;
+    
+    $query->select('account_id')
+        ->from('agency')->orderBy('account_id');
+    $command = $query->createCommand();
+    $data = $command->queryAll();
+    $out = [];
+    foreach ($data as $d) {
+        $out[] = $d['account_id'];
+    }
+    return $out;
+}
     /**
      * Finds the Agency model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.

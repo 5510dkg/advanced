@@ -25,7 +25,8 @@
         "2amigos/yii2-date-picker-widget" : "~1.0",
 	"kartik-v/yii2-widget-fileinput": "@dev",
         "open-ecommerce/yii2-backuprestore": "dev-master",
-        "johnitvn/yii2-rbac-plus": "*"
+        "johnitvn/yii2-rbac-plus": "*",
+	"kartik-v/yii2-widget-typeahead": "*"
 
     },
     "require-dev": {

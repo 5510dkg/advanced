@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 use backend\modules\settings\models\Country;
 use backend\modules\settings\models\State;
@@ -7,6 +8,21 @@ use backend\modules\settings\models\District;
 use backend\modules\settings\models\DeliveryMethods;
 use yii\helpers\ArrayHelper;
 use dosamigos\datepicker\DatePicker;
+use kartik\typeahead\Typeahead;
+
+
+//$data = [
+//    'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 
+//    'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
+//    'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
+//    'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
+//    'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
+//    'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
+//    'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
+//    'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
+//    'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+//];
+
 
 /* @var $this yii\web\View */
 /* @var $model backend\modules\circulation\models\Agency */
@@ -541,7 +557,16 @@ use dosamigos\datepicker\DatePicker;
                 <?= $form->field($model, 'landline_no')->textInput() ?>
                 <?= $form->field($model, 'mobile_no')->textInput() ?>
                 <div id='agencytypeshow' style="display:none">
-                <?= $form->field($model,'agency_combined_id')->textInput()?>    
+                <?= $form->field($model,'agency_combined_id')->widget(Typeahead::classname(), [
+                    'dataset' => [
+                        [
+                            'local' => $acc,
+                            'limit' => 10
+                        ]
+                    ],
+                    'pluginOptions' => ['highlight' => true],
+                    'options' => ['placeholder' => 'Filter as you type ...'],
+]);?>    
                 </div>
 
         </div>
@@ -642,12 +667,22 @@ use dosamigos\datepicker\DatePicker;
                                                                        // 'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
                                                                         'clientOptions' => [
                                                                             'autoclose' => true,
-                                                                            'format' => 'yyyy-mm-dd'
+                                                                            'format' => 'yyyy-mm-dd',
+                                                                            'startDate'=>date('Y-m-d'),
                                                                         ]
                         ]); ?>
              <?= $form->field($model,'commission')->textInput(['maxlength'=>true])?>
              <?= $form->field($model, 'status')->dropDownList([ 'Suspended' => 'Suspended', 'Active' => 'Active', 'Inactive' => 'Inactive', ]) ?>
-             <?= $form->field($model, 'reference')->textInput(['maxlength' => true]) ?>
+             <?= $form->field($model, 'reference')->widget(Typeahead::classname(), [
+                    'dataset' => [
+                        [
+                            'local' => $data,
+                            'limit' => 10
+                        ]
+                    ],
+                    'pluginOptions' => ['highlight' => true],
+                    'options' => ['placeholder' => 'Filter as you type ...'],
+]); ?>
          </div>
     </div>
                 <?php } ?>
