@@ -112,7 +112,7 @@ use kartik\typeahead\Typeahead;
         <h4><em>Copies Detail</em></h4>
         </div>
         <div class="col-lg-6">
-                <?= $form->field($model, 'panchjanya')->textInput() ?>
+                <?= $form->field($model, 'panchjanya')->textInput(['maxlength'=>'1']) ?>
               
         </div>
          <div class="col-lg-6">
@@ -161,11 +161,6 @@ use kartik\typeahead\Typeahead;
          </div>
     </div>
                 <?php } ?>
-            
-            
-            
-            
-            
            <!-- address ends here -->
             <!--copies starts here -->
             
@@ -411,7 +406,7 @@ use kartik\typeahead\Typeahead;
                                                                             'startDate'=>date('Y-m-d'),
                                                                         ]
                         ]); ?>
-             <?= $form->field($model,'commission')->hiddenInput(['maxlength'=>true])?>
+             <?= $form->field($model,'commission')->hiddenInput(['maxlength'=>'32'])->hint('please do not use % sign,use only full value like 33')?>
              <?= $form->field($model, 'status')->hiddenInput([ 'Suspended' => 'Suspended', 'Active' => 'Active', 'Inactive' => 'Inactive', ]) ?>
              <?= $form->field($model, 'reference')->hiddenInput(['maxlength' => true]) ?>
          </div>
@@ -629,11 +624,11 @@ use kartik\typeahead\Typeahead;
         <h4><em>Copies Detail</em></h4>
         </div>
         <div class="col-lg-6">
-                <?= $form->field($model, 'panchjanya')->textInput() ?>
+                <?= $form->field($model, 'panchjanya')->textInput(['maxlength'=>'5']) ?>
               
         </div>
          <div class="col-lg-6">
-                <?= $form->field($model, 'organiser')->textInput() ?>
+                <?= $form->field($model, 'organiser')->textInput(['maxlength'=>'5']) ?>
         </div>
     </div>
    
@@ -671,7 +666,7 @@ use kartik\typeahead\Typeahead;
                                                                             'startDate'=>date('Y-m-d'),
                                                                         ]
                         ]); ?>
-             <?= $form->field($model,'commission')->textInput(['maxlength'=>true])?>
+             <?= $form->field($model,'commission')->textInput(['maxlength'=>true])->hint('Please do not use % sign')?>
              <?= $form->field($model, 'status')->dropDownList([ 'Suspended' => 'Suspended', 'Active' => 'Active', 'Inactive' => 'Inactive', ]) ?>
              <?= $form->field($model, 'reference')->widget(Typeahead::classname(), [
                     'dataset' => [
