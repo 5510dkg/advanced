@@ -31,7 +31,8 @@ Class BillingController extends Controller{
     
     public function actionCreate(){
         $request=Yii::$app->request->post();
-        print_r($request);exit;
+        echo $request['time'];
+        
         
     }
     

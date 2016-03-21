@@ -27,7 +27,7 @@ use dosamigos\datepicker\DatePicker;
 ]); ?>
     <br/>
     <h3>No of. Special Editions In Selected Month</h3>
-    <select class="form-control" id="optionselect" required="required">
+    <select class="form-control" id="optionselect" name="time" required="required">
         <option value="0">0</option>
         <option value="1">1</option>
         <option value="2">2</option>
