@@ -34,9 +34,9 @@ Class BillingController extends Controller{
         $model = new AgencyBillBook();  
         $request=Yii::$app->request;
        // echo $request['time'];
-        $dates=$request->post('date1[]');
-        $prices=$request->post('price[]');
-        print_r($dates);exit;
+        $dates=$request->post('date1');
+        $prices=$request->post('price');
+        //print_r($dates);exit;
         
         $alldate=Yii::$app->mycomponent->calsunday();
        // print_r($alldate);
@@ -78,7 +78,7 @@ Class BillingController extends Controller{
                     $model->created_on=  date('Y-m-d H:i:s');
                     $model->save(false);
                     
-                    $dd=$v['date'];
+                    $dd=$date;
         }
         
     }
