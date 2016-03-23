@@ -34,6 +34,7 @@ Class BillingController extends Controller{
     
     public function actionCreate(){
         $model = new AgencyBillBook();  
+        $model->scenario = AgencyBillBook::SCENARIO_CREATE;
         $request=Yii::$app->request;
        // echo $request['time'];
         $dates=$request->post('date1');
@@ -81,7 +82,11 @@ Class BillingController extends Controller{
                     $model->discounted_amt=$per;
                     $model->final_total=$discounted;
                     $model->created_on=  date('Y-m-d H:i:s');
-                    $model->save(false);
+                   if($model->validate() && $model->save()){
+                    continue;
+                   }else{
+                       return $this->render('welcome',['error'=>$model->errors]);
+                   }
                     
                     
         }

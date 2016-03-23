@@ -33,6 +33,7 @@ class AgencyBillBook extends \yii\db\ActiveRecord
     {
         return 'agency_bill_book';
     }
+    const SCENARIO_CREATE = 'insert';
 
     /**
      * @inheritdoc
@@ -49,6 +50,13 @@ class AgencyBillBook extends \yii\db\ActiveRecord
             [['total_price'], 'string', 'max' => 50]
         ];
     }
+  public function scenarios()
+{
+    $scenarios = parent::scenarios();
+    $scenarios[self::SCENARIO_CREATE] = [[['issue_date'],'unique'], [['issue_date'], 'string', 'max' => 32],];
+
+    return $scenarios;
+}
 //     public function beforeSave($insert)
 //    {
 //        if (parent::beforeSave($insert)) {
