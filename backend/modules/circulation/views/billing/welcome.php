@@ -9,7 +9,7 @@ use dosamigos\datepicker\DatePicker;
         <h1>Agency Billing</h1>
     </div>
 </div>
-<?php  if(!empty($error)){print_r($error);}else{$error='';};?>
+<?php  if(!empty($error)){echo $error;}else{$error='';};?>
   <?php ActiveForm::begin(['action'=>'index.php?r=circulation/billing/create']); ?>
 <div class="col-lg-11">
     

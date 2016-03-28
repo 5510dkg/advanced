@@ -115,6 +115,26 @@ class AgencyBillBook extends \yii\db\ActiveRecord
         
         
     }
+    public function get_records($dd) {
+          $query = (new \yii\db\Query())->select(['COUNT(id) as ct'])->from('agency_bill_book')->where(''
+                  . 'DATE_FORMAT(issue_date,"%Y%m")="'.$dd.'"');
+             $command = $query->createCommand();
+             $data = $command->queryAll();
+             $dsc = '';
+             foreach($data as $row) {
+                 echo $row['ct'];
+                    if($row['ct']==0){
+                       return  $dsc=FALSE;exit;
+                    }
+                    else{
+                       return  $dsc=TRUE;
+                    }
+                 
+             }
+            // echo $dsc;exit;
+        
+        
+    }
     
     public function get_all_agencies($date){
           $query = (new \yii\db\Query())->select(['*'])->from('agency')->where(['status' =>'Active']);

@@ -21,7 +21,7 @@ use yii\helpers\Html;
                             Railway Labels
                         </div>
                         <div class="panel-body">
-                        <?=Html::a('Generate Bill',['/circulation/magazine-record-book'],['class'=>'btn btn-success btn-lg btn-block'])?>  
+                        <?=Html::a('Generate Bill',['/circulation/billing'],['class'=>'btn btn-success btn-lg btn-block'])?>  
                         </div>
                         <div class="panel-footer">
                            Railway Labels

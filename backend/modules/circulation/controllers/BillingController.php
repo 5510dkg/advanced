@@ -1,18 +1,22 @@
 <?php
+
 namespace backend\modules\circulation\controllers;
 
 use Yii;
+use backend\modules\circulation\models\Billing;
+use backend\modules\circulation\models\BillingSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use backend\modules\circulation\models\AgencyBillBook;
 use yii\filters\VerbFilter;
 use \yii\web\Response;
 use yii\helpers\Html;
 
-
-
-Class BillingController extends Controller{
-     /**
+/**
+ * BillingController implements the CRUD actions for Billing model.
+ */
+class BillingController extends Controller
+{
+    /**
      * @inheritdoc
      */
     public function behaviors()
@@ -27,75 +31,241 @@ Class BillingController extends Controller{
             ],
         ];
     }
-    
-    public function actionIndex(){
-        return $this->render('welcome');
+
+    /**
+     * Lists all Billing models.
+     * @return mixed
+     */
+    public function actionIndex()
+    {    
+        $searchModel = new BillingSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
     }
-    
-    public function actionCreate(){
-        $model = new AgencyBillBook();  
-        $model->scenario = AgencyBillBook::SCENARIO_CREATE;
-        $request=Yii::$app->request;
-       // echo $request['time'];
-        $dates=$request->post('date1');
-        $dd=$request->post('date');
-        $prices=$request->post('price');
-        //print_r($dates);exit;
-        
-        $alldate=Yii::$app->mycomponent->calsunday();
-       // print_r($alldate);  
-        //
-        
-        foreach ($alldate as $date){
-            $agency=$model->get_all_agencies($date);
-                //echo count($agency);exit;
-               // echo'<pre>';
-               // print_r($agency);exit;
-               // echo '</pre>';
-            $i=1;
-                foreach ($agency as $key=> $val) {
-                   // echo $i;
-                    $model->id=NULL;
-                    $model->isNewRecord = TRUE; 
-                    $model->agency_id=$val['agency_id'];
-                    $model->issue_date=$date;
-                    $model->pjy=$val['panchjanya'];
-                    $model->org=$val['organiser'];
-                    $model->total_copies=$val['panchjanya']+$val['organiser'];
-                    if(in_array($date, $dates)){
-                        $key = array_search($date, $dates); 
-                    $model->price_per_piece=$prices[$key];
-                    $price=$prices[$key];
-                    }
-                    else
-                    {
-                        $price='15';
-                      $model->price_per_piece='15'; 
-                    }
-                    $tot=$val['panchjanya']+$val['organiser'];
-                    $price=($val['panchjanya']+$val['organiser'])*$price;
-                    $model->total_price=$price;
-                    $dsc=$model->get_discount($tot);
-                    $per=($price*$dsc)/100;
-                    $model->discount=$dsc;
-                    $discounted=$price-$per;
-                    $model->discounted_amt=$per;
-                    $model->final_total=$discounted;
-                    $model->created_on=  date('Y-m-d H:i:s');
-                   if($model->validate() && $model->save()){
-                    continue;
-                   }else{
-                       return $this->render('welcome',['error'=>$model->errors]);
-                   }
-                    
-                    
+
+
+    /**
+     * Displays a single Billing model.
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionView($id)
+    {   
+        $request = Yii::$app->request;
+        if($request->isAjax){
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            return [
+                    'title'=> "Billing #".$id,
+                    'content'=>$this->renderAjax('view', [
+                        'model' => $this->findModel($id),
+                    ]),
+                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
+                            Html::a('Edit',['update','id'=>$id],['class'=>'btn btn-primary','role'=>'modal-remote'])
+                ];    
+        }else{
+            return $this->render('view', [
+                'model' => $this->findModel($id),
+            ]);
         }
-        $this->actionShow($dd);
+    }
+
+    /**
+     * Creates a new Billing model.
+     * For ajax request will return json object
+     * and for non-ajax request if creation is successful, the browser will be redirected to the 'view' page.
+     * @return mixed
+     */
+    public function actionCreate()
+    {
+        $request = Yii::$app->request;
+        $model = new Billing();  
+
+        if($request->isAjax){
+            /*
+            *   Process for ajax request
+            */
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            if($request->isGet){
+                return [
+                    'title'=> "Create new Billing",
+                    'content'=>$this->renderAjax('create', [
+                        'model' => $model,
+                    ]),
+                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
+                                Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
         
+                ];         
+            }else if($model->load($request->post()) && $model->save()){
+                return [
+                    'forceReload'=>'#crud-datatable-pjax',
+                    'title'=> "Create new Billing",
+                    'content'=>'<span class="text-success">Create Billing success</span>',
+                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
+                            Html::a('Create More',['create'],['class'=>'btn btn-primary','role'=>'modal-remote'])
+        
+                ];         
+            }else{           
+                return [
+                    'title'=> "Create new Billing",
+                    'content'=>$this->renderAjax('create', [
+                        'model' => $model,
+                    ]),
+                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
+                                Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
+        
+                ];         
+            }
+        }else{
+            /*
+            *   Process for non-ajax request
+            */
+            if ($model->load($request->post()) && $model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            } else {
+                return $this->render('create', [
+                    'model' => $model,
+                ]);
+            }
+        }
+       
     }
+
+    /**
+     * Updates an existing Billing model.
+     * For ajax request will return json object
+     * and for non-ajax request if update is successful, the browser will be redirected to the 'view' page.
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionUpdate($id)
+    {
+        $request = Yii::$app->request;
+        $model = $this->findModel($id);       
+
+        if($request->isAjax){
+            /*
+            *   Process for ajax request
+            */
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            if($request->isGet){
+                return [
+                    'title'=> "Update Billing #".$id,
+                    'content'=>$this->renderAjax('update', [
+                        'model' => $model,
+                    ]),
+                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
+                                Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
+                ];         
+            }else if($model->load($request->post()) && $model->save()){
+                return [
+                    'forceReload'=>'#crud-datatable-pjax',
+                    'title'=> "Billing #".$id,
+                    'content'=>$this->renderAjax('view', [
+                        'model' => $model,
+                    ]),
+                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
+                            Html::a('Edit',['update','id'=>$id],['class'=>'btn btn-primary','role'=>'modal-remote'])
+                ];    
+            }else{
+                 return [
+                    'title'=> "Update Billing #".$id,
+                    'content'=>$this->renderAjax('update', [
+                        'model' => $model,
+                    ]),
+                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
+                                Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
+                ];        
+            }
+        }else{
+            /*
+            *   Process for non-ajax request
+            */
+            if ($model->load($request->post()) && $model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            } else {
+                return $this->render('update', [
+                    'model' => $model,
+                ]);
+            }
+        }
     }
-    public function actionShow($dd){
-        $this->render('show',['month'=>$dd]);
+
+    /**
+     * Delete an existing Billing model.
+     * For ajax request will return json object
+     * and for non-ajax request if deletion is successful, the browser will be redirected to the 'index' page.
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionDelete($id)
+    {
+        $request = Yii::$app->request;
+        $this->findModel($id)->delete();
+
+        if($request->isAjax){
+            /*
+            *   Process for ajax request
+            */
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            return ['forceClose'=>true,'forceReload'=>'#crud-datatable-pjax'];
+        }else{
+            /*
+            *   Process for non-ajax request
+            */
+            return $this->redirect(['index']);
+        }
+
+
     }
-    
+
+     /**
+     * Delete multiple existing Billing model.
+     * For ajax request will return json object
+     * and for non-ajax request if deletion is successful, the browser will be redirected to the 'index' page.
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionBulkDelete()
+    {        
+        $request = Yii::$app->request;
+        $pks = explode(',', $request->post( 'pks' )); // Array or selected records primary keys
+        foreach ( $pks as $pk ) {
+            $model = $this->findModel($pk);
+            $model->delete();
+        }
+
+        if($request->isAjax){
+            /*
+            *   Process for ajax request
+            */
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            return ['forceClose'=>true,'forceReload'=>'#crud-datatable-pjax'];
+        }else{
+            /*
+            *   Process for non-ajax request
+            */
+            return $this->redirect(['index']);
+        }
+       
+    }
+
+    /**
+     * Finds the Billing model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param integer $id
+     * @return Billing the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    protected function findModel($id)
+    {
+        if (($model = Billing::findOne($id)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
 }
