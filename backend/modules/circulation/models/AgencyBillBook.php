@@ -41,19 +41,19 @@ class AgencyBillBook extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['agency_id', 'issue_date', 'pjy', 'org', 'total_copies', 'price_per_piece', 'total_price', 'discount', 'discounted_amt', 'final_total', 'created_on'], 'required'],
-            [['agency_id', 'pjy', 'org'], 'integer'],
-            [['issue_date', 'credited_date', 'created_on'], 'safe'],
-            [['discount', 'discounted_amt', 'final_total', 'credit_amt'], 'number'],
-            [['total_copies'], 'string', 'max' => 30],
-            [['price_per_piece'], 'string', 'max' => 40],
-            [['total_price'], 'string', 'max' => 50]
+//            [['agency_id', 'issue_date', 'pjy', 'org', 'total_copies', 'price_per_piece', 'total_price', 'discount', 'discounted_amt', 'final_total', 'created_on'], 'required'],
+//            [['agency_id', 'pjy', 'org'], 'integer'],
+//            [['issue_date', 'credited_date', 'created_on'], 'safe'],
+//            [['discount', 'discounted_amt', 'final_total', 'credit_amt'], 'number'],
+//            [['total_copies'], 'string', 'max' => 30],
+//            [['price_per_piece'], 'string', 'max' => 40],
+//            [['total_price'], 'string', 'max' => 50]
         ];
     }
   public function scenarios()
 {
     $scenarios = parent::scenarios();
-    $scenarios[self::SCENARIO_CREATE] = [[['issue_date'],'unique'], [['issue_date'], 'string', 'max' => 32],];
+    $scenarios[self::SCENARIO_CREATE] = [['issue_date'], 'unique'];
 
     return $scenarios;
 }
@@ -117,21 +117,15 @@ class AgencyBillBook extends \yii\db\ActiveRecord
     }
     public function get_records($dd) {
           $query = (new \yii\db\Query())->select(['COUNT(id) as ct'])->from('agency_bill_book')->where(''
-                  . 'DATE_FORMAT(issue_date,"%Y%m")="'.$dd.'"');
+                  . 'DATE_FORMAT(issue_date,"%Y-%m")="'.$dd.'"');
              $command = $query->createCommand();
              $data = $command->queryAll();
              $dsc = '';
              foreach($data as $row) {
-                 echo $row['ct'];
-                    if($row['ct']==0){
-                       return  $dsc=FALSE;exit;
-                    }
-                    else{
-                       return  $dsc=TRUE;
-                    }
+                $dsc= $row['ct'];
                  
              }
-            // echo $dsc;exit;
+           return $dsc; 
         
         
     }

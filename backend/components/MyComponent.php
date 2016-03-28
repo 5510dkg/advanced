@@ -20,8 +20,8 @@ public function sundays($y,$m) {
     return $array;
 }
 
-public function calsunday() {
-$d1=date("Y-m");    
+public function calsunday($d1=NULL) {
+//$d1=date("Y-m");    
 $dt1 = $d1.'-'.'01';
 //$a_date = "2009-11-";
 $dt2=date("Y-m-t", strtotime($dt1));
