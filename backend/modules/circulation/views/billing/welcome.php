@@ -30,6 +30,7 @@ use dosamigos\datepicker\DatePicker;
 ]); ?>
     <br/>
     <h3>No of. Special Editions In Selected Month</h3>
+    
     <select class="form-control" id="optionselect" name="time" required="required">
         <option value="0">0</option>
         <option value="1">1</option>
@@ -41,8 +42,8 @@ use dosamigos\datepicker\DatePicker;
     </select>
         </div>
     <div class="one" id="one">
-        
-            <?= DatePicker::widget([
+            <label>Date</label>
+             <?= DatePicker::widget([
          'name' => 'date1[]',
          //'value' => '02-16-2012',
          'template' => '{addon}{input}',
@@ -60,7 +61,7 @@ use dosamigos\datepicker\DatePicker;
        
     </div>
     <div class="two" id="two">
-        <?= DatePicker::widget([
+        <label>Date</label> <?= DatePicker::widget([
          'name' => 'date1[]',
          //'value' => '02-16-2012',
          'template' => '{addon}{input}',
@@ -75,7 +76,7 @@ use dosamigos\datepicker\DatePicker;
         </label> 
         <input type="text" name="price[]" class="form-control" />
         </div>
-        <?= DatePicker::widget([
+        <label>Date</label> <?= DatePicker::widget([
          'name' => 'date1[]',
          //'value' => '02-16-2012',
          'template' => '{addon}{input}',
@@ -93,7 +94,7 @@ use dosamigos\datepicker\DatePicker;
         
     </div>
     <div class="three" id="three">
-        <?= DatePicker::widget([
+        <label>Date</label> <?= DatePicker::widget([
          'name' => 'date1[]',
          //'value' => '02-16-2012',
          'template' => '{addon}{input}',
@@ -107,7 +108,7 @@ use dosamigos\datepicker\DatePicker;
             Price
         </label> 
         <input type="text" name="price[]" class="form-control" />
-        </div><?= DatePicker::widget([
+        </div><label>Date</label> <?= DatePicker::widget([
          'name' => 'date1[]',
          //'value' => '02-16-2012',
          'template' => '{addon}{input}',
@@ -121,7 +122,7 @@ use dosamigos\datepicker\DatePicker;
             Price
         </label> 
         <input type="text" name="price[]" class="form-control" />
-        </div><?= DatePicker::widget([
+        </div><label>Date</label> <?= DatePicker::widget([
          'name' => 'date1[]',
          //'value' => '02-16-2012',
          'template' => '{addon}{input}',
@@ -139,7 +140,7 @@ use dosamigos\datepicker\DatePicker;
     
     </div>
     <div class="four" id="four">
-        <?= DatePicker::widget([
+        <label>Date</label> <?= DatePicker::widget([
          'name' => 'date1[]',
          //'value' => '02-16-2012',
          'template' => '{addon}{input}',
@@ -153,7 +154,7 @@ use dosamigos\datepicker\DatePicker;
             Price
         </label> 
         <input type="text" name="price[]" class="form-control" />
-        </div><?= DatePicker::widget([
+        </div><label>Date</label> <?= DatePicker::widget([
          'name' => 'date1[]',
          //'value' => '02-16-2012',
          'template' => '{addon}{input}',
@@ -167,7 +168,7 @@ use dosamigos\datepicker\DatePicker;
             Price
         </label> 
         <input type="text" name="price[]" class="form-control" />
-        </div><?= DatePicker::widget([
+        </div><label>Date</label> <?= DatePicker::widget([
          'name' => 'date1[]',
          //'value' => '02-16-2012',
          'template' => '{addon}{input}',
@@ -181,7 +182,7 @@ use dosamigos\datepicker\DatePicker;
             Price
         </label> 
         <input type="text" name="price[]" class="form-control" />
-        </div><?= DatePicker::widget([
+        </div><label>Date</label> <?= DatePicker::widget([
          'name' => 'date1[]',
          //'value' => '02-16-2012',
          'template' => '{addon}{input}',
@@ -199,7 +200,7 @@ use dosamigos\datepicker\DatePicker;
         
     </div>
     <div class="five" id="five">
-        <?= DatePicker::widget([
+        <label>Date</label> <?= DatePicker::widget([
          'name' => 'date1[]',
          //'value' => '02-16-2012',
          'template' => '{addon}{input}',
@@ -213,7 +214,7 @@ use dosamigos\datepicker\DatePicker;
             Price
         </label> 
         <input type="text" name="price[]" class="form-control" />
-        </div><?= DatePicker::widget([
+        </div><label>Date</label> <?= DatePicker::widget([
          'name' => 'date1[]',
          //'value' => '02-16-2012',
          'template' => '{addon}{input}',
@@ -227,7 +228,7 @@ use dosamigos\datepicker\DatePicker;
             Price
         </label> 
         <input type="text" name="price[]" class="form-control" />
-        </div><?= DatePicker::widget([
+        </div><label>Date</label> <?= DatePicker::widget([
          'name' => 'date1[]',
          //'value' => '02-16-2012',
          'template' => '{addon}{input}',
@@ -241,7 +242,7 @@ use dosamigos\datepicker\DatePicker;
             Price
         </label> 
         <input type="text" name="price[]" class="form-control" />
-        </div><?= DatePicker::widget([
+        </div><label>Date</label> <?= DatePicker::widget([
          'name' => 'date1[]',
          //'value' => '02-16-2012',
          'template' => '{addon}{input}',
@@ -255,7 +256,7 @@ use dosamigos\datepicker\DatePicker;
             Price
         </label> 
         <input type="text" name="price[]" class="form-control" />
-        </div><?= DatePicker::widget([
+        </div><label>Date</label> <?= DatePicker::widget([
          'name' => 'date1[]',
          //'value' => '02-16-2012',
          'template' => '{addon}{input}',
