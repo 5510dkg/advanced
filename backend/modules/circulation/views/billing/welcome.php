@@ -11,10 +11,10 @@ use dosamigos\datepicker\DatePicker;
 </div>
 <?php  if(!empty($error)){echo $error;}else{$error='';};?>
   <?php ActiveForm::begin(['action'=>'index.php?r=circulation/billing/create']); ?>
-<div class="col-lg-11">
+<div class="col-lg-4 col-lg-offset-3">
     
         <div class="form-group">   
-    <h3>Generate bill for the month </h3>
+    <h4>Generate bill for the month </h4>
     <?= DatePicker::widget([
     'name' => 'date',
     //'value' => '02-16-2012',
@@ -29,7 +29,7 @@ use dosamigos\datepicker\DatePicker;
         ]
 ]); ?>
     <br/>
-    <h3>No of. Special Editions In Selected Month</h3>
+    <h4>No of. Special Editions In Selected Month</h4>
     
     <select class="form-control" id="optionselect" name="time" required="required">
         <option value="0">0</option>
