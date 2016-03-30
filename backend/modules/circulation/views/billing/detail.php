@@ -67,10 +67,10 @@ echo $monthdata;
          'urlCreator' => function($action, $model, $key, $index) { 
           if ($action === 'bill') {
                             // $month=$monthdata;
-                            return Url::toRoute(['billing/view', 'id' => $model->id,'month'=>$model->month]);
+                            return Url::toRoute(['billing/view', 'id' => $model->id]);
                         } else {
                             // $month=$monthdata;
-                            return Url::toRoute([$action, 'id' => $model->id,'month'=>$model->month]);
+                            return Url::toRoute([$action, 'id' => $model->id]);
                         }
 
         },
