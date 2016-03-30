@@ -8,6 +8,7 @@ use backend\modules\circulation\models\AgencyBillBook;
 use yii\filters\VerbFilter;
 use \yii\web\Response;
 use yii\helpers\Html;
+use yii\base\DynamicModel;
 
 
 
@@ -98,6 +99,17 @@ Class BillingController extends Controller{
     }
      
     public function actionSearch(){
+     
+        $model = new DynamicModel([
+            'name', 'account_id', 'mail_pincode'
+        ]);
+        $model->addRule('name', 'string',['max'=>32]);
+
+        if($model->load(Yii::$app->request->post())){
+            // do somenthing with model
+            return $this->redirect(['view']);
+        }
+        return $this->render('search', ['model'=>$model]);
         
     }
     
