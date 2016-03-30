@@ -27,7 +27,7 @@ use dosamigos\datepicker\DatePicker;
                                                                         'clientOptions' => [
                                                                             'autoclose' => true,
                                                                             'format' => 'yyyy-mm-dd',
-                                                                            'daysOfWeekDisabled'=> [1,2,3,4,5,6],
+                                                                           // 'daysOfWeekDisabled'=> [1,2,3,4,5,6],
                                                                             
                                                                         ]
                         ]); ?>
