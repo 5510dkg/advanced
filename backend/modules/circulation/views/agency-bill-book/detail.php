@@ -37,11 +37,11 @@ $new =date( "M-Y", strtotime( "$month" ) );
             <td><?=$row['discount'];?></td>
             <td><?=$row['discounted_amt'];?></td>
             <td><?=$row['final_total'];?></td>
-            <?php $id=$row['id']; ?>
+            <?php  $id=$row['id']; ?>
         </tr>
             
         <?php endforeach; ?>
         
     </table>
-    <p><a class="btn btn-lg btn-success" href="index.php?r=circulation/billing/view&id="<?=$id?>>Back</a></p>
+    <p><a class="btn btn-lg btn-success" href="index.php?r=circulation/billing/view&id=<?=$id?>">Back</a></p>
 </div>
