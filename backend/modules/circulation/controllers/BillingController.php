@@ -47,15 +47,15 @@ Class BillingController extends Controller{
         $record=$model->get_records($dd);
         if($record=='0'){
         $alldate=Yii::$app->mycomponent->calsunday($dd);
-      //print_r($alldate);  exit;
+    //  print_r($alldate);  exit;
         //
         
         foreach ($alldate as $date){
             $agency=$model->get_all_agencies($date);
                 //echo count($agency);exit;
-                echo'<pre>';
-                print_r($agency);exit;
-                echo '</pre>';
+//                echo'<pre>';
+//                print_r($agency);exit;
+//                echo '</pre>';
             $i=1;
                 foreach ($agency as $key=> $val) {
                    // echo $i;
@@ -89,11 +89,8 @@ Class BillingController extends Controller{
                     $model->save(false);
                     
                     
-        }
-       
-       return  $this->render('show',['month'=>$dd]);
-        
-    }
+        } }
+     return  $this->render('show',['month'=>$dd]);
         }
         else{
             return $this->render('welcome',['error'=>'Bill is Already Generated']);
