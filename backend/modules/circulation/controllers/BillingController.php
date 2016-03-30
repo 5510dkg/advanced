@@ -138,12 +138,21 @@ Class BillingController extends Controller{
         
     }
     
-    public function actionView(){
-        $model= new AgencyBillBook();
+    public function actionView($id){
+      //  $model= new AgencyBillBook();
+            $model = AgencyBillBook::find()
+                    ->innerJoinWith('agency', 'agency_bill_book.agency_id = agency.id')
+                    ->andWhere(['agency.id' => $id])
+                    ->one();
+            
+        return $this->render('view', [
+                'model' => $model,
+            ]);
         
         
         
     }
+    
 
     public function actionReferencesList() {
     $query = new \yii\db\Query;
@@ -159,7 +168,21 @@ Class BillingController extends Controller{
     return $out;
 }
     
-    
+   /**
+     * Finds the AgencyReceipt model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param integer $id
+     * @return AgencyReceipt the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    protected function findModel($id)
+    {
+        if (($model = Agency::findOne($id)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }  
     
     
   

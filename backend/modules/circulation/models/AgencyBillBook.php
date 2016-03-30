@@ -319,4 +319,10 @@ class AgencyBillBook extends \yii\db\ActiveRecord
             // $titles = '';
         
     }
+    
+    
+    public function getAgency() {
+        return $this->hasone(Agency::classname(),['id'=>'agency_id']);
+        
+    }
 }
