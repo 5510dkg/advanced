@@ -60,6 +60,7 @@ use yii\helpers\Html;
                     </div>
                 </div> 
 <?php } ?>
+<?php  if(Yii::$app->user->can('search-bill')){ ?>
 <div class="col-lg-4">
                     <div class="panel panel-success">
                         <div class="panel-heading">
@@ -73,3 +74,4 @@ use yii\helpers\Html;
                         </div>
                     </div>
                 </div> 
+<?php } ?>
