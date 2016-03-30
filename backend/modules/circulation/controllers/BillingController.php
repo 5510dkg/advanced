@@ -53,9 +53,9 @@ Class BillingController extends Controller{
         foreach ($alldate as $date){
             $agency=$model->get_all_agencies($date);
                 //echo count($agency);exit;
-               // echo'<pre>';
-               // print_r($agency);exit;
-               // echo '</pre>';
+                echo'<pre>';
+                print_r($agency);exit;
+                echo '</pre>';
             $i=1;
                 foreach ($agency as $key=> $val) {
                    // echo $i;
