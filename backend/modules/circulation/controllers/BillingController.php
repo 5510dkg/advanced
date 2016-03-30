@@ -144,9 +144,10 @@ Class BillingController extends Controller{
 //                    ->innerJoinWith('agency', 'agency_bill_book.agency_id = agency.id')
 //                    ->andWhere(['agency.id' => $id])
 //                    ->one();
-          $model->getDetails('',$id);
+          $data=$model->getDetails('',$id);
+         // print_r();
         return $this->render('view', [
-                'model' => $model,
+                'model' => $data,
             ]);
         
         

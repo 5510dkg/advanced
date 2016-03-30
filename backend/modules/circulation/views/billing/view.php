@@ -11,7 +11,7 @@ use yii\widgets\DetailView;
     </div>
 </div>
 <div class="billing-view">
- 
+<?php //print_r($model);?>
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
