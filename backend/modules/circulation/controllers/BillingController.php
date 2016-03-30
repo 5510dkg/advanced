@@ -148,7 +148,7 @@ Class BillingController extends Controller{
          // print_r();
         return $this->render('bill', [
                 'rs' => $data,
-                'month'=>'2016-04',
+                'month'=>$month,
             ]);
         
         
