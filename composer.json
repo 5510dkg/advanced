@@ -36,8 +36,9 @@
         "yiisoft/yii2-faker": "*"
     },
     "config": {
-        "process-timeout": 1800
-    },
+        "process-timeout": 1800,
+        "preferred-install": "dist"
+},
     "extra": {
         "asset-installer-paths": {
             "npm-asset-library": "vendor/npm",
