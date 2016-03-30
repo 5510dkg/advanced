@@ -96,5 +96,13 @@ Class BillingController extends Controller{
             return $this->render('welcome',['error'=>'Bill is Already Generated']);
         }
     }
+     
+    public function actionSearch(){
+        
+    }
+    
+    
+    
+    
   
 }
