@@ -122,6 +122,7 @@ class AgencyCreditNoteController extends Controller
                 if($method=='cut'){
                     //$pricem=$qty*0.10;
                     $pc=$model->get_agency_copy_price($pid, $dt);
+                    
                     $tprice=$pc-0.10;
                     $amt=$qty*$tprice;
                 }
@@ -130,8 +131,9 @@ class AgencyCreditNoteController extends Controller
                     $tprice=$pc;
                     $amt=$qty*$tprice;
                 }
+               // exit;
                 $total=$model->total($pid, $dt);
-                $customer->credit_amt = $amt;;
+                $customer->credit_amt = $amt;
                 $customer->credited_date = date('Y-m-d');
                 $customer->final_total=$total-$amt;
                 $customer->update();
