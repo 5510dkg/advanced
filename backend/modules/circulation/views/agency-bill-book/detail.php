@@ -43,5 +43,5 @@ $new =date( "M-Y", strtotime( "$month" ) );
         <?php endforeach; ?>
         
     </table>
-    <p><a class="btn btn-lg btn-success" href="index.php?r=circulation/billing/view&id=<?=$id?>">Back</a></p>
+    <p><a class="btn btn-lg btn-success" href="index.php?r=circulation/billing/view&id=<?=$id?>&month=<?=$month?>">Back</a></p>
 </div>
