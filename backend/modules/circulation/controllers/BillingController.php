@@ -139,12 +139,12 @@ Class BillingController extends Controller{
     }
     
     public function actionView($id){
-      //  $model= new AgencyBillBook();
-            $model = AgencyBillBook::find()
-                    ->innerJoinWith('agency', 'agency_bill_book.agency_id = agency.id')
-                    ->andWhere(['agency.id' => $id])
-                    ->one();
-            
+        $model= new AgencyBillBook();
+//            $model = AgencyBillBook::find()
+//                    ->innerJoinWith('agency', 'agency_bill_book.agency_id = agency.id')
+//                    ->andWhere(['agency.id' => $id])
+//                    ->one();
+          $model->getDetails('',$id);
         return $this->render('view', [
                 'model' => $model,
             ]);
