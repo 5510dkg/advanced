@@ -127,7 +127,7 @@ Class BillingController extends Controller{
                             [
                              'list'=>$dataProvider,
                              'model'=>$model,
-                             'month'=>$month,  
+                             'monthdata'=>$month,  
                              'data'=>$this->actionReferencesList()
                             ]);
         }

@@ -6,6 +6,7 @@ use dosamigos\datepicker\DatePicker;
 use yii\helpers\Url;
 
 $this->title='Bill|Search';
+echo $monthdata;
 ?>
 <div class="row">
     <div class="page-header">
@@ -65,9 +66,11 @@ $this->title='Bill|Search';
         ],
          'urlCreator' => function($action, $model, $key, $index) { 
           if ($action === 'bill') {
-                            return Url::toRoute(['billing/view', 'id' => $model->id,'month'=>$month]);
+                            // $month=$monthdata;
+                            return Url::toRoute(['billing/view', 'id' => $model->id,'month'=>$model->month]);
                         } else {
-                            return Url::toRoute([$action, 'id' => $model->id,'month'=>$month]);
+                            // $month=$monthdata;
+                            return Url::toRoute([$action, 'id' => $model->id,'month'=>$model->month]);
                         }
 
         },
