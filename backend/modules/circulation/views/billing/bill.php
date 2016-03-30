@@ -46,4 +46,5 @@ $new =date( "M-Y", strtotime( "$month" ) );
         <?php $inc++; ?>
         <?php endforeach; ?>
     </table>
+    <p><a class="btn btn-lg btn-success" href="index.php?r=circulation/billing/search">Back</a></p>
 </div>
