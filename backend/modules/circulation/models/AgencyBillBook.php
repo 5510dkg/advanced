@@ -148,7 +148,7 @@ class AgencyBillBook extends \yii\db\ActiveRecord
                  $titles[$id]['mail_district_id']=$row['mail_district_id'];
                  $titles[$id]['mail_pincode']= $row['mail_pincode'];
                  $pjy=$this->getcopiespjy($date,$row['id'],$row['route_id']);
-                 echo $pjy;exit;
+                 //echo $pjy;exit;
                 if($pjy!='Back'){
                  $titles[$id]['panchjanya']=$pjy;  
                 }else{
