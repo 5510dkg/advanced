@@ -106,6 +106,7 @@ Class BillingController extends Controller{
             $model->addRule('account_id', 'string',['max'=>32]);
             $model->addRule('mail_pincode', 'string',['max'=>32]);
             $model->addRule('month', 'string',['max'=>32]);
+            $model->addRule('month', 'required');
 
             if($model->load(Yii::$app->request->post())){
                         // do somenthing with model
