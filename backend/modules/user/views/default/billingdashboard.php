@@ -60,3 +60,16 @@ use yii\helpers\Html;
                     </div>
                 </div> 
 <?php } ?>
+<div class="col-lg-4">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            Receipt
+                        </div>
+                        <div class="panel-body">
+                        <?=Html::a('Search Bill',['/circulation/billing/search'],['class'=>'btn btn-success btn-lg btn-block'])?>  
+                        </div>
+                        <div class="panel-footer">
+                          Receipt
+                        </div>
+                    </div>
+                </div> 
