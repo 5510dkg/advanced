@@ -16,6 +16,15 @@ $this->title='Bill|Search';
 <div class="row">
     <div class="form-vertical">
    <?php $form = ActiveForm::begin(); ?>
+        <?= $form->field($model, 'month')->widget(
+    DatePicker::className(), [  
+                                'clientOptions' => [
+                                'autoclose' => true,
+                                'format'=> "yyyy-mm",
+                                'viewMode'=> "months", 
+                                'minViewMode'=> "months",
+        ]
+]);?>
  
         <?= $form->field($model, 'name')->widget(Typeahead::classname(), [
                     'dataset' => [
@@ -56,9 +65,9 @@ $this->title='Bill|Search';
         ],
          'urlCreator' => function($action, $model, $key, $index) { 
           if ($action === 'bill') {
-                            return Url::toRoute(['billing/view', 'id' => $model->id]);
+                            return Url::toRoute(['billing/view', 'id' => $model->id,$model->month]);
                         } else {
-                            return Url::toRoute([$action, 'id' => $model->id,'month'=>$month]);
+                            return Url::toRoute([$action, 'id' => $model->id,$model->month]);
                         }
 
         },
