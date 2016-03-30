@@ -11,14 +11,13 @@ use yii\widgets\DetailView;
     </div>
 </div>
 <div class="billing-view">
-<?php //print_r($model);?>
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            'id',
-            'agency.name',
-            'agency.account_id',
-        ],
-    ]) ?>
+    <div class="row">
+        <table class="table table-striped table-bordered detail-view">
+            <tbody>
+               
+                
+            </tbody>
+        </table>  
+    </div>
 
 </div>
