@@ -58,7 +58,7 @@ $this->title='Bill|Search';
           if ($action === 'bill') {
                             return Url::toRoute(['billing/view', 'id' => $model->id]);
                         } else {
-                            return Url::toRoute([$action, 'id' => $model->id]);
+                            return Url::toRoute([$action, 'id' => $model->id,'month'=>$month]);
                         }
 
         },
