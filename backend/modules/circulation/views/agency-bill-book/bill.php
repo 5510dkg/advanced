@@ -35,7 +35,7 @@ $new =date( "M-Y", strtotime( "$month" ) );
             
             <td><?=$row['discounted_amt'];?></td>
             <td><?=$row['final_amt'];?></td>
-            <td><?php echo HTML::a('<span class="glyphicon glyphicon-eye-open"></span>',['/circulation/agency-bill-book/detail','agency_id'=>$row['agencyid'],'month'=>$month]) ?>
+            <td><?php echo HTML::a('<span class="glyphicon glyphicon-eye-open"></span>',['/circulation/agency-bill-book/detail','agency_id'=>$row['agencyid'],'month'=>$row['month']]) ?>
             &nbsp;&nbsp;&nbsp;&nbsp;
             <?php echo HTML::a('<span class="glyphicon glyphicon-print"></span>',['/circulation/agency-bill-book/print','agency_id'=>$row['agencyid'],'month'=>$month]) ?>
             </td>
