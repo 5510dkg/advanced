@@ -100,11 +100,12 @@ Class BillingController extends Controller{
     public function actionSearch(){
      
             $model = new DynamicModel([
-                'name', 'account_id', 'mail_pincode'
+                'name', 'account_id', 'mail_pincode','month'
             ]);
             $model->addRule('name', 'string',['max'=>32]);
             $model->addRule('account_id', 'string',['max'=>32]);
             $model->addRule('mail_pincode', 'string',['max'=>32]);
+            $model->addRule('month', 'string',['max'=>32]);
 
             if($model->load(Yii::$app->request->post())){
                         // do somenthing with model

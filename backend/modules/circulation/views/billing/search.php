@@ -15,7 +15,15 @@ $this->title='Bill|Search';
 <div class="row">
     <div class="form-vertical">
    <?php $form = ActiveForm::begin(); ?>
- 
+        <?= $form->field($model, 'month')->widget(
+    DatePicker::className(), [  
+                                'clientOptions' => [
+                                'autoclose' => true,
+                                'format'=> "yyyy-mm",
+                                'viewMode'=> "months", 
+                                'minViewMode'=> "months",
+        ]
+]);?>
         <?= $form->field($model, 'name')->widget(Typeahead::classname(), [
                     'dataset' => [
                         [
