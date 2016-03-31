@@ -11,20 +11,7 @@ $this->title='Credit Note';
             <h1>Credit Note</h1>
         </div>
     </div>
-    
-    
-    <?php //echo  //DetailView::widget([
-//        'model' => $model,
-//        'attributes' => [
-//            'id',
-//            'agency_id',
-//            'return_date',
-//            'issue_type',
-//            'pjy',
-//            'org',
-//            'issue_date',
-//            'return_type',
-//        ],
-//    ])  //?>
+    <h1 class="text-success">Credit Note added Successfully</h1>
+    <p><a class="btn btn-lg btn-success" href="index.php?r=circulation%2Fagency-credit-note%2Flist">Back</a></p>
 
 </div>
