@@ -90,7 +90,7 @@ $i=1;$r=1;?>
                 (D) RECEIPTS (IF ANY) IN LAST MONTH: Rs: 0/=<br/>
                 (E) ANY ADJUSTMENT MADE IN THIS MONTH : Rs: 0/=<br/>
                 (F) CREDIT NOTE (IF ANY) IN THIS MONTH : Rs: 0/=<br/>
-                (G) NET BILL AMOUNT DUE AT THE END OF THIS MONTH <strong><?=array_sum($final_total)?></strong>
+                (G) NET BILL AMOUNT DUE AT THE END OF THIS MONTH : Rs: <strong><?=array_sum($final_total)?></strong>/=
             </div>
             
 	
