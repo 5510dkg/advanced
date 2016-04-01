@@ -87,7 +87,10 @@ $i=1;$r=1;?>
                 (A) TOTAL AMOUNT : Rs:&nbsp;&nbsp;<?=array_sum($total_amt)?>/=<br/>
                 (B) NET AMOUNT(TOTAL AMOUNT - COMMISSION): Rs:&nbsp;&nbsp;<?=array_sum($final_total)?>/=<br/>
                 (C) LAST MONTH'S BALANCE: Rs: 0/=<br/>
-                (D) RECEIPTS (IF ANY) IN 
+                (D) RECEIPTS (IF ANY) IN LAST MONTH: Rs: 0/=<br/>
+                (E) ANY ADJUSTMENT MADE IN THIS MONTH : Rs: 0/=<br/>
+                (F) CREDIT NOTE (IF ANY) IN THIS MONTH : Rs: 0/=<br/>
+                (G) NET BILL AMOUNT DUE AT THE END OF THIS MONTH <strong><?=array_sum($final_total)?></strong>
             </div>
             
 	
