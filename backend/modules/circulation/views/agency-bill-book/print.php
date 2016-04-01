@@ -86,7 +86,8 @@ $i=1;$r=1;?>
             <div style="width: 100%; margin-left: 25px;" class="col-lg-offset-3">
                 (A) TOTAL AMOUNT : Rs:&nbsp;&nbsp;<?=array_sum($total_amt)?>/=<br/>
                 (B) NET AMOUNT(TOTAL AMOUNT - COMMISSION): Rs:&nbsp;&nbsp;<?=array_sum($final_total)?>/=<br/>
-                (C) LAST MONTH'S BALANCE: Rs: 0/=
+                (C) LAST MONTH'S BALANCE: Rs: 0/=<br/>
+                (D) RECEIPTS (IF ANY) IN 
             </div>
             
 	
