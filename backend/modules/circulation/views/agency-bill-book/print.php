@@ -15,7 +15,7 @@ $i=1;$r=1;?>
 
 	<div style="margin-left: 25px;margin-bottom: 40px;margin-right: -30px; width: 100%;float: left; height: 300px;">
             <div style="height: 130px; width: 100%; border: 1px solid black;">
-                logo Space
+                Space For Logo
             </div>
             <div style="width: 100%;height: 15px;">
              Code:&nbsp;&nbsp;&nbsp;&nbsp;<?=$data[0]['account_id']?> 
