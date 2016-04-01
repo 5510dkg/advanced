@@ -96,7 +96,7 @@ class AgencyBillBookController extends Controller
 
         'content' =>$this->renderPartial('print'),
         'options' => [
-            'title' => 'Labels',
+            'title' => 'Bill',
             'subject' => 'Generating Labels',
             'fileame' => 'Ordinarypost.pdf'
         ],
