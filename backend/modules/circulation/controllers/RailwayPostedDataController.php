@@ -56,7 +56,7 @@ class RailwayPostedDataController extends \yii\web\Controller
 
       'content' =>$this->renderPartial('forwarding'),
       'options' => [
-          'title' => 'Sorwarding Slip',
+          'title' => 'forwarding Slip',
           'subject' => 'forwarding Slips'
       ],
       // 'methods' => [
