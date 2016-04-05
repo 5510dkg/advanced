@@ -716,7 +716,7 @@ use kartik\typeahead\Typeahead;
 
 <?php $this->registerJs("
    $(document).ready(function () {
-    $('[type=checkbox]').change(function () {
+    $('#agency-address_status').change(function () {
     
      // $('#autohideid').fadeToggle();
         
