@@ -14,6 +14,7 @@ use yii\filters\VerbFilter;
 use \yii\web\Response;
 use yii\helpers\Html;
 use yii\base\DynamicModel;
+use yii\data\ActiveDataProvider;
 
 /**
  * AgencyController implements the CRUD actions for Agency model.
