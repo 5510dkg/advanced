@@ -506,13 +506,13 @@ class AgencyController extends Controller
      */    
     public function actionSearchaddress(){
         $model = new DynamicModel([
-                'name', 'account_id', 'mail_pincode'
+                'name', 'account_id', 'mail_pincode','state'
             ]);
             $model->addRule('name', 'string',['max'=>32]);
             $model->addRule('account_id', 'string',['max'=>32]);
             $model->addRule('mail_pincode', 'string',['max'=>32]);
-            $model->addRule('month', 'string',['max'=>32]);
-            $model->addRule('month', 'required');
+            $model->addRule('state', 'string',['max'=>32]);
+       
 
             if($model->load(Yii::$app->request->post())){
                         // do somenthing with model
@@ -528,13 +528,13 @@ class AgencyController extends Controller
                 $query->andFilterWhere(['like', 'name', $model->name]);
                 $query->andFilterWhere(['like', 'account_id', $model->account_id]);
                 $query->andFilterWhere(['like', 'mail_pincode', $model->mail_pincode]);
-                $month=$model->month;
+                $query->andFilterWhere('state_id',$model->state);
+                
             return $this->render('detail',
                             [
                              'list'=>$dataProvider,
                              'model'=>$model,
-                             'monthdata'=>$month,  
-                             'data'=>$this->actionAgencylist()
+                            'data'=>$this->actionAgencylist()
                             ]);
         }
         return $this->render('searchaddress', ['model'=>$model,

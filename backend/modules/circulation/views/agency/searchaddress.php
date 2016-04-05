@@ -30,11 +30,13 @@ $this->title='Agency|Search';
                     'pluginOptions' => ['highlight' => true],
                     'options' => ['placeholder' => 'Filter as you type ...'],
 ]); ?>
+                <?= $form->field($model,'state')->dropDownList(\yii\helpers\ArrayHelper::map(\backend\modules\settings\models\State::find()->all(),'id','name'))?>
        
       
             </div>
             <div class="col-md-4">
                <?= $form->field($model, 'account_id') ?>  
+                
             </div>
             
             <div class="col-md-4">
