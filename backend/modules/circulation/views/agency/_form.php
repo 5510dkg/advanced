@@ -564,13 +564,13 @@ use kartik\typeahead\Typeahead;
     </div>
     <div class="box-body">
         <div class="col-lg-6">
-                <?= $form->field($model, 'name')->textInput() ?>
+                <?= $form->field($model, 'name')->textInput(['maxlength'=>'60']) ?>
                 <?= $form->field($model, 'email')->textInput() ?>
                  <?= $form->field($model,'agency_type')->dropDownList([ 'Select agency type'=>'','Single' => 'Single', 'Combined' => 'Combined' ]);?>
         </div>
          <div class="col-lg-6">
-                <?= $form->field($model, 'landline_no')->textInput() ?>
-                <?= $form->field($model, 'mobile_no')->textInput() ?>
+                <?= $form->field($model, 'landline_no')->textInput(['maxlength'=>'8']) ?>
+                <?= $form->field($model, 'mobile_no')->textInput(['maxlength'=>'10']) ?>
                 <div id='agencytypeshow' style="display:none">
                 <?= $form->field($model,'agency_combined_id')->widget(Typeahead::classname(), [
                     'dataset' => [
@@ -592,9 +592,9 @@ use kartik\typeahead\Typeahead;
         <h4><em>Mailing Address Details</em></h4>
         </div>
         <div class="col-lg-6">
-                <?= $form->field($model, 'mail_house_no')->textInput(['maxlength' => true]) ?>
-                <?= $form->field($model, 'mail_street_address')->textarea(['rows' => 4]) ?>
-                <?= $form->field($model, 'mail_p_office')->textInput(['maxlength' => true]) ?>
+                <?= $form->field($model, 'mail_house_no')->textInput(['maxlength' => '60']) ?>
+                <?= $form->field($model, 'mail_street_address')->textarea(['rows' => 4,'maxlength'=>'250']) ?>
+                <?= $form->field($model, 'mail_p_office')->textInput(['maxlength' => 60]) ?>
                
         </div>
          <div class="col-lg-6">
@@ -607,7 +607,7 @@ use kartik\typeahead\Typeahead;
                                            });'
                     ]) ?>
                 <?= $form->field($model, 'mail_district_id')->dropDownList(ArrayHelper::map(District::find()->all(),'id','name'),['prompt'=>'Select District']) ?>
-                <?= $form->field($model, 'mail_pincode')->textInput() ?>
+                <?= $form->field($model, 'mail_pincode')->textInput(['maxlength'=>'6']) ?>
         </div>
     </div>
     <div class="row">
@@ -634,7 +634,7 @@ use kartik\typeahead\Typeahead;
                                            });'
                     ]) ?>
                 <?= $form->field($model, 'add_district_id')->dropDownList(ArrayHelper::map(District::find()->all(),'id','name'),['prompt'=>'Select District']) ?>
-                <?= $form->field($model, 'add_pincode')->textInput() ?>
+                <?= $form->field($model, 'add_pincode')->textInput(['maxlength'=>'6']) ?>
         </div>
         </div>
     </div>
@@ -643,11 +643,11 @@ use kartik\typeahead\Typeahead;
         <h4><em>Copies Detail</em></h4>
         </div>
         <div class="col-lg-6">
-                <?= $form->field($model, 'panchjanya')->textInput(['maxlength'=>'5']) ?>
+                <?= $form->field($model, 'panchjanya')->textInput(['maxlength'=>'4']) ?>
               
         </div>
          <div class="col-lg-6">
-                <?= $form->field($model, 'organiser')->textInput(['maxlength'=>'5']) ?>
+                <?= $form->field($model, 'organiser')->textInput(['maxlength'=>'4']) ?>
         </div>
     </div>
    
@@ -661,13 +661,13 @@ use kartik\typeahead\Typeahead;
 
 
              <?= $form->field($model,'comment')->textarea(['rows'=>'4']) ?>
-             <?= $form->field($model, 'vehicle_id')->textInput() ?>
+             <?= $form->field($model, 'vehicle_id')->textInput(['maxlength'=>'45']) ?>
          </div>
            <div id="deliveryrail" class="col-lg-6" style="display:none">
            
-                <?= $form->field($model,'source')->textInput()?>
-                <?= $form->field($model,'train_no')->textInput()?>
-                <?= $form->field($model,'train_name')->textInput()?>
+                <?= $form->field($model,'source')->textInput(['maxlength'=>'60'])?>
+                <?= $form->field($model,'train_no')->textInput(['maxlength'=>'8'])?>
+                <?= $form->field($model,'train_name')->textInput(['maxlength'=>'80'])?>
         
              
          </div>
