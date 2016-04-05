@@ -717,9 +717,10 @@ use kartik\typeahead\Typeahead;
 <?php $this->registerJs("
    $(document).ready(function () {
     $('#agency-address_status').change(function () {
-    
-     // $('#autohideid').fadeToggle();
         
+     // $('#autohideid').fadeToggle();
+      if( $('#agency-address_status').prop('checked', true)){
+ 
         $('#agency-add_house_no').val( $('#agency-mail_house_no').val() );
         $('#agency-add_street_address').val( $('#agency-mail_street_address').val() );
         $('#agency-add_p_office').val( $('#agency-mail_p_office').val() );
@@ -727,6 +728,7 @@ use kartik\typeahead\Typeahead;
         $('#agency-add_state_id').val( $('#agency-mail_state_id').val() );
         $('#agency-add_district_id').val( $('#agency-mail_district_id').val() );
         $('#agency-add_pincode').val( $('#agency-mail_pincode').val() );
+        }
       
     });
     
