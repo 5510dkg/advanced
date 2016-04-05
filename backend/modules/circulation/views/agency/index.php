@@ -17,11 +17,6 @@ CrudAsset::register($this);
  
 ?>
 
-<div class="row">
-    <div class="page-header">
-        <h1>Agencies</h1>
-    </div>
-</div>
 <div class="agency-index">
     <div id="ajaxCrudDatatable">
         <?=GridView::widget([
