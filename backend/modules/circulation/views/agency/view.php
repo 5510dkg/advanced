@@ -6,7 +6,14 @@ use yii\widgets\DetailView;
 /* @var $model backend\modules\circulation\models\Agency */
 ?>
 <div class="agency-view">
- 
+ <div class=" box box-default">
+    <div class="box-header with-border">
+        <h3 class="box-title">New Agency</h3>
+        <div class="box-tools pull-right">
+            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+        </div>
+    </div>
+    <div class="box-body">
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
@@ -40,5 +47,7 @@ use yii\widgets\DetailView;
             'add_pincode',
         ],
     ]) ?>
+    </div>
+ </div>   
 
 </div>
