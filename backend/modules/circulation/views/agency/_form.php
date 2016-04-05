@@ -771,6 +771,7 @@ use kartik\typeahead\Typeahead;
             $('#agencytypeshow').hide();
        // console.log($('#agency-route_id').val());
      }
+     
 
     // if($('#agency-route_id option[value='Rail']')){
     //     console.log('YES');
