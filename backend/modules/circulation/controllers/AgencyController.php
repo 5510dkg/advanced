@@ -500,7 +500,46 @@ class AgencyController extends Controller
 
 
     // agency multiple upload section ends here
+    /*
+     * agency search form for update address
+     */    
+    public function actionSearchaddress(){
+        $model = new DynamicModel([
+                'name', 'account_id', 'mail_pincode'
+            ]);
+            $model->addRule('name', 'string',['max'=>32]);
+            $model->addRule('account_id', 'string',['max'=>32]);
+            $model->addRule('mail_pincode', 'string',['max'=>32]);
+            $model->addRule('month', 'string',['max'=>32]);
+            $model->addRule('month', 'required');
 
+            if($model->load(Yii::$app->request->post())){
+                        // do somenthing with model
+                            $params=Yii::$app->request->post();
+                           // print_r($params);exit;
+                            $query = Agency::find();
+                            $dataProvider = new ActiveDataProvider([
+                                'query' => $query,
+                            ]);
+                            $model->load($params);
+                           
+                                
+                $query->andFilterWhere(['like', 'name', $model->name]);
+                $query->andFilterWhere(['like', 'account_id', $model->account_id]);
+                $query->andFilterWhere(['like', 'mail_pincode', $model->mail_pincode]);
+                $month=$model->month;
+            return $this->render('detail',
+                            [
+                             'list'=>$dataProvider,
+                             'model'=>$model,
+                             'monthdata'=>$month,  
+                             'data'=>$this->actionReferencesList()
+                            ]);
+        }
+        return $this->render('searchaddress', ['model'=>$model,
+            'data'=>$this->actionReferencesList(),
+            ]);
+    }
     
     
     /** 
