@@ -260,7 +260,7 @@ class AgencyController extends Controller
                         'model' => $model,
                     ]),
                     'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
-                            Html::a('Edit',['update','id'=>$id],['class'=>'btn btn-primary','role'=>'modal-remote'])
+                            Html::a('Edit',['update','id'=>$id,'q'=>$q],['class'=>'btn btn-primary','role'=>'modal-remote'])
                 ];
             }else{
                  return [
