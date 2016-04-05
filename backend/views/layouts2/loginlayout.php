@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Ritesh Singh
- * Date: 3/19/2016
- * Time: 3:27 PM
- */?>
-<?php
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -16,6 +9,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use common\widgets\Alert;
+use kartik\sidenav\SideNav;
 
 AppAsset::register($this);
 ?>
@@ -29,18 +23,26 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
-<body class="hold-transition login-page">
+<body>
 <?php $this->beginBody() ?>
-<div class="login-box">
-<div class="login-box-body">
-            <?= Alert::widget() ?>
-            <?= $content ?>
-         </div>
+
+<div class="container">
+    <!-- navigation starts here -->
+   
+
+      <?= $content ?>
+     
 </div>
 
+<!--<footer class="footer">
+    <div class="container">
+        <p class="pull-left">&copy; Bharat Prakashan Delhi Limited <?= date('Y') ?></p>
+
+        <p class="pull-right"><?= Yii::powered() ?></p>
+    </div>
+</footer>-->
 
 <?php $this->endBody() ?>
 </body>
 </html>
 <?php $this->endPage() ?>
-
