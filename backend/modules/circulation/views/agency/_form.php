@@ -569,10 +569,18 @@ use kartik\typeahead\Typeahead;
             
             <!-- deactivate agency ends here-->
                 <?php if($q=='no'){?>
+            <div class=" box box-default">
+    <div class="box-header with-border">
+        <h3 class="box-title">Update Copies Records</h3>
+        <div class="box-tools pull-right">
+            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+        </div>
+    </div>
+    <div class="box-body">
                 <?= $form->field($model, 'name')->textInput() ?>
                 <?= $form->field($model, 'email')->textInput() ?>
                  <?= $form->field($model,'agency_type')->dropDownList([ 'Select agency type'=>'','Single' => 'Single', 'Combined' => 'Combined' ]);?>
-        </div>
+      
          <div class="col-lg-6">
                 <?= $form->field($model, 'landline_no')->textInput() ?>
                 <?= $form->field($model, 'mobile_no')->textInput() ?>
@@ -591,7 +599,6 @@ use kartik\typeahead\Typeahead;
 
         </div>
 
-    </div>
 
     <div class="row">
         <div class="col-lg-12">
@@ -705,6 +712,7 @@ use kartik\typeahead\Typeahead;
 ]); ?>
          </div>
     </div>
+</div>
                 <?php } ?>
      
    <?php if (!Yii::$app->request->isAjax){ ?>
