@@ -16,11 +16,6 @@ $this->params['breadcrumbs'][] = $this->title;
 CrudAsset::register($this);
 
 ?>
-<div class="row">
-    <div class="page-header">
-        <h1>Access Rights</h1>
-    </div>
-</div>
 <div class="auth-assignment-index">
     <div id="ajaxCrudDatatable">
         <?=GridView::widget([

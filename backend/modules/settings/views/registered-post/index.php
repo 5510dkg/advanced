@@ -17,11 +17,6 @@ CrudAsset::register($this);
 
 ?>
 
-<div class="row">
-    <div class="page-header">
-        <h1>Registered Post</h1>
-    </div>
-</div>
 <div class="registered-post-index">
     <div id="ajaxCrudDatatable">
         <?=GridView::widget([

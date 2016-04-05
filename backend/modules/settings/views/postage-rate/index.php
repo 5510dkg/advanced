@@ -17,11 +17,6 @@ CrudAsset::register($this);
 
 ?>
 
-<div class="row">
-    <div class="page-header">
-        <h1>Postage Rate</h1>
-    </div>
-</div>
 <div class="postage-rate-index">
     <div id="ajaxCrudDatatable">
         <?=GridView::widget([
