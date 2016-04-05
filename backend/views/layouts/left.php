@@ -8,13 +8,13 @@
                 <img src="<?= $directoryAsset ?>/img/user.jpg" class="img-circle" alt="User Image"/>
             </div>
             <div class="pull-left info">
-                <p>Alexander Pierce</p>
+                <p><?= Yii::$app->user->identity->name;?></p>
 
-                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                
             </div>
         </div>
 
-        <!-- search form -->
+<!--         search form 
         <form action="#" method="get" class="sidebar-form">
             <div class="input-group">
                 <input type="text" name="q" class="form-control" placeholder="Search..."/>
@@ -23,43 +23,29 @@
                 </button>
               </span>
             </div>
-        </form>
+        </form>-->
         <!-- /.search form -->
+       <?php if(Yii::$app->user->identity->role_group_id=='1'){$homeurl='/admin/';
+              }
+             if(Yii::$app->user->identity->role_group_id=='2'){$homeurl='/user/';
+              }
+             if(Yii::$app->user->identity->role_group_id=='3'){$homeurl='/approver/';
+              }
+             if(Yii::$app->user->identity->role_group_id=='4'){$homeurl='/manager/'; 
+              }
+       ?>
 
         <?= dmstr\widgets\Menu::widget(
             [
                 'options' => ['class' => 'sidebar-menu'],
                 'items' => [
-                    ['label' => 'Menu Yii2', 'options' => ['class' => 'header']],
-                    ['label' => 'Gii', 'icon' => 'fa fa-file-code-o', 'url' => ['/gii']],
-                    ['label' => 'Debug', 'icon' => 'fa fa-dashboard', 'url' => ['/debug']],
-                    ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
-                    [
-                        'label' => 'Same tools',
-                        'icon' => 'fa fa-share',
-                        'url' => '#',
-                        'items' => [
-                            ['label' => 'Class', 'icon' => 'fa fa-file-code-o', 'url' => ['/class-master'],],
-                            ['label' => 'Debug', 'icon' => 'fa fa-dashboard', 'url' => ['/debug'],],
-                            [
-                                'label' => 'Level One',
-                                'icon' => 'fa fa-circle-o',
-                                'url' => '#',
-                                'items' => [
-                                    ['label' => 'Level Two', 'icon' => 'fa fa-circle-o', 'url' => '#',],
-                                    [
-                                        'label' => 'Level Two',
-                                        'icon' => 'fa fa-circle-o',
-                                        'url' => '#',
-                                        'items' => [
-                                            ['label' => 'Level Three', 'icon' => 'fa fa-circle-o', 'url' => '#',],
-                                            ['label' => 'Level Three', 'icon' => 'fa fa-circle-o', 'url' => '#',],
-                                        ],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
+                    ['label' => 'Menu', 'options' => ['class' => 'header']],
+                    ['label' => 'Dashboard', 'icon' => 'fa fa-dashboard', 'url' => [$homeurl]],
+                    ['label' => 'Configuration', 'icon' => 'fa fa-cog', 'url' => ['/settings']],
+                    ['label' => 'User Management','icon' => 'fa fa-user', 'url' => ['/admin/users'], 'visible' => Yii::$app->user->can('create-user')],
+                    ['label' => 'Access Management','icon' => 'glyphicon glyphicon-registration-mark', 'url' => ['/rbac/assignment'], 'visible' => Yii::$app->user->can('access-mgmt')],
+                    ['label' => 'Database','icon' => 'fa fa-edit', 'url' => ['/backuprestore'], 'visible' => Yii::$app->user->can('access-mgmt')],
+                    
                 ],
             ]
         ) ?>
