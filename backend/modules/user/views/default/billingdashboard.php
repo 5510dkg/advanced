@@ -13,6 +13,7 @@ use yii\helpers\Html;
                         
                 </div> 
 <?php } ?>
+
 <?php  if(Yii::$app->user->can('upload-credit-note')){ ?>
 <div class="col-lg-4">
                         <?=Html::a('Credit Note',['/circulation/agency-credit-note/list'],['class'=>'btn btn-success btn-lg btn-block'])?>  
@@ -26,6 +27,10 @@ use yii\helpers\Html;
                         
                 </div> 
 <?php } ?>
+<br/>
+<br/>
+<br/>
+
 <?php  if(Yii::$app->user->can('search-bill')){ ?>
 <div class="col-lg-4">
                         <?=Html::a('Search Bill',['/circulation/billing/search'],['class'=>'btn btn-success btn-lg btn-block'])?>  
