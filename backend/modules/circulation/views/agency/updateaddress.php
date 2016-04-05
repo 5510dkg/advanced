@@ -3,6 +3,7 @@ use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 use kartik\typeahead\Typeahead;
 use dosamigos\datepicker\DatePicker;
+use yii\helpers\Url;
 
 $this->title='Agency|Search';
 ?>
@@ -73,7 +74,7 @@ $this->title='Agency|Search';
         'mail_pincode',
         'reference',
         ['class'=>'yii\grid\ActionColumn',
-         'template'=>'{edit}',
+         'template'=>'{update}',
         'buttons' => [
         'bill' => function ($url, $model) {
             return Html::a('<span></span><span class="glyphicon glyphicon glyphicon-eye"></span>', $url, [
