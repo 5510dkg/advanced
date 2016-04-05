@@ -83,7 +83,7 @@ $this->title='Agency|Search';
          }
         ],
          'urlCreator' => function($action, $model, $key, $index) { 
-                        return Url::toRoute([$action, 'id' => $model->id]);
+                        return Url::toRoute([$action, 'id' => $model->id,'q'=>'add']);
         },
             ],
          ],
