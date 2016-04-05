@@ -20,14 +20,55 @@ use yii\helpers\Html;
             <ul class="nav navbar-nav">
 
                 <!-- Messages: style can be found in dropdown.less-->
-                
+                 <?php if(Yii::$app->user->identity->role_group_id!='1'){?>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bookmark fa-fw"></i>HR
+                    </a>
+                </li>
+                 <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-desktop fa-fw"></i>IT
+                    </a>
+                </li>
+                 <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-inr fa-fw"></i>FINANCE
+                    </a>
+                </li>
+                 <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-external-link fa-fw"></i>EDITORIAL
+                    </a>
+                </li>
+                 <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-dot-circle-o fa-fw"></i>CIRCULATION
+                    </a>
+                </li>
+                 <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-certificate fa-fw"></i>PRODUCTION
+                    </a>
+                </li>
+                 <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-gavel fa-fw"></i>OPERATION
+                    </a>
+                </li>
+                 <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-newspaper-o fa-fw"></i>ADVERTISEMENT
+                    </a>
+                </li>
+                 <?php } ?>
                 
                 
                 <!-- User Account: style can be found in dropdown.less -->
 
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="<?= $directoryAsset ?>/img/user.jpg" class="user-image" alt="User Image"/>
+                       
                         <span class="hidden-xs"><?=  strtoupper(Yii::$app->user->identity->name)?> </span>
                     </a>
                     <ul class="dropdown-menu">
@@ -58,10 +99,6 @@ use yii\helpers\Html;
                     </ul>
                 </li>
 
-                <!-- User Account: style can be found in dropdown.less -->
-                <li>
-                    <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-                </li>
             </ul>
         </div>
     </nav>
