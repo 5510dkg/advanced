@@ -529,7 +529,7 @@ class AgencyController extends Controller
                 $query->andFilterWhere(['like', 'name', $model->name]);
                 $query->andFilterWhere(['like', 'account_id', $model->account_id]);
                 $query->andFilterWhere(['like', 'mail_pincode', $model->mail_pincode]);
-                $query->andFilterWhere(['state_id'=>$model->state]);
+                $query->andFilterWhere(['mail_state_id'=>$model->state]);
                 
             return $this->render('updateaddress',
                             [
