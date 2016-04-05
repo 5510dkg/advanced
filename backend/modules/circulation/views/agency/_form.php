@@ -681,7 +681,7 @@ use kartik\typeahead\Typeahead;
          </div>
     </div>
                 <?php } ?>
-    <input type="hidden" name="q" value="<?=$q?>"/>
+    
    <?php if (!Yii::$app->request->isAjax){ ?>
 	  	<div class="form-group">
 	        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
