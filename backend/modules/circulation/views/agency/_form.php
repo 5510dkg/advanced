@@ -571,16 +571,17 @@ use kartik\typeahead\Typeahead;
                 <?php if($q=='no'){?>
             <div class=" box box-default">
     <div class="box-header with-border">
-        <h3 class="box-title">Update Copies Records</h3>
+        <h3 class="box-title">New Agency</h3>
         <div class="box-tools pull-right">
             <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
         </div>
     </div>
     <div class="box-body">
+        <div class="col-lg-6">
                 <?= $form->field($model, 'name')->textInput() ?>
                 <?= $form->field($model, 'email')->textInput() ?>
                  <?= $form->field($model,'agency_type')->dropDownList([ 'Select agency type'=>'','Single' => 'Single', 'Combined' => 'Combined' ]);?>
-      
+        </div>
          <div class="col-lg-6">
                 <?= $form->field($model, 'landline_no')->textInput() ?>
                 <?= $form->field($model, 'mobile_no')->textInput() ?>
