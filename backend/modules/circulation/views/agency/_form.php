@@ -33,18 +33,22 @@ use kartik\typeahead\Typeahead;
     
     <?php $form = ActiveForm::begin(); ?>
 
-    <div class="row">
-        <div class="col-lg-12">
-        <h4><em>Agency Basic Details</em></h4>
-        </div>
-        <div class="col-lg-6">
             <!--address starts here -->
             
             <?php if($q=='copy'){?>
+            
+<div class=" box box-default">
+    <div class="box-header with-border">
+        <h3 class="box-title">Update Copies Records</h3>
+        <div class="box-tools pull-right">
+            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+        </div>
+    </div>
+    <div class="box-body">
                 <?= $form->field($model, 'name')->textInput(['readonly'=>'readonly']) ?>
                 <?= $form->field($model, 'email')->hiddenInput()->label(false) ?>
                  <?= $form->field($model,'agency_type')->hiddenInput([ 'Select agency type'=>'','Single' => 'Single', 'Combined' => 'Combined' ])->label(false);?>
-        </div>
+       
         <div class="col-lg-6" style="display: none">
                 <?= $form->field($model, 'landline_no')->hiddenInput()->label(FALSE) ?>
                 <?= $form->field($model, 'mobile_no')->hiddenInput()->label(FALSE) ?>
@@ -54,7 +58,6 @@ use kartik\typeahead\Typeahead;
 
         </div>
 
-    </div>
 
     <div class="row" style="display: none">
         <div class="col-lg-12" style="display: none">
@@ -160,11 +163,16 @@ use kartik\typeahead\Typeahead;
              <?= $form->field($model, 'reference')->hiddenInput(['maxlength' => true]) ?>
          </div>
     </div>
-                <?php } ?>
+</div>
+                <?php
+                
+                
+                
+            } ?>
            <!-- address ends here -->
             <!--copies starts here -->
             
-             <?php if($q=='add'){?>
+            <?php if($q=='add'){?>
                 <?= $form->field($model, 'name')->textInput() ?>
                 <?= $form->field($model, 'email')->hiddenInput()->label(false) ?>
                  <?= $form->field($model,'agency_type')->hiddenInput([ 'Select agency type'=>'','Single' => 'Single', 'Combined' => 'Combined' ])->label(false);?>
@@ -289,8 +297,6 @@ use kartik\typeahead\Typeahead;
          <!-- copies ends here -->
             
             <!-- Delivery method starts here-->
-            
-            
             <?php if($q=='delivery'){?>
                 <?= $form->field($model, 'name')->textInput(['readonly'=>'readonly']) ?>
                 <?= $form->field($model, 'email')->hiddenInput()->label(false) ?>
@@ -681,12 +687,13 @@ use kartik\typeahead\Typeahead;
          </div>
     </div>
                 <?php } ?>
-    
+     
    <?php if (!Yii::$app->request->isAjax){ ?>
 	  	<div class="form-group">
 	        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
 	    </div>
 	<?php } ?>
+       
 
     <?php ActiveForm::end(); ?>
     
