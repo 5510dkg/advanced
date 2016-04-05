@@ -11,6 +11,7 @@ use dosamigos\datepicker\DatePicker;
 use kartik\typeahead\Typeahead;
 
 
+
 //$data = [
 //    'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 
 //    'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
@@ -716,9 +717,11 @@ use kartik\typeahead\Typeahead;
     <?php ActiveForm::end(); ?>
     
 </div>
-<script>
+
+
+<?php $this->registerJs("
    $(document).ready(function () {
-    $("[type=checkbox]").change(function () {
+    $('[type=checkbox]').change(function () {
      // $('#autohideid').fadeToggle();
         
         $('#agency-add_house_no').val( $('#agency-mail_house_no').val() );
@@ -734,11 +737,11 @@ use kartik\typeahead\Typeahead;
       if ( this.value == 'Combined')
       //.....................^.......
       {
-        $("#agencytypeshow").show();
+        $('#agencytypeshow').show();
       }
       else
       {
-        $("#agencytypeshow").hide();
+        $('#agencytypeshow').hide();
       }
     });
    //Delivery method detail
@@ -748,35 +751,35 @@ use kartik\typeahead\Typeahead;
       //.....................^.......
       {
 
-        $("#deliveryrail").show();
-        $("#agency-source").prop('required',true);
-        $("#agency-train_no").prop('required', true);
-        $("#agency-train_name").prop('required',true);
+        $('#deliveryrail').show();
+        $('agency-source').prop('required',true);
+        $('#agency-train_no').prop('required', true);
+        $('#agency-train_name').prop('required',true);
 
       }
       else
       {
-        $("#deliveryrail").hide();
+        $('#deliveryrail').hide();
       }
     });  
      //slected in rail method in edit mode
 
      if($('#agency-route_id').val()=='5'){
-         $("#deliveryrail").show();
+         $('#deliveryrail').show();
      }else{
-            $("#deliveryrail").hide();
+            $('#deliveryrail').hide();
        // console.log($('#agency-route_id').val());
      }
      if($('#agency-agency_type').val()=='Combined'){
-          $("#agencytypeshow").show();
+          $('#agencytypeshow').show();
      }else{
-            $("#agencytypeshow").hide();
+            $('#agencytypeshow').hide();
        // console.log($('#agency-route_id').val());
      }
 
-    // if($("#agency-route_id option[value='Rail']")){
+    // if($('#agency-route_id option[value='Rail']')){
     //     console.log('YES');
-    //      $("#deliveryrail").hide();
+    //      $('#deliveryrail').hide();
     //   }
     // else{
     //     console.log('No');
@@ -785,5 +788,4 @@ use kartik\typeahead\Typeahead;
   
 
 
-});
-</script>
+});");
