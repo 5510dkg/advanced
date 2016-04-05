@@ -717,6 +717,7 @@ use kartik\typeahead\Typeahead;
 <?php $this->registerJs("
    $(document).ready(function () {
     $('[type=checkbox]').change(function () {
+    
      // $('#autohideid').fadeToggle();
         
         $('#agency-add_house_no').val( $('#agency-mail_house_no').val() );
@@ -726,7 +727,9 @@ use kartik\typeahead\Typeahead;
         $('#agency-add_state_id').val( $('#agency-mail_state_id').val() );
         $('#agency-add_district_id').val( $('#agency-mail_district_id').val() );
         $('#agency-add_pincode').val( $('#agency-mail_pincode').val() );
+      
     });
+    
     //agency-agency_type
      $('#agency-agency_type').on('change', function() {
       if ( this.value == 'Combined')
