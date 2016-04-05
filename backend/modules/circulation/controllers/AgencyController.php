@@ -73,6 +73,10 @@ class AgencyController extends Controller
      */
     public function actionView($id)
     {
+        if(isset($_GET['q'])){
+             $q=$_GET['q']; 
+        }
+        else $q='no';
         $request = Yii::$app->request;
         if($request->isAjax){
             Yii::$app->response->format = Response::FORMAT_JSON;
@@ -82,7 +86,7 @@ class AgencyController extends Controller
                         'model' => $this->findModel($id),
                     ]),
                     'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
-                            Html::a('Edit',['update','id'=>$id],['class'=>'btn btn-primary','role'=>'modal-remote'])
+                            Html::a('Edit',['update','id'=>$id,'q'=>$q],['class'=>'btn btn-primary','role'=>'modal-remote'])
                 ];
         }else{
             return $this->render('view', [

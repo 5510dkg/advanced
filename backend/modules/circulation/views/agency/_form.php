@@ -112,11 +112,11 @@ use kartik\typeahead\Typeahead;
         <h4><em>Copies Detail</em></h4>
         </div>
         <div class="col-lg-6">
-                <?= $form->field($model, 'panchjanya')->textInput(['maxlength'=>'1']) ?>
+                <?= $form->field($model, 'panchjanya')->textInput(['maxlength'=>'4']) ?>
               
         </div>
          <div class="col-lg-6">
-                <?= $form->field($model, 'organiser')->textInput() ?>
+                <?= $form->field($model, 'organiser')->textInput(['maxlength'=>'4']) ?>
         </div>
     </div>
    
