@@ -719,7 +719,7 @@ use kartik\typeahead\Typeahead;
     $('#agency-address_status').change(function () {
         
      // $('#autohideid').fadeToggle();
-      if( $('#agency-address_status').prop('checked', true)){
+//      if( $('#agency-address_status').prop('checked', false)){
  
         $('#agency-add_house_no').val( $('#agency-mail_house_no').val() );
         $('#agency-add_street_address').val( $('#agency-mail_street_address').val() );
@@ -728,7 +728,7 @@ use kartik\typeahead\Typeahead;
         $('#agency-add_state_id').val( $('#agency-mail_state_id').val() );
         $('#agency-add_district_id').val( $('#agency-mail_district_id').val() );
         $('#agency-add_pincode').val( $('#agency-mail_pincode').val() );
-        }
+       // }
       
     });
     
