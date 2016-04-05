@@ -18,6 +18,7 @@ use dosamigos\datepicker\DatePicker;
     <?= DatePicker::widget([
     'name' => 'date',
     //'value' => '02-16-2012',
+    
        
     'template' => '{addon}{input}',
         'clientOptions' => [
@@ -25,6 +26,7 @@ use dosamigos\datepicker\DatePicker;
             'format'=> "yyyy-mm",
             'viewMode'=> "months", 
             'minViewMode'=> "months",
+           
            
         ]
 ]); ?>
