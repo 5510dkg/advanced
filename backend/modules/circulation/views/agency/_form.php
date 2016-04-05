@@ -173,10 +173,18 @@ use kartik\typeahead\Typeahead;
             <!--copies starts here -->
             
             <?php if($q=='add'){?>
+            <div class=" box box-default">
+    <div class="box-header with-border">
+        <h3 class="box-title">Update Address</h3>
+        <div class="box-tools pull-right">
+            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+        </div>
+    </div>
+    <div class="box-body">
                 <?= $form->field($model, 'name')->textInput() ?>
                 <?= $form->field($model, 'email')->hiddenInput()->label(false) ?>
                  <?= $form->field($model,'agency_type')->hiddenInput([ 'Select agency type'=>'','Single' => 'Single', 'Combined' => 'Combined' ])->label(false);?>
-        </div>
+       
          <div class="col-lg-6">
                 <?= $form->field($model, 'landline_no')->hiddenInput()->label(FALSE) ?>
                 <?= $form->field($model, 'mobile_no')->hiddenInput()->label(FALSE) ?>
@@ -186,7 +194,7 @@ use kartik\typeahead\Typeahead;
 
         </div>
 
-    </div>
+   
 
     <div class="row">
         <div class="col-lg-12">
@@ -292,16 +300,25 @@ use kartik\typeahead\Typeahead;
              <?= $form->field($model, 'reference')->hiddenInput(['maxlength' => true]) ?>
          </div>
     </div>
+            </div>
                 <?php } ?>
             
          <!-- copies ends here -->
             
             <!-- Delivery method starts here-->
             <?php if($q=='delivery'){?>
+            <div class=" box box-default">
+    <div class="box-header with-border">
+        <h3 class="box-title">Update Delivery Method</h3>
+        <div class="box-tools pull-right">
+            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+        </div>
+    </div>
+    <div class="box-body">
                 <?= $form->field($model, 'name')->textInput(['readonly'=>'readonly']) ?>
                 <?= $form->field($model, 'email')->hiddenInput()->label(false) ?>
                  <?= $form->field($model,'agency_type')->hiddenInput([ 'Select agency type'=>'','Single' => 'Single', 'Combined' => 'Combined' ])->label(false);?>
-        </div>
+        
         <div class="col-lg-6" style="display: none">
                 <?= $form->field($model, 'landline_no')->hiddenInput()->label(FALSE) ?>
                 <?= $form->field($model, 'mobile_no')->hiddenInput()->label(FALSE) ?>
@@ -311,7 +328,7 @@ use kartik\typeahead\Typeahead;
 
         </div>
 
-    </div>
+   
 
     <div class="row" style="display: none">
         <div class="col-lg-12" style="display: none">
@@ -416,6 +433,7 @@ use kartik\typeahead\Typeahead;
              <?= $form->field($model, 'status')->hiddenInput([ 'Suspended' => 'Suspended', 'Active' => 'Active', 'Inactive' => 'Inactive', ]) ?>
              <?= $form->field($model, 'reference')->hiddenInput(['maxlength' => true]) ?>
          </div>
+    </div>
     </div>
                 <?php } ?>
             <!-- delivery method ends here-->
