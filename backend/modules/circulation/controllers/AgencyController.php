@@ -13,6 +13,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use \yii\web\Response;
 use yii\helpers\Html;
+use yii\base\DynamicModel;
 
 /**
  * AgencyController implements the CRUD actions for Agency model.
@@ -533,13 +534,28 @@ class AgencyController extends Controller
                              'list'=>$dataProvider,
                              'model'=>$model,
                              'monthdata'=>$month,  
-                             'data'=>$this->actionReferencesList()
+                             'data'=>$this->actionAgencylist()
                             ]);
         }
         return $this->render('searchaddress', ['model'=>$model,
-            'data'=>$this->actionReferencesList(),
+            'data'=>$this->actionAgencylist(),
             ]);
     }
+    
+    //search list for auto select dropdown
+     public function actionAgencylist() {
+    $query = new \yii\db\Query;
+    
+    $query->select('name')
+        ->from('agency')->orderBy('name');
+    $command = $query->createCommand();
+    $data = $command->queryAll();
+    $out = [];
+    foreach ($data as $d) {
+        $out[] = $d['name'];
+    }
+    return $out;
+}
     
     
     /** 
@@ -559,7 +575,9 @@ public function actionReferenceList($q = null) {
         $out[] = ['value' => $d['reference']];
     }
     echo Json::encode($out);
-}public function actionReferencesList() {
+    
+}
+public function actionReferencesList() {
     $query = new \yii\db\Query;
     
     $query->select('reference')
