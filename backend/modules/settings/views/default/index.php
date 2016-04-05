@@ -51,7 +51,7 @@ use yii\helpers\Html;
 
 <?php if(Yii::$app->user->can('add-payment-mode')) {?>
 <div class="col-lg-4">
-                            <?=Html::a('Payment Mode',['/settings/patment-mode'],['class'=>'btn btn-success btn-lg btn-block'])?>  
+                            <?=Html::a('Payment Mode',['/settings/payment-mode'],['class'=>'btn btn-success btn-lg btn-block'])?>  
                 </div>
 <?php } ?>
 
