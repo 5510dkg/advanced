@@ -8,7 +8,7 @@ $this->title='Agency Management';?>
      <?=Html::a('Update Address',['/circulation/agency/searchaddress',['q'=>'add']],['class'=>'btn btn-success btn-lg btn-block'])?>  
 </div>
 <div class="col-sm-3">
-     <?=Html::a('New Agency',['/circulation/agency/create',['q'=>'create']],['class'=>'btn btn-success btn-lg btn-block'])?>  
+     <?=Html::a('New Agency',['/circulation/agency/create'],['class'=>'btn btn-success btn-lg btn-block'])?>  
 </div>
 <div class="col-sm-3">
      <?=Html::a('Update Copies',['/circulation/agency/searchcopies',['q'=>'copy']],['class'=>'btn btn-success btn-lg btn-block'])?>  

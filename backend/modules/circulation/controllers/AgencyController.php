@@ -546,7 +546,7 @@ class AgencyController extends Controller
     /*
      * Search list for update address
      */
-    public function actionSearchaddress(){
+    public function actionSearchcopies(){
         $model = new DynamicModel([
                 'name', 'account_id', 'mail_pincode','state'
             ]);
@@ -572,17 +572,101 @@ class AgencyController extends Controller
                 $query->andFilterWhere(['like', 'mail_pincode', $model->mail_pincode]);
                 $query->andFilterWhere(['mail_state_id'=>$model->state]);
                 
-            return $this->render('updateaddress',
+            return $this->render('updatecopies',
                             [
                              'list'=>$dataProvider,
                              'model'=>$model,
                             'data'=>$this->actionAgencylist()
                             ]);
         }
-        return $this->render('searchaddress', ['model'=>$model,
+        return $this->render('searchcopies', ['model'=>$model,
             'data'=>$this->actionAgencylist(),
             ]);
     }
+    /*
+     * Search list for update address
+     */
+    public function actionSearchdeactivate(){
+        $model = new DynamicModel([
+                'name', 'account_id', 'mail_pincode','state'
+            ]);
+            $model->addRule('name', 'string',['max'=>32]);
+            $model->addRule('account_id', 'string',['max'=>32]);
+            $model->addRule('mail_pincode', 'string',['max'=>32]);
+            $model->addRule('state', 'string',['max'=>32]);
+       
+
+            if($model->load(Yii::$app->request->post())){
+                        // do somenthing with model
+                            $params=Yii::$app->request->post();
+                           // print_r($params);exit;
+                            $query = Agency::find();
+                            $dataProvider = new ActiveDataProvider([
+                                'query' => $query,
+                            ]);
+                            $model->load($params);
+                           
+                                
+                $query->andFilterWhere(['like', 'name', $model->name]);
+                $query->andFilterWhere(['like', 'account_id', $model->account_id]);
+                $query->andFilterWhere(['like', 'mail_pincode', $model->mail_pincode]);
+                $query->andFilterWhere(['mail_state_id'=>$model->state]);
+                
+            return $this->render('updatedeactivate',
+                            [
+                             'list'=>$dataProvider,
+                             'model'=>$model,
+                            'data'=>$this->actionAgencylist()
+                            ]);
+        }
+        return $this->render('searchdeactivate', ['model'=>$model,
+            'data'=>$this->actionAgencylist(),
+            ]);
+    }
+    /*
+     * Search list for update address
+     */
+    public function actionSearchdelivery(){
+        $model = new DynamicModel([
+                'name', 'account_id', 'mail_pincode','state'
+            ]);
+            $model->addRule('name', 'string',['max'=>32]);
+            $model->addRule('account_id', 'string',['max'=>32]);
+            $model->addRule('mail_pincode', 'string',['max'=>32]);
+            $model->addRule('state', 'string',['max'=>32]);
+       
+
+            if($model->load(Yii::$app->request->post())){
+                        // do somenthing with model
+                            $params=Yii::$app->request->post();
+                           // print_r($params);exit;
+                            $query = Agency::find();
+                            $dataProvider = new ActiveDataProvider([
+                                'query' => $query,
+                            ]);
+                            $model->load($params);
+                           
+                                
+                $query->andFilterWhere(['like', 'name', $model->name]);
+                $query->andFilterWhere(['like', 'account_id', $model->account_id]);
+                $query->andFilterWhere(['like', 'mail_pincode', $model->mail_pincode]);
+                $query->andFilterWhere(['mail_state_id'=>$model->state]);
+                
+            return $this->render('updatedelivery',
+                            [
+                             'list'=>$dataProvider,
+                             'model'=>$model,
+                            'data'=>$this->actionAgencylist()
+                            ]);
+        }
+        return $this->render('searchdelivery', ['model'=>$model,
+            'data'=>$this->actionAgencylist(),
+            ]);
+    }
+    
+    
+    
+    
     
     //search list for auto select dropdown
      public function actionAgencylist() {
