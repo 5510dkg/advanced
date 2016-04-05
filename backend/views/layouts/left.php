@@ -45,19 +45,20 @@
                     ['label' => 'User Management','icon' => 'fa fa-user', 'url' => ['/admin/users'], 'visible' => Yii::$app->user->can('create-user')],
                     ['label' => 'Access Management','icon' => 'glyphicon glyphicon-registration-mark', 'url' => ['/rbac/assignment'], 'visible' => Yii::$app->user->can('access-mgmt')],
                     ['label' => 'Database','icon' => 'fa fa-edit', 'url' => ['/backuprestore'], 'visible' => Yii::$app->user->can('access-mgmt')],
+                     ['label' => 'Agency Management','icon' => 'fa fa-edit', 'url' => ['/circulation/agency/list'], 'visible' => Yii::$app->user->can('create-agency')],
                     //agency management menu starts here
-                    [
-                        'label' => 'Agency Management',
-                        'icon' => 'fa fa-edit',
-                        'url' => '#',
-                        'visible' => Yii::$app->user->can('create-agency'),
-                        'items' => [
-                             ['label' => 'Search Agency', 'icon' => 'fa fa-search', 'url' => ['/debug'],],
-                            ['label' => 'Create Agency', 'icon' => 'fa fa-plus', 'url' => ['/circulation/agency/create'],],
-                            ['label' => 'Update Agency', 'icon' => 'fa fa-edit', 'url' => ['/debug'],],
-                            ['label' => 'Delete Agency', 'icon' => 'fa fa-minus', 'url' => ['/debug'],],
-                        ],
-                    ],
+//                    [
+//                        'label' => 'Agency Management',
+//                        'icon' => 'fa fa-edit',
+//                        'url' => '#',
+//                        'visible' => Yii::$app->user->can('create-agency'),
+//                        'items' => [
+//                             ['label' => 'Search Agency', 'icon' => 'fa fa-search', 'url' => ['/debug'],],
+//                            ['label' => 'Create Agency', 'icon' => 'fa fa-plus', 'url' => ['/circulation/agency/create'],],
+//                            ['label' => 'Update Agency', 'icon' => 'fa fa-edit', 'url' => ['/debug'],],
+//                            ['label' => 'Delete Agency', 'icon' => 'fa fa-minus', 'url' => ['/debug'],],
+//                        ],
+//                    ],
                //agency managemenet menu ends here     
                 ],
             ]
