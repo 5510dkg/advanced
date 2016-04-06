@@ -167,7 +167,7 @@ class Agency extends \yii\db\ActiveRecord
              if($atyp=='Single'){
                  $this->billing_id=$mystate.'|'.$atype.'|'.$num;
              }else{
-                 $this->billing_id='';
+                 $this->billing_id=$this->agency_combined_id;
              }
             
             
