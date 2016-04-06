@@ -36,9 +36,12 @@ class RegisteredPostedDataController extends \yii\web\Controller
 
 
 		 }else{
+               
 		    $pdf = new Pdf([
         'mode' => Pdf::MODE_UTF8, // leaner size using standard fonts
         'orientation'=>'L',
+        'destination' => Pdf::DEST_DOWNLOAD,
+        'filename' => 'RegisteredPost"'.date('d-m-y').'".pdf',
 
         'content' => $this->renderPartial('print'),
         'options' => [
