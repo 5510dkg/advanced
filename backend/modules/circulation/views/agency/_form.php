@@ -719,7 +719,7 @@ use kartik\typeahead\Typeahead;
     $('#agency-address_status').change(function () {
         
      // $('#autohideid').fadeToggle();
-//      if( $('#agency-address_status').prop('checked', false)){
+       if($(this).is(':checked')){
  
         $('#agency-add_house_no').val( $('#agency-mail_house_no').val() );
         $('#agency-add_street_address').val( $('#agency-mail_street_address').val() );
@@ -728,8 +728,22 @@ use kartik\typeahead\Typeahead;
         $('#agency-add_state_id').val( $('#agency-mail_state_id').val() );
         $('#agency-add_district_id').val( $('#agency-mail_district_id').val() );
         $('#agency-add_pincode').val( $('#agency-mail_pincode').val() );
-       // }
+        }
+        else if($(this).is(':not(:checked)')){
+        $('#agency-add_house_no').val('');
+        $('#agency-add_street_address').val('');
+        $('#agency-add_p_office').val('');
+        $('#agency-add_country_id').val('');
+        $('#agency-add_state_id').val('');
+        $('#agency-add_district_id').val('');
+        $('#agency-add_pincode').val('');
+            }
       
+    });
+    //district change 
+    $('#agency-mail_district_id').on('change', function() {
+          $('#agency-add_district_id').val('');
+          $('#agency-add_pincode').val('');
     });
     
     //agency-agency_type
