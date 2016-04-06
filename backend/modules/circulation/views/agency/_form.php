@@ -745,8 +745,26 @@ use kartik\typeahead\Typeahead;
     });
     //district change 
     $('#agency-mail_district_id').on('change', function() {
-          $('#agency-add_district_id').val('');
-          $('#agency-add_pincode').val('');
+         $('#agency-add_house_no').val('');
+        $('#agency-add_street_address').val('');
+        $('#agency-add_p_office').val('');
+        $('#agency-add_country_id').val('');
+        $('#agency-add_state_id').val('');
+        $('#agency-add_district_id').val('');
+        $('#agency-add_pincode').val('');
+        $('#agency-mail_pincode').val('');
+        $('#agency-address_status').prop('checked', false);
+    });
+    $('#agency-mail_state_id').on('change', function() {
+         $('#agency-add_house_no').val('');
+        $('#agency-add_street_address').val('');
+        $('#agency-add_p_office').val('');
+        $('#agency-add_country_id').val('');
+        $('#agency-add_state_id').val('');
+        $('#agency-add_district_id').val('');
+        $('#agency-add_pincode').val('');
+        $('#agency-mail_pincode').val('');
+        $('#agency-address_status').prop('checked', false);
     });
     
     //agency-agency_type
