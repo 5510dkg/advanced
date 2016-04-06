@@ -4,15 +4,17 @@ use yii\widgets\ActiveForm;
 use dosamigos\datepicker\DatePicker;
 ?>
 
-<div class="row">
-    <div class="page-header">
-        <h1>Agency Billing</h1>
-    </div>
-</div>
 <?php  if(!empty($error)){echo $error;}else{$error='';};?>
   <?php ActiveForm::begin(['action'=>'index.php?r=circulation/billing/create']); ?>
 <div class="col-lg-4 col-lg-offset-3">
-    
+    <div class="box box-success">
+        <div class="box-header with-border">
+        <h3 class="box-title">Generate Bill</h3>
+        <div class="box-tools pull-right">
+            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+        </div>
+    </div>
+    <div class="box-body">
         <div class="form-group">   
     <h4>Generate bill for the month </h4>
     <?= DatePicker::widget([
@@ -280,6 +282,8 @@ use dosamigos\datepicker\DatePicker;
     <input type="submit" name="submit" value="Generate" class="btn btn-primary"/>
     <?php ActiveForm::end(); ?>
     
+</div>
+    </div>
 </div>
 
 <?php $this->registerJs(
