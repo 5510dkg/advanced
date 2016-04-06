@@ -1,9 +1,4 @@
-<?php
-//$this->title='';
-$this->registerJsFile('@web/bower_components/jquery/dist/jquery.min.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
-$this->registerJsFile('@web/bower_components/bootstrap/dist/js/bootstrap.min.js', ['depends' => [\yii\bootstrap\BootstrapAsset::className()]]);
 
-?>
 <?php
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
@@ -13,10 +8,16 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <div class="site-changepassword">
-    <h1><?= Html::encode($this->title) ?></h1>
-   
-    <p>Please fill out the following fields to change password :</p>
-   
+    
+<div class=" box box-default">
+    <div class="box-header with-border">
+        <h3 class="box-title">Please fill out the following fields to change password </h3>
+        <div class="box-tools pull-right">
+            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+        </div>
+    </div>
+    <div class="box-body">
+    
     <?php $form = ActiveForm::begin([
         'id'=>'changepassword-form',
         'options'=>['class'=>'form-horizontal'],
@@ -44,5 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ]) ?>
             </div>
         </div>
+    </div>
+    </div>
     <?php ActiveForm::end(); ?>
 </div> 
