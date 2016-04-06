@@ -7,7 +7,13 @@ use dosamigos\datepicker\DatePicker;
 /* @var $model backend\modules\circulation\models\AgencyCreditNote */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-
+<div class="box box-primary">
+    <div class="box-header">
+        <div class="box-title">
+            <h3>Credit Note Form</h3>
+        </div>
+    </div>
+    <div class="box-body">
 <div class="agency-credit-note-form">
 
     <?php $form = ActiveForm::begin(); ?>
@@ -58,4 +64,6 @@ use dosamigos\datepicker\DatePicker;
 
     <?php ActiveForm::end(); ?>
     
+</div>
+</div>
 </div>
