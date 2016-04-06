@@ -194,7 +194,7 @@ class RegisteredPostData extends \yii\db\ActiveRecord
     
     public function agencylist(){
 
-           $query = (new \yii\db\Query())->select('*')->from('agency')->where(['route_id' =>'2']);
+           $query = (new \yii\db\Query())->select('*')->from('agency')->where(['route_id' =>'2'])->orderBy('mail_state_id');
             $command = $query->createCommand();
             return $command->queryAll();
         //return Agency::find()->where('route_id=2')->all();
