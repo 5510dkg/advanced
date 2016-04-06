@@ -5,8 +5,35 @@ use dosamigos\datepicker\DatePicker;
 ?>
 
 <?php  if(!empty($error)){echo $error;}else{$error='';};?>
+<div class="box box-success" id="hidediv">
+        <div class="box-header with-border">
+        <h3 class="box-title">Generate Bill</h3>
+        <div class="box-tools pull-right">
+            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+        </div>
+    </div>
+    <div class="box-body">
+        <h4><i> Have You Submitted All Receipts In the Last Month...?</i></h4>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="btn btn-lg btn-success" id="Y">Yes</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;
+         <button class="btn btn-lg btn-success" id="N">No</button>
+    </div>
+</div>
+<div class="box box-danger" id="msgdiv">
+        <div class="box-header with-border">
+        <h3 class="box-title">!Warning</h3>
+        <div class="box-tools pull-right">
+            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+        </div>
+    </div>
+    <div class="box-body">
+        <h4><i>Please Submit All Receipts First. Then Try Again... </i></h4>
+       
+    </div>
+</div>
   <?php ActiveForm::begin(['action'=>'index.php?r=circulation/billing/create']); ?>
-<div class="col-lg-4 col-lg-offset-3">
+<div class="col-lg-4 col-lg-offset-3" id="showdiv">
     <div class="box box-success">
         <div class="box-header with-border">
         <h3 class="box-title">Generate Bill</h3>
@@ -16,6 +43,7 @@ use dosamigos\datepicker\DatePicker;
     </div>
     <div class="box-body">
         <div class="form-group">   
+            <?php $last=date("Y-m", strtotime("first day of previous month")); ?>
     <h4>Generate bill for the month </h4>
     <?= DatePicker::widget([
     'name' => 'date',
@@ -28,6 +56,7 @@ use dosamigos\datepicker\DatePicker;
             'format'=> "yyyy-mm",
             'viewMode'=> "months", 
             'minViewMode'=> "months",
+            'startDate'=>$last,
            
            
         ]
@@ -98,6 +127,7 @@ use dosamigos\datepicker\DatePicker;
         
     </div>
     <div class="three" id="three">
+        
         <label>Date</label> <?= DatePicker::widget([
          'name' => 'date1[]',
          //'value' => '02-16-2012',
@@ -289,6 +319,18 @@ use dosamigos\datepicker\DatePicker;
 <?php $this->registerJs(
         
     '$("document").ready(function(){ 
+         $("#showdiv").hide();
+          $("#msgdiv").hide();
+         $("#Y").on("click", function() {
+         $("#hidediv").hide();
+         $("#showdiv").show();
+          $("#msgdiv").hide();
+         });
+          $("#N").on("click", function() {
+         $("#hidediv").hide();
+         $("#showdiv").hide();
+         $("#msgdiv").show();
+         });
  $("#optionselect").on("change", function() {
    // alert("hii");
       if ( this.value == "1")
