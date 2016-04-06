@@ -1,16 +1,18 @@
 <?php
-$this->title='Agency Billing';
+$new =date( "M-Y", strtotime( "$month" ) );
+$this->title="Agency Billing for the month of $new";
 $inc=1;
 use yii\helpers\Html;
 use yii\helpers\Url;
-$new =date( "M-Y", strtotime( "$month" ) );
-?>
 
-<div class="row">
-    <div class="page-header">
-        <h3>Agency Billing for the month of <?php echo $new; ?> </h3>
+?>
+<div class="box box-primary">
+    <div class="box-header">
+        <div class="box-title">
+            <h3>Bill</h3>
+        </div>
     </div>
-</div>
+    <div class="box-body">
 <div class="col-lg-12">
     <table style="width:100%" id="dataTables-example" class="table table-striped table-bordered table-hover dataTable no-footer dtr-inline">
         <tr role="row">
@@ -47,4 +49,6 @@ $new =date( "M-Y", strtotime( "$month" ) );
         <?php endforeach; ?>
     </table>
     <p><a class="btn btn-lg btn-success" href="index.php?r=circulation/billing/search">Back</a></p>
+</div>
+    </div>
 </div>
