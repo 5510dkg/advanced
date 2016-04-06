@@ -56,7 +56,7 @@ class OrdinaryPostedDataController extends Controller
         'mode' => Pdf::MODE_UTF8, // leaner size using standard fonts
         'orientation'=>'L',
         'destination' => Pdf::DEST_DOWNLOAD,
-        'filename' => 'Ordinarypost.pdf',
+        'filename' => 'Ordinarypost"'.date('d-m-y').'".pdf',
 
 
         'content' =>$this->renderPartial('print'),

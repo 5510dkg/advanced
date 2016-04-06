@@ -23,7 +23,7 @@ foreach ($data as $key => $value) {
 	for($r=1;$r<$j+1;$r++){
 	?>
 
-	<div style="margin-left: 25px;margin-bottom: 40px;margin-right: -90px; width: 490px;float: left; height: 300px;">
+	<div style="margin-left: 25px;margin-bottom: 130px;margin-right: -90px; width: 490px;float: left; height: 300px;">
 	<div style="height: 20px">
 	<p style="font-size:9px"><?= $value->license;?>, Issue Dt: <?= $value->date;?>.
 1/1 Sanskriti Bhavan, D. B. Gupta Marg, Jhandewalan, N.D-55. <?php if(($value->pjy)>'0'){ echo 'PANCHJANYA';}else{echo "ORGANISER";} ?></p>
@@ -32,7 +32,7 @@ foreach ($data as $key => $value) {
 
 
 
-	<div style="height: 90px">
+	<div style="height: 110px">
 
 		<strong><?=$t['name'];?></strong><br/>
 		H. No.: <?= $t['hno'];?><br/>
@@ -44,7 +44,7 @@ foreach ($data as $key => $value) {
 
 
 	</div>
-	<div style="height: 20px;"><div><strong>PJY:<?= $value->pjy;?> + ORG : <?= $value->org; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?=$r.'/'.$j?></strong></div></div>
+	<div style="height: 40px;"><div><strong>PJY:<?= $value->pjy;?> + ORG : <?= $value->org; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?=$r.'/'.$j?></strong></div></div>
 	</div>
 
 <?php } }
