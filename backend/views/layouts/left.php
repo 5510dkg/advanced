@@ -47,7 +47,7 @@
                     ['label' => 'Database','icon' => 'fa fa-edit', 'url' => ['/backuprestore'], 'visible' => Yii::$app->user->can('access-mgmt')],
                      ['label' => 'Agency Management','icon' => 'fa fa-edit', 'url' => ['/circulation/agency/list'], 'visible' => Yii::$app->user->can('create-agency')],
                      ['label' => 'Labels Management','icon' => 'fa fa-file-pdf-o', 'url' => ['/user/default/dashboard'], 'visible' => Yii::$app->user->can('generate-labels')],
-                     ['label' => 'Billing','icon' => 'fa fa-edit', 'url' => ['/user/default/billingdashboard'], 'visible' => Yii::$app->user->can('generate-bill')],
+                     ['label' => 'Billing','icon' => 'fa fa-inr', 'url' => ['/user/default/billingdashboard'], 'visible' => Yii::$app->user->can('generate-bill')],
                     //agency management menu starts here
 //                    [
 //                        'label' => 'Agency Management',
