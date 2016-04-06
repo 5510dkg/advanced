@@ -8,14 +8,16 @@ use dosamigos\datepicker\DatePicker;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 <div class="box box-primary">
-    <div class="box-header">
-        <div class="box-title">
-            <h3>Credit Note Form</h3>
+    <div class="box-header with-border">
+        <h3 class="box-title">Credit Note Form</h3>
+        <div class="box-tools pull-right">
+            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
         </div>
     </div>
     <div class="box-body">
 <div class="agency-credit-note-form">
-
+    <div class="row">
+    <div class="col-md-4">
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'agency_id')->textInput(['value'=>$id]) ?>
@@ -33,10 +35,13 @@ use dosamigos\datepicker\DatePicker;
                                                                             
                                                                         ]
                         ]); ?>
-
+    </div>
+    <div class="col-md-4">
     <?= $form->field($model, 'issue_type')->dropDownList([ 'Regular Edition' => 'Regular Edition','Special Edition' => 'Special Edition', ]) ?>
 
     <?= $form->field($model, 'pjy')->textInput() ?>
+    </div>
+    <div class="col-md-4">
 
     <?= $form->field($model, 'org')->textInput() ?>
 
@@ -52,15 +57,22 @@ use dosamigos\datepicker\DatePicker;
                                                                             
                                                                         ]
                         ]); ?>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-md-4">
 
     <?= $form->field($model, 'return_type')->dropDownList([ 'cut' => 'cut','RSL' => 'RSL','copy'=>'copy' ]) ?>
 
-  
+    </div>
+    <div class="col-md-12">
 	<?php if (!Yii::$app->request->isAjax){ ?>
 	  	<div class="form-group">
 	        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
 	    </div>
 	<?php } ?>
+    </div>
+    </div>
 
     <?php ActiveForm::end(); ?>
     
