@@ -74,7 +74,7 @@ $this->title='Agency|Search';
         'mail_pincode',
         'reference',
         ['class'=>'yii\grid\ActionColumn',
-         'template'=>'{update}',
+         'template'=>'{view}',
         'buttons' => [
         'bill' => function ($url, $model) {
             return Html::a('<span></span><span class="glyphicon glyphicon glyphicon-eye"></span>', $url, [
