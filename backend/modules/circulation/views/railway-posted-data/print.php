@@ -1,5 +1,3 @@
-
-
 <?php
 
 ini_set('memory_limit', '-1');
@@ -26,17 +24,17 @@ foreach ($data as $key => $value) {
 	for($r=1;$r<$j+1;$r++){
 	?>
 
-	<div style="margin-left: 25px;margin-bottom: 25px;margin-right: -90px; width: 490px;float: left; height: 290px;">
+	<div style="margin-left: 25px;margin-bottom: 100px;margin-right: -90px; width: 490px;float: left; height: 300px;">
 	<div style="height: 20px">
 	<p style="font-size:9px"><?= $value->license;?>, Issue Dt: <?= $value->date;?>.
 1/1 Sanskriti Bhavan, D. B. Gupta Marg, Jhandewalan, N.D-55. <?php if(($value->pjy)>'0'){ echo 'PANCHJANYA';}else{echo "ORGANISER";} ?></p>
 	</div>
 	<?php $t=$model->Agencyname($value->agency_id);?>
 	<div style="height: 15px; margin-left: 40%;"><B><u>BY RAILWAYS</u></B></div>
-	<div style="height: 9px; margin-left: 35%;"><?=$t['source'].'-'.$t['train_no'].'&nbsp;'.$t['train_name']?></div>
+	<div style="height: 29px; margin-left: 35%;"><?=$t['source'].'-'.$t['train_no'].'&nbsp;'.$t['train_name']?></div>
 
 
-	<div style="height: 90px">
+	<div style="height: 110px">
 
 		<strong><?=$t['name'];?></strong><br/>
 		H. No.: <?= $t['hno'];?><br/>
@@ -48,7 +46,7 @@ foreach ($data as $key => $value) {
 
 
 	</div>
-	<div style="height: 20px;"><div><strong>PJY:<?= $value->pjy;?> + ORG : <?= $value->org; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $value->wt.' KGS/'.$j?></strong></div></div>
+	<div style="height: 90px;"><div><strong>PJY:<?= $value->pjy;?> + ORG : <?= $value->org; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $value->wt.' KGS/'.$j?></strong></div></div>
 	</div>
 
 <?php } }?>
