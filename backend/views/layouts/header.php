@@ -69,7 +69,7 @@ use yii\helpers\Html;
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                        
-                        <span class="hidden-xs"><?=  strtoupper(Yii::$app->user->identity->name)?> </span>
+                        <span class="hidden-xs"><i class="fa fa-power-off"></i> </span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
