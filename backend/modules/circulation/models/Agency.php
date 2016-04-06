@@ -237,15 +237,32 @@ class Agency extends \yii\db\ActiveRecord
     {
         return $this->hasMany(AgencyCreationUpdationRecords::className(), ['agency_id' => 'id']);
     }
+    public function getCountry()
+    {
+        return $this->hasone(Country::classname(),['id'=>'mail_country_id']);
+    }
 
-    public function getState()
+    public function getStates()
+    {
+        return $this->hasone(State::classname(),['id'=>'add_state_id']);
+    }
+     public function getState()
     {
         return $this->hasone(State::classname(),['id'=>'mail_state_id']);
     }
-
     public function getDistrict()
     {
         return $this->hasone(District::classname(),['id'=>'mail_district_id']);
+    }
+    
+    public function getDeliveryMethods()
+    {
+        return $this->hasone(\backend\modules\settings\models\DeliveryMethods::classname(),['id'=>'route_id']);
+    }
+    
+    public function getDistricts()
+    {
+        return $this->hasone(District::classname(),['id'=>'add_district_id']);
     }
 
 
