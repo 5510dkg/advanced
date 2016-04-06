@@ -44,6 +44,7 @@ use dosamigos\datepicker\DatePicker;
     <div class="box-body">
         <div class="form-group">   
             <?php $last=date("Y-m", strtotime("first day of previous month")); ?>
+            <?php $lastd=date("Y-m-d", strtotime("first day of previous month")); ?>
     <h4>Generate bill for the month </h4>
     <?= DatePicker::widget([
     'name' => 'date',
@@ -83,13 +84,15 @@ use dosamigos\datepicker\DatePicker;
              'clientOptions' => [
                  'autoclose' => true,
                  'format'=> "yyyy-mm-dd",
+                 'daysOfWeekDisabled'=> [1,2,3,4,5,6],
+                 'startDate'=>$lastd,
              ]
      ]); ?> 
         <div class="form-group">
         <label>
             Price
         </label> 
-        <input type="text" name="price[]" class="form-control" />
+        <input type="text" name="price[]" maxlength="3" class="form-control" />
         </div>
        
     </div>
@@ -101,13 +104,15 @@ use dosamigos\datepicker\DatePicker;
              'clientOptions' => [
                  'autoclose' => true,
                  'format'=> "yyyy-mm-dd",
+                 'daysOfWeekDisabled'=> [1,2,3,4,5,6],
+                 'startDate'=>$lastd,
              ]
      ]); ?> 
         <div class="form-group">
         <label>
             Price
         </label> 
-        <input type="text" name="price[]" class="form-control" />
+        <input type="text" name="price[]" maxlength="3" class="form-control" />
         </div>
         <label>Date</label> <?= DatePicker::widget([
          'name' => 'date1[]',
@@ -116,13 +121,15 @@ use dosamigos\datepicker\DatePicker;
              'clientOptions' => [
                  'autoclose' => true,
                  'format'=> "yyyy-mm-dd",
+                 'daysOfWeekDisabled'=> [1,2,3,4,5,6],
+                 'startDate'=>$lastd,
              ]
      ]); ?> 
         <div class="form-group">
         <label>
             Price
         </label> 
-        <input type="text" name="price[]" class="form-control" />
+        <input type="text" name="price[]" maxlength="3" class="form-control" />
         </div>
         
     </div>
@@ -135,13 +142,15 @@ use dosamigos\datepicker\DatePicker;
              'clientOptions' => [
                  'autoclose' => true,
                  'format'=> "yyyy-mm-dd",
+                 'daysOfWeekDisabled'=> [1,2,3,4,5,6],
+                 'startDate'=>$lastd,
              ]
      ]); ?> 
         <div class="form-group">
         <label>
             Price
         </label> 
-        <input type="text" name="price[]" class="form-control" />
+        <input type="text" name="price[]" maxlength="3" class="form-control" />
         </div><label>Date</label> <?= DatePicker::widget([
          'name' => 'date1[]',
          //'value' => '02-16-2012',
@@ -149,13 +158,15 @@ use dosamigos\datepicker\DatePicker;
              'clientOptions' => [
                  'autoclose' => true,
                  'format'=> "yyyy-mm-dd",
+                 'daysOfWeekDisabled'=> [1,2,3,4,5,6],
+                 'startDate'=>$lastd,
              ]
      ]); ?> 
         <div class="form-group">
         <label>
             Price
         </label> 
-        <input type="text" name="price[]" class="form-control" />
+        <input type="text" name="price[]" maxlength="3" class="form-control" />
         </div><label>Date</label> <?= DatePicker::widget([
          'name' => 'date1[]',
          //'value' => '02-16-2012',
@@ -163,13 +174,15 @@ use dosamigos\datepicker\DatePicker;
              'clientOptions' => [
                  'autoclose' => true,
                  'format'=> "yyyy-mm-dd",
+                 'daysOfWeekDisabled'=> [1,2,3,4,5,6],
+                 'startDate'=>$lastd,
              ]
      ]); ?> 
         <div class="form-group">
         <label>
             Price
         </label> 
-        <input type="text" name="price[]" class="form-control" />
+        <input type="text" name="price[]" maxlength="3" class="form-control" />
         </div>
     
     </div>
@@ -181,13 +194,15 @@ use dosamigos\datepicker\DatePicker;
              'clientOptions' => [
                  'autoclose' => true,
                  'format'=> "yyyy-mm-dd",
+                 'daysOfWeekDisabled'=> [1,2,3,4,5,6],
+                 'startDate'=>$lastd,
              ]
      ]); ?> 
         <div class="form-group">
         <label>
             Price
         </label> 
-        <input type="text" name="price[]" class="form-control" />
+        <input type="text" name="price[]" maxlength="3" class="form-control" />
         </div><label>Date</label> <?= DatePicker::widget([
          'name' => 'date1[]',
          //'value' => '02-16-2012',
@@ -195,13 +210,14 @@ use dosamigos\datepicker\DatePicker;
              'clientOptions' => [
                  'autoclose' => true,
                  'format'=> "yyyy-mm-dd",
+                 'daysOfWeekDisabled'=> [1,2,3,4,5,6],
              ]
      ]); ?> 
         <div class="form-group">
         <label>
             Price
         </label> 
-        <input type="text" name="price[]" class="form-control" />
+        <input type="text" name="price[]" maxlength="3" class="form-control" />
         </div><label>Date</label> <?= DatePicker::widget([
          'name' => 'date1[]',
          //'value' => '02-16-2012',
@@ -209,13 +225,14 @@ use dosamigos\datepicker\DatePicker;
              'clientOptions' => [
                  'autoclose' => true,
                  'format'=> "yyyy-mm-dd",
+                 'daysOfWeekDisabled'=> [1,2,3,4,5,6],
              ]
      ]); ?> 
         <div class="form-group">
         <label>
             Price
         </label> 
-        <input type="text" name="price[]" class="form-control" />
+            <input type="text" name="price[]" maxlength="3" class="form-control" />
         </div><label>Date</label> <?= DatePicker::widget([
          'name' => 'date1[]',
          //'value' => '02-16-2012',
@@ -223,13 +240,14 @@ use dosamigos\datepicker\DatePicker;
              'clientOptions' => [
                  'autoclose' => true,
                  'format'=> "yyyy-mm-dd",
+                 'daysOfWeekDisabled'=> [1,2,3,4,5,6],
              ]
      ]); ?> 
         <div class="form-group">
         <label>
             Price
         </label> 
-        <input type="text" name="price[]" class="form-control" />
+        <input type="text" name="price[]" maxlength="3" class="form-control" />
         </div>
         
     </div>
@@ -241,13 +259,14 @@ use dosamigos\datepicker\DatePicker;
              'clientOptions' => [
                  'autoclose' => true,
                  'format'=> "yyyy-mm-dd",
+                 'daysOfWeekDisabled'=> [1,2,3,4,5,6],
              ]
      ]); ?> 
         <div class="form-group">
         <label>
             Price
         </label> 
-        <input type="text" name="price[]" class="form-control" />
+        <input type="text" name="price[]" maxlength="3" class="form-control" />
         </div><label>Date</label> <?= DatePicker::widget([
          'name' => 'date1[]',
          //'value' => '02-16-2012',
@@ -255,13 +274,14 @@ use dosamigos\datepicker\DatePicker;
              'clientOptions' => [
                  'autoclose' => true,
                  'format'=> "yyyy-mm-dd",
+                 'daysOfWeekDisabled'=> [1,2,3,4,5,6],
              ]
      ]); ?> 
         <div class="form-group">
         <label>
             Price
         </label> 
-        <input type="text" name="price[]" class="form-control" />
+        <input type="text" name="price[]" maxlength="3" class="form-control" />
         </div><label>Date</label> <?= DatePicker::widget([
          'name' => 'date1[]',
          //'value' => '02-16-2012',
@@ -269,13 +289,14 @@ use dosamigos\datepicker\DatePicker;
              'clientOptions' => [
                  'autoclose' => true,
                  'format'=> "yyyy-mm-dd",
+                 'daysOfWeekDisabled'=> [1,2,3,4,5,6],
              ]
      ]); ?> 
         <div class="form-group">
         <label>
             Price
         </label> 
-        <input type="text" name="price[]" class="form-control" />
+        <input type="text" name="price[]" maxlength="3" class="form-control" />
         </div><label>Date</label> <?= DatePicker::widget([
          'name' => 'date1[]',
          //'value' => '02-16-2012',
@@ -283,13 +304,14 @@ use dosamigos\datepicker\DatePicker;
              'clientOptions' => [
                  'autoclose' => true,
                  'format'=> "yyyy-mm-dd",
+                 'daysOfWeekDisabled'=> [1,2,3,4,5,6],
              ]
      ]); ?> 
         <div class="form-group">
         <label>
             Price
         </label> 
-        <input type="text" name="price[]" class="form-control" />
+        <input type="text" name="price[]" maxlength="3" class="form-control" />
         </div><label>Date</label> <?= DatePicker::widget([
          'name' => 'date1[]',
          //'value' => '02-16-2012',
@@ -297,13 +319,14 @@ use dosamigos\datepicker\DatePicker;
              'clientOptions' => [
                  'autoclose' => true,
                  'format'=> "yyyy-mm-dd",
+                 'daysOfWeekDisabled'=> [1,2,3,4,5,6],
              ]
      ]); ?> 
         <div class="form-group">
         <label>
             Price
         </label> 
-        <input type="text" name="price[]" class="form-control" />
+            <input type="text" name="price[]" maxlength="3" class="form-control" />
         </div>
         
     </div>
