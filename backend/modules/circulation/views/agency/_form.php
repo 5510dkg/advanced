@@ -505,6 +505,9 @@ use kartik\typeahead\Typeahead;
                 <?= $form->field($model, 'organiser')->textInput() ?>
         </div>
     </div>
+            <div class="col-lg-6">
+    <?= $form->field($model, 'status')->dropDownList([ 'Suspended' => 'Suspended', 'Active' => 'Active', 'Inactive' => 'Inactive', ]) ?>
+</div>
    
     <div class="row" style="display: none">
 <!--         <div class="col-lg-12">
