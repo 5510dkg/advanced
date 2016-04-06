@@ -30,18 +30,18 @@ return [
      [
         'class' => 'kartik\grid\ActionColumn',
         'dropdown' => false,
-        'template'=>'{view}{info}{slip}',
+        'template'=>'{info}{slip}',
         'vAlign'=>'middle',
        
         'buttons' => [
         'info' => function ($url, $model) {
             return Html::a('<span></span><span class="glyphicon glyphicon glyphicon-print"></span>', $url, [
-                        'title' => Yii::t('app', 'Info'),
+                        'title' => Yii::t('app', 'Print Labels'),
             ]);
          },
          'slip' => function ($url, $model) {
-             return Html::a('<span>|</span><span class="glyphicon  glyphicon glyphicon-file"></span>', $url, [
-                         'title' => Yii::t('app', 'Slip'),
+             return Html::a('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon  glyphicon glyphicon-file"></span>', $url, [
+                         'title' => Yii::t('app', 'Print Forwarding Slip'),
              ]);
           }
         ],

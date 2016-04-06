@@ -30,13 +30,13 @@ return [
     [
         'class' => 'kartik\grid\ActionColumn',
         'dropdown' => false,
-         'template'=>'{view}{info}',
+         'template'=>'{info}',
         'vAlign'=>'middle',
        
         'buttons' => [
         'info' => function ($url, $model) {
             return Html::a('<span></span><span class="glyphicon glyphicon glyphicon-print"></span>', $url, [
-                        'title' => Yii::t('app', 'Info'),
+                        'title' => Yii::t('app', 'Print Labels'),
             ]);
          }
         ],
