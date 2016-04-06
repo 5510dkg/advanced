@@ -157,13 +157,18 @@ class Agency extends \yii\db\ActiveRecord
             $st=strtoupper($st);
             $atyp=$this->agency_type;
             if($atyp=='Single'){
+               
                 $atype='S';
             }else{$atype='C';}
             
             $mystate=mb_substr($st, 0, 2);
-            $num=str_pad($num, 4, '0', STR_PAD_LEFT);
+            $num=str_pad($num, 5, '0', STR_PAD_LEFT);
             $this->account_id=$mystate.'|'.$atype.'|'.$num;
-            $this->billing_id='';
+             if($atyp=='Single'){
+                 $this->billing_id=$mystate.'|'.$atype.'|'.$num;
+             }else{
+                 
+             }
             
             
         return true;
