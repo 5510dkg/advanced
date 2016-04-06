@@ -23,7 +23,7 @@ use yii\helpers\Html;
 
 <?php  if(Yii::$app->user->can('upload-receipt')){ ?>
 <div class="col-lg-4">
-                        <?=Html::a('Agency Receipts',['/circulation/agency-receipt/list'],['class'=>'btn btn-success btn-lg btn-block'])?>  
+                        <?=Html::a('Agency Receipts',['/circulation/agency-receipt/searchview'],['class'=>'btn btn-success btn-lg btn-block'])?>  
                         
                 </div> 
 <?php } ?>
