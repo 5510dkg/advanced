@@ -197,7 +197,7 @@ class RailwayPostData extends \yii\db\ActiveRecord
     
     public function agencylist(){
 
-           $query = (new \yii\db\Query())->select('*')->from('agency')->where(['route_id' =>'5']);
+           $query = (new \yii\db\Query())->select('*')->from('agency')->where(['route_id' =>'5'])->orderBy('mail_state_id');
             $command = $query->createCommand();
             return $command->queryAll();
         //return Agency::find()->where('route_id=2')->all();
