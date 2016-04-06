@@ -40,11 +40,11 @@ use dosamigos\datepicker\DatePicker;
     <div class="col-md-4">
     <?= $form->field($model, 'issue_type')->dropDownList([ 'Regular Edition' => 'Regular Edition','Special Edition' => 'Special Edition', ]) ?>
 
-    <?= $form->field($model, 'pjy')->textInput() ?>
+    <?= $form->field($model, 'pjy')->textInput(['maxlength'=>'4']) ?>
     </div>
     <div class="col-md-4">
 
-    <?= $form->field($model, 'org')->textInput() ?>
+    <?= $form->field($model, 'org')->textInput(['maxlength'=>'4']) ?>
 
     <?= $form->field($model, 'issue_date')->widget( DatePicker::className(), [
                                                                         // inline too, not bad
