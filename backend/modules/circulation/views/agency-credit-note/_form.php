@@ -20,9 +20,10 @@ use dosamigos\datepicker\DatePicker;
     <div class="col-md-4">
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'agency_id')->textInput(['value'=>$id]) ?>
+    <?= $form->field($model, 'agency_id')->textInput(['value'=>$id,'readonly'=>'readonly']) ?>
+        
     
-
+    
     <?= $form->field($model, 'return_date')->widget( DatePicker::className(), [
                                                                         // inline too, not bad
                                                                          'inline' => false, 
