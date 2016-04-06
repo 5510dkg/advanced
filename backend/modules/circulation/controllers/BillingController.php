@@ -93,7 +93,7 @@ Class BillingController extends Controller{
      return  $this->render('show',['month'=>$dd]);
         }
         else{
-            return $this->render('welcome',['error'=>'Bill is Already Generated']);
+            return $this->render('msgfile',['error'=>'Bill is Already Generated']);
         }
     }
      
