@@ -29,7 +29,7 @@ $this->title='Agency|Search';
                         ]
                     ],
                     'pluginOptions' => ['highlight' => true],
-                    'options' => ['placeholder' => 'Filter as you type ...'],
+                    'options' => ['placeholder' => 'Type name of agency ...'],
 ]); ?>
                 <?= $form->field($model,'state')->dropDownList(\yii\helpers\ArrayHelper::map(\backend\modules\settings\models\State::find()->all(),'id','name'),[
                     'prompt'=>'Select State'
@@ -74,16 +74,20 @@ $this->title='Agency|Search';
         'mail_pincode',
         'reference',
         ['class'=>'yii\grid\ActionColumn',
-         'template'=>'{view}',
+         'template'=>'{bill}',
         'buttons' => [
         'bill' => function ($url, $model) {
-            return Html::a('<span></span><span class="glyphicon glyphicon glyphicon-eye"></span>', $url, [
-                        'title' => Yii::t('app', 'edit'),
+            return Html::a('<span></span><span class="glyphicon glyphicon glyphicon-plus"></span>', $url, [
+                        'title' => Yii::t('app', 'Upload Credit Note'),
             ]);
          }
         ],
-         'urlCreator' => function($action, $model, $key, $index) { 
+         'urlCreator' => function($action, $model, $key, $index) {
+                        if($action=='bill'){
+                           return Url::toRoute(['create', 'id' => $model->id,'q'=>'delivery']);  
+                        }else{
                         return Url::toRoute([$action, 'id' => $model->id,'q'=>'delivery']);
+                        }
         },
             ],
          ],
