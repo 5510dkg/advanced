@@ -16,7 +16,7 @@ use yii\helpers\Html;
 
 <?php  if(Yii::$app->user->can('upload-credit-note')){ ?>
 <div class="col-lg-4">
-                        <?=Html::a('Credit Note',['/circulation/agency-credit-note/list'],['class'=>'btn btn-success btn-lg btn-block'])?>  
+                        <?=Html::a('Credit Note',['/circulation/agency-credit-note/searchview'],['class'=>'btn btn-success btn-lg btn-block'])?>  
                         
                 </div> 
 <?php } ?>

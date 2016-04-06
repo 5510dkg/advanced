@@ -10,6 +10,9 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use \yii\web\Response;
 use yii\helpers\Html;
+use yii\base\DynamicModel;
+use backend\modules\circulation\models\Agency;
+use yii\data\ActiveDataProvider;
 
 /**
  * AgencyCreditNoteController implements the CRUD actions for AgencyCreditNote model.
