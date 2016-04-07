@@ -352,6 +352,7 @@ public function actionSingle($id) {
     $model = new DynamicModel([
                 'date','id'
             ]);
+            $model->addRule('date', 'required');
             $model->addRule('date', 'string',['max'=>32]);
             $model->addRule('id', 'string',['max'=>32]);
        
