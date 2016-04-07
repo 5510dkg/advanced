@@ -380,8 +380,6 @@ public function actionSingle($id) {
         return $this->render('single', ['model'=>$model,
             'id'=>$id,
             ]);
-    
-    
 }
 public function actionPrint($id){
 		//$this->layout='adminlayout';
