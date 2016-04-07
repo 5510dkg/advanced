@@ -17,7 +17,7 @@ $this->title='Agency|Search';
     </div>
     <div class="box-body">
        <?php $form = ActiveForm::begin(); ?>
-        <?=$form->field($model, 'id')->hiddenInput(['value'=>$id])?>
+        <?=$form->field($model, 'id')->hiddenInput(['value'=>$id])->label(false)?>
         <?=$form->field($model,'date')->widget( DatePicker::className(), [
                                                                         // inline too, not bad
                                                                          'inline' => false, 
