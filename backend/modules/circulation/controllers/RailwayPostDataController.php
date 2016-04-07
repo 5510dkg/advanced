@@ -347,6 +347,43 @@ public function actionSearchview(){
     }
     return $out;
 }
+public function actionSingle($id) {
+    $model = new DynamicModel([
+                'date','id'
+            ]);
+            $model->addRule('date', 'string',['max'=>32]);
+            $model->addRule('id', 'string',['max'=>32]);
+       
+
+            if($model->load(Yii::$app->request->post())){
+                        // do somenthing with model
+                            $params=Yii::$app->request->post();
+                           // print_r($params);exit;
+                            $query = Agency::find();
+                            $dataProvider = new ActiveDataProvider([
+                                'query' => $query,
+                            ]);
+                            $model->load($params);
+                           
+                                
+                $query->andFilterWhere(['like', 'name', $model->name]);
+                $query->andFilterWhere(['like', 'account_id', $model->account_id]);
+                $query->andFilterWhere(['like', 'mail_pincode', $model->mail_pincode]);
+                $query->andFilterWhere(['mail_state_id'=>$model->state]);
+                
+            return $this->render('viewagency',
+                            [
+                             'list'=>$dataProvider,
+                             'model'=>$model,
+                            'data'=>$this->actionAgencylist()
+                            ]);
+        }
+        return $this->render('single', ['model'=>$model,
+            'id'=>$id,
+            ]);
+    
+    
+}
 public function actionPrint($id){
 		//$this->layout='adminlayout';
 		$request=Yii::$app->request;
