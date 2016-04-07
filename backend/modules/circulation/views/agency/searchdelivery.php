@@ -28,7 +28,7 @@ $this->title='Agency|Search';
                         ]
                     ],
                     'pluginOptions' => ['highlight' => true],
-                    'options' => ['placeholder' => 'Filter as you type ...'],
+                    'options' => ['placeholder' => 'Enter Agency Name ...'],
 ]); ?>
                 <?= $form->field($model,'state')->dropDownList(\yii\helpers\ArrayHelper::map(\backend\modules\settings\models\State::find()->all(),'id','name'),[
                     'prompt'=>'Select state'
