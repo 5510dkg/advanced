@@ -147,7 +147,7 @@ class AgencyCreditNoteController extends Controller
 //             $command = $query->createCommand();
 //             $data = $command->queryAll();
                 
-                return $this->redirect(['view', 'id' => $model->id]);
+                return $this->redirect(['success', 'id' => $model->id]);
             } else {
                 return $this->render('create', [
                     'model' => $model,
@@ -159,6 +159,10 @@ class AgencyCreditNoteController extends Controller
          }
         
        
+    }
+    
+    public function actionSuccess(){
+         return $this->render('success');
     }
     
 
