@@ -295,6 +295,7 @@ class UsersController extends Controller
                 ];
             }else if($model->load($request->post())){
                         $model->created_at=date("Y-m-d H:i:s");
+                       // $model->validate();
                         $model->save();
                 return [
                     'forceReload'=>'#crud-datatable-pjax',
