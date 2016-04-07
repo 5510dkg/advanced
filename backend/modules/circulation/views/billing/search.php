@@ -39,7 +39,7 @@ $this->title='Bill|Search';
                         ]
                     ],
                     'pluginOptions' => ['highlight' => true],
-                    'options' => ['placeholder' => 'Filter as you type ...'],
+                    'options' => ['placeholder' => 'Enter Agency Name ...'],
 ]); ?>
             </div>
             <div class="col-md-3">
