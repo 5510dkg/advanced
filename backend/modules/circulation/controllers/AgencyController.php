@@ -370,7 +370,7 @@ class AgencyController extends Controller
         */
 
         public function actionUpload(){
-          $this->layout="adminlayout";
+          //$this->layout="adminlayout";
         //  echo 'hii';
           return $this->render('upload');
         }
