@@ -17,8 +17,7 @@ use yii\widgets\ActiveForm;
     </div>
     <div class="box-body">
 
-    <div class="row">
         <h3><i>Receipt Has Been Submitted Successfully For Approval From Finance Department.</i></h3>
-    </div>
+    
     </div> 
 </div>   

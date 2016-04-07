@@ -32,6 +32,7 @@ use yii\widgets\ActiveForm;
             ]) ?>
         </div>
         <div class="col-md-4">
+    <?=$form->field($model,'status')->hiddenInput(['value'=>'0'])->label(false)?>        
     <?= $form->field($model, 'cr_amt')->textInput(['maxlength' => '6']) ?>
 
     <?= $form->field($model, 'payment_mode')->dropDownList(\yii\helpers\ArrayHelper::map(backend\modules\settings\models\PaymentMode::find()->all(),'id','name'),['prompt'=>'Please Select Payment Mode']) ?>

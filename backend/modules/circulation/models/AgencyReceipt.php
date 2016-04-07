@@ -32,8 +32,8 @@ class AgencyReceipt extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['agency_id', 'rcpt_date', 'cr_amt', 'payment_mode', 'comment'], 'required'],
-            [['agency_id', 'payment_mode'], 'integer'],
+            [['agency_id', 'rcpt_date','status' ,'cr_amt', 'payment_mode', 'comment'], 'required'],
+            [['agency_id','status', 'payment_mode'], 'integer'],
             [['rcpt_date', 'created_on', 'created_on_time'], 'safe'],
             [['cr_amt'], 'number'],
             [['comment'], 'string']
@@ -43,6 +43,7 @@ class AgencyReceipt extends \yii\db\ActiveRecord
         if(parent::beforeSave($insert)){
          $this->created_on=date("Y-m-d");
          $this->created_on_time=date("H:i:s");
+         
          return TRUE;
         }
         else{
@@ -65,6 +66,7 @@ class AgencyReceipt extends \yii\db\ActiveRecord
             'comment' => 'Comment',
             'created_on' => 'Created On',
             'created_on_time' => 'Created On Time',
+            'status'=>'status',
         ];
     }
 }

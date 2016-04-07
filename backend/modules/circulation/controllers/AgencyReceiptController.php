@@ -117,7 +117,13 @@ class AgencyReceiptController extends Controller
         
        
     }
+    
+    public function actionSuccess(){
+         return $this->render('success');
+    }
 
+
+    
     /**
      * Updates an existing AgencyReceipt model.
      * For ajax request will return json object

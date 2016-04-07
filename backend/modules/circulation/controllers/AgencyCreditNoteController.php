@@ -108,7 +108,7 @@ class AgencyCreditNoteController extends Controller
         $request = Yii::$app->request;
         $model = new AgencyCreditNote();  
         $id=$request->get('id');
-
+        //error_reporting(0);
       
             /*
             *   Process for non-ajax request
@@ -120,8 +120,9 @@ class AgencyCreditNoteController extends Controller
                 $issue=$model->issue_type;
                 $qty=$model->pjy+$model->org;
                 $ip=$model->get_agency($pid, $dt);
-                
+               // echo $ip;print_r($ip);exit;
                 $customer = \backend\modules\circulation\models\AgencyBillBook::findOne($ip);
+               // $customer->credit_amt=0;
                 if($method=='cut'){
                     //$pricem=$qty*0.10;
                     $pc=$model->get_agency_copy_price($pid, $dt);
@@ -134,6 +135,7 @@ class AgencyCreditNoteController extends Controller
                     $tprice=$pc;
                     $amt=$qty*$tprice;
                 }
+               // echo $amt;exit;
                // exit;
                 $total=$model->total($pid, $dt);
                 $customer->credit_amt = $amt;
