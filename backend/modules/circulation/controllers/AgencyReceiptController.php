@@ -107,7 +107,7 @@ class AgencyReceiptController extends Controller
             *   Process for non-ajax request
             */
             if ($model->load($request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
+                return $this->redirect(['success', 'id' => $model->id]);
             } else {
                 return $this->render('create', [
                     'model' => $model,
