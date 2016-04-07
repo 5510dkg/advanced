@@ -11,7 +11,7 @@ $this->title='Agency Management';?>
      <?=Html::a('New Agency',['/circulation/agency/create'],['class'=>'btn btn-success btn-lg btn-block'])?>  
 </div>
 <div class="col-sm-3">
-     <?=Html::a('Update Copies',['/circulation/agency/searchcopies',['q'=>'copy']],['class'=>'btn btn-success btn-lg btn-block'])?>  
+     <?=Html::a('Update Supply',['/circulation/agency/searchcopies',['q'=>'copy']],['class'=>'btn btn-success btn-lg btn-block'])?>  
 </div>
     <div class="col-sm-3">
      <?=Html::a('Deactivate Agecny',['/circulation/agency/searchdeactivate',['q'=>'deactive']],['class'=>'btn btn-warning btn-lg btn-block'])?>  
@@ -23,5 +23,8 @@ $this->title='Agency Management';?>
 </div>
     <div class="col-sm-3">
      <?=Html::a('View Agency Detail',['/circulation/agency/searchview',['q'=>'delivery']],['class'=>'btn btn-success btn-lg btn-block'])?>  
+</div>
+     <div class="col-sm-3">
+     <?=Html::a('Upload Agency Excel',['/circulation/agency/upload',['q'=>'delivery']],['class'=>'btn btn-danger btn-lg btn-block'])?>  
 </div>
 </div>
