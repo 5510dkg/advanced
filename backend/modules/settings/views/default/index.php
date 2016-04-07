@@ -42,7 +42,7 @@ use yii\helpers\Html;
 <br/><br/><br/>
 <?php if(Yii::$app->user->can('add-district')) {?>
 <div class="col-lg-4">
-                            <?=Html::a('District',['/settings/license'],['class'=>'btn btn-success btn-lg btn-block'])?>  
+                            <?=Html::a('District',['/settings/district'],['class'=>'btn btn-success btn-lg btn-block'])?>  
                         
                 </div>
 <?php } ?>
