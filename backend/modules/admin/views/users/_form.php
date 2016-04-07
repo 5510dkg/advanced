@@ -37,7 +37,7 @@ use backend\modules\settings\models\Department;
      'onchange'=>'$.post( "index.php?r=settings/designation/lists&id='.'"+$(this).val(), function( data ) 
          {
          $( "select#users-designation_id" ).html( data );
-           });']
+           });','required'=>'required']
             ) ?>
 </div>
     
