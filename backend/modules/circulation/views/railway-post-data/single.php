@@ -16,6 +16,7 @@ $this->title='Agency|Search';
         </div>
     </div>
     <div class="box-body">
+        <div class="col-md-4">
        <?php $form = ActiveForm::begin(); ?>
         <?=$form->field($model, 'id')->hiddenInput(['value'=>$id])->label(false)?>
         <?=$form->field($model,'date')->widget( DatePicker::className(), [
@@ -30,6 +31,10 @@ $this->title='Agency|Search';
                                                                             'daysOfWeekDisabled'=> [1,2,3,4,5,6],
                                                                         ]
                         ]);?>
+        <div class="form-group">
+            <?= Html::submitButton('Submit', ['class' => 'btn btn-primary']) ?>
+        </div>
+        </div>
         <?php ActiveForm::end(); ?>
     </div>
 </div> 
