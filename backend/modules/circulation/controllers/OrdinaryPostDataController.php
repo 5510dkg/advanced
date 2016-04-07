@@ -314,6 +314,7 @@ public function actionSearchview(){
                 $query->andFilterWhere(['like', 'account_id', $model->account_id]);
                 $query->andFilterWhere(['like', 'mail_pincode', $model->mail_pincode]);
                 $query->andFilterWhere(['mail_state_id'=>$model->state]);
+                 $query->where(['route_id'=>'1']);
                 
             return $this->render('viewagency',
                             [
