@@ -84,7 +84,7 @@ $this->title='Agency|Search';
         ],
          'urlCreator' => function($action, $model, $key, $index) {
                         if($action=='bill'){
-                           return Url::toRoute(['create', 'id' => $model->id,'q'=>'delivery']);  
+                           return Url::toRoute(['print', 'id' => $model->id,'q'=>'delivery']);  
                         }else{
                         return Url::toRoute([$action, 'id' => $model->id,'q'=>'delivery']);
                         }
