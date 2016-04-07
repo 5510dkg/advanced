@@ -23,6 +23,7 @@ use yii\helpers\Html;
                         
                 </div> 
 <?php } ?>
+<br/><br/><br/>
 <?php  if(Yii::$app->user->can('generate-labels')){ ?>
 <div class="col-lg-4">
                         <?=Html::a('Single Railway Label',['/circulation/railway-post-data/searchview'],['class'=>'btn btn-success btn-lg btn-block'])?> 
