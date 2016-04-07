@@ -214,4 +214,12 @@ class RegisteredPostData extends \yii\db\ActiveRecord
             'generated_date'=>'generated Date',
         ];
     }
+     public function singleagencylist($id){
+
+           $query = (new \yii\db\Query())->select('*')->from('agency')->where(['id' =>$id])->orderBy('mail_state_id');
+            $command = $query->createCommand();
+            return $command->queryAll();
+        //return Agency::find()->where('route_id=2')->all();
+
+    }
 }

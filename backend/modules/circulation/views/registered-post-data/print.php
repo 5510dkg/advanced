@@ -7,7 +7,7 @@ use backend\modules\circulation\controllers\RegisteredPostedDataController;
 $request=Yii::$app->request;
 $id= $request->get('id');
 $model= new RegisteredPostedData();
-$data=$model->find()->where(['post_id'=>$id])->all();
+$data=$model->find()->where(['id'=>$id])->all();
 //print_r($data);
 $i=1;$r=1;
 foreach ($data as $key => $value) {

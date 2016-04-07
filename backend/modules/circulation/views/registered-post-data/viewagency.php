@@ -78,13 +78,13 @@ $this->title='Agency|Search';
         'buttons' => [
         'bill' => function ($url, $model) {
             return Html::a('<span></span><span class="glyphicon glyphicon glyphicon-plus"></span>', $url, [
-                        'title' => Yii::t('app', 'Upload Credit Note'),
+                        'title' => Yii::t('app', 'Label Detail'),
             ]);
          }
         ],
          'urlCreator' => function($action, $model, $key, $index) {
                         if($action=='bill'){
-                           return Url::toRoute(['create', 'id' => $model->id,'q'=>'delivery']);  
+                           return Url::toRoute(['single', 'id' => $model->id,'q'=>'delivery']);  
                         }else{
                         return Url::toRoute([$action, 'id' => $model->id,'q'=>'delivery']);
                         }
