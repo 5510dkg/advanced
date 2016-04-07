@@ -122,6 +122,9 @@ class AgencyCreditNoteController extends Controller
                 $ip=$model->get_agency($pid, $dt);
                // echo $ip;print_r($ip);exit;
                 $customer = \backend\modules\circulation\models\AgencyBillBook::findOne($ip);
+                if($customer==''||$customer==NULL){
+                     return $this->redirect(['failure', 'id' => $model->id]);
+                }else
                // $customer->credit_amt=0;
                 if($method=='cut'){
                     //$pricem=$qty*0.10;
@@ -164,7 +167,9 @@ class AgencyCreditNoteController extends Controller
     public function actionSuccess(){
          return $this->render('success');
     }
-    
+     public function actionFailure(){
+         return $this->render('failure');
+    }
 
     /**
      * Updates an existing AgencyCreditNote model.
