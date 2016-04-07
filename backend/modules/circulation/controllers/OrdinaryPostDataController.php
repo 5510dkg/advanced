@@ -361,9 +361,10 @@ public function actionSingle($id) {
                             $params=Yii::$app->request->post();
                             
                             $model->load($params);
-                           $customer = \backend\modules\circulation\models\RailwayPostedData::findOne(['agency_id'=>$model->id,'date'=>$model->date]);
+                           $customer = \backend\modules\circulation\models\OrdinaryPostedData::findOne(['agency_id'=>$model->id,'date'=>$model->date]);
                            $data= new OrdinaryPostData();
                            $copy=$data->singleagencylist($model->id);
+                          // print_r($copy);exit;
                            $pjy= $copy[0]['panchjanya'];
                            $org=$copy[0]['organiser'];
                            $customer->pjy = $pjy;

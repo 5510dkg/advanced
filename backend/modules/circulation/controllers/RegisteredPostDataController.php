@@ -362,7 +362,7 @@ public function actionSingle($id) {
                             $params=Yii::$app->request->post();
                             
                             $model->load($params);
-                           $customer = \backend\modules\circulation\models\RailwayPostedData::findOne(['agency_id'=>$model->id,'date'=>$model->date]);
+                           $customer = \backend\modules\circulation\models\RegisteredPostedData::findOne(['agency_id'=>$model->id,'date'=>$model->date]);
                            $data= new RegisteredPostData();
                            $copy=$data->singleagencylist($model->id);
                            $pjy= $copy[0]['panchjanya'];
@@ -394,7 +394,7 @@ public function actionPrint($id){
         'mode' => Pdf::MODE_UTF8, // leaner size using standard fonts
         'orientation'=>'L',
         'destination' => Pdf::DEST_DOWNLOAD,
-        'filename' => 'RailwayPost"'.date('d-m-y').'".pdf',
+        'filename' => 'SingleRegisteredPost"'.date('d-m-y').'".pdf',
 
         'content' =>$this->renderPartial('print'),
         'options' => [
