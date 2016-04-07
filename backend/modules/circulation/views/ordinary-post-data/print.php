@@ -7,7 +7,7 @@ use backend\modules\circulation\controllers\OrdinaryPostedDataController;
 $request=Yii::$app->request;
 $id= $request->get('id');
 $model= new OrdinaryPostedData();
-$data=$model->find()->where(['ord_id'=>$id])->all();
+$data=$model->find()->where(['id'=>$id])->all();
 //print_r($data);
 
 $i=1;$r=1;
