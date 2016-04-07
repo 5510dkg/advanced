@@ -583,7 +583,7 @@ use kartik\typeahead\Typeahead;
                         ]
                     ],
                     'pluginOptions' => ['highlight' => true],
-                    'options' => ['placeholder' => 'Filter as you type ...'],
+                    'options' => ['placeholder' => 'Enter Agency Name ...'],
 ]);?>    
                 </div>
 
@@ -698,7 +698,7 @@ use kartik\typeahead\Typeahead;
                         ]
                     ],
                     'pluginOptions' => ['highlight' => true],
-                    'options' => ['placeholder' => 'Filter as you type ...'],
+                    'options' => ['placeholder' => 'Enter Agency Name ...'],
 ]); ?>
          </div>
     </div>
