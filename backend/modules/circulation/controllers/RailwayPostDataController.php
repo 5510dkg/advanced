@@ -13,6 +13,7 @@ use yii\helpers\Html;
 use yii\base\DynamicModel;
 use backend\modules\circulation\models\Agency;
 use yii\data\ActiveDataProvider;
+use kartik\mpdf\Pdf;
 
 /**
  * RailwayPostDataController implements the CRUD actions for RailwayPostData model.
@@ -358,24 +359,21 @@ public function actionSingle($id) {
             if($model->load(Yii::$app->request->post())){
                         // do somenthing with model
                             $params=Yii::$app->request->post();
-                           // print_r($params);exit;
-                            $query = Agency::find();
-                            $dataProvider = new ActiveDataProvider([
-                                'query' => $query,
-                            ]);
+                            
                             $model->load($params);
-                           
-                                
-                $query->andFilterWhere(['like', 'name', $model->name]);
-                $query->andFilterWhere(['like', 'account_id', $model->account_id]);
-                $query->andFilterWhere(['like', 'mail_pincode', $model->mail_pincode]);
-                $query->andFilterWhere(['mail_state_id'=>$model->state]);
+                           $customer = \backend\modules\circulation\models\RailwayPostedData::findOne(['agency_id'=>$model->id,'date'=>$model->date]);
+                           $data= new RailwayPostData();
+                           $copy=$data->singleagencylist($model->id);
+                           $pjy= $copy[0]['panchjanya'];
+                           $org=$copy[0]['organiser'];
+                           $customer->pjy = $pjy;
+                           $customer->org = $org;
+                           $customer->update();
                 
-            return $this->render('viewagency',
-                            [
-                             'list'=>$dataProvider,
-                             'model'=>$model,
-                            'data'=>$this->actionAgencylist()
+            return $this->redirect(['print',
+                            
+                                'id'=>$customer->id,
+                               
                             ]);
         }
         return $this->render('single', ['model'=>$model,

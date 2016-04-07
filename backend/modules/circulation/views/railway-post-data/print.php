@@ -6,9 +6,11 @@ ini_set('max_execution_time', 300);
 use backend\modules\circulation\models\RailwayPostedData;
 use backend\modules\circulation\controllers\RailwayPostedDataController;
 $request=Yii::$app->request;
-$id= $request->get('id');
+ $id= $request->get('id'); 
+
+//$date=$request->get('date');
 $model= new RailwayPostedData();
-$data=$model->find()->where(['rail_id'=>$id])->all();
+$data=$model->find()->where(['id'=>$id])->all();
 //print_r($data);
 
 $i=1;$r=1;
