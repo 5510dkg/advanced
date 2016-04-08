@@ -52,3 +52,4 @@ class AppAsset extends AssetBundle
         parent::init();
     }
 }
+  
