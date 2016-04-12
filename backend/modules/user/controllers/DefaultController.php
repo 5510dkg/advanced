@@ -43,7 +43,9 @@ class DefaultController extends Controller
                         // do somenthing with model
                             $params=Yii::$app->request->post();
                            // print_r($params);exit;
-                            
+                            $ordp='null';
+                            $regdp='null';
+                            $railp='null';
                             $model->load($params);
                             if($model->railway==1){
                                 
@@ -54,12 +56,18 @@ class DefaultController extends Controller
                               $rail->generated_date=date('Y-m-d');
                               
                               if($rail->save()){
+                                  
+                                  $dt=$model->date;
+                                  if (!file_exists('railway_post/'.$dt)) {
+                                      mkdir('railway_post/'.$dt, 0777, true);
+                                    }
+                                   $railp='railway_post/'.$dt.'/'.$model->date.'.pdf';
                                   $id=$rail->id;
                                     $pdf = new Pdf([
                                     'mode' => Pdf::MODE_UTF8, // leaner size using standard fonts
                                     'orientation'=>'L',
-                                    'destination' => Pdf::DEST_DOWNLOAD,
-                                    'filename' => 'RailwayPost"'.date('d-m-y').'".pdf',
+                                    'destination' => Pdf::DEST_FILE,
+                                    'filename' => 'railway_post/'.$dt.'/'.$model->date.'.pdf',
 
                                     'content' =>$this->renderPartial('print',['id'=>$id,'ord'=>$ord]),
                                     'options' => [
@@ -72,6 +80,7 @@ class DefaultController extends Controller
                                     // ]
                     ]);
                                    $pdf->render();
+                                   
                               }
                             }
                             if($model->ordinary==1){
@@ -83,12 +92,17 @@ class DefaultController extends Controller
                               $rail->generated_date=date('Y-m-d');
                               
                               if($rail->save()){
+                                  $dt=$model->date;
+                                  if (!file_exists('ordinary_post/'.$dt)) {
+                                      mkdir('ordinary_post/'.$dt, 0777, true);
+                                    }
+                                    $ordp='ordinary_post/'.$dt.'/'.$model->date.'.pdf';
                                   $id=$rail->id;
                                     $pdf = new Pdf([
                                     'mode' => Pdf::MODE_UTF8, // leaner size using standard fonts
                                     'orientation'=>'L',
-                                    'destination' => Pdf::DEST_DOWNLOAD,
-                                    'filename' => 'Ordinary"'.$model->date.'".pdf',
+                                    'destination' => Pdf::DEST_FILE,
+                                    'filename' => 'ordinary_post/'.$dt.'/'.$model->date.'.pdf',
 
                                     'content' =>$this->renderPartial('printordinary',['id'=>$id,'ord'=>$ord]),
                                     'options' => [
@@ -112,12 +126,18 @@ class DefaultController extends Controller
                               $rail->generated_date=date('Y-m-d');
                               
                               if($rail->save()){
+                                  $dt=$model->date;
+                                  if (!file_exists('registered_post/'.$dt)) {
+                                      mkdir('registered_post/'.$dt, 0777, true);
+                                    }
+                                    $regdp='registered_post/'.$dt.'/'.$model->date.'.pdf';
                                   $id=$rail->id;
                                     $pdf = new Pdf([
                                     'mode' => Pdf::MODE_UTF8, // leaner size using standard fonts
                                     'orientation'=>'L',
-                                    'destination' => Pdf::DEST_DOWNLOAD,
-                                    'filename' => 'Registered"'.$model->date.'".pdf',
+                                    'destination' => Pdf::DEST_FILE,
+                                        
+                                    'filename' => 'registered_post/'.$dt.'/'.$model->date.'.pdf',
 
                                     'content' =>$this->renderPartial('regdprint',['id'=>$id,'ord'=>$ord]),
                                     'options' => [
@@ -129,15 +149,18 @@ class DefaultController extends Controller
                                     //     'SetFooter' => ['|Page {PAGENO}|'],
                                     // ]
                     ]);
+                                    
                                     $pdf->render();
                               }
                             }
                             
-//                            echo '<pre>';
-//                            print_r($model);
-//                            echo '</pre>';
-//                            exit;
-                
+                        return    $this->render('links',[
+                                'ordp'=>$ordp,
+                                'regdp'=>$regdp,
+                                'railp'=>$railp
+                            ]);
+                            
+
         }
              return $this->render('form', ['model'=>$model,
            

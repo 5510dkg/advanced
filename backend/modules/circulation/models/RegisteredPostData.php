@@ -33,7 +33,7 @@ class RegisteredPostData extends \yii\db\ActiveRecord
     {
         return [
             [['date'], 'required'],
-            [['date'], 'unique'],
+          //  [['date'], 'unique'],
             [['date', 'time','generated_date'], 'safe']
         ];
     }
