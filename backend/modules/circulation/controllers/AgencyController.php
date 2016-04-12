@@ -459,7 +459,7 @@ class AgencyController extends Controller
                   $agency->billing_id         =$rowData[0][35];
                   $agency->save(false);
 
-                  print_r($agency->getErrors());
+                 // print_r($agency->getErrors());
                 }
 
               //file reading ends here
