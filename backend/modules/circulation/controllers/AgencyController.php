@@ -455,9 +455,11 @@ class AgencyController extends Controller
                   $agency->train_no           =$rowData[0][31];
                   $agency->source             =$rowData[0][32];
                   $agency->train_name         =$rowData[0][33];
-                  $agency->save();
+                  $agency->account_id         =$rowData[0][34];
+                  $agency->billing_id         =$rowData[0][35];
+                  $agency->save(false);
 
-    //              print_r($user->getErrors());
+                  print_r($agency->getErrors());
                 }
 
               //file reading ends here

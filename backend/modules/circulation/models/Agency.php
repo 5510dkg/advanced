@@ -41,6 +41,7 @@ use Yii;
  * @property integer $add_pincode
  * @property string  $agency_type
  * @property string  $comment
+ * * @property string  $billing_id
  * @property string  $commission
  * @property string  $issue_start_date
  * @property string  $agency_combined_id
@@ -156,19 +157,19 @@ class Agency extends \yii\db\ActiveRecord
             //$st=$st['name'];
             $st=strtoupper($st);
             $atyp=$this->agency_type;
-            if($atyp=='Single'){
-               
-                $atype='S';
-            }else{$atype='C';}
-            
-            $mystate=mb_substr($st, 0, 2);
-            $num=str_pad($num, 5, '0', STR_PAD_LEFT);
-            $this->account_id=$mystate.'|'.$atype.'|'.$num;
-             if($atyp=='Single'){
-                 $this->billing_id=$mystate.'|'.$atype.'|'.$num;
-             }else{
-                 $this->billing_id=$this->agency_combined_id;
-             }
+//            if($atyp=='Single'){
+//               
+//                $atype='S';
+//            }else{$atype='C';}
+//            
+//            $mystate=mb_substr($st, 0, 2);
+//            $num=str_pad($num, 5, '0', STR_PAD_LEFT);
+//            $this->account_id=$mystate.'|'.$atype.'|'.$num;
+//             if($atyp=='Single'){
+//                 $this->billing_id=$mystate.'|'.$atype.'|'.$num;
+//             }else{
+//                 $this->billing_id=$this->agency_combined_id;
+//             }
             
             
         return true;
