@@ -71,10 +71,11 @@ class DefaultController extends Controller
                                     //     'SetFooter' => ['|Page {PAGENO}|'],
                                     // ]
                     ]);
-                                   return $pdf->render();
+                                   $pdf->render();
                               }
                             }
                             if($model->ordinary==1){
+                          //      echo 'hiiiiiiiii';exit;
                                  $ord=$model->ord_sort_by;  
                               $rail= new OrdinaryPostData();
                               $rail->date=$model->date;
@@ -99,7 +100,7 @@ class DefaultController extends Controller
                                     //     'SetFooter' => ['|Page {PAGENO}|'],
                                     // ]
                     ]);
-                                   return $pdf->render();
+                                    $pdf->render();
                               }
                                 
                             }
@@ -128,7 +129,7 @@ class DefaultController extends Controller
                                     //     'SetFooter' => ['|Page {PAGENO}|'],
                                     // ]
                     ]);
-                                   return $pdf->render();
+                                    $pdf->render();
                               }
                             }
                             
