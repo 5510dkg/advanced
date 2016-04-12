@@ -7,7 +7,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 ?> 
-<div class=" box box-default">
+<div class=" box box-primary">
     <div class="box-header with-border">
         <h3 class="box-title">Label Generation</h3>
         <div class="box-tools pull-right">
