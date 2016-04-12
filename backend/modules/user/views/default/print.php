@@ -7,12 +7,18 @@ use backend\modules\circulation\models\RailwayPostedData;
 use backend\modules\circulation\controllers\RailwayPostedDataController;
 $request=Yii::$app->request;
 //$id= $request->get('id');
-$lab=1;
+
 $model= new RailwayPostedData();
 if($ord=='state')$ord='id';
 if($ord=='organiser_only'){
-    $ord='id';$lab=1;
-}else{
+    $ord='id';
+    $data=$model->find()->where(['rail_id'=>$id,'pjy'=>'0'])->orderBy($ord.' ASC')->all();
+}
+elseif($ord=='panchjanya_only'){
+    $ord='id';
+    $data=$model->find()->where(['rail_id'=>$id])->andWhere(['>=','pjy','0'])->orderBy($ord.' ASC')->all();
+}
+else{
 $data=$model->find()->where(['rail_id'=>$id])->orderBy($ord.' ASC')->all();
 }
 //print_r($data);exit;
