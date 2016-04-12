@@ -8,7 +8,7 @@ use backend\modules\circulation\controllers\RailwayPostedDataController;
 $request=Yii::$app->request;
 //$id= $request->get('id');
 $model= new RailwayPostedData();
-if($ord=='state')$ord='';
+if($ord=='state')$ord='id';
 $data=$model->find()->where(['rail_id'=>$id])->orderBy($ord.' ASC')->all();
 //print_r($data);exit;
 
