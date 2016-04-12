@@ -24,7 +24,7 @@ class DefaultController extends Controller
     }
     public function actionLebeldashboard(){
          $model = new DynamicModel([
-                'railway', 'ordinary','registered', 'sort_by','state'
+                'railway', 'ordinary','registered', 'rail_sort_by','ord_sort_by','regd_sort_by'
             ]);
             $model->addRule('railway', 'string',['max'=>32]);
             $model->addRule('ordinary', 'string',['max'=>32]);
