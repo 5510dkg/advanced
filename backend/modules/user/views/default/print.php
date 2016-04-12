@@ -7,9 +7,14 @@ use backend\modules\circulation\models\RailwayPostedData;
 use backend\modules\circulation\controllers\RailwayPostedDataController;
 $request=Yii::$app->request;
 //$id= $request->get('id');
+$lab=1;
 $model= new RailwayPostedData();
 if($ord=='state')$ord='id';
+if($ord=='organiser_only'){
+    $ord='id';$lab=1;
+}else{
 $data=$model->find()->where(['rail_id'=>$id])->orderBy($ord.' ASC')->all();
+}
 //print_r($data);exit;
 
 $i=1;$r=1;
@@ -22,6 +27,7 @@ foreach ($data as $key => $value) {
 	// echo 'this'.$j;
 	//echo $value->wt.'//';
 	 //$floor=floor($num);
+         
 	for($r=1;$r<$j+1;$r++){
 	?>
 
