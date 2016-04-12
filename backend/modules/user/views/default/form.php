@@ -57,7 +57,7 @@ use dosamigos\datepicker\DatePicker;
                         </td>
                         <td>
                             <?=$form->field($model, 'rail_sort_by')->dropDownList(['state'=>'state',
-                                'train'=>'train','Organiser_only'=>'organiser Only','panchjanya_only'=>'Panchjanya Only'])->label(false);?>
+                                'train_name'=>'train','Organiser_only'=>'organiser Only','panchjanya_only'=>'Panchjanya Only'])->label(false);?>
                         </td>
                     </tr>
                     <tr>
