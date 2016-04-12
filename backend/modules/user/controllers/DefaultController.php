@@ -32,7 +32,8 @@ class DefaultController extends Controller
                 'railway','date' ,'ordinary','registered', 'rail_sort_by','ord_sort_by','regd_sort_by'
             ]);
             $model->addRule('railway', 'string',['max'=>32]);
-              $model->addRule('date', 'string',['max'=>32]);
+            $model->addRule('date', 'string',['max'=>32]);
+            $model->addRule('date', 'required');
             $model->addRule('ordinary', 'string',['max'=>32]);
             $model->addRule('registered', 'string',['max'=>32]);
             $model->addRule('rail_sort_by', 'string',['max'=>32]);
