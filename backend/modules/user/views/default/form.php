@@ -71,7 +71,7 @@ use dosamigos\datepicker\DatePicker;
                         </td>
                         <td>
                             <?=$form->field($model, 'ord_sort_by')->dropDownList(['state'=>'state',
-                                'Organiser_only'=>'organiser Only','panchjanya_only'=>'Panchjanya Only'])->label(false);?>
+                                'organiser_only'=>'organiser Only','panchjanya_only'=>'Panchjanya Only'])->label(false);?>
                         </td>
                     </tr>
                     <tr>
@@ -85,7 +85,7 @@ use dosamigos\datepicker\DatePicker;
                         </td>
                         <td>
                             <?=$form->field($model, 'regd_sort_by')->dropDownList(['state'=>'state',
-                                'Organiser_only'=>'organiser Only','panchjanya_only'=>'Panchjanya Only'])->label(false);?>
+                                'organiser_only'=>'organiser Only','panchjanya_only'=>'Panchjanya Only'])->label(false);?>
                         </td>
                     </tr>
                     <tr>
