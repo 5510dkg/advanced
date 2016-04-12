@@ -29,9 +29,10 @@ class DefaultController extends Controller
     }
     public function actionLebeldashboard(){
          $model = new DynamicModel([
-                'railway', 'ordinary','registered', 'rail_sort_by','ord_sort_by','regd_sort_by'
+                'railway','date' ,'ordinary','registered', 'rail_sort_by','ord_sort_by','regd_sort_by'
             ]);
             $model->addRule('railway', 'string',['max'=>32]);
+              $model->addRule('date', 'string',['max'=>32]);
             $model->addRule('ordinary', 'string',['max'=>32]);
             $model->addRule('registered', 'string',['max'=>32]);
             $model->addRule('rail_sort_by', 'string',['max'=>32]);
@@ -45,11 +46,12 @@ class DefaultController extends Controller
                             $model->load($params);
                             if($model->railway==1){
                                 
-                                
+                              $ord=$model->rail_sort_by;  
                               $rail= new RailwayPostData();
                               $rail->date=$model->date;
                               $rail->time=date('H:i:s');
                               $rail->generated_date=date('Y-m-d');
+                              
                               if($rail->save()){
                                   $id=$rail->id;
                                     $pdf = new Pdf([
@@ -58,7 +60,7 @@ class DefaultController extends Controller
                                     'destination' => Pdf::DEST_DOWNLOAD,
                                     'filename' => 'RailwayPost"'.date('d-m-y').'".pdf',
 
-                                    'content' =>$this->renderPartial('print',['id'=>$id]),
+                                    'content' =>$this->renderPartial('print',['id'=>$id,'ord'=>$ord]),
                                     'options' => [
                                         'title' => 'Labels',
                                         'subject' => 'Generating Labels'
@@ -70,7 +72,6 @@ class DefaultController extends Controller
                     ]);
                                    return $pdf->render();
                               }
-                                
                             }
                             if($model->ordinary==1){
                                 

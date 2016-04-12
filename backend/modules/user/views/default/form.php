@@ -5,6 +5,7 @@ $this->title='Home';
 <?php
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use dosamigos\datepicker\DatePicker;
 
 ?> 
 <div class=" box box-primary">
@@ -20,6 +21,22 @@ use yii\widgets\ActiveForm;
             <div class="col-md-12">    
                 <?php $form= ActiveForm::begin()?>
                 <table class="table-bordered table-responsive table-condensed" style="width: 100%;">
+                    <tr>
+                        <td colspan="2">
+                              <?= $form->field($model, 'date')->widget( DatePicker::className(), [
+                            // inline too, not bad
+                            'inline' => false, 
+                            // modify template for custom rendering
+                            // 'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
+                            'clientOptions' => [
+                            'autoclose' => true,
+                            'format' => 'yyyy-mm-dd',
+                            'daysOfWeekDisabled'=> [1,2,3,4,5,6],
+                           // 'startDate'=>date('Y-m-d'),
+                        ]
+                        ]); ?>
+                        </td>
+                    </tr>
                     <tr>
                     
                     <th>
@@ -72,7 +89,7 @@ use yii\widgets\ActiveForm;
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2">
+                        <td>
                            <div class="form-group" style="margin-left: 45%">
 	        <?= Html::submitButton('Generate Lebels', ['class' =>'btn btn-success']) ?>
 	    </div> 

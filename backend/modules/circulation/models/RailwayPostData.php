@@ -33,7 +33,7 @@ class RailwayPostData extends \yii\db\ActiveRecord
     {
         return [
             [['date'], 'required'],
-            [['date'], 'unique'],
+           
             [['date', 'time','generated_date'], 'safe']
         ];
     }
@@ -64,6 +64,7 @@ class RailwayPostData extends \yii\db\ActiveRecord
                 $postage->pjy=$value['panchjanya'];
                 $postage->org=$value['organiser'];
                 $postage->date=$this->date;
+                //$postage->state=$value['state'];
                 $postage->train_no=$value['train_no'];
                 $postage->train_name=$value['train_name'];
                 $postage->source=$value['source'];
