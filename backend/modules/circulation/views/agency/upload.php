@@ -19,6 +19,6 @@ $this->params['breadcrumbs'][] = $this->title;
   'options' => ['accept' => './xlxs']
    ]) ?>
    <div class="col-sm-4 offset-4">
-<?=Html::a("Click here",['/admin/users/download']) ?> to download excel format.
+<?=Html::a("Click here",['/circulation/agency/download']) ?> to download excel format.
 
    </div>
