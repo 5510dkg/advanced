@@ -14,7 +14,7 @@ if($ord=='organiser_only'){
 }
 elseif($ord=='panchjanya_only'){
     $ord='id';
-    $data=$model->find()->where(['post_id'=>$id])->andWhere(['>=','pjy','0'])->orderBy($ord.' ASC')->all();
+    $data=$model->find()->where(['post_id'=>$id,'org'=>'0'])->orderBy($ord.' ASC')->all();
 }
 else{
 $data=$model->find()->where(['post_id'=>$id])->orderBy($ord.' ASC')->all();
