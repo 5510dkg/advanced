@@ -142,6 +142,22 @@ class Agency extends \yii\db\ActiveRecord
         return $this->hasMany(AgencyCopiesRecords::className(), ['agency_id' => 'id']);
     }
 
+    /*
+     * get state name according to district name
+     */
+    public function getstatename($name){
+        $query = (new \yii\db\Query())->select(['id'])->from('_district')->where(['like', 'name',$name])->limit(1);
+             $command = $query->createCommand();
+             $data = $command->queryAll();
+             $titles = '';
+             foreach($data as $row) {
+                 $titles = $row['id'];
+             }
+             return $titles;
+    }
+    
+    
+    
     /**
      *  before save
      */
@@ -157,19 +173,19 @@ class Agency extends \yii\db\ActiveRecord
             //$st=$st['name'];
             $st=strtoupper($st);
             $atyp=$this->agency_type;
-//            if($atyp=='Single'){
-//               
-//                $atype='S';
-//            }else{$atype='C';}
-//            
-//            $mystate=mb_substr($st, 0, 2);
-//            $num=str_pad($num, 5, '0', STR_PAD_LEFT);
-//            $this->account_id=$mystate.'|'.$atype.'|'.$num;
-//             if($atyp=='Single'){
-//                 $this->billing_id=$mystate.'|'.$atype.'|'.$num;
-//             }else{
-//                 $this->billing_id=$this->agency_combined_id;
-//             }
+            if($atyp=='Single'){
+               
+                $atype='S';
+            }else{$atype='C';}
+            
+            $mystate=mb_substr($st, 0, 2);
+            $num=str_pad($num, 5, '0', STR_PAD_LEFT);
+            $this->account_id=$mystate.'|'.$atype.'|'.$num;
+             if($atyp=='Single'){
+                 $this->billing_id=$mystate.'|'.$atype.'|'.$num;
+             }else{
+                 $this->billing_id=$this->agency_combined_id;
+             }
             
             
         return true;

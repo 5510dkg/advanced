@@ -51,6 +51,16 @@ class AgencyReceipt extends \yii\db\ActiveRecord
         }
         
     }
+       public function get_agency_billing_id($id){
+            $query = (new \yii\db\Query())->select(['billing_id'])->from('agency')->where(['id' =>$id]);
+             $command = $query->createCommand();
+             $data = $command->queryAll();
+             $titles = '';
+             foreach($data as $row) {
+                  $titles= $row['billing_id'];
+             }
+             return $titles;
+    }
 
     /**
      * @inheritdoc

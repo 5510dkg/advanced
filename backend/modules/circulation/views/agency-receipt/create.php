@@ -11,5 +11,6 @@ $this->title='receipt add'
     <?= $this->render('_form', [
         'model' => $model,
         'id'=>$id,
+        'billing_id'=>$billing_id
     ]) ?>
 </div>

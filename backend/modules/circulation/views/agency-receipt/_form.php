@@ -22,7 +22,10 @@ use yii\widgets\ActiveForm;
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'agency_id')->textInput(['value'=>$id,'readonly'=>'readonly']) ?>
-
+            <div class="form-group">
+    <label for="email">Billing id</label>
+    <input type="email" class="form-control" readonly="readonly" value="<?=$billing_id?>">
+  </div>
     <?= $form->field($model, 'rcpt_date')->widget(\dosamigos\datepicker\DatePicker::className(),
             [
                 'clientOptions'=>[

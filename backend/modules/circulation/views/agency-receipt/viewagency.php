@@ -38,7 +38,7 @@ $this->title='Agency|Search';
       
             </div>
             <div class="col-md-4">
-               <?= $form->field($model, 'account_id') ?>  
+               <?= $form->field($model, 'billing_id') ?>  
                 
             </div>
             
@@ -70,7 +70,7 @@ $this->title='Agency|Search';
      'columns' => [
         ['class' => 'yii\grid\SerialColumn'],
         'name',
-        'account_id',
+        'billing_id',
         'mail_pincode',
         'reference',
         ['class'=>'yii\grid\ActionColumn',
