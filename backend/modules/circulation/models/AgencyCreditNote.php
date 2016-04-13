@@ -59,6 +59,16 @@ class AgencyCreditNote extends \yii\db\ActiveRecord
              }
              return $titles;
     }
+     public function get_agency_billing_id($id){
+            $query = (new \yii\db\Query())->select(['billing_id'])->from('agency')->where(['id' =>$id]);
+             $command = $query->createCommand();
+             $data = $command->queryAll();
+             $titles = '';
+             foreach($data as $row) {
+                  $titles= $row['billing_id'];
+             }
+             return $titles;
+    }
      public function total($id,$date){
             $query = (new \yii\db\Query())->select(['final_total'])->from('agency_bill_book')->where(['agency_id' =>$id,'issue_date'=>$date]);
              $command = $query->createCommand();

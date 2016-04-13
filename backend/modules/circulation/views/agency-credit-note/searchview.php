@@ -37,7 +37,7 @@ $this->title='Agency|Search';
       
             </div>
             <div class="col-md-4">
-               <?= $form->field($model, 'account_id') ?>  
+               <?= $form->field($model, 'billing_id') ?>  
                 
             </div>
             

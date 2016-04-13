@@ -109,6 +109,7 @@ class AgencyCreditNoteController extends Controller
         $model = new AgencyCreditNote();  
         $id=$request->get('id');
         //error_reporting(0);
+        $billing_id=$model->get_agency_billing_id($id);
       
             /*
             *   Process for non-ajax request
@@ -155,6 +156,7 @@ class AgencyCreditNoteController extends Controller
                 return $this->render('create', [
                     'model' => $model,
                     'id'=>$id,
+                    'billing_id'=>$billing_id
                 ]);
             }
          }else{
@@ -325,10 +327,10 @@ class AgencyCreditNoteController extends Controller
 }
 public function actionSearchview(){
         $model = new DynamicModel([
-                'name', 'account_id', 'mail_pincode','state'
+                'name', 'billing_id', 'mail_pincode','state'
             ]);
             $model->addRule('name', 'string',['max'=>32]);
-            $model->addRule('account_id', 'string',['max'=>32]);
+            $model->addRule('billing_id', 'string',['max'=>32]);
             $model->addRule('mail_pincode', 'string',['max'=>32]);
             $model->addRule('state', 'string',['max'=>32]);
        
@@ -345,7 +347,7 @@ public function actionSearchview(){
                            
                                 
                 $query->andFilterWhere(['like', 'name', $model->name]);
-                $query->andFilterWhere(['like', 'account_id', $model->account_id]);
+                $query->andFilterWhere(['like', 'billing_id', $model->billing_id]);
                 $query->andFilterWhere(['like', 'mail_pincode', $model->mail_pincode]);
                 $query->andFilterWhere(['mail_state_id'=>$model->state]);
                 

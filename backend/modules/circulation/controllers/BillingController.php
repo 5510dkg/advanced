@@ -100,10 +100,10 @@ Class BillingController extends Controller{
     public function actionSearch(){
      
             $model = new DynamicModel([
-                'name', 'account_id', 'mail_pincode','month'
+                'name', 'billing_id', 'mail_pincode','month'
             ]);
             $model->addRule('name', 'string',['max'=>32]);
-            $model->addRule('account_id', 'string',['max'=>32]);
+            $model->addRule('billing_id', 'string',['max'=>32]);
             $model->addRule('mail_pincode', 'string',['max'=>32]);
             $model->addRule('month', 'string',['max'=>32]);
             $model->addRule('month', 'required');
@@ -120,7 +120,7 @@ Class BillingController extends Controller{
                            
                                 
                 $query->andFilterWhere(['like', 'name', $model->name]);
-                $query->andFilterWhere(['like', 'account_id', $model->account_id]);
+                $query->andFilterWhere(['like', 'billing_id', $model->billing_id]);
                 $query->andFilterWhere(['like', 'mail_pincode', $model->mail_pincode]);
                 $month=$model->month;
             return $this->render('detail',

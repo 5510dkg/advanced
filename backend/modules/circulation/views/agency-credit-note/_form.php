@@ -21,8 +21,11 @@ use dosamigos\datepicker\DatePicker;
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'agency_id')->textInput(['value'=>$id,'readonly'=>'readonly']) ?>
-        
-    
+      
+    <div class="form-group">
+    <label for="email">Billing id</label>
+    <input type="email" class="form-control" readonly="readonly" value="<?=$billing_id?>">
+  </div>
     
     <?= $form->field($model, 'return_date')->widget( DatePicker::className(), [
                                                                         // inline too, not bad
@@ -38,6 +41,7 @@ use dosamigos\datepicker\DatePicker;
                         ]); ?>
     </div>
     <div class="col-md-4">
+          
     <?= $form->field($model, 'issue_type')->dropDownList([ 'Regular Edition' => 'Regular Edition','Special Edition' => 'Special Edition', ]) ?>
 
     <?= $form->field($model, 'pjy')->textInput(['maxlength'=>'4']) ?>
@@ -64,7 +68,7 @@ use dosamigos\datepicker\DatePicker;
     <div class="col-md-4">
 
     <?= $form->field($model, 'return_type')->dropDownList([ 'CUT' => 'CUT','RSL' => 'RETURN SHORTAGE LOSSES' ]) ?>
-
+        
     </div>
     <div class="col-md-12">
 	<?php if (!Yii::$app->request->isAjax){ ?>
