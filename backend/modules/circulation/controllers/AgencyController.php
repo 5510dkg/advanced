@@ -487,7 +487,7 @@ class AgencyController extends Controller
     public function actionDownload() {
      $path = 'download/format';
 
-     $file = $path . '/useruploadformat.xlsx';
+     $file = $path . '/agencyuploadformat.xlsx';
 
      if (file_exists($file)) {
 
