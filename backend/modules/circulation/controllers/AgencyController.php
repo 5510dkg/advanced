@@ -511,10 +511,10 @@ class AgencyController extends Controller
         $model = new DynamicModel([
                 'name', 'account_id', 'mail_pincode','state'
             ]);
-            $model->addRule('name', 'string',['max'=>32]);
-            $model->addRule('account_id', 'string',['max'=>32]);
-            $model->addRule('mail_pincode', 'string',['max'=>32]);
-            $model->addRule('state', 'string',['max'=>32]);
+            $model->addRule('name', 'string',['max'=>90]);
+            $model->addRule('account_id', 'string',['max'=>90]);
+            $model->addRule('mail_pincode', 'string',['max'=>90]);
+            $model->addRule('state', 'string',['max'=>90]);
        
 
             if($model->load(Yii::$app->request->post())){
@@ -552,10 +552,10 @@ class AgencyController extends Controller
         $model = new DynamicModel([
                 'name', 'account_id', 'mail_pincode','state'
             ]);
-            $model->addRule('name', 'string',['max'=>32]);
-            $model->addRule('account_id', 'string',['max'=>32]);
-            $model->addRule('mail_pincode', 'string',['max'=>32]);
-            $model->addRule('state', 'string',['max'=>32]);
+            $model->addRule('name', 'string',['max'=>90]);
+            $model->addRule('account_id', 'string',['max'=>90]);
+            $model->addRule('mail_pincode', 'string',['max'=>90]);
+            $model->addRule('state', 'string',['max'=>90]);
        
 
             if($model->load(Yii::$app->request->post())){
@@ -592,10 +592,10 @@ class AgencyController extends Controller
         $model = new DynamicModel([
                 'name', 'account_id', 'mail_pincode','state'
             ]);
-            $model->addRule('name', 'string',['max'=>32]);
-            $model->addRule('account_id', 'string',['max'=>32]);
-            $model->addRule('mail_pincode', 'string',['max'=>32]);
-            $model->addRule('state', 'string',['max'=>32]);
+            $model->addRule('name', 'string',['max'=>90]);
+            $model->addRule('account_id', 'string',['max'=>90]);
+            $model->addRule('mail_pincode', 'string',['max'=>90]);
+            $model->addRule('state', 'string',['max'=>90]);
        
 
             if($model->load(Yii::$app->request->post())){
@@ -632,10 +632,10 @@ class AgencyController extends Controller
         $model = new DynamicModel([
                 'name', 'account_id', 'mail_pincode','state'
             ]);
-            $model->addRule('name', 'string',['max'=>32]);
-            $model->addRule('account_id', 'string',['max'=>32]);
-            $model->addRule('mail_pincode', 'string',['max'=>32]);
-            $model->addRule('state', 'string',['max'=>32]);
+            $model->addRule('name', 'string',['max'=>90]);
+            $model->addRule('account_id', 'string',['max'=>90]);
+            $model->addRule('mail_pincode', 'string',['max'=>90]);
+            $model->addRule('state', 'string',['max'=>90]);
        
 
             if($model->load(Yii::$app->request->post())){
@@ -674,10 +674,10 @@ class AgencyController extends Controller
         $model = new DynamicModel([
                 'name', 'account_id', 'mail_pincode','state'
             ]);
-            $model->addRule('name', 'string',['max'=>32]);
-            $model->addRule('account_id', 'string',['max'=>32]);
-            $model->addRule('mail_pincode', 'string',['max'=>32]);
-            $model->addRule('state', 'string',['max'=>32]);
+            $model->addRule('name', 'string',['max'=>90]);
+            $model->addRule('account_id', 'string',['max'=>90]);
+            $model->addRule('mail_pincode', 'string',['max'=>90]);
+            $model->addRule('state', 'string',['max'=>90]);
        
 
             if($model->load(Yii::$app->request->post())){
