@@ -97,7 +97,7 @@ $this->title='Agency|Search';
         'class' => 'list-wrapper',
         'id' => 'list-wrapper',
     ],
-    'layout' => "{summary}\n{pager}\n{items}",
+    'layout' => "{summary}\n{items}\n{pager}",
    
 ]);
 ?>

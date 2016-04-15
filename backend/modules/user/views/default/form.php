@@ -8,6 +8,7 @@ use yii\widgets\ActiveForm;
 use dosamigos\datepicker\DatePicker;
 
 ?> 
+<div id="loadercomp">
 <div class=" box box-primary">
     <div class="box-header with-border">
         <h3 class="box-title">Label Generation</h3>
@@ -91,7 +92,9 @@ use dosamigos\datepicker\DatePicker;
                     <tr>
                         <td>
                            <div class="form-group" style="margin-left: 45%">
-	        <?= Html::submitButton('Generate Lebels', ['class' =>'btn btn-success']) ?>
+	        <?= Html::submitButton('Generate Lebels', ['class' =>'btn btn-success',
+
+]) ?>
 	    </div> 
                         </td>
                     </tr>
@@ -100,3 +103,5 @@ use dosamigos\datepicker\DatePicker;
                 <?php ActiveForm::end()?>
             </div>
         </div></div></div>
+</div>
+
