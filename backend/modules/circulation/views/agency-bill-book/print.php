@@ -75,27 +75,6 @@ $i=1;$r=1;?>
                 
                 
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     <?php  endforeach;?>
                 <tr>
                     <th><strong>TOTAL SUPPLY</strong></th>
