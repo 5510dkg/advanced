@@ -50,12 +50,12 @@ $i=1;$r=1;?>
             </div><br/>
             <br/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BILLING DETAILS<br/>
-            <table  class="table-bordered" style="width: 100%; border-collapse: collapse;">
+            <table style="width: 100%; border-collapse: collapse;">
                 <tr>
-                    <td>ISSUE DATE</td>
-                    <td>PANCHJANYA SUPPLY</td>
-                    <td>ORGANISER SUPPLY</td>
-                    <td>UNIT PRICE</td>
+                    <th>ISSUE DATE</th>
+                    <th>PANCHJANYA SUPPLY</th>
+                    <th>ORGANISER SUPPLY</th>
+                    <th>UNIT PRICE</th>
                 </tr>
                 <?php foreach ($data as $row):?>
                 <tr>
@@ -75,10 +75,10 @@ $i=1;$r=1;?>
                 </tr>
                 <?php   endforeach;?>
                 <tr>
-                    <td><strong>TOTAL SUPPLY</strong></td>
-                    <td><?=array_sum($pjy);?></td>
-                    <td><?=array_sum($org);?></td>
-                    <td>&nbsp;</td>
+                    <th><strong>TOTAL SUPPLY</strong></th>
+                    <th><?=array_sum($pjy);?></th>
+                    <th><?=array_sum($org);?></th>
+                    <th>&nbsp;</th>
                 </tr>
                 
             </table><br/><br/><br/>
