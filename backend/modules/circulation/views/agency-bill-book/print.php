@@ -72,7 +72,8 @@ $i=1;$r=1;?>
                         $receipts[]=$row['credit_amt'];
                         
                     ?>
-                </tr>
+                </tr> 
+                
                 <?php   endforeach;?>
                 <tr>
                     <th><strong>TOTAL SUPPLY</strong></th>
