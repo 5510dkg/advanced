@@ -73,12 +73,6 @@ $i=1;$r=1;?>
                     ?>        
                 </tr> 
                 
-                
-                
-                
-                
-                
-                
                 <?php   endforeach;?>
                 <tr>
                     <th><strong>TOTAL SUPPLY</strong></th>
