@@ -73,7 +73,7 @@ $i=1;$r=1;?>
                     ?>        
                 </tr> 
                 
-                <?php   endforeach;?>
+                <?php  endforeach;?>
                 <tr>
                     <th><strong>TOTAL SUPPLY</strong></th>
                     <th><?=array_sum($pjy);?></th>
