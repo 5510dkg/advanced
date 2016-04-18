@@ -72,10 +72,7 @@ $i=1;$r=1;?>
                         $receipts[]=$row['credit_amt'];
                     ?>        
                 </tr> 
-                
-                
-                    
-                    <?php  endforeach;?>
+                <?php  endforeach;?>
                 <tr>
                     <th><strong>TOTAL SUPPLY</strong></th>
                     <th><?=array_sum($pjy);?></th>
