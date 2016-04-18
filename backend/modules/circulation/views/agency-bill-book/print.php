@@ -71,7 +71,6 @@ $i=1;$r=1;?>
                         $discounted_amt[]=$row['discounted_amt'];
                         $receipts[]=$row['credit_amt'];
                     ?>        
-                    
                 </tr> 
                 <?php   endforeach;?>
                 <tr>
