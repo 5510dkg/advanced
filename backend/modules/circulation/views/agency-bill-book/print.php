@@ -91,10 +91,10 @@ $i=1;$r=1;?>
                 (F) CREDIT NOTE (IF ANY) IN THIS MONTH : Rs: 0/=<br/>
                 (G) NET BILL AMOUNT DUE AT THE END OF THIS MONTH : Rs: <strong><?=array_sum($final_total)?></strong>/=
             </div>
-            <div style="width: 55%;margin-left: 25px; height: 40px; " class="col-lg-offset-3">
-             <br/><br/>   Note: this bill is baed on revised commission rates( as stated below)
-                <table style=" border: 1px solid black;
-border-collapse: collapse;">
+            <div style="width: 55%;font-size:12px; margin-left: 25px; height: 40px; " class="col-lg-offset-3">
+                <br/><br/>  <i> Note: this bill is baed on revised commission rates( as stated below)</i>
+                <table  style=" border: 1px solid black;
+border-collapse: collapse; font-size:10px;">
                 <thead>
                   <tr>
                     <th height="20">Number Of Copies(Monthly Average)</th>
@@ -128,6 +128,14 @@ border-collapse: collapse;">
                   </tr>
                 </tbody>
               </table>
+             <br/>
+            </div>
+            <div style="width: 100%; height: 40px; border-top: 1px solid black; " class="col-lg-offset-3">
+                <p style="font-size:10px"><i>Please arrange early payment.Your supply may be discontinued for non-payment.All disputes to delhi jurisdiction only.</i></p> 
+                <p style="font-size:10px"><i>You can arrange to pay via cheque,money order,demand draft,cash or using pnb online facility.The details of pnb online facolity are: <br/>
+                    A/C No:-1502002100051122,IFSC No-PUNB0013000</i></p>
+                    <p style="font-size:10px"><i>Please take a note of your security amount.If its dhort,please send the additional security amount(present security rate is Rs: 60 per sopy)</i></p>
+                    <p style="font-size:10px"><i>In case of any query please write us at circ@bpdl.in or send an SMS at 9902099020 starting your message with BPDL followed by space and your message.</i></p>
             </div>
             
 	
