@@ -181,6 +181,26 @@ class AgencyController extends Controller
             *   Process for non-ajax request
             */
             if ($model->load($request->post()) && $model->save()) {
+                  $bookrecord=new AgencyCopiesRecords();
+                        $bookrecord->agency_id=$model->id;
+                        $bookrecord->date=date("Y-m-d");
+                        $bookrecord->pachjanya=$model->panchjanya;
+                        $bookrecord->organiser=$model->organiser;
+                        $bookrecord->save();                      
+
+                        $cr= new AgencyCreationUpdationRecords();
+                        $cr->agency_id=$model->id;
+                        $cr->date=date("Y-m-d");
+                        $cr->time=date("H:i:s");
+                        $cr->status='1';
+                        $cr->save();
+
+                        $com=new AgencyCommission();
+                        $com->agency_id=$model->id;
+                        $com->amount=$model->commission;
+                        $com->date=date("Y-m-d");
+                        $com->save();
+
                 return $this->redirect(['view', 'id' => $model->id]);
             } else {
                 return $this->render('create', [
@@ -239,7 +259,7 @@ class AgencyController extends Controller
                         $bookrecord->date=date("Y-m-d");
                         $bookrecord->pachjanya=$model->panchjanya;
                         $bookrecord->organiser=$model->organiser;
-                        $bookrecord->save();
+                        $bookrecord->save();                      
 
                         $cr= new AgencyCreationUpdationRecords();
                         $cr->agency_id=$model->id;
@@ -280,6 +300,27 @@ class AgencyController extends Controller
             *   Process for non-ajax request
             */
             if ($model->load($request->post()) && $model->save()) {
+                
+                  $bookrecord=new AgencyCopiesRecords();
+                        $bookrecord->agency_id=$model->id;
+                        $bookrecord->date=date("Y-m-d");
+                        $bookrecord->pachjanya=$model->panchjanya;
+                        $bookrecord->organiser=$model->organiser;
+                        $bookrecord->save();                      
+
+                        $cr= new AgencyCreationUpdationRecords();
+                        $cr->agency_id=$model->id;
+                        $cr->date=date("Y-m-d");
+                        $cr->time=date("H:i:s");
+                        $cr->status='1';
+                        $cr->save();
+
+                        $com=new AgencyCommission();
+                        $com->agency_id=$model->id;
+                        $com->amount=$model->commission;
+                        $com->date=date("Y-m-d");
+                        $com->save();
+
                 return $this->redirect(['view', 'id' => $model->id]);
             } else {
                 return $this->render('update', [
