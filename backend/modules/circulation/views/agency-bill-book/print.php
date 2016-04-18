@@ -81,6 +81,7 @@ $i=1;$r=1;?>
                     <th>&nbsp;</th>
                 </tr>
                 
+                
             </table><br/><br/><br/>
             <div style="width: 100%; margin-left: 25px;" class="col-lg-offset-3">
                 (A) TOTAL AMOUNT : Rs:&nbsp;&nbsp;<?=array_sum($total_amt)?>/=<br/>
