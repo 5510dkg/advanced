@@ -80,9 +80,7 @@ $i=1;$r=1;?>
                     <th><?=array_sum($org);?></th>
                     <th>&nbsp;</th>
                 </tr>
-                
-                
-            </table><br/><br/><br/>
+                </table><br/><br/><br/>
             <div style="width: 100%; margin-left: 25px;" class="col-lg-offset-3">
                 (A) TOTAL AMOUNT : Rs:&nbsp;&nbsp;<?=array_sum($total_amt)?>/=<br/>
                 (B) NET AMOUNT(TOTAL AMOUNT - COMMISSION): Rs:&nbsp;&nbsp;<?=array_sum($final_total)?>/=<br/>
