@@ -28,8 +28,8 @@ foreach ($data as $key => $value) {
 	if(($value->pjy)>($value->org)){ $k=$value->pjy;}else{ $k=$value->org;}
 	$sum=$value->pjy+$value->org;
 	$num=$sum/$value->bundle_size;
-	 $j=ceil($num);
-
+	$j=ceil($num);
+        
 	// echo 'this'.$j;
 	//echo $value->wt.'//';
 	 //$floor=floor($num);

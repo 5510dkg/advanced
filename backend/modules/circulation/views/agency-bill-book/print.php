@@ -12,7 +12,6 @@ $data=$agency->getPrintdetails($month, $agency_id);
 
 $i=1;$r=1;?>
 
-
 	<div style="margin-left: 25px;margin-bottom: 40px;margin-right: -30px; width: 100%;float: left; height: 300px;">
             <div style="height: 130px; width: 100%; border: none;">
                 <img src="images/header.jpg"/>
@@ -91,6 +90,44 @@ $i=1;$r=1;?>
                 (E) ANY ADJUSTMENT MADE IN THIS MONTH : Rs: 0/=<br/>
                 (F) CREDIT NOTE (IF ANY) IN THIS MONTH : Rs: 0/=<br/>
                 (G) NET BILL AMOUNT DUE AT THE END OF THIS MONTH : Rs: <strong><?=array_sum($final_total)?></strong>/=
+            </div>
+            <div style="width: 55%;margin-left: 25px; height: 40px; " class="col-lg-offset-3">
+             <br/><br/>   Note: this bill is baed on revised commission rates( as stated below)
+                <table style=" border: 1px solid black;
+border-collapse: collapse;">
+                <thead>
+                  <tr>
+                    <th height="20">Number Of Copies(Monthly Average)</th>
+                    <th height="20">New Commission Rate(%)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td height="20">0-50</td>
+                    <td height="20">30%</td>
+                  </tr>
+                  <tr>
+                    <td height="20">51-100</td>
+                    <td height="20">32%</td>
+                  </tr>
+                  <tr>
+                    <td>101-200</td>
+                    <td>33.33%</td>
+                  </tr>
+                  <tr>
+                      <td>201-400</td>
+                      <td>35%</td>
+                  </tr>
+                  <tr>
+                      <td>401-700</td>
+                      <td>40%</td>
+                  </tr>
+                  <tr>
+                      <td>701 & above</td>
+                      <td>42%</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
             
 	
