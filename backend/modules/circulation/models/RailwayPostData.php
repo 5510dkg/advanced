@@ -64,6 +64,12 @@ class RailwayPostData extends \yii\db\ActiveRecord
                 $postage->pjy=$value['panchjanya'];
                 $postage->org=$value['organiser'];
                 $postage->date=$this->date;
+                $postage->state=$value['mail_state_id'];
+                $postage->district=$value['mail_district_id'];
+                $postage->postoffice=$value['mail_p_office'];
+                $postage->state_id=$value['mail_state_id'];
+                $postage->district_id=$value['mail_district_id'];
+                $postage->post_office=$value['mail_p_office'];
                 //$postage->state=$value['state'];
                 $postage->train_no=$value['train_no'];
                 $postage->train_name=$value['train_name'];
@@ -195,6 +201,7 @@ class RailwayPostData extends \yii\db\ActiveRecord
              }
              return $titles;
     }
+    
     
     public function agencylist(){
 

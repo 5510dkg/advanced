@@ -22,6 +22,12 @@ use Yii;
  * @property string $train_name
  * @property string $source
  * @property string $license
+ * @property string $state
+ * @property string $district
+ * @property string $postoffice
+ * @property string $state_id
+ * @property string $district_id
+ * @property string $post_office
  */
 class RailwayPostedData extends \yii\db\ActiveRecord
 {
@@ -39,11 +45,11 @@ class RailwayPostedData extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['agency_id', 'tempelate_id', 'rail_id'], 'integer'],
+            [['agency_id', 'tempelate_id', 'rail_id','state_id','district_id','post_office'], 'integer'],
             [['date'], 'safe'],
             [['wt', 'postage'], 'string', 'max' => 50],
             [['address_bar','license'], 'string', 'max' => 255],
-            [['sn', 'pjy', 'org', 'train_no', 'train_name', 'source'], 'string', 'max' => 250]
+            [['sn', 'pjy', 'org', 'train_no', 'train_name', 'source','state','district','postoffice'], 'string', 'max' => 250]
         ];
     }
 
@@ -68,6 +74,12 @@ class RailwayPostedData extends \yii\db\ActiveRecord
             'train_name' => 'Train Name',
             'source' => 'Source',
             'license'=>'license',
+            'state'=>'State',
+            'district'=>'District',
+            'postoffice'=>'Post Office',
+            'state_id'=>'State',
+            'district_id'=>'District',
+            'post_office'=>'Post Office'
         ];
     }
     /**

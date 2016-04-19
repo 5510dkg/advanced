@@ -51,7 +51,13 @@ class DefaultController extends Controller
                             $model->load($params);
                             if($model->railway==1){
                                 
-                              $ord=$model->rail_sort_by;  
+                              $train=$model->train;
+                              $po=$model->po;
+                              $copy=$model->copy;
+                              $state=$model->state;
+                              $disctrict=$model->district;
+                              
+                              
                               $rail= new RailwayPostData();
                               $rail->date=$model->date;
                               $rail->time=date('H:i:s');
@@ -72,7 +78,13 @@ class DefaultController extends Controller
                                     'destination' => Pdf::DEST_FILE,
                                     'filename' => 'railway_post/'.$dt.'/'.$model->date.'.pdf',
 
-                                    'content' =>$this->renderPartial('print',['id'=>$id,'ord'=>$ord]),
+                                    'content' =>$this->renderPartial('print',['id'=>$id,'state'=>$state,
+                                        'district'=>$disctrict,
+                                        'po'=>$po,
+                                        'state'=>$state,
+                                        'train'=>$train,
+                                        'copy'=>$copy
+                                        ]),
                                     'options' => [
                                         'title' => 'Labels',
                                         'subject' => 'Generating Labels'
