@@ -43,7 +43,7 @@ use dosamigos\datepicker\DatePicker;
                     <th>
                         Name
                     </th>
-                    <th>
+                    <th colspan="5">
                         Sort By
                     </th>
                     </tr>
@@ -57,8 +57,19 @@ use dosamigos\datepicker\DatePicker;
 ?>
                         </td>
                         <td>
-                            <?=$form->field($model, 'rail_sort_by')->dropDownList(['state'=>'state',
-                                'train_name'=>'train','organiser_only'=>'organiser Only','panchjanya_only'=>'Panchjanya Only'])->label(false);?>
+                            <?=$form->field($model, 'state')->dropDownList([''=>'Please Select','1'=>'State'])->label(false);?>
+                        </td>
+                        <td>
+                            <?=$form->field($model, 'district')->dropDownList([''=>'Please Select','1'=>'District'])->label(false);?>
+                        </td>
+                        <td>
+                            <?=$form->field($model, 'po')->dropDownList([''=>'Please Select','1'=>'Post Office'])->label(false);?>
+                        </td>
+                        <td>
+                            <?=$form->field($model, 'pjy')->dropDownList([''=>'Please Select','1'=>'Panchjanya Only'])->label(false);?>
+                        </td>
+                        <td>
+                            <?=$form->field($model, 'org')->dropDownList([''=>'Please Select','1'=>'Organiser Only'])->label(false);?>
                         </td>
                     </tr>
                     <tr>
@@ -71,13 +82,24 @@ use dosamigos\datepicker\DatePicker;
 ?>
                         </td>
                         <td>
-                            <?=$form->field($model, 'ord_sort_by')->dropDownList(['state'=>'state',
-                                'organiser_only'=>'organiser Only','panchjanya_only'=>'Panchjanya Only'])->label(false);?>
+                            <?=$form->field($model, 'state')->dropDownList([''=>'Please Select','1'=>'State'])->label(false);?>
+                        </td>
+                        <td>
+                            <?=$form->field($model, 'district')->dropDownList([''=>'Please Select','1'=>'District'])->label(false);?>
+                        </td>
+                        <td>
+                            <?=$form->field($model, 'po')->dropDownList([''=>'Please Select','1'=>'Post Office'])->label(false);?>
+                        </td>
+                        <td>
+                            <?=$form->field($model, 'pjy')->dropDownList([''=>'Please Select','1'=>'Panchjanya Only'])->label(false);?>
+                        </td>
+                        <td>
+                            <?=$form->field($model, 'org')->dropDownList([''=>'Please Select','1'=>'Organiser Only'])->label(false);?>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <?=$form->field($model, 'registered')->checkbox(array( 
+                            <?=$form->field($model, 'org')->checkbox(array( 
                                             //'label'=>'railway', 
                                             'labelOptions'=>array('style'=>'padding:5px;'), 
                                             'disabled'=>false 
@@ -85,8 +107,19 @@ use dosamigos\datepicker\DatePicker;
 ?>
                         </td>
                         <td>
-                            <?=$form->field($model, 'regd_sort_by')->dropDownList(['state'=>'state',
-                                'organiser_only'=>'organiser Only','panchjanya_only'=>'Panchjanya Only'])->label(false);?>
+                            <?=$form->field($model, 'state')->dropDownList([''=>'Please Select','1'=>'State'])->label(false);?>
+                        </td>
+                        <td>
+                            <?=$form->field($model, 'district')->dropDownList([''=>'Please Select','1'=>'District'])->label(false);?>
+                        </td>
+                        <td>
+                            <?=$form->field($model, 'po')->dropDownList([''=>'Please Select','1'=>'Post Office'])->label(false);?>
+                        </td>
+                        <td>
+                            <?=$form->field($model, 'pjy')->dropDownList([''=>'Please Select','1'=>'Panchjanya Only'])->label(false);?>
+                        </td>
+                        <td>
+                            <?=$form->field($model, 'org')->dropDownList([''=>'Please Select','1'=>'Organiser Only'])->label(false);?>
                         </td>
                     </tr>
                     <tr>

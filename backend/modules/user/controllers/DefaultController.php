@@ -29,7 +29,7 @@ class DefaultController extends Controller
     }
     public function actionLebeldashboard(){
          $model = new DynamicModel([
-                'railway','date' ,'ordinary','registered', 'state','district','po','org','train'
+                'railway','date' ,'ordinary','registered', 'state','district','pjy','po','org','train'
             ]);
             $model->addRule('railway', 'string',['max'=>32]);
             $model->addRule('date', 'string',['max'=>32]);
@@ -40,6 +40,7 @@ class DefaultController extends Controller
             $model->addRule('district','string',['max'=>32]);
             $model->addRule('po','string',['max'=>32]);
             $model->addRule('org','string',['max'=>32]);
+            $model->addRule('pjy','string',['max'=>32]);
             $model->addRule('train','string',['max'=>32]);
             if($model->load(Yii::$app->request->post())){
                         // do somenthing with model
