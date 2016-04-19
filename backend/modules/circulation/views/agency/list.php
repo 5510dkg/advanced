@@ -1,7 +1,8 @@
 <?php
 use yii\helpers\Html;
 use yii\helpers\Url;
-$this->title='Agency Management';?>
+$this->title='Agency Management';
+?>
 
 <div class="row">
 <div class="col-sm-3">
