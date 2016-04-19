@@ -12,7 +12,15 @@ $model= new RailwayPostedData();
 if($ord=='state')$ord='id';
 if($ord=='organiser_only'){
     $ord='id';
-     
+     $sort = new Sort([
+        'attributes' => [
+            'state_id' => [
+                'asc' => ['state_id' => SORT_ASC],
+                'default' => SORT_DESC,
+                'label' => 'State',
+            ],
+        ],
+    ]);
     $data=$model->find()->where(['rail_id'=>$id,'pjy'=>'0'])->orderBy($sort)->all();
 }
 elseif($ord=='panchjanya_only'){
