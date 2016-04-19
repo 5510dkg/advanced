@@ -1,5 +1,5 @@
 <?php
-
+use yii\data\Sort;
 ini_set('memory_limit', '-1');
 ini_set('max_execution_time', 300);
 //use Yii;
@@ -12,6 +12,16 @@ $model= new RailwayPostedData();
 if($ord=='state')$ord='id';
 if($ord=='organiser_only'){
     $ord='id';
+     $sort = new Sort([
+        'attributes' => [
+            'name' => [
+                'asc' => ['first_name' => SORT_ASC, 'last_name' => SORT_ASC],
+                'desc' => ['first_name' => SORT_DESC, 'last_name' => SORT_DESC],
+                'default' => SORT_DESC,
+                'label' => 'Name',
+            ],
+        ],
+    ]);
     $data=$model->find()->where(['rail_id'=>$id,'pjy'=>'0'])->orderBy($ord.' ASC')->all();
 }
 elseif($ord=='panchjanya_only'){
