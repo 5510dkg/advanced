@@ -18,6 +18,7 @@ $this->title='Agency Management';
      <?=Html::a('Deactivate Agency',['/circulation/agency/searchdeactivate',['q'=>'deactive']],['class'=>'btn btn-warning btn-lg btn-block'])?>  
 </div>
 </div>
+
 <div class="row" style="margin-top: 10px;">
 <div class="col-sm-3">
      <?=Html::a('Update Delivery Method',['/circulation/agency/searchdelivery',['q'=>'delivery']],['class'=>'btn btn-success btn-lg btn-block'])?>  
