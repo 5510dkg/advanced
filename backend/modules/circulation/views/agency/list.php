@@ -14,7 +14,7 @@ $this->title='Agency Management';?>
      <?=Html::a('Update Supply',['/circulation/agency/searchcopies',['q'=>'copy']],['class'=>'btn btn-success btn-lg btn-block'])?>  
 </div>
     <div class="col-sm-3">
-     <?=Html::a('Deactivate Agecny',['/circulation/agency/searchdeactivate',['q'=>'deactive']],['class'=>'btn btn-warning btn-lg btn-block'])?>  
+     <?=Html::a('Deactivate Agency',['/circulation/agency/searchdeactivate',['q'=>'deactive']],['class'=>'btn btn-warning btn-lg btn-block'])?>  
 </div>
 </div>
 <div class="row" style="margin-top: 10px;">
