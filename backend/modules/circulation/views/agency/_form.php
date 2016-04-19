@@ -560,7 +560,7 @@ use kartik\typeahead\Typeahead;
                 <?php if($q=='no'){?>
             <div class=" box box-default">
     <div class="box-header with-border">
-        <h3 class="box-title">New Agency</h3>
+        <h3 class="box-title">Basic Details</h3>
         <div class="box-tools pull-right">
             <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
         </div>
