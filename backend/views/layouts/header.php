@@ -21,17 +21,130 @@ use yii\helpers\Html;
 
                 <!-- Messages: style can be found in dropdown.less-->
                  <?php if(Yii::$app->user->identity->role_group_id!='1'){?>
+                <?php if(Yii::$app->user->identity->department_id='1'){ ?>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-bookmark fa-fw"></i>HR
                     </a>
                 </li>
-                 <li class="dropdown">
+                <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-desktop fa-fw"></i>IT
                     </a>
                 </li>
-                 <li class="dropdown">
+                  <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-certificate fa-fw"></i>PRODUCTION
+                    </a>
+                </li>
+                <?php } ?> 
+                  <?php if(Yii::$app->user->identity->department_id=='2'){ ?> 
+                      <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bookmark fa-fw"></i>HR
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-desktop fa-fw"></i>IT
+                    </a>
+                </li>
+                      
+                      
+                      
+                      <?php } ?>
+                <?php if(Yii::$app->user->identity->department_id=='3'){ ?> 
+                      <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bookmark fa-fw"></i>HR
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-desktop fa-fw"></i>IT
+                    </a>
+                </li>
+                      
+                      
+                      
+                      <?php } ?>
+                <?php if(Yii::$app->user->identity->department_id=='4'){ ?> 
+                      <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bookmark fa-fw"></i>HR
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-desktop fa-fw"></i>IT
+                    </a>
+                </li>
+                      
+                      
+                      
+                      <?php } ?>
+                <?php if(Yii::$app->user->identity->department_id=='5'){ ?> 
+                      <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bookmark fa-fw"></i>HR
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-desktop fa-fw"></i>IT
+                    </a>
+                </li>
+                      
+                      
+                      
+                      <?php } ?>
+                <?php if(Yii::$app->user->identity->department_id=='6'){ ?> 
+                      <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bookmark fa-fw"></i>HR
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-desktop fa-fw"></i>IT
+                    </a>
+                </li>
+                      
+                      
+                      
+                      <?php } ?>
+                <?php if(Yii::$app->user->identity->department_id=='7'){ ?> 
+                      <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bookmark fa-fw"></i>HR
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-desktop fa-fw"></i>IT
+                    </a>
+                </li>
+                      
+                      
+                      
+                      <?php } ?>
+                <?php if(Yii::$app->user->identity->department_id=='8'){ ?> 
+                      <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bookmark fa-fw"></i>HR
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-desktop fa-fw"></i>IT
+                    </a>
+                </li>
+                      
+                      
+                      
+                      <?php } ?>
+                
+<!--                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-inr fa-fw"></i>FINANCE
                     </a>
@@ -60,7 +173,7 @@ use yii\helpers\Html;
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-newspaper-o fa-fw"></i>ADVERTISEMENT
                     </a>
-                </li>
+                </li>-->
                  <?php } ?>
                 
                 
