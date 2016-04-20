@@ -123,6 +123,21 @@ class DefaultController extends Controller
                               $rail->time=date('H:i:s');
                               $rail->generated_date=date('Y-m-d');
                               
+                              
+                              
+                              $arr=array();
+                              //print_r($model);exit;
+                              if($model->state1==1){
+                                  $arr['state']='state_id ASC';
+                              }
+                              if($model->district1==1){
+                                  $arr['district']='district_id ASC';
+                              }
+                              if($model->po1){
+                                  $arr['post_office']='post_office ASC';
+                              }
+                             
+                              
                               if($rail->save()){
                                   $dt=$model->date;
                                   if (!file_exists('ordinary_post/'.$dt)) {
