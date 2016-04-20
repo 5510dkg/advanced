@@ -124,7 +124,7 @@ class DefaultController extends Controller
                               $rail->generated_date=date('Y-m-d');
                               
                               
-                              
+                              $cpy=0;
                               $arr=array();
                               //print_r($model);exit;
                               if($model->state1==1){
@@ -136,7 +136,12 @@ class DefaultController extends Controller
                               if($model->po1){
                                   $arr['post_office']='post_office ASC';
                               }
-                             
+                              if($model->copy1==1){
+                                  $cpy=1;
+                              }
+                              if($model->cpy==2){
+                                  $cpy=2;
+                              }
                               
                               if($rail->save()){
                                   $dt=$model->date;
