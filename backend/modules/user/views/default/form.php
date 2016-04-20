@@ -119,6 +119,29 @@ use dosamigos\datepicker\DatePicker;
                     </tr>
                     <tr>
                         <td>
+                            <?=$form->field($model, 'vpp')->checkbox(array( 
+                                            //'label'=>'railway', 
+                                            'labelOptions'=>array('style'=>'padding:5px;'), 
+                                            'disabled'=>false 
+                                            )) 
+?>
+                        </td>
+                        <td>
+                            <?=$form->field($model, 'state3')->dropDownList([''=>'Please Select','1'=>'State'])->label(false);?>
+                        </td>
+                        <td>
+                            <?=$form->field($model, 'district3')->dropDownList([''=>'Please Select','1'=>'District'])->label(false);?>
+                        </td>
+                        <td>
+                            <?=$form->field($model, 'po3')->dropDownList([''=>'Please Select','1'=>'Post Office'])->label(false);?>
+                        </td>
+                        <td>
+                            <?=$form->field($model, 'copy3')->dropDownList([''=>'Please Select','1'=>'Panchjanya Only','2'=>'Organiser Only'])->label(false);?>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td>
                            <div class="form-group" style="margin-left: 45%">
 	        <?= Html::submitButton('Generate Lebels', ['class' =>'btn btn-success',
 

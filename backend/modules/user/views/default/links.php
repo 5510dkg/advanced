@@ -32,7 +32,19 @@
             </div><br/><br/>
             
             
-        </div></div>
+        </div>
+         <div class="row">
+            <div class="col-md-12">
+            <?php   if($vppp!='null'){ ?>
+             <a class="btn btn-lg btn-success" target="_blank" href="<?=$vppp?>">Download Vpp Labels</a>   
+                
+             <?php } ?>
+            </div><br/><br/>
+            
+            
+        </div>
+    
+    </div>
 </div>
 <div class="se-pre-con"></div>
 <?php

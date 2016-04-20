@@ -80,4 +80,65 @@ class VppPostedData extends \yii\db\ActiveRecord
             'post_office' => 'Post Office',
         ];
     }
+    
+     /**
+     * Finds the RegisteredPostData model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param integer $id
+     * @return RegisteredPostData the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    public function findModel($id)
+    {
+        if (($model = $this->find->where(['vpp_id'=>$id])->all()) !== null) {
+           // return $model;
+             throw new NotFoundHttpException('The requested page does not exist.');
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+     public function Agencyname($id){
+            $query = (new \yii\db\Query())->select(['*'])->from('agency')->where(['id' =>$id]);
+            $command = $query->createCommand();
+            $data = $command->queryAll();
+            $titles = '';
+            foreach($data as $row) {
+                $titles['name']= $row['name'];
+                $titles['hno']=$row['mail_house_no'];
+                $titles['street']=$row['mail_street_address'];
+                $titles['post']=$row['mail_p_office'];
+                $titles['source']=$row['source'];
+                $titles['train_name']=$row['train_name'];
+                $titles['train_no']=$row['train_no'];
+                $titles['dist']=$this->distname($row['mail_district_id']);
+                $titles['state']=$this->statename($row['mail_state_id']);
+                $titles['pincode']=$row['mail_pincode'];
+            }
+            return $titles;
+                
+    }
+    public function statename($id){
+            $query = (new \yii\db\Query())->select(['name'])->from('_state')->where(['id' =>$id]);
+            $command = $query->createCommand();
+            $data = $command->queryAll();
+            $titles = '';
+            foreach($data as $row) {
+                $titles= $row['name'];
+               
+            }
+            return $titles;
+                
+    }
+    public function distname($id){
+            $query = (new \yii\db\Query())->select(['name'])->from('_district')->where(['id' =>$id]);
+            $command = $query->createCommand();
+            $data = $command->queryAll();
+            $titles = '';
+            foreach($data as $row) {
+                $titles= $row['name'];
+               
+            }
+            return $titles;
+                
+    }
 }

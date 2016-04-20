@@ -6,6 +6,7 @@ use yii\web\Controller;
 use backend\modules\circulation\models\RailwayPostData;
 use backend\modules\circulation\models\RegisteredPostData;
 use backend\modules\circulation\models\OrdinaryPostData;
+use backend\modules\circulation\models\VppPostData;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use \yii\web\Response;
@@ -29,13 +30,14 @@ class DefaultController extends Controller
     }
     public function actionLebeldashboard(){
          $model = new DynamicModel([
-                'railway','date' ,'ordinary','registered', 'state','district','copy','po','train',
-                 'state1','district1','copy1','po1','state2','district2','copy2','po2'
+                'railway','date' ,'ordinary','registered','vpp' ,'state','district','copy','po','train',
+                 'state1','district1','copy1','po1','state2','district2','copy2','po2','state3','district3','copy3','po3'
             ]);
             $model->addRule('railway', 'string',['max'=>32]);
             $model->addRule('date', 'string',['max'=>32]);
             $model->addRule('date', 'required');
             $model->addRule('ordinary', 'string',['max'=>32]);
+            $model->addRule('vpp', 'string',['max'=>32]);
             $model->addRule('registered', 'string',['max'=>32]);
             $model->addRule('state','string',['max'=>32]);
             $model->addRule('district','string',['max'=>32]);
@@ -50,6 +52,10 @@ class DefaultController extends Controller
             $model->addRule('po2','string',['max'=>32]);
             $model->addRule('copy2','string',['max'=>32]);
             $model->addRule('train','string',['max'=>32]);
+             $model->addRule('state3','string',['max'=>32]);
+            $model->addRule('district3','string',['max'=>32]);
+            $model->addRule('po3','string',['max'=>32]);
+            $model->addRule('copy3','string',['max'=>32]);
             if($model->load(Yii::$app->request->post())){
                         // do somenthing with model
                             $params=Yii::$app->request->post();
@@ -57,7 +63,9 @@ class DefaultController extends Controller
                             $ordp='null';
                             $regdp='null';
                             $railp='null';
+                            $vppp='null';
                             $model->load($params);
+                          //  print_r($model);exit;
                             if($model->railway==1){
                                 
                               $train=$model->train;
@@ -178,6 +186,62 @@ class DefaultController extends Controller
                               }
                                 
                             }
+                            if($model->vpp==1){
+                                //echo 'hiiiiiiiii';exit;
+                                 //$ord=$model->ord_sort_by;  
+                              $rail= new VppPostData();
+                              $rail->date=$model->date;
+                              $rail->time=date('H:i:s');
+                              $rail->generated_date=date('Y-m-d');
+                              
+                              
+                              $cpy=0;
+                              $arr=array();
+                              //print_r($model);exit;
+                              if($model->state1==1){
+                                  $arr['state']='state_id ASC';
+                              }
+                              if($model->district1==1){
+                                  $arr['district']='district_id ASC';
+                              }
+                              if($model->po1){
+                                  $arr['post_office']='post_office ASC';
+                              }
+                              if($model->copy1==1){
+                                  $cpy=1;
+                              }
+                              if($model->copy1==2){
+                                  $cpy=2;
+                              }
+                              
+                              if($rail->save()){
+                                  $dt=$model->date;
+                                  if (!file_exists('vpp_post/'.$dt)) {
+                                      mkdir('vpp_post/'.$dt, 0777, true);
+                                    }
+                                    $vppp='vpp_post/'.$dt.'/'.$model->date.'.pdf';
+                                  $id=$rail->id;
+                                    $pdf = new Pdf([
+                                    'mode' => Pdf::MODE_UTF8, // leaner size using standard fonts
+                                    'orientation'=>'L',
+                                    'destination' => Pdf::DEST_FILE,
+                                    'filename' => 'vpp_post/'.$dt.'/'.$model->date.'.pdf',
+
+                                     'content' =>$this->renderPartial('vppprint',['id'=>$id,'array'=>$arr,
+                                        'cpy'=>$cpy]),
+                                    'options' => [
+                                        'title' => 'Labels',
+                                        'subject' => 'Generating Labels'
+                                    ],
+                                    // 'methods' => [
+                                    //     'SetHeader' => ['Generated By: Ritesh Singh PDF Component||Generated On: ' . date("r")],
+                                    //     'SetFooter' => ['|Page {PAGENO}|'],
+                                    // ]
+                    ]);
+                                    $pdf->render();
+                              }
+                                
+                            }
                             if($model->registered==1){
                                 
                               $rail= new RegisteredPostData();
@@ -237,7 +301,8 @@ class DefaultController extends Controller
                         return    $this->render('links',[
                                 'ordp'=>$ordp,
                                 'regdp'=>$regdp,
-                                'railp'=>$railp
+                                'railp'=>$railp,
+                                'vppp'=>$vppp
                             ]);
                             
 
