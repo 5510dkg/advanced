@@ -72,7 +72,7 @@ class RegisteredPostedData extends \yii\db\ActiveRecord
             'post_id'=>'POST ID',
             'license'=>'license',
             'bundle_size'=>'bundle_size',
-             'state'=>'State',
+            'state'=>'State',
             'district'=>'District',
             'postoffice'=>'Post Office',
             'state_id'=>'State',
