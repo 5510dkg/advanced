@@ -64,6 +64,7 @@ class DefaultController extends Controller
                               $po=$model->po;
                               $copy=$model->copy;
                               $state=$model->state;
+                              $cpy=0;
                               $disctrict=$model->district;
                               $arr=array();
                               //print_r($model);exit;
@@ -78,6 +79,12 @@ class DefaultController extends Controller
                               }
                               if($model->train){
                                   $arr['train_name']='train_name ASC';
+                              }
+                               if($model->copy==1){
+                                  $cpy=1;
+                              }
+                              if($model->copy==2){
+                                  $cpy=2;
                               }
                               $rail= new RailwayPostData();
                               $rail->date=$model->date;
@@ -100,8 +107,8 @@ class DefaultController extends Controller
                                     'destination' => Pdf::DEST_FILE,
                                     'filename' => 'railway_post/'.$dt.'/'.$model->date.'.pdf',
                                                 
-                                    'content' =>$this->renderPartial('print',['id'=>$id,'array'=>$arr
-                                        ]),
+                                    'content' =>$this->renderPartial('print',['id'=>$id,'array'=>$arr,
+                                        'cpy'=>$cpy]),
                                     'options' => [
                                         'title' => 'Labels',
                                         'subject' => 'Generating Labels'
@@ -139,7 +146,7 @@ class DefaultController extends Controller
                               if($model->copy1==1){
                                   $cpy=1;
                               }
-                              if($model->cpy==2){
+                              if($model->copy1==2){
                                   $cpy=2;
                               }
                               
@@ -156,7 +163,8 @@ class DefaultController extends Controller
                                     'destination' => Pdf::DEST_FILE,
                                     'filename' => 'ordinary_post/'.$dt.'/'.$model->date.'.pdf',
 
-                                    'content' =>$this->renderPartial('printordinary',['id'=>$id,'ord'=>$ord]),
+                                     'content' =>$this->renderPartial('printordinary',['id'=>$id,'array'=>$arr,
+                                        'cpy'=>$cpy]),
                                     'options' => [
                                         'title' => 'Labels',
                                         'subject' => 'Generating Labels'
@@ -177,6 +185,25 @@ class DefaultController extends Controller
                               $rail->time=date('H:i:s');
                               $rail->generated_date=date('Y-m-d');
                               
+                              $cpy=0;
+                              $arr=array();
+                              //print_r($model);exit;
+                              if($model->state2==1){
+                                  $arr['state']='state_id ASC';
+                              }
+                              if($model->district2==1){
+                                  $arr['district']='district_id ASC';
+                              }
+                              if($model->po2){
+                                  $arr['post_office']='post_office ASC';
+                              }
+                              if($model->copy2==1){
+                                  $cpy=1;
+                              }
+                              if($model->copy2==2){
+                                  $cpy=2;
+                              }
+                              
                               if($rail->save()){
                                   $dt=$model->date;
                                   if (!file_exists('registered_post/'.$dt)) {
@@ -191,7 +218,8 @@ class DefaultController extends Controller
                                         
                                     'filename' => 'registered_post/'.$dt.'/'.$model->date.'.pdf',
 
-                                    'content' =>$this->renderPartial('regdprint',['id'=>$id,'ord'=>$ord]),
+                                      'content' =>$this->renderPartial('regdprint',['id'=>$id,'array'=>$arr,
+                                        'cpy'=>$cpy]),
                                     'options' => [
                                         'title' => 'Labels',
                                         'subject' => 'Generating Labels'

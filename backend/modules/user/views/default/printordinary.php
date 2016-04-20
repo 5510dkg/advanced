@@ -7,18 +7,27 @@ use backend\modules\circulation\controllers\OrdinaryPostedDataController;
 $request=Yii::$app->request;
 //$id= $request->get('id');
 $model= new OrdinaryPostedData();
-if($ord=='state')$ord='id';
-if($ord=='organiser_only'){
-    $ord='id';
-    $data=$model->find()->where(['ord_id'=>$id,'pjy'=>'0'])->orderBy($ord.' ASC')->all();
+$sort=implode(',', $array);
+if($cpy==0){
+    $data=$model->find()->where(['ord_id'=>$id])->orderBy($sort)->all();
 }
-elseif($ord=='panchjanya_only'){
-    $ord='id';
-    $data=$model->find()->where(['ord_id'=>$id,'org'=>'0'])->orderBy($ord.' ASC')->all();
+if($cpy==1){
+    $data=$model->find()->where(['ord_id'=>$id,'org'=>'0'])->orderBy($sort)->all();
 }
-else{
-$data=$model->find()->where(['ord_id'=>$id])->orderBy($ord.' ASC')->all();
+if($cpy==2){
+    $data=$model->find()->where(['ord_id'=>$id,'pjy'=>'0'])->orderBy($sort)->all();
 }
+//if($ord=='organiser_only'){
+//    $ord='id';
+//    $data=$model->find()->where(['ord_id'=>$id,'pjy'=>'0'])->orderBy($ord.' ASC')->all();
+//}
+//elseif($ord=='panchjanya_only'){
+//    $ord='id';
+//    $data=$model->find()->where(['ord_id'=>$id,'org'=>'0'])->orderBy($ord.' ASC')->all();
+//}
+//else{
+//$data=$model->find()->where(['ord_id'=>$id])->orderBy($ord.' ASC')->all();
+//}
 
 $i=1;$r=1;
 foreach ($data as $key => $value) {

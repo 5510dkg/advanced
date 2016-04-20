@@ -11,7 +11,15 @@ $request=Yii::$app->request;
 $model= new RailwayPostedData();
 $sort=implode(',', $array);
 //print_r($array);exit;
+if($cpy==0){
     $data=$model->find()->where(['rail_id'=>$id])->orderBy($sort)->all();
+}
+if($cpy==1){
+    $data=$model->find()->where(['rail_id'=>$id,'org'=>'0'])->orderBy($sort)->all();
+}
+if($cpy==2){
+    $data=$model->find()->where(['rail_id'=>$id,'pjy'=>'0'])->orderBy($sort)->all();
+}
    // print_r($data);exit;
 //}
 //elseif($ord=='panchjanya_only'){
