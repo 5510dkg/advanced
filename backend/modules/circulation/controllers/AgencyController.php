@@ -15,6 +15,7 @@ use \yii\web\Response;
 use yii\helpers\Html;
 use yii\base\DynamicModel;
 use yii\data\ActiveDataProvider;
+use yii\data\SqlDataProvider;
 
 /**
  * AgencyController implements the CRUD actions for Agency model.
@@ -582,6 +583,41 @@ class AgencyController extends Controller
                             ]);
         }
         return $this->render('searchaddress', ['model'=>$model,
+            'data'=>$this->actionAgencylist(),
+            ]);
+    }
+    
+     public function actionWeekly(){
+        $model = new DynamicModel([
+                'week','name'
+            ]);
+            $model->addRule('week', 'string',['max'=>90]);
+             $model->addRule('name', 'string',['max'=>90]);
+              $model->addRule('week', 'required');
+           
+              
+
+            if($model->load(Yii::$app->request->post())){
+                        // do somenthing with model
+                            $params=Yii::$app->request->post();
+                           // print_r($params);exit;
+                            $query = Agency::find();
+                            $dataProvider = new ActiveDataProvider([
+                                'query' => $query,
+                            ]);
+                            $model->load($params);
+                           
+                                
+                $query->andFilterWhere(['like', 'name', $model->name]);
+                        
+            return $this->render('searchweekly',
+                            [
+                             'list'=>$dataProvider,
+                             'model'=>$model,
+                            'data'=>$this->actionAgencylist()
+                            ]);
+        }
+        return $this->render('searchweekly', ['model'=>$model,
             'data'=>$this->actionAgencylist(),
             ]);
     }
