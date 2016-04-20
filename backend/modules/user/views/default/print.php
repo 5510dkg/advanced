@@ -9,27 +9,18 @@ $request=Yii::$app->request;
 //$id= $request->get('id');
 
 $model= new RailwayPostedData();
-if($ord=='state')$ord='id';
-if($ord=='organiser_only'){
-    $ord='id';
-     $sort = new Sort([
-        'attributes' => [
-            'state_id' => [
-                'asc' => ['state_id' => SORT_ASC],
-                'default' => SORT_DESC,
-                'label' => 'State',
-            ],
-        ],
-    ]);
-    $data=$model->find()->where(['rail_id'=>$id,'pjy'=>'0'])->orderBy($sort)->all();
-}
-elseif($ord=='panchjanya_only'){
-    $ord='id';
-    $data=$model->find()->where(['rail_id'=>$id,'org'=>'0'])->orderBy($ord.' ASC')->all();
-}
-else{
-$data=$model->find()->where(['rail_id'=>$id])->orderBy($ord.' ASC')->all();
-}
+$sort=implode(',', $array);
+//print_r($array);exit;
+    $data=$model->find()->where(['rail_id'=>$id])->orderBy($sort)->all();
+   // print_r($data);exit;
+//}
+//elseif($ord=='panchjanya_only'){
+//    $ord='id';
+//    $data=$model->find()->where(['rail_id'=>$id,'org'=>'0'])->orderBy($ord.' ASC')->all();
+//}
+//else{
+//$data=$model->find()->where(['rail_id'=>$id])->orderBy($ord.' ASC')->all();
+//}
 //print_r($data);exit;
 
 $i=1;$r=1;

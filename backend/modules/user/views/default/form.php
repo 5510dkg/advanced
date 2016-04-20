@@ -82,16 +82,16 @@ use dosamigos\datepicker\DatePicker;
 ?>
                         </td>
                         <td>
-                            <?=$form->field($model, 'state')->dropDownList([''=>'Please Select','1'=>'State'])->label(false);?>
+                            <?=$form->field($model, 'state1')->dropDownList([''=>'Please Select','1'=>'State'])->label(false);?>
                         </td>
                         <td>
-                            <?=$form->field($model, 'district')->dropDownList([''=>'Please Select','1'=>'District'])->label(false);?>
+                            <?=$form->field($model, 'district1')->dropDownList([''=>'Please Select','1'=>'District'])->label(false);?>
                         </td>
                         <td>
-                            <?=$form->field($model, 'po')->dropDownList([''=>'Please Select','1'=>'Post Office'])->label(false);?>
+                            <?=$form->field($model, 'po1')->dropDownList([''=>'Please Select','1'=>'Post Office'])->label(false);?>
                         </td>
                         <td>
-                            <?=$form->field($model, 'copy')->dropDownList([''=>'Please Select','1'=>'Panchjanya Only','2'=>'Organiser Only'])->label(false);?>
+                            <?=$form->field($model, 'copy1')->dropDownList([''=>'Please Select','1'=>'Panchjanya Only','2'=>'Organiser Only'])->label(false);?>
                         </td>
                         
                     </tr>
@@ -105,16 +105,16 @@ use dosamigos\datepicker\DatePicker;
 ?>
                         </td>
                         <td>
-                            <?=$form->field($model, 'state')->dropDownList([''=>'Please Select','1'=>'State'])->label(false);?>
+                            <?=$form->field($model, 'state2')->dropDownList([''=>'Please Select','1'=>'State'])->label(false);?>
                         </td>
                         <td>
-                            <?=$form->field($model, 'district')->dropDownList([''=>'Please Select','1'=>'District'])->label(false);?>
+                            <?=$form->field($model, 'district2')->dropDownList([''=>'Please Select','1'=>'District'])->label(false);?>
                         </td>
                         <td>
-                            <?=$form->field($model, 'po')->dropDownList([''=>'Please Select','1'=>'Post Office'])->label(false);?>
+                            <?=$form->field($model, 'po2')->dropDownList([''=>'Please Select','1'=>'Post Office'])->label(false);?>
                         </td>
                         <td>
-                            <?=$form->field($model, 'copy')->dropDownList([''=>'Please Select','1'=>'Panchjanya Only','2'=>'Organiser Only'])->label(false);?>
+                            <?=$form->field($model, 'copy2')->dropDownList([''=>'Please Select','1'=>'Panchjanya Only','2'=>'Organiser Only'])->label(false);?>
                         </td>
                     </tr>
                     <tr>

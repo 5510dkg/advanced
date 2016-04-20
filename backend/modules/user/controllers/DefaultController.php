@@ -29,7 +29,8 @@ class DefaultController extends Controller
     }
     public function actionLebeldashboard(){
          $model = new DynamicModel([
-                'railway','date' ,'ordinary','registered', 'state','district','copy','po','train'
+                'railway','date' ,'ordinary','registered', 'state','district','copy','po','train',
+                 'state1','district1','copy1','po1','state2','district2','copy2','po2'
             ]);
             $model->addRule('railway', 'string',['max'=>32]);
             $model->addRule('date', 'string',['max'=>32]);
@@ -40,6 +41,14 @@ class DefaultController extends Controller
             $model->addRule('district','string',['max'=>32]);
             $model->addRule('po','string',['max'=>32]);
             $model->addRule('copy','string',['max'=>32]);
+            $model->addRule('state1','string',['max'=>32]);
+            $model->addRule('district1','string',['max'=>32]);
+            $model->addRule('po1','string',['max'=>32]);
+            $model->addRule('copy1','string',['max'=>32]);
+            $model->addRule('state2','string',['max'=>32]);
+            $model->addRule('district2','string',['max'=>32]);
+            $model->addRule('po2','string',['max'=>32]);
+            $model->addRule('copy2','string',['max'=>32]);
             $model->addRule('train','string',['max'=>32]);
             if($model->load(Yii::$app->request->post())){
                         // do somenthing with model
@@ -56,8 +65,20 @@ class DefaultController extends Controller
                               $copy=$model->copy;
                               $state=$model->state;
                               $disctrict=$model->district;
-                              
-                              
+                              $arr=array();
+                              //print_r($model);exit;
+                              if($model->state==1){
+                                  $arr['state']='state_id ASC';
+                              }
+                              if($model->district==1){
+                                  $arr['district']='district_id ASC';
+                              }
+                              if($model->po){
+                                  $arr['post_office']='post_office ASC';
+                              }
+                              if($model->train){
+                                  $arr['train_name']='train_name ASC';
+                              }
                               $rail= new RailwayPostData();
                               $rail->date=$model->date;
                               $rail->time=date('H:i:s');
@@ -72,18 +93,14 @@ class DefaultController extends Controller
                                     }
                                    $railp='railway_post/'.$dt.'/'.$model->date.'.pdf';
                                   $id=$rail->id;
+                                  
                                     $pdf = new Pdf([
                                     'mode' => Pdf::MODE_UTF8, // leaner size using standard fonts
                                     'orientation'=>'L',
                                     'destination' => Pdf::DEST_FILE,
                                     'filename' => 'railway_post/'.$dt.'/'.$model->date.'.pdf',
-
-                                    'content' =>$this->renderPartial('print',['id'=>$id,'state'=>$state,
-                                        'district'=>$disctrict,
-                                        'po'=>$po,
-                                        'state'=>$state,
-                                        'train'=>$train,
-                                        'copy'=>$copy
+                                                
+                                    'content' =>$this->renderPartial('print',['id'=>$id,'array'=>$arr
                                         ]),
                                     'options' => [
                                         'title' => 'Labels',
