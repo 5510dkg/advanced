@@ -198,19 +198,19 @@ class DefaultController extends Controller
                               $cpy=0;
                               $arr=array();
                               //print_r($model);exit;
-                              if($model->state1==1){
+                              if($model->state3==1){
                                   $arr['state']='state_id ASC';
                               }
-                              if($model->district1==1){
+                              if($model->district3==1){
                                   $arr['district']='district_id ASC';
                               }
-                              if($model->po1){
+                              if($model->po3){
                                   $arr['post_office']='post_office ASC';
                               }
-                              if($model->copy1==1){
+                              if($model->copy3==1){
                                   $cpy=1;
                               }
-                              if($model->copy1==2){
+                              if($model->copy3==2){
                                   $cpy=2;
                               }
                               
