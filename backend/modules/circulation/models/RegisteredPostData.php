@@ -63,6 +63,12 @@ class RegisteredPostData extends \yii\db\ActiveRecord
                 $postage->pjy=$value['panchjanya'];
                 $postage->org=$value['organiser'];
                 $postage->date=$this->date;
+                $postage->state=$value['mail_state_id'];
+                $postage->district=$value['mail_district_id'];
+                $postage->postoffice=$value['mail_p_office'];
+                $postage->state_id=$value['mail_state_id'];
+                $postage->district_id=$value['mail_district_id'];
+                $postage->post_office=$value['mail_p_office'];
                 $postage->post_id=$this->getnextid();
                 if($value['panchjanya']>0){
                     $postage->license=$this->getlicense('PJY');
