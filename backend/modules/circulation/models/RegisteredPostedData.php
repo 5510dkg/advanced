@@ -22,6 +22,12 @@ use Yii;
  * @property integer $org
  * @property string $date
  * @property string $post_id
+ *  @property string $state
+ * @property string $district
+ * @property string $postoffice
+ * @property string $state_id
+ * @property string $district_id
+ * @property string $post_office
  */
 class RegisteredPostedData extends \yii\db\ActiveRecord
 {
@@ -66,6 +72,12 @@ class RegisteredPostedData extends \yii\db\ActiveRecord
             'post_id'=>'POST ID',
             'license'=>'license',
             'bundle_size'=>'bundle_size',
+             'state'=>'State',
+            'district'=>'District',
+            'postoffice'=>'Post Office',
+            'state_id'=>'State',
+            'district_id'=>'District',
+            'post_office'=>'Post Office',
         ];
     }
 

@@ -20,6 +20,12 @@ use Yii;
  * @property integer $ord_id
  * @property string $license
  * @property string $bundle_size
+ * @property string $state
+ * @property string $district
+ * @property string $postoffice
+ * @property string $state_id
+ * @property string $district_id
+ * @property string $post_office
  */
 class OrdinaryPostedData extends \yii\db\ActiveRecord
 {
@@ -64,6 +70,12 @@ class OrdinaryPostedData extends \yii\db\ActiveRecord
             'ord_id' => 'Ord ID',
             'license'=>'license',
             'bundle_size'=>'Bundle Size',
+            'state'=>'State',
+            'district'=>'District',
+            'postoffice'=>'Post Office',
+            'state_id'=>'State',
+            'district_id'=>'District',
+            'post_office'=>'Post Office',
         ];
     }
      /**

@@ -124,7 +124,7 @@ class DefaultController extends Controller
                             }
                             if($model->ordinary==1){
                           //      echo 'hiiiiiiiii';exit;
-                                 $ord=$model->ord_sort_by;  
+                                 //$ord=$model->ord_sort_by;  
                               $rail= new OrdinaryPostData();
                               $rail->date=$model->date;
                               $rail->time=date('H:i:s');
@@ -179,7 +179,7 @@ class DefaultController extends Controller
                                 
                             }
                             if($model->registered==1){
-                              $ord=$model->ord_sort_by;  
+                                
                               $rail= new RegisteredPostData();
                               $rail->date=$model->date;
                               $rail->time=date('H:i:s');
