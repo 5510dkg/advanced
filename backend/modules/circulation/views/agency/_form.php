@@ -168,7 +168,7 @@ use kartik\typeahead\Typeahead;
         </div>
     </div>
     <div class="box-body">
-                <?= $form->field($model, 'name')->textInput() ?>
+                <?= $form->field($model, 'name')->textInput(['readonly'=>'readonly']) ?>
                 <?= $form->field($model, 'email')->hiddenInput()->label(false) ?>
                  <?= $form->field($model,'agency_type')->hiddenInput([ 'Select agency type'=>'','Single' => 'Single', 'Combined' => 'Combined' ])->label(false);?>
        
