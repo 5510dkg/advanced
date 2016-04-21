@@ -30,6 +30,6 @@ $this->title='Agency Management';
      <?=Html::a('Upload Agency Excel',['/circulation/agency/upload',['q'=>'delivery']],['class'=>'btn btn-danger btn-lg btn-block'])?>  
 </div>
      <div class="col-sm-3">
-     <?=Html::a('Download Weekly Supply',['/circulation/agency/weekly'],['class'=>'btn btn-success btn-lg btn-block'])?>  
+     <a class="btn btn-lg btn-success" target="_blank" href="download/data/agencyrecordbook.xlsx">Download Weekly Supply</a>  
 </div>
 </div>
