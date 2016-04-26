@@ -73,7 +73,8 @@ $this->title='Agency|Search';
                     'mail_pincode',
                     'reference'
                     
-                ]
+                ],
+                'target'=> '_self',
 ]);
 
             ?>
