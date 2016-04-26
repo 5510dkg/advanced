@@ -44,6 +44,9 @@ $this->title='Agency|Search';
             <div class="col-md-4">
                   <?= $form->field($model, 'mail_pincode')->label('Pin Code') ?>
             </div>
+            <div class="col-md-4">
+                  <?= $form->field($model, 'status')->dropDownList(['Active'=>'Active','Suspended'=>'Suspended','Inactive'=>'Inactive'])->label('Status') ?>
+            </div>
             <div class="col-md-12">    
         <div class="form-group">
             <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

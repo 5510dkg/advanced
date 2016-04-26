@@ -102,11 +102,11 @@ use kartik\typeahead\Typeahead;
         <h4><em>Copies Detail</em></h4>
         </div>
         <div class="col-lg-6">
-                <?= $form->field($model, 'panchjanya')->textInput(['maxlength'=>'4']) ?>
+                <?= $form->field($model, 'panchjanya')->textInput(['maxlength'=>'5']) ?>
               
         </div>
          <div class="col-lg-6">
-                <?= $form->field($model, 'organiser')->textInput(['maxlength'=>'4']) ?>
+                <?= $form->field($model, 'organiser')->textInput(['maxlength'=>'5']) ?>
         </div>
     </div>
    
@@ -202,7 +202,11 @@ use kartik\typeahead\Typeahead;
                                          $( "select#agency-mail_district_id" ).html( data );
                                            });'
                     ]) ?>
+                <?php if($model->isNewRecord){ ?>
                 <?= $form->field($model, 'mail_district_id')->dropDownList(ArrayHelper::map(District::find()->all(),'id','name'),['prompt'=>'Select District']) ?>
+                    <?php } else { ?>
+              <?= $form->field($model, 'mail_district_id')->dropDownList(ArrayHelper::map(District::find()->where(['state_id'=>$model->add_state_id])->all(),'id','name'),['prompt'=>'Select District']) ?>
+                    <?php } ?>
                 <?= $form->field($model, 'mail_pincode')->textInput() ?>
         </div>
     </div>
@@ -229,7 +233,11 @@ use kartik\typeahead\Typeahead;
                                          $( "select#agency-add_district_id" ).html( data );
                                            });'
                     ]) ?>
+                <?php if($model->isNewRecord){ ?>
                 <?= $form->field($model, 'add_district_id')->dropDownList(ArrayHelper::map(District::find()->all(),'id','name'),['prompt'=>'Select District']) ?>
+                    <?php } else { ?>
+              <?= $form->field($model, 'add_district_id')->dropDownList(ArrayHelper::map(District::find()->where(['state_id'=>$model->add_state_id])->all(),'id','name'),['prompt'=>'Select District']) ?>
+                    <?php } ?>
                 <?= $form->field($model, 'add_pincode')->textInput() ?>
         </div>
         </div>
@@ -638,7 +646,11 @@ use kartik\typeahead\Typeahead;
                                          $( "select#agency-add_district_id" ).html( data );
                                            });'
                     ]) ?>
+                    <?php if($model->isNewRecord){ ?>
                 <?= $form->field($model, 'add_district_id')->dropDownList(ArrayHelper::map(District::find()->all(),'id','name'),['prompt'=>'Select District']) ?>
+                    <?php } else { ?>
+              <?= $form->field($model, 'add_district_id')->dropDownList(ArrayHelper::map(District::find()->where(['state_id'=>$model->add_state_id])->all(),'id','name'),['prompt'=>'Select District']) ?>
+                    <?php } ?>
                 <?= $form->field($model, 'add_pincode')->textInput(['maxlength'=>'6']) ?>
         </div>
         </div>
@@ -648,11 +660,11 @@ use kartik\typeahead\Typeahead;
         <h4><em>Copies Detail</em></h4>
         </div>
         <div class="col-lg-6">
-                <?= $form->field($model, 'panchjanya')->textInput(['maxlength'=>'4']) ?>
+                <?= $form->field($model, 'panchjanya')->textInput(['maxlength'=>'5']) ?>
               
         </div>
          <div class="col-lg-6">
-                <?= $form->field($model, 'organiser')->textInput(['maxlength'=>'4']) ?>
+                <?= $form->field($model, 'organiser')->textInput(['maxlength'=>'5']) ?>
         </div>
     </div>
    
