@@ -77,13 +77,51 @@ class DefaultController extends Controller
                               $arr=array();
                               //print_r($model);exit;
                               if($model->state==1){
+                                  
                                   $arr['state']='state_id ASC';
                               }
-                              if($model->district==1){
-                                  $arr['district']='district_id ASC';
+                              if($model->state==2){
+                                  
+                                 $arr['district']='district_id ASC';
                               }
-                              if($model->po){
-                                  $arr['post_office']='post_office ASC';
+                              if($model->state==3){
+                                  
+                                   $arr['post_office']='post_office ASC';
+                              }
+                              if($model->state==4){
+                                  
+                                  $cpy=1;
+                              }
+                              if($model->state==5){
+                                  
+                                   $cpy=2;
+                              }
+                              if($model->district==1){
+                                  $arr['state']='state_id ASC';
+                              }
+                               if($model->district==2){
+                                 $arr['district']='district_id ASC';
+                              }
+                               if($model->district==3){
+                                 $arr['post_office']='post_office ASC';
+                              }
+                               if($model->district==4){
+                                 $cpy=1;
+                              }
+                               if($model->district==5){
+                                 $cpy=2;
+                              }
+                              if($model->po==1){
+                                    $arr['state']='state_id ASC';
+                              }
+                              if($model->po==2){
+                                 $arr['district']='district_id ASC';
+                              }if($model->po==3){
+                                 $arr['post_office']='post_office ASC';
+                              }if($model->po==4){
+                                   $cpy=1;
+                              }if($model->po==5){
+                                 $cpy=2;
                               }
                               if($model->train){
                                   $arr['train_name']='train_name ASC';
@@ -143,20 +181,67 @@ class DefaultController extends Controller
                               $arr=array();
                               //print_r($model);exit;
                               if($model->state1==1){
+                                  
                                   $arr['state']='state_id ASC';
                               }
-                              if($model->district1==1){
-                                  $arr['district']='district_id ASC';
+                              if($model->state1==2){
+                                  
+                                 $arr['district']='district_id ASC';
                               }
-                              if($model->po1){
-                                  $arr['post_office']='post_office ASC';
+                              if($model->state1==3){
+                                  
+                                   $arr['post_office']='post_office ASC';
                               }
-                              if($model->copy1==1){
+                              if($model->state1==4){
+                                  
                                   $cpy=1;
                               }
-                              if($model->copy1==2){
-                                  $cpy=2;
+                              if($model->state1==5){
+                                  
+                                   $cpy=2;
                               }
+                              if($model->district1==1){
+                                  $arr['state']='state_id ASC';
+                              }
+                               if($model->district1==2){
+                                 $arr['district']='district_id ASC';
+                              }
+                               if($model->district1==3){
+                                 $arr['post_office']='post_office ASC';
+                              }
+                               if($model->district1==4){
+                                 $cpy=1;
+                              }
+                               if($model->district1==5){
+                                 $cpy=2;
+                              }
+                              if($model->po1==1){
+                                    $arr['state']='state_id ASC';
+                              }
+                              if($model->po1==2){
+                                 $arr['district']='district_id ASC';
+                              }if($model->po1==3){
+                                 $arr['post_office']='post_office ASC';
+                              }if($model->po1==4){
+                                   $cpy=1;
+                              }if($model->po1==5){
+                                 $cpy=2;
+                              }
+//                              if($model->state1==1){
+//                                  $arr['state']='state_id ASC';
+//                              }
+//                              if($model->district1==1){
+//                                  $arr['district']='district_id ASC';
+//                              }
+//                              if($model->po1){
+//                                  $arr['post_office']='post_office ASC';
+//                              }
+//                              if($model->copy1==1){
+//                                  $cpy=1;
+//                              }
+//                              if($model->copy1==2){
+//                                  $cpy=2;
+//                              }
                               
                               if($rail->save()){
                                   $dt=$model->date;
@@ -198,15 +283,63 @@ class DefaultController extends Controller
                               $cpy=0;
                               $arr=array();
                               //print_r($model);exit;
-                              if($model->state3==1){
+                             if($model->state3==1){
+                                  
                                   $arr['state']='state_id ASC';
                               }
+                              if($model->state3==2){
+                                  
+                                 $arr['district']='district_id ASC';
+                              }
+                              if($model->state3==3){
+                                  
+                                   $arr['post_office']='post_office ASC';
+                              }
+                              if($model->state3==4){
+                                  
+                                  $cpy=1;
+                              }
+                              if($model->state3==5){
+                                  
+                                   $cpy=2;
+                              }
                               if($model->district3==1){
-                                  $arr['district']='district_id ASC';
+                                  $arr['state']='state_id ASC';
                               }
-                              if($model->po3){
-                                  $arr['post_office']='post_office ASC';
+                               if($model->district3==2){
+                                 $arr['district']='district_id ASC';
                               }
+                               if($model->district3==3){
+                                 $arr['post_office']='post_office ASC';
+                              }
+                               if($model->district3==4){
+                                 $cpy=1;
+                              }
+                               if($model->district3==5){
+                                 $cpy=2;
+                              }
+                              if($model->po3==1){
+                                    $arr['state']='state_id ASC';
+                              }
+                              if($model->po3==2){
+                                 $arr['district']='district_id ASC';
+                              }if($model->po3==3){
+                                 $arr['post_office']='post_office ASC';
+                              }if($model->po3==4){
+                                   $cpy=1;
+                              }if($model->po3==5){
+                                 $cpy=2;
+                              }
+                              
+//                              if($model->state3==1){
+//                                  $arr['state']='state_id ASC';
+//                              }
+//                              if($model->district3==1){
+//                                  $arr['district']='district_id ASC';
+//                              }
+//                              if($model->po3){
+//                                  $arr['post_office']='post_office ASC';
+//                              }
                               if($model->copy3==1){
                                   $cpy=1;
                               }
@@ -252,15 +385,63 @@ class DefaultController extends Controller
                               $cpy=0;
                               $arr=array();
                               //print_r($model);exit;
+                              //
                               if($model->state2==1){
+                                  
                                   $arr['state']='state_id ASC';
                               }
+                              if($model->state2==2){
+                                  
+                                 $arr['district']='district_id ASC';
+                              }
+                              if($model->state2==3){
+                                  
+                                   $arr['post_office']='post_office ASC';
+                              }
+                              if($model->state2==4){
+                                  
+                                  $cpy=1;
+                              }
+                              if($model->state2==5){
+                                  
+                                   $cpy=2;
+                              }
                               if($model->district2==1){
-                                  $arr['district']='district_id ASC';
+                                  $arr['state']='state_id ASC';
                               }
-                              if($model->po2){
-                                  $arr['post_office']='post_office ASC';
+                               if($model->district2==2){
+                                 $arr['district']='district_id ASC';
                               }
+                               if($model->district2==3){
+                                 $arr['post_office']='post_office ASC';
+                              }
+                               if($model->district2==4){
+                                 $cpy=1;
+                              }
+                               if($model->district2==5){
+                                 $cpy=2;
+                              }
+                              if($model->po2==1){
+                                    $arr['state']='state_id ASC';
+                              }
+                              if($model->po2==2){
+                                 $arr['district']='district_id ASC';
+                              }if($model->po2==3){
+                                 $arr['post_office']='post_office ASC';
+                              }if($model->po2==4){
+                                   $cpy=1;
+                              }if($model->po2==5){
+                                 $cpy=2;
+                              }
+//                              if($model->state2==1){
+//                                  $arr['state']='state_id ASC';
+//                              }
+//                              if($model->district2==1){
+//                                  $arr['district']='district_id ASC';
+//                              }
+//                              if($model->po2){
+//                                  $arr['post_office']='post_office ASC';
+//                              }
                               if($model->copy2==1){
                                   $cpy=1;
                               }
