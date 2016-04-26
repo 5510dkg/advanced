@@ -20,14 +20,15 @@
         "yiisoft/yii2-swiftmailer": "*",
         "kartik-v/yii2-grid": "@dev",
         "johnitvn/yii2-ajaxcrud": "*",
-        "phpoffice/phpexcel": "dev-develop",
+        "phpoffice/phpexcel": "1.8.0",
         "kartik-v/yii2-widget-sidenav": "*",
         "2amigos/yii2-date-picker-widget" : "~1.0",
 	"kartik-v/yii2-widget-fileinput": "@dev",
         "open-ecommerce/yii2-backuprestore": "dev-master",
         "johnitvn/yii2-rbac-plus": "*",
 	"kartik-v/yii2-widget-typeahead": "*",
-        "dmstr/yii2-adminlte-asset": "2.*"
+        "dmstr/yii2-adminlte-asset": "2.*",
+        "kartik-v/yii2-export": "@dev"
 
     },
     "require-dev": {

@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use kartik\typeahead\Typeahead;
 use dosamigos\datepicker\DatePicker;
 use yii\helpers\Url;
+use kartik\export\ExportMenu;
 
 $this->title='Agency|Search';
 ?>
@@ -62,6 +63,20 @@ $this->title='Agency|Search';
     <div class="box-header with-border">
         <h3 class="box-title">Agency Listings</h3>
         <div class="box-tools pull-right">
+            <?php
+            echo ExportMenu::widget([
+                'dataProvider' => $list,
+                'columns' => [
+                     ['class' => 'yii\grid\SerialColumn'],
+                    'name',
+                    'account_id',
+                    'mail_pincode',
+                    'reference'
+                    
+                ]
+]);
+
+            ?>
             <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
         </div>
     </div>
