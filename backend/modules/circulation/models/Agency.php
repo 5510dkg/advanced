@@ -48,7 +48,7 @@ use Yii;
  * @property string  $source
  * @property string  $tain_no
  * @property string  $train_name
- *
+ * @property string $title
  * @property AgencyCopiesRecords[] $agencyCopiesRecords
  * @property AgencyCreationUpdationRecords[] $agencyCreationUpdationRecords
  */
@@ -69,8 +69,8 @@ class Agency extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'email', 'landline_no','agency_type','mobile_no', 'mail_house_no', 'mail_street_address', 'mail_p_office','add_house_no','add_street_address','add_p_office','add_pincode','add_country_id', 'add_state_id', 'add_district_id' ,'mail_country_id', 'mail_state_id', 'mail_district_id', 'mail_pincode','commission','agency_type','route_id'], 'required'],
-            [['name','billing_id','vehicle_id' ,'status','agency_type','commission','comment','issue_start_date','mail_street_address', 'add_street_address','agency_combined_id','train_no','train_name','source'], 'string'],
+            [['name','title' ,'email', 'landline_no','agency_type','mobile_no', 'mail_house_no', 'mail_street_address', 'mail_p_office','add_house_no','add_street_address','add_p_office','add_pincode','add_country_id', 'add_state_id', 'add_district_id' ,'mail_country_id', 'mail_state_id', 'mail_district_id', 'mail_pincode','commission','agency_type','route_id'], 'required'],
+            [['title','name','billing_id','vehicle_id' ,'status','agency_type','commission','comment','issue_start_date','mail_street_address', 'add_street_address','agency_combined_id','train_no','train_name','source'], 'string'],
             [['route_id',  'landline_no', 'mobile_no', 'mail_country_id', 'mail_state_id', 'mail_district_id', 'mail_pincode', 'panchjanya', 'organiser', 'add_country_id', 'add_state_id', 'add_district_id', 'add_pincode'], 'integer'],
             [['security_amt'], 'number'],
 
@@ -131,6 +131,7 @@ class Agency extends \yii\db\ActiveRecord
             'source'=>'Source',
             'train_name'=>'Train Name',
             'billing_id'=>'Billing Id',
+            'title'=>'Title',
         ];
     }
 

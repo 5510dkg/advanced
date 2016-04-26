@@ -567,13 +567,15 @@ use kartik\typeahead\Typeahead;
     </div>
     <div class="box-body">
         <div class="col-lg-6">
+             <?= $form->field($model, 'title')->dropDownList(['SH.'=>'SH.','SMT'=>'SMT','M/S'=>'M/S'])?>
                 <?= $form->field($model, 'name')->textInput(['maxlength'=>'60']) ?>
-                <?= $form->field($model, 'email')->textInput() ?>
+                
                  <?= $form->field($model,'agency_type')->dropDownList([ 'Select agency type'=>'','Single' => 'Single', 'Combined' => 'Combined' ]);?>
         </div>
          <div class="col-lg-6">
                 <?= $form->field($model, 'landline_no')->textInput(['maxlength'=>'8']) ?>
                 <?= $form->field($model, 'mobile_no')->textInput(['maxlength'=>'10']) ?>
+             <?= $form->field($model, 'email')->textInput() ?>
                 <div id='agencytypeshow' style="display:none">
                 <?= $form->field($model,'agency_combined_id')->widget(Typeahead::classname(), [
                     'dataset' => [
