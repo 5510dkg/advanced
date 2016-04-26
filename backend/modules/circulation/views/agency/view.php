@@ -220,4 +220,5 @@ use yii\widgets\DetailView;
  </div>
         </div>
     </div>
+    <a href="index.php?r=circulation/agency/list" class="btn btn-default">Back</a>
 </div>

@@ -710,6 +710,8 @@ use kartik\typeahead\Typeahead;
    <?php if (!Yii::$app->request->isAjax){ ?>
     <div class="form-group" style="margin-left: 35%">
 	        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+	  
+                        <a href="index.php?r=circulation/agency/list" class="btn btn-default">Back</a>
 	    </div>
 	<?php } ?>
        
