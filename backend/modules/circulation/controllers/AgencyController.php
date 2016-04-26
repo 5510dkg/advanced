@@ -748,42 +748,51 @@ class AgencyController extends Controller
      */
         
     public function actionSearchview(){
-        $model = new DynamicModel([
-                'name', 'account_id', 'mail_pincode','state','status'
-            ]);
-            $model->addRule('name', 'string',['max'=>90]);
-            $model->addRule('account_id', 'string',['max'=>90]);
-            $model->addRule('mail_pincode', 'string',['max'=>90]);
-            $model->addRule('state', 'string',['max'=>90]);
-            $model->addRule('status', 'string',['max'=>90]);
-       
+//        $model = new DynamicModel([
+//                'name', 'account_id', 'mail_pincode','state','status'
+//            ]);
+//            $model->addRule('name', 'string',['max'=>90]);
+//            $model->addRule('account_id', 'string',['max'=>90]);
+//            $model->addRule('mail_pincode', 'string',['max'=>90]);
+//            $model->addRule('state', 'string',['max'=>90]);
+//            $model->addRule('status', 'string',['max'=>90]);
+//       
+//
+//            if($model->load(Yii::$app->request->post())){
+//                        // do somenthing with model
+//                            $params=Yii::$app->request->post();
+//                           // print_r($params);exit;
+//                            $query = Agency::find();
+//                            $dataProvider = new ActiveDataProvider([
+//                                'query' => $query,
+//                            ]);
+//                            $model->load($params);
+//                           
+//                                
+//                $query->andFilterWhere(['like', 'name', $model->name]);
+//                $query->andFilterWhere(['like', 'account_id', $model->account_id]);
+//                $query->andFilterWhere(['like', 'mail_pincode', $model->mail_pincode]);
+//                $query->andFilterWhere(['mail_state_id'=>$model->state]);
+//                  $query->andFilterWhere(['status'=>$model->status]);
+//            return $this->render('viewagency',
+//                            [
+//                             'list'=>$dataProvider,
+//                             'model'=>$model,
+//                            'data'=>$this->actionAgencylist()
+//                            ]);
+//        }
+//        return $this->render('searchview', ['model'=>$model,
+//            'data'=>$this->actionAgencylist(),
+//            ]);
+            $searchModel = new \backend\modules\circulation\models\Agencyview();
+            $dataProvider = $searchModel->search(Yii::$app->request->get());
 
-            if($model->load(Yii::$app->request->post())){
-                        // do somenthing with model
-                            $params=Yii::$app->request->post();
-                           // print_r($params);exit;
-                            $query = Agency::find();
-                            $dataProvider = new ActiveDataProvider([
-                                'query' => $query,
-                            ]);
-                            $model->load($params);
-                           
-                                
-                $query->andFilterWhere(['like', 'name', $model->name]);
-                $query->andFilterWhere(['like', 'account_id', $model->account_id]);
-                $query->andFilterWhere(['like', 'mail_pincode', $model->mail_pincode]);
-                $query->andFilterWhere(['mail_state_id'=>$model->state]);
-                  $query->andFilterWhere(['status'=>$model->status]);
-            return $this->render('viewagency',
-                            [
-                             'list'=>$dataProvider,
-                             'model'=>$model,
-                            'data'=>$this->actionAgencylist()
-                            ]);
-        }
-        return $this->render('searchview', ['model'=>$model,
-            'data'=>$this->actionAgencylist(),
-            ]);
+            return $this->render('viewagency', [
+                'dataProvider' => $dataProvider,
+                'searchModel' => $searchModel,
+                'data'=>$this->actionAgencylist(),
+                ]);
+        
     }
     
     

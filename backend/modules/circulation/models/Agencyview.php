@@ -5,6 +5,7 @@ namespace backend\modules\circulation\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
+use backend\modules\circulation\models\Agency;
 
 class Agencyview extends Agency
 {
@@ -12,8 +13,8 @@ class Agencyview extends Agency
     {
         // only fields in rules() are searchable
         return [
-            [['id'], 'integer'],
-            [['title', 'creation_date'], 'safe'],
+            [[ 'name', 'account_id', 'mail_pincode','mail_state_id','status'], 'string','max' => 110],
+            
         ];
     }
 
@@ -25,7 +26,7 @@ class Agencyview extends Agency
 
     public function search($params)
     {
-        $query = Post::find();
+        $query = Agency::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -33,13 +34,20 @@ class Agencyview extends Agency
 
         // load the search form data and validate
         if (!($this->load($params) && $this->validate())) {
+           // echo 'hii';exit;
             return $dataProvider;
         }
-
+//        echo $this->name;
+//        $this->mail_state_id;
+//                print_r($params);exit;
+//        echo 'hii';exit;
         // adjust the query by adding the filters
-        $query->andFilterWhere(['id' => $this->id]);
-        $query->andFilterWhere(['like', 'title', $this->title])
-              ->andFilterWhere(['like', 'creation_date', $this->creation_date]);
+        
+         $query->andFilterWhere(['like', 'name', $this->name]);
+                $query->andFilterWhere(['like', 'account_id', $this->account_id]);
+                $query->andFilterWhere(['like', 'mail_pincode', $this->mail_pincode]);
+                $query->andFilterWhere(['mail_state_id'=>$this->mail_state_id]);
+                  $query->andFilterWhere(['status'=>$this->status]);
 
         return $dataProvider;
     }

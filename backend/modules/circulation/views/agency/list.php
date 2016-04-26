@@ -24,7 +24,7 @@ $this->title='Agency Management';
      <?=Html::a('Update Delivery Method',['/circulation/agency/searchdelivery',['q'=>'delivery']],['class'=>'btn btn-success btn-lg btn-block'])?>  
 </div>
     <div class="col-sm-3">
-     <?=Html::a('View Agency Detail',['/circulation/agency/searchview',['q'=>'delivery']],['class'=>'btn btn-success btn-lg btn-block'])?>  
+     <?=Html::a('View Agency Detail',['/circulation/agency/searchview'],['class'=>'btn btn-success btn-lg btn-block'])?>  
 </div>
      <div class="col-sm-3">
      <?=Html::a('Upload Agency Excel',['/circulation/agency/upload',['q'=>'delivery']],['class'=>'btn btn-danger btn-lg btn-block'])?>  

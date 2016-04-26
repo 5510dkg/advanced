@@ -5,6 +5,7 @@ use kartik\typeahead\Typeahead;
 use dosamigos\datepicker\DatePicker;
 
 $this->title='Agency|Search';
+$data=  \backend\modules\circulation\controllers\AgencyController::actionAgencylist();
 ?>
 
 <div class=" box box-default">
@@ -18,7 +19,7 @@ $this->title='Agency|Search';
 
         <div class="row">
             <div class="col-md-4">    
-   <?php $form = ActiveForm::begin(); ?>
+   <?php $form = ActiveForm::begin(['method' => 'get']); ?>
        
         <?= $form->field($model, 'name')->widget(Typeahead::classname(), [
                     'dataset' => [
@@ -30,7 +31,7 @@ $this->title='Agency|Search';
                     'pluginOptions' => ['highlight' => true],
                     'options' => ['placeholder' => 'Enter Agency Name ...'],
 ]); ?>
-                <?= $form->field($model,'state')->dropDownList(\yii\helpers\ArrayHelper::map(\backend\modules\settings\models\State::find()->all(),'id','name'),[
+                <?= $form->field($model,'mail_state_id')->dropDownList(\yii\helpers\ArrayHelper::map(\backend\modules\settings\models\State::find()->all(),'id','name'),[
                     'prompt'=>'Select state'
                 ])?>
        
