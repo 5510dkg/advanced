@@ -63,6 +63,7 @@ foreach ($data as $key => $value) {
 		DISTRICT: <?= strtoupper($t['dist'])?><br/>
 		STATE: <?= strtoupper($t['state'])?><br/>
 		<strong>PO :<?= strtoupper($t['post'])?></strong><br/>
+                 <?php if($t['pincode']==0 || $t['pincode']==''){$t['pincode']=='----';} ?>
 		<?=$t['pincode'];?>
 
 

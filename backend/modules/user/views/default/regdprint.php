@@ -68,6 +68,7 @@ Jhandewalan, N.D-55. <?php if(($value->pjy)>($value->org)){ echo 'PANCHJANYA';}e
 		DISTRICT: <?= strtoupper($t['dist'])?><br/>
 		STATE: <?= strtoupper($t['state'])?><br/>
 		<strong>PO :<?= strtoupper($t['post'])?></strong><br/>
+                <?php if($t['pincode']==0 || $t['pincode']==''){$t['pincode']=='----';} ?>
 		<?=$t['pincode']?>
 
 
