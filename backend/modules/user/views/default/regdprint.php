@@ -12,7 +12,7 @@ if($cpy==0){
     $data=$model->find()->where(['post_id'=>$id])->orderBy($sort)->all();
 }
 if($cpy==1){
-    $data=$model->find()->where(['post_id'=>$id,'org'=>'0'])->orderBy($sort)->all();
+    $data=$model->find()->where(['post_id'=>$id])->orderBy($sort)->all();
 }
 if($cpy==2){
     $data=$model->find()->where(['post_id'=>$id,'pjy'=>'0'])->orderBy($sort)->all();
@@ -33,8 +33,16 @@ if($cpy==2){
 $i=1;$r=1;
 foreach ($data as $key => $value) {
 	if(($value->pjy)>($value->org)){ $k=$value->pjy;}else{ $k=$value->org;}
-
-	$num=$k/$value->bundle_size;
+        if($cpy==1){ 
+            $sum=$value->pjy;
+            
+        }elseif($cpy==2){
+            $sum=$value->org;
+        }
+        else{
+           $sum=$value->pjy+$value->org; 
+        }
+	$num=$sum/$value->bundle_size;
 	 $j=ceil($num);
 	// echo 'this'.$j;
 	//echo $value->wt.'//';
@@ -70,10 +78,12 @@ Jhandewalan, N.D-55. <?php if(($value->pjy)>($value->org)){ echo 'PANCHJANYA';}e
 		<strong>PO :<?= strtoupper($t['post'])?></strong><br/>
                 <?php if($t['pincode']==0 || $t['pincode']==''){$t['pincode']=='----';} ?>
 		<?=$t['pincode']?>
-
+ <?php if($cpy==1){ $data="PJY : ".$value->pjy; }elseif($cpy==2){
+                    $data=" ORG : ".$value->org;
+                }else{ $data="PJY : ".$value->pjy.'  +'." ORG : ".$value->org;} ?>
 
 	</div>
-	<div style="height: 50px;"><div><strong>PJY:<?= $value->pjy;?> + ORG : <?= $value->org; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $r.'/'.$j?></strong></div></div>
+	<div style="height: 50px;"><div><strong><?=$data?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $r.'/'.$j?></strong></div></div>
 	</div>
 
 <?php } }

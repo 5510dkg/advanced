@@ -34,13 +34,16 @@ if($cpy==2){
 $i=1;$r=1;
 foreach ($data as $key => $value) {
 	if(($value->pjy)>($value->org)){ $k=$value->pjy;}else{ $k=$value->org;}
-	$sum=$value->pjy+$value->org;
+	//$sum=$value->pjy+$value->org;
         if($cpy==1){ 
             $sum=$value->pjy;
             
         }elseif($cpy==2){
             $sum=$value->org;
             
+        }
+        else{
+           $sum=$value->pjy+$value->org; 
         }
 	$num=$sum/$value->bundle_size;
 	$j=ceil($num);
@@ -74,7 +77,7 @@ foreach ($data as $key => $value) {
 		<?=$t['pincode'];?>
 
                 <?php if($cpy==1){ $data="PJY : ".$value->pjy; }elseif($cpy==2){
-                    $data="+ ORG : ".$value->org;
+                    $data=" ORG : ".$value->org;
                 }else{ $data="PJY : ".$value->pjy.'  +'." ORG : ".$value->org;} ?>
 	</div>
 	<div style="height: 90px;"><div><strong><?=$data?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $value->wt.' KGS/'.$j?></strong></div></div>
