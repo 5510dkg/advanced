@@ -364,8 +364,6 @@ class AgencyBillBookController extends Controller
             $model = $this->findModel($pk);
             $model->delete();
         }
-        
-        
         if($request->isAjax){
             /*
             *   Process for ajax request
