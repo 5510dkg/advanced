@@ -15,7 +15,7 @@ if($cpy==0){
     $data=$model->find()->where(['rail_id'=>$id])->orderBy($sort)->all();
 }
 if($cpy==1){
-    $data=$model->find()->where(['rail_id'=>$id,'org'=>'0'])->orderBy($sort)->all();
+    $data=$model->find()->where(['rail_id'=>$id])->orderBy($sort)->all();
 }
 if($cpy==2){
     $data=$model->find()->where(['rail_id'=>$id,'pjy'=>'0'])->orderBy($sort)->all();
@@ -35,6 +35,13 @@ $i=1;$r=1;
 foreach ($data as $key => $value) {
 	if(($value->pjy)>($value->org)){ $k=$value->pjy;}else{ $k=$value->org;}
 	$sum=$value->pjy+$value->org;
+        if($cpy==1){ 
+            $sum=$value->pjy;
+            
+        }elseif($cpy==2){
+            $sum=$value->org;
+            
+        }
 	$num=$sum/$value->bundle_size;
 	$j=ceil($num);
         
@@ -63,12 +70,14 @@ foreach ($data as $key => $value) {
 		DISTRICT: <?= strtoupper($t['dist'])?><br/>
 		STATE: <?= strtoupper($t['state'])?><br/>
 		<strong>PO :<?= strtoupper($t['post'])?></strong><br/>
-                 <?php if($t['pincode']==0 || $t['pincode']==''){$t['pincode']=='----';} ?>
+                 <?php if($t['pincode']==0 || $t['pincode']==''){$t['pincode']='----';} ?>
 		<?=$t['pincode'];?>
 
-
+                <?php if($cpy==1){ $data="PJY : ".$value->pjy; }elseif($cpy==2){
+                    $data="+ ORG : ".$value->org;
+                }else{ $data="PJY : ".$value->pjy.'  +'." ORG : ".$value->org;} ?>
 	</div>
-	<div style="height: 100px;"><div><strong>PJY:<?= $value->pjy;?> + ORG : <?= $value->org; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $value->wt.' KGS/'.$j?></strong></div></div>
+	<div style="height: 90px;"><div><strong><?=$data?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $value->wt.' KGS/'.$j?></strong></div></div>
 	</div>
 
 <?php } }?>
