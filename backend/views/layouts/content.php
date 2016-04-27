@@ -39,7 +39,7 @@ use dmstr\widgets\Alert;
     <div class="pull-right hidden-xs">
         <b>Version</b> 2.0
     </div>
-    <strong>Copyright &copy; 2016-2017 <a href="https://plus.google.com/+riteshsingh1">Ritesh Singh</a>.</strong> All rights
+    <strong>Copyright &copy; 2016-2017 <a href="http://manacleindia.com">Manacle Technologies Pvt. Ltd.</a>.</strong> All rights
     reserved.
 </footer>
 
