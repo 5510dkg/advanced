@@ -378,7 +378,6 @@ class AgencyBillBookController extends Controller
         }
        
     }
-    
 
     /**
      * Finds the AgencyBillBook model based on its primary key value.
