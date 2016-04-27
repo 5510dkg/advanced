@@ -12,6 +12,7 @@ if($cpy==0){
     $data=$model->find()->where(['post_id'=>$id])->orderBy($sort)->all();
 }
 if($cpy==1){
+    echo 'hii';exit;
     $data=$model->find()->where(['post_id'=>$id])->orderBy($sort)->all();
 }
 if($cpy==2){
