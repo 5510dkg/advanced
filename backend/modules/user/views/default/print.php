@@ -52,22 +52,22 @@ foreach ($data as $key => $value) {
 	</div>
 	<?php $t=$model->Agencyname($value->agency_id);?>
 	<div style="height: 15px; margin-left: 40%;"><B><u>BY RAILWAYS</u></B></div>
-	<div style="height: 29px; margin-left: 35%;"><?=$t['source'].'-'.$t['train_no'].'&nbsp;'.$t['train_name']?></div>
+	<div style="height: 29px; margin-left: 35%;"><?=strtoupper($t['source'].'-'.$t['train_no'].'&nbsp;'.$t['train_name'])?></div>
 
 
 	<div style="height: 110px">
 
-		<strong><?=$t['name'];?></strong><br/>
-		H. No.: <?= $t['hno'];?><br/>
-		<?=$t['street'];?><br/>
-		District: <?= $t['dist'];?><br/>
-		State: <?= $t['state'];?><br/>
-		<strong>PO :<?= $t['post'];?></strong><br/>
+            <strong><?=  strtoupper($t['name'])?></strong><br/>
+		H. NO.: <?= $t['hno'];?><br/>
+		<?=strtoupper($t['street'])?><br/>
+		DISTRICT: <?= strtoupper($t['dist'])?><br/>
+		STATE: <?= strtoupper($t['state'])?><br/>
+		<strong>PO :<?= strtoupper($t['post'])?></strong><br/>
 		<?=$t['pincode'];?>
 
 
 	</div>
-	<div style="height: 90px;"><div><strong>PJY:<?= $value->pjy;?> + ORG : <?= $value->org; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $value->wt.' KGS/'.$j?></strong></div></div>
+	<div style="height: 100px;"><div><strong>PJY:<?= $value->pjy;?> + ORG : <?= $value->org; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $value->wt.' KGS/'.$j?></strong></div></div>
 	</div>
 
 <?php } }?>

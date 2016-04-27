@@ -53,12 +53,12 @@ foreach ($data as $key => $value) {
 
 	<div style="height: 110px">
 
-		<strong><?=$t['name'];?></strong><br/>
-		H. No.: <?= $t['hno'];?><br/>
-		<?=$t['street'];?><br/>
-		District: <?= $t['dist'];?><br/>
-		State: <?= $t['state'];?><br/>
-		<strong>PO :<?= $t['post'];?></strong><br/>
+		<strong><?=strtoupper($t['name'])?></strong><br/>
+		H. No.: <?= strtoupper($t['hno'])?><br/>
+		<?=strtoupper($t['street'])?><br/>
+		DISTRICT: <?= strtoupper($t['dist'])?><br/>
+		STATE: <?= strtoupper($t['state'])?><br/>
+		<strong>PO :<?= strtoupper($t['post'])?></strong><br/>
 		<?=$t['pincode'];?>
 
 

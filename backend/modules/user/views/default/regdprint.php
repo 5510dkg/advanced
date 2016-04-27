@@ -62,13 +62,13 @@ Jhandewalan, N.D-55. <?php if(($value->pjy)>($value->org)){ echo 'PANCHJANYA';}e
 
 	<div style="height: 110px">
 		<?php $t=$model->Agencyname($value->agency_id);?>
-		<strong><?=$t['name'];?></strong><br/>
-		H. No.: <?= $t['hno'];?><br/>
-		<?=$t['street'];?><br/>
-		District: <?= $t['dist'];?><br/>
-		State: <?= $t['state'];?><br/>
-		<strong>PO :<?= $t['post'];?></strong><br/>
-		<?=$t['pincode'];?>
+		<strong><?=strtoupper($t['name'])?></strong><br/>
+		H. No.: <?= strtoupper($t['hno'])?><br/>
+		<?=strtoupper($t['street'])?><br/>
+		DISTRICT: <?= strtoupper($t['dist'])?><br/>
+		STATE: <?= strtoupper($t['state'])?><br/>
+		<strong>PO :<?= strtoupper($t['post'])?></strong><br/>
+		<?=$t['pincode']?>
 
 
 	</div>
