@@ -236,12 +236,12 @@ class DefaultController extends Controller
 //                              if($model->po1){
 //                                  $arr['post_office']='post_office ASC';
 //                              }
-//                              if($model->copy1==1){
-//                                  $cpy=1;
-//                              }
-//                              if($model->copy1==2){
-//                                  $cpy=2;
-//                              }
+                              if($model->copy1==1){
+                                  $cpy=1;
+                              }
+                              if($model->copy1==2){
+                                  $cpy=2;
+                              }
                               
                               if($rail->save()){
                                   $dt=$model->date;
