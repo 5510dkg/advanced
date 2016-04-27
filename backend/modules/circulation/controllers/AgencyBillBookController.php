@@ -366,7 +366,6 @@ class AgencyBillBookController extends Controller
         }
         
         
-        
         if($request->isAjax){
             /*
             *   Process for ajax request
