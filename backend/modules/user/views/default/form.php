@@ -159,37 +159,187 @@ use dosamigos\datepicker\DatePicker;
    if($(this).val() ==1){
   // $('#dynamicmodel-district').val('');
    $('#dynamicmodel-district option:contains(State)').attr('disabled','disabled');
+   $('#dynamicmodel-po option:contains(State)').attr('disabled','disabled');
+
       }
       if($(this).val() ==2){
   // $('#dynamicmodel-district').val('');
    $('#dynamicmodel-district option:contains(District)').attr('disabled','disabled');
+      $('#dynamicmodel-po option:contains(District)').attr('disabled','disabled');
       }
       if($(this).val() ==3){
   // $('#dynamicmodel-district').val('');
    $('#dynamicmodel-district option:contains(Post Office)').attr('disabled','disabled');
+    $('#dynamicmodel-po option:contains(Post Office)').attr('disabled','disabled');
       }
       if($(this).val() ==4){
   // $('#dynamicmodel-district').val('');
    $('#dynamicmodel-district option:contains(Panchjanya Only)').attr('disabled','disabled');
+    $('#dynamicmodel-po option:contains(Panchjanya Only)').attr('disabled','disabled');
       }
  
 });
     $('#dynamicmodel-district').change(function() {
    if($(this).val() ==1){
+  // $('#dynamicmodel-po').val('');
+   $('#dynamicmodel-po option:contains(State)').attr('disabled','disabled');
+      $('#dynamicmodel-state option:contains(State)').attr('disabled','disabled');
+      }
+      if($(this).val() ==2){
+  // $('#dynamicmodel-po').val('');
+   $('#dynamicmodel-po option:contains(District)').attr('disabled','disabled');
+    $('#dynamicmodel-state option:contains(District)').attr('disabled','disabled');
+      }
+      if($(this).val() ==3){
+  // $('#dynamicmodel-po').val('');
+   $('#dynamicmodel-po option:contains(Post Office)').attr('disabled','disabled');
+     $('#dynamicmodel-state option:contains(Post Office)').attr('disabled','disabled');
+      }
+      if($(this).val() ==4){
   // $('#dynamicmodel-district').val('');
-   $('#dynamicmodel-district option:contains(State)').attr('disabled','disabled');
+   $('#dynamicmodel-po option:contains(Panchjanya Only)').attr('disabled','disabled');
+   $('#dynamicmodel-state option:contains(Panchjanya Only)').attr('disabled','disabled');
+      }
+ 
+});
+$('#dynamicmodel-state1').change(function() {
+   if($(this).val() ==1){
+  // $('#dynamicmodel-district').val('');
+   $('#dynamicmodel-district1 option:contains(State)').attr('disabled','disabled');
+   $('#dynamicmodel-po1 option:contains(State)').attr('disabled','disabled');
+
       }
       if($(this).val() ==2){
   // $('#dynamicmodel-district').val('');
-   $('#dynamicmodel-district option:contains(District)').attr('disabled','disabled');
+   $('#dynamicmodel-district1 option:contains(District)').attr('disabled','disabled');
+      $('#dynamicmodel-po1 option:contains(District)').attr('disabled','disabled');
       }
       if($(this).val() ==3){
   // $('#dynamicmodel-district').val('');
    $('#dynamicmodel-district option:contains(Post Office)').attr('disabled','disabled');
+    $('#dynamicmodel-po1 option:contains(Post Office)').attr('disabled','disabled');
       }
       if($(this).val() ==4){
   // $('#dynamicmodel-district').val('');
-   $('#dynamicmodel-district option:contains(Panchjanya Only)').attr('disabled','disabled');
+   $('#dynamicmodel-district1 option:contains(Panchjanya Only)').attr('disabled','disabled');
+    $('#dynamicmodel-po1 option:contains(Panchjanya Only)').attr('disabled','disabled');
+      }
+ 
+});
+    $('#dynamicmodel-district1').change(function() {
+   if($(this).val() ==1){
+  // $('#dynamicmodel-po1').val('');
+   $('#dynamicmodel-po1 option:contains(State)').attr('disabled','disabled');
+      $('#dynamicmodel-state1 option:contains(State)').attr('disabled','disabled');
+      }
+      if($(this).val() ==2){
+  // $('#dynamicmodel-po1').val('');
+   $('#dynamicmodel-po1 option:contains(District)').attr('disabled','disabled');
+    $('#dynamicmodel-state1 option:contains(District)').attr('disabled','disabled');
+      }
+      if($(this).val() ==3){
+  // $('#dynamicmodel-po1').val('');
+   $('#dynamicmodel-po1 option:contains(Post Office)').attr('disabled','disabled');
+     $('#dynamicmodel-state1 option:contains(Post Office)').attr('disabled','disabled');
+      }
+      if($(this).val() ==4){
+  // $('#dynamicmodel-district').val('');
+   $('#dynamicmodel-po1 option:contains(Panchjanya Only)').attr('disabled','disabled');
+   $('#dynamicmodel-state1 option:contains(Panchjanya Only)').attr('disabled','disabled');
+      }
+ 
+});
+$('#dynamicmodel-state2').change(function() {
+   if($(this).val() ==1){
+  // $('#dynamicmodel-district2').val('');
+   $('#dynamicmodel-district2 option:contains(State)').attr('disabled','disabled');
+   $('#dynamicmodel-po2 option:contains(State)').attr('disabled','disabled');
+
+      }
+      if($(this).val() ==2){
+  // $('#dynamicmodel-district2').val('');
+   $('#dynamicmodel-district2 option:contains(District)').attr('disabled','disabled');
+      $('#dynamicmodel-po2 option:contains(District)').attr('disabled','disabled');
+      }
+      if($(this).val() ==3){
+  // $('#dynamicmodel-district2').val('');
+   $('#dynamicmodel-district2 option:contains(Post Office)').attr('disabled','disabled');
+    $('#dynamicmodel-po2 option:contains(Post Office)').attr('disabled','disabled');
+      }
+      if($(this).val() ==4){
+  // $('#dynamicmodel-district2').val('');
+   $('#dynamicmodel-district2 option:contains(Panchjanya Only)').attr('disabled','disabled');
+    $('#dynamicmodel-po2 option:contains(Panchjanya Only)').attr('disabled','disabled');
+      }
+ 
+});
+    $('#dynamicmodel-district2').change(function() {
+   if($(this).val() ==1){
+  // $('#dynamicmodel-po2').val('');
+   $('#dynamicmodel-po2 option:contains(State)').attr('disabled','disabled');
+      $('#dynamicmodel-state2 option:contains(State)').attr('disabled','disabled');
+      }
+      if($(this).val() ==2){
+  // $('#dynamicmodel-po2').val('');
+   $('#dynamicmodel-po2 option:contains(District)').attr('disabled','disabled');
+    $('#dynamicmodel-state2 option:contains(District)').attr('disabled','disabled');
+      }
+      if($(this).val() ==3){
+  // $('#dynamicmodel-po2').val('');
+   $('#dynamicmodel-po2 option:contains(Post Office)').attr('disabled','disabled');
+     $('#dynamicmodel-state2 option:contains(Post Office)').attr('disabled','disabled');
+      }
+      if($(this).val() ==4){
+  // $('#dynamicmodel-district2').val('');
+   $('#dynamicmodel-po2 option:contains(Panchjanya Only)').attr('disabled','disabled');
+   $('#dynamicmodel-state2 option:contains(Panchjanya Only)').attr('disabled','disabled');
+      }
+ 
+});
+$('#dynamicmodel-state3').change(function() {
+   if($(this).val() ==1){
+  // $('#dynamicmodel-district3').val('');
+   $('#dynamicmodel-district3 option:contains(State)').attr('disabled','disabled');
+   $('#dynamicmodel-po3 option:contains(State)').attr('disabled','disabled');
+
+      }
+      if($(this).val() ==2){
+  // $('#dynamicmodel-district3').val('');
+   $('#dynamicmodel-district3 option:contains(District)').attr('disabled','disabled');
+      $('#dynamicmodel-po3 option:contains(District)').attr('disabled','disabled');
+      }
+      if($(this).val() ==3){
+  // $('#dynamicmodel-district3').val('');
+   $('#dynamicmodel-district3 option:contains(Post Office)').attr('disabled','disabled');
+    $('#dynamicmodel-po3 option:contains(Post Office)').attr('disabled','disabled');
+      }
+      if($(this).val() ==4){
+  // $('#dynamicmodel-district3').val('');
+   $('#dynamicmodel-district3 option:contains(Panchjanya Only)').attr('disabled','disabled');
+    $('#dynamicmodel-po3 option:contains(Panchjanya Only)').attr('disabled','disabled');
+      }
+ 
+});
+    $('#dynamicmodel-district3').change(function() {
+   if($(this).val() ==1){
+  // $('#dynamicmodel-po3').val('');
+   $('#dynamicmodel-po3 option:contains(State)').attr('disabled','disabled');
+      $('#dynamicmodel-state3 option:contains(State)').attr('disabled','disabled');
+      }
+      if($(this).val() ==2){
+  // $('#dynamicmodel-po3').val('');
+   $('#dynamicmodel-po3 option:contains(District)').attr('disabled','disabled');
+    $('#dynamicmodel-state3 option:contains(District)').attr('disabled','disabled');
+      }
+      if($(this).val() ==3){
+  // $('#dynamicmodel-po3').val('');
+   $('#dynamicmodel-po3 option:contains(Post Office)').attr('disabled','disabled');
+     $('#dynamicmodel-state3 option:contains(Post Office)').attr('disabled','disabled');
+      }
+      if($(this).val() ==4){
+  // $('#dynamicmodel-district3').val('');
+   $('#dynamicmodel-po3 option:contains(Panchjanya Only)').attr('disabled','disabled');
+   $('#dynamicmodel-state3 option:contains(Panchjanya Only)').attr('disabled','disabled');
       }
  
 });
