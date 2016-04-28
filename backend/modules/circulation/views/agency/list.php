@@ -33,3 +33,8 @@ $this->title='Agency Management';
      <a class="btn btn-lg btn-success" target="_blank" href="download/data/agencyrecordbook.xlsx">Download Weekly Supply</a>  
 </div>
 </div>
+<div class="row" style="margin-top: 10px;">
+<div class="col-sm-3">
+     <?=Html::a('Download weekly',['/circulation/agency/weeklysupply'],['class'=>'btn btn-success btn-lg btn-block'])?>  
+</div>
+</div>

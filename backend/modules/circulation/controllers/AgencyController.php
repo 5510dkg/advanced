@@ -416,6 +416,7 @@ class AgencyController extends Controller
         //  echo 'hii';
           return $this->render('upload');
         }
+      
         public function actionUploadagency(){
 
           if(empty($_FILES['file'])){
@@ -546,7 +547,63 @@ class AgencyController extends Controller
 
 
 
+  
+    public function actionWeeklysupply(){
+            $model=new DynamicModel([
+                'from_date','to_date','state','post_office'
+            ]);
+            $model->addRule('from_date','string',['max'=>90]);
+            $model->addRule('to_date','string',['max'=>90]);
+            $model->addRule('state','string',['max'=>90]);
+            $model->addRule('post_office','string',['max'=>90]);
+            $model->addRule('from_date','required');
+            $model->addRule('to_date','required');
+            if($model->load(Yii::$app->request->post())){
+                                $objPHPExcel = new \PHPExcel();
+                 
+                $sheet=0;
+                  
+                            $objPHPExcel->setActiveSheetIndex($sheet);
+                            $foos = [
+                                    ['firstname'=>'John',
+                                    'lastname'=>'Doe'],
+                                    ['firstname'=>'John',
+                                    'lastname'=>'Jones'],
+                                    ['firstname'=>'Jane',
+                                    'lastname'=>'Doe'],
+                            ];
 
+                        $objPHPExcel->getActiveSheet()->getColumnDimension('A')->setWidth(20);
+                        $objPHPExcel->getActiveSheet()->getColumnDimension('B')->setWidth(20);
+
+                        $objPHPExcel->getActiveSheet()->setTitle('xxx')                     
+                         ->setCellValue('A1', 'Firstname')
+                         ->setCellValue('B1', 'Lastname');
+
+                     $row=2;
+
+                            foreach ($foos as $foo) {  
+
+                                $objPHPExcel->getActiveSheet()->setCellValue('A'.$row,$foo['firstname']); 
+                                $objPHPExcel->getActiveSheet()->setCellValue('B'.$row,$foo['lastname']);
+                                $row++ ;
+                            }
+
+                    header('Content-Type: application/vnd.ms-excel');
+                    $filename = "MyExcelReport_".date("d-m-Y-His").".xls";
+                    header('Content-Disposition: attachment;filename='.$filename .' ');
+                    header('Cache-Control: max-age=0');
+                    $objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
+                    $objWriter->save('php://output');   
+                
+            }
+            else{
+                return $this->render('weeklysupply',[
+                    'model'=>$model,
+                     'data'=>$this->actionPolist(),
+                    ]);
+            }
+        }
     // agency multiple upload section ends here
     /*
      * agency search form for update address
@@ -811,6 +868,20 @@ class AgencyController extends Controller
     $out = [];
     foreach ($data as $d) {
         $out[] = $d['name'];
+    }
+    return $out;
+}
+ //search list for auto select dropdown
+     public function actionPolist() {
+    $query = new \yii\db\Query;
+    
+    $query->select('mail_p_office')
+        ->from('agency')->orderBy('mail_p_office');
+    $command = $query->createCommand();
+    $data = $command->queryAll();
+    $out = [];
+    foreach ($data as $d) {
+        $out[] = $d['mail_p_office'];
     }
     return $out;
 }
