@@ -86,10 +86,10 @@ foreach ($data as $key => $value) {
                 }
                 if($value->org >= $value->bundle_size){
                     $pjy=0;
-                    $pjy=$value->bundle_size;
+                    $org=$value->bundle_size;
                     
                 }elseif($value->org!=0 && $value->org<$value->bundle_size){
-                    $pjy=$value->org;
+                    $org=$value->org;
                 }
                 
                 
