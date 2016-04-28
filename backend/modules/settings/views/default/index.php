@@ -66,6 +66,6 @@ use yii\helpers\Html;
 <?php } ?>
 <?php if(Yii::$app->user->can('add-sub-department')) {?>
 <div class="col-lg-4">
-                            <?=Html::a('State',['/settings/sub-department'],['class'=>'btn btn-success btn-lg btn-block'])?>  
+                            <?=Html::a('Sub Department',['/settings/sub-department'],['class'=>'btn btn-success btn-lg btn-block'])?>  
                 </div>
 <?php } ?>
