@@ -48,6 +48,7 @@ foreach ($data as $key => $value) {
 	$num=$sum/$value->bundle_size;
 	$j=ceil($num);
         
+        
 	// echo 'this'.$j;
 	//echo $value->wt.'//';
 	 //$floor=floor($num);
@@ -75,7 +76,7 @@ foreach ($data as $key => $value) {
 		<strong>PO :<?= strtoupper($t['post'])?></strong><br/>
                  <?php if($t['pincode']==0 || $t['pincode']==''){$t['pincode']='----';} ?>
 		<?=$t['pincode'];?>
-
+                
                 <?php if($cpy==1){ $data="PJY : ".$value->pjy; }elseif($cpy==2){
                     $data=" ORG : ".$value->org;
                 }else{ $data="PJY : ".$value->pjy.'  +'." ORG : ".$value->org;} ?>
