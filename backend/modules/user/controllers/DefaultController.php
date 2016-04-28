@@ -22,12 +22,15 @@ class DefaultController extends Controller
     {
         return $this->render('index');
     }
+    
     public function actionDashboard() {
         return $this->render('dashboard');
     }
+    
     public function actionBillingdashboard(){
         return $this->render('billingdashboard');
     }
+    
     public function actionLebeldashboard(){
          $model = new DynamicModel([
                 'railway','date' ,'ordinary','registered','vpp' ,'state','district','copy','po','train',
