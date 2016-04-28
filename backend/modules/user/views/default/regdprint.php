@@ -79,13 +79,28 @@ Jhandewalan, N.D-55. <?php if(($value->pjy)>($value->org)){ echo 'PANCHJANYA';}e
 		<strong>PO :<?= strtoupper($t['post'])?></strong><br/>
                 <?php if($t['pincode']==0 || $t['pincode']==''){$t['pincode']=='----';} ?>
 		<?=$t['pincode']?>
- <?php if($cpy==1){ $data="PJY : ".$value->pjy; }elseif($cpy==2){
-                    $data=" ORG : ".$value->org;
-                }else{ $data="PJY : ".$value->pjy.'  +'." ORG : ".$value->org;} ?>
-
+ <?php
+                $sum=$sum-$value->bundle_size;
+                if($value->pjy >= $value->bundle_size){
+                    $org=0;
+                    $pjy=$value->bundle_size;
+                    
+                }elseif($value->pjy!=0 && $value->pjy<$value->bundle_size){
+                    $pjy=$value->pjy;
+                }
+                else{
+                    $org=$value->org;
+                }
+                
+                
+                
+                ?>
+                <?php if($cpy==1){ $data="PJY : ".$pjy; }elseif($cpy==2){
+                    $data=" ORG : ".$org;
+                }else{ $data="PJY : ".$pjy.'  +'." ORG : ".$org;} ?>
 	</div>
 	<div style="height: 50px;"><div><strong><?=$data?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $r.'/'.$j?></strong></div></div>
 	</div>
 
-<?php } }
+<?php $value->pjy=abs($value->pjy-$value->bundle_size); } }
 //echo $data->_attributes['id'];
