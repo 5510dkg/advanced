@@ -84,11 +84,21 @@ foreach ($data as $key => $value) {
                 }elseif($value->pjy!=0 && $value->pjy<$value->bundle_size){
                     $pjy=$value->pjy;
                 }
+                else{
+                    $pjy=0;
+                }
                 if($value->org >= $value->bundle_size){
                     $pjy=0;
                     $org=$value->bundle_size;
                     
                 }elseif($value->org!=0 && $value->org<$value->bundle_size){
+                    $org=$value->org;
+                }else{
+                    $org=0;
+                }
+                if(($pjy+$org)>=$value->bundle_size){
+                    $org=0;
+                }else{
                     $org=$value->org;
                 }
                 
@@ -103,7 +113,7 @@ foreach ($data as $key => $value) {
 	</div>
 
 <?php $value->pjy=abs($value->pjy-$value->bundle_size);
-        
+      //if($org=!0 && $value->org!=0){$value->org=abs($value->org-$value->bundle_size); }
                 } }?>
 
 
