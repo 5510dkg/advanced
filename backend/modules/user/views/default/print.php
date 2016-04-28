@@ -84,8 +84,12 @@ foreach ($data as $key => $value) {
                 }elseif($value->pjy!=0 && $value->pjy<$value->bundle_size){
                     $pjy=$value->pjy;
                 }
-                else{
-                    $org=$value->org;
+                if($value->org >= $value->bundle_size){
+                    $pjy=0;
+                    $pjy=$value->bundle_size;
+                    
+                }elseif($value->org!=0 && $value->org<$value->bundle_size){
+                    $pjy=$value->org;
                 }
                 
                 
