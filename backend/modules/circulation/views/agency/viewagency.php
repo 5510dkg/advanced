@@ -20,9 +20,30 @@ $this->title='Agency|Search';
                 'columns' => [
                      ['class' => 'yii\grid\SerialColumn'],
                     'name',
-                    'account_id',
-                    'mail_pincode',
-                    'reference'
+        'mobile_no',
+         [
+                'attribute' => 'route_id',
+                'value' => 'deliveryMethods.name',
+         ],
+        'landline_no',
+        'email',
+        'security_amt',
+        'agency_type',            
+        'status',
+        'panchjanya',
+        'organiser',
+        'mail_street_address',
+        [
+            'attribute'=>'mail_district_id',
+            'value'=>'district.name'
+        ],
+         [
+             'attribute'=>'mail_p_office',
+             'value'=>'mail_p_office',
+         ],           
+        'mail_pincode',
+        'reference',
+                    
                     
                 ],
                 'target'=> '_self',
@@ -40,7 +61,14 @@ $this->title='Agency|Search';
      'columns' => [
         ['class' => 'yii\grid\SerialColumn'],
         'name',
-        'account_id',
+        'mobile_no',
+         [
+                'attribute' => 'route_id',
+                'value' => 'deliveryMethods.name',
+         ],
+        'panchjanya',
+        'organiser',
+        'mail_street_address',
         'mail_pincode',
         'reference',
         ['class'=>'yii\grid\ActionColumn',
