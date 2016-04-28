@@ -155,4 +155,50 @@ use dosamigos\datepicker\DatePicker;
             </div>
         </div></div></div>
 </div>
+<?php $this->registerJS("$('#dynamicmodel-state').change(function() {
+   if($(this).val() ==1){
+  // $('#dynamicmodel-district').val('');
+   $('#dynamicmodel-district option:contains(State)').attr('disabled','disabled');
+      }
+      if($(this).val() ==2){
+  // $('#dynamicmodel-district').val('');
+   $('#dynamicmodel-district option:contains(District)').attr('disabled','disabled');
+      }
+      if($(this).val() ==3){
+  // $('#dynamicmodel-district').val('');
+   $('#dynamicmodel-district option:contains(Post Office)').attr('disabled','disabled');
+      }
+      if($(this).val() ==4){
+  // $('#dynamicmodel-district').val('');
+   $('#dynamicmodel-district option:contains(Panchjanya Only)').attr('disabled','disabled');
+      }
+ 
+});
+    $('#dynamicmodel-district').change(function() {
+   if($(this).val() ==1){
+  // $('#dynamicmodel-district').val('');
+   $('#dynamicmodel-district option:contains(State)').attr('disabled','disabled');
+      }
+      if($(this).val() ==2){
+  // $('#dynamicmodel-district').val('');
+   $('#dynamicmodel-district option:contains(District)').attr('disabled','disabled');
+      }
+      if($(this).val() ==3){
+  // $('#dynamicmodel-district').val('');
+   $('#dynamicmodel-district option:contains(Post Office)').attr('disabled','disabled');
+      }
+      if($(this).val() ==4){
+  // $('#dynamicmodel-district').val('');
+   $('#dynamicmodel-district option:contains(Panchjanya Only)').attr('disabled','disabled');
+      }
+ 
+});
+
+
+
+
+
+
+
+"); ?>
 
