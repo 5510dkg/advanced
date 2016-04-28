@@ -87,7 +87,22 @@ class Agency extends \yii\db\ActiveRecord
 
         return $scenarios;
     }
-
+    
+    /*
+     * excel file creation for weekly supply
+     */
+    public function get_all_excel_record($from_dt,$to_date,$state=NULL,$po=NULL){
+             
+             $query = (new \yii\db\Query())->select('*')->from('agency');
+             $command = $query->createCommand();
+             $data = $command->queryAll();
+             $titles = '';
+             foreach($data as $row) {
+                 $titles .= $row['name'] . ', ';
+             }
+        
+    }
+    
     /**
      * @inheritdoc
      */

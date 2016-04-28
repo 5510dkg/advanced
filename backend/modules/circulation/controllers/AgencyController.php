@@ -549,6 +549,7 @@ class AgencyController extends Controller
 
   
     public function actionWeeklysupply(){
+            
             $model=new DynamicModel([
                 'from_date','to_date','state','post_office'
             ]);
@@ -562,8 +563,11 @@ class AgencyController extends Controller
                                 $objPHPExcel = new \PHPExcel();
                  
                 $sheet=0;
+                            $agency=new Agency();
+                            $data=$agency->get_all_excel_record();
                   
                             $objPHPExcel->setActiveSheetIndex($sheet);
+                          
                             $foos = [
                                     ['firstname'=>'John',
                                     'lastname'=>'Doe'],
