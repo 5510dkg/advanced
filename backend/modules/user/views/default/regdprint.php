@@ -18,6 +18,8 @@ if($cpy==1){
 if($cpy==2){
     $data=$model->find()->where(['post_id'=>$id,'pjy'=>'0'])->orderBy($sort)->all();
 }
+$pw=$model->pjyweight();
+$ow=$model->orgweight();
 //if($ord=='state')$ord='id';
 //if($ord=='organiser_only'){
 //    $ord='id';
@@ -109,36 +111,7 @@ Jhandewalan, N.D-55. <?php if(($value->pjy)>($value->org)){ echo 'PANCHJANYA';}e
 		<strong>PO :<?= strtoupper($t['post'])?></strong><br/>
                 <?php if($t['pincode']==0 || $t['pincode']==''){$t['pincode']=='----';} ?>
 		<?=$t['pincode']?>
- <?php
-                $sum=$sum-$value->bundle_size;
-                if($value->pjy >= $value->bundle_size){
-                    $org=0;
-                    $pjy=$value->bundle_size;
-                    
-                }elseif($value->pjy!=0 && $value->pjy<$value->bundle_size){
-                    $pjy=$value->pjy;
-                }
-                else{
-                    $pjy=0;
-                }
-                if($value->org >= $value->bundle_size){
-                    $pjy=0;
-                    $org=$value->bundle_size;
-                    
-                }elseif($value->org!=0 && $value->org<$value->bundle_size){
-                    $org=$value->org;
-                }else{
-                    $org=0;
-                }
-                if(($pjy+$org)>=$value->bundle_size){
-                    $org=0;
-                }else{
-                    $org=$value->org;
-                }
-                
-                
-                
-                ?>
+ 
                 <?php if($cpy==1){ $data="PJY : ".$pjy; }elseif($cpy==2){
                     $data=" ORG : ".$org;
                 }else{ $data="PJY : ".$pjy.'  +'." ORG : ".$org;} ?>

@@ -129,6 +129,33 @@ class VppPostedData extends \yii\db\ActiveRecord
             return $titles;
                 
     }
+    
+      public function pjyweight(){
+            $query = (new \yii\db\Query())->select(['weight'])->from('_weight')->where(['name' =>'PJY']);
+            $command = $query->createCommand();
+            $data = $command->queryAll();
+            $titles = '';
+            foreach($data as $row) {
+                $titles= $row['weight'];
+               
+            }
+            return $titles;
+                
+    }
+     public function orgweight(){
+            $query = (new \yii\db\Query())->select(['weight'])->from('_weight')->where(['name' =>'ORG']);
+            $command = $query->createCommand();
+            $data = $command->queryAll();
+            $titles = '';
+            foreach($data as $row) {
+                $titles= $row['weight'];
+               
+            }
+            return $titles;
+                
+    }
+    
+    
     public function distname($id){
             $query = (new \yii\db\Query())->select(['name'])->from('_district')->where(['id' =>$id]);
             $command = $query->createCommand();
