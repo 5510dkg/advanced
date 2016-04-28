@@ -457,6 +457,8 @@ class AgencyController extends Controller
                 $sheet=$objPHPExcel->getSheet(0);
                 $highestRow=$sheet->getHighestRow();
                 $highestColoumn=$sheet->getHighestColumn();
+               
+                
                 for ($row=1;$row<=$highestRow;$row++){
                   $rowData=$sheet->rangeToArray('A'.$row.':'.$highestColoumn.$row,NULL,TRUE,FALSE);
                   if($row==1){
@@ -511,10 +513,10 @@ class AgencyController extends Controller
             }
           }
           if($success==true){
-            $output=['error'=>'File uploaded'];
+            $output=['success'=>'File uploaded'];
           }
           elseif ($success==false) {
-            $output=['error'=>'Error while uploading images'];
+            $output=['error'=>'Error Invalid Format.Please Upload in proper format'];
             foreach($paths as $file){
                 unlink($file);
             }
