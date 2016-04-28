@@ -56,10 +56,40 @@ foreach ($data as $key => $value) {
 	<p style="font-size:9px"><?=$value->license;?>.Issue Dt:<?= $value->date;?>. To be delivered at Window. 1/1 Sanskriti Bhavan, D. B. Gupta Marg,
 Jhandewalan, N.D-55. <?php if(($value->pjy)>($value->org)){ echo 'PANCHJANYA';}else{echo "ORGANISER";} ?></p>
 	</div>
+            <?php
+                $sum=$sum-$value->bundle_size;
+                if($value->pjy >= $value->bundle_size){
+                    $org=0;
+                    $pjy=$value->bundle_size;
+                    
+                }elseif($value->pjy!=0 && $value->pjy<$value->bundle_size){
+                    $pjy=$value->pjy;
+                }
+                else{
+                    $pjy=0;
+                }
+                if($value->org >= $value->bundle_size){
+                    $pjy=0;
+                    $org=$value->bundle_size;
+                    
+                }elseif($value->org!=0 && $value->org<$value->bundle_size){
+                    $org=$value->org;
+                }else{
+                    $org=0;
+                }
+                if(($pjy+$org)>=$value->bundle_size){
+                    $org=0;
+                }else{
+                    $org=$value->org;
+                }
+                ?>
+             <?php
+                $total=($pjy*$pw)+($org*$ow);
+                ?>
 	<div style="height: 15px">
 		<div style="width: 90px; float: left;">
 				<p style="font-size: 12px;color: #595959;"><u>Wt</u> :
-				<?= abs($value->wt/1000);?> Kg</p>
+				<?=$total?> Kg</p>
 		</div>
 		<div style="width: 130px; float: right; ">
 				<p style="font-size: 12px;color: #595959;"><u>Postage</u>
@@ -89,6 +119,20 @@ Jhandewalan, N.D-55. <?php if(($value->pjy)>($value->org)){ echo 'PANCHJANYA';}e
                     $pjy=$value->pjy;
                 }
                 else{
+                    $pjy=0;
+                }
+                if($value->org >= $value->bundle_size){
+                    $pjy=0;
+                    $org=$value->bundle_size;
+                    
+                }elseif($value->org!=0 && $value->org<$value->bundle_size){
+                    $org=$value->org;
+                }else{
+                    $org=0;
+                }
+                if(($pjy+$org)>=$value->bundle_size){
+                    $org=0;
+                }else{
                     $org=$value->org;
                 }
                 

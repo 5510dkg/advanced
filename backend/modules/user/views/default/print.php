@@ -5,10 +5,12 @@ ini_set('max_execution_time', 300);
 //use Yii;
 use backend\modules\circulation\models\RailwayPostedData;
 use backend\modules\circulation\controllers\RailwayPostedDataController;
+use backend\modules\settings\models\Weight;
 $request=Yii::$app->request;
 //$id= $request->get('id');
 
 $model= new RailwayPostedData();
+$weight=new Weight();
 $sort=implode(',', $array);
 //print_r($array);exit;
 if($cpy==0){
@@ -20,6 +22,8 @@ if($cpy==1){
 if($cpy==2){
     $data=$model->find()->where(['rail_id'=>$id,'pjy'=>'0'])->orderBy($sort)->all();
 }
+$pw=$model->pjyweight();
+$ow=$model->orgweight();
    // print_r($data);exit;
 //}
 //elseif($ord=='panchjanya_only'){
@@ -107,9 +111,13 @@ foreach ($data as $key => $value) {
                 ?>
                 <?php if($cpy==1){ $data="PJY : ".$pjy; }elseif($cpy==2){
                     $data=" ORG : ".$org;
-                }else{ $data="PJY : ".$pjy.'  +'." ORG : ".$org;} ?>
+                }else{ $data="PJY : ".$pjy.'  +'." ORG : ".$org;}
+                ?>
+                <?php
+                $total=($pjy*$pw)+($org*$ow);
+                ?>
 	</div>
-	<div style="height: 90px;"><div><strong><?=$data?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $value->wt.' KGS/'.$j?></strong></div></div>
+	<div style="height: 90px;"><div><strong><?=$data?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $total.' KGS/'.$j?></strong></div></div>
 	</div>
 
 <?php $value->pjy=abs($value->pjy-$value->bundle_size);
