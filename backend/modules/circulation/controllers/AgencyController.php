@@ -16,6 +16,7 @@ use yii\helpers\Html;
 use yii\base\DynamicModel;
 use yii\data\ActiveDataProvider;
 use yii\data\SqlDataProvider;
+use DateTime;
 
 /**
  * AgencyController implements the CRUD actions for Agency model.
@@ -570,20 +571,36 @@ class AgencyController extends Controller
                             $data=$agency->get_all_excel_record($model->from_date,$model->to_date);
                             //print_r($data);exit;
                             $objPHPExcel->setActiveSheetIndex($sheet);
-                          
-                            
-                            $foos = [
-                                    ['firstname'=>'John',
-                                    'lastname'=>'Doe'],
-                                    ['firstname'=>'John',
-                                    'lastname'=>'Jones'],
-                                    ['firstname'=>'Jane',
-                                    'lastname'=>'Doe'],
-                            ];
+                            $start = new DateTime($model->from_date);
+                            $end = new DateTime($model->to_date);
+                            $days = $start->diff($end, true)->days;
 
+                            $sundays = intval($days / 7) + ($start->format('N') + $days % 7 >= 7);
+
+                           // echo $sundays;exit;
+                            
+                           
+                             $dates=\backend\components\MyComponent::getSunday($model->from_date,$model->to_date);
+                            // exit;
+                             
+                             //print_r($dates);exit;
                         $objPHPExcel->getActiveSheet()->getColumnDimension('A')->setWidth(20);
                         $objPHPExcel->getActiveSheet()->getColumnDimension('B')->setWidth(20);
-
+                        $cols=6;
+                        for($z=0;$z<$sundays;$z++){
+                        $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($cols,'1',$dates[$z]); 
+                        $cols++;
+                        $cols++;
+                        }
+                        $colz=6;
+                        
+                        for($k=0;$k<$sundays;$k++){
+                        $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colz,'2','PJY'); 
+                        $colz++;
+                        $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colz,'2','ORG'); 
+                        $colz++;
+                        }
+                        
                         $objPHPExcel->getActiveSheet()->setTitle('AgencySupplysheet')                     
                          ->setCellValue('A1', 'Agency Name')
                          ->setCellValue('B1', 'Mobile Number')
@@ -592,7 +609,7 @@ class AgencyController extends Controller
                          ->setCellValue('E1', 'Supply Id')
                          ->setCellValue('F1', 'Lastname');
 
-                     $row=2;
+                     $row=3;
 
                             foreach ($data as $foo) {  
 
@@ -601,11 +618,16 @@ class AgencyController extends Controller
                                 $objPHPExcel->getActiveSheet()->setCellValue('C'.$row,$foo['mail_street_address']);
                                 $objPHPExcel->getActiveSheet()->setCellValue('D'.$row,$foo['mail_p_office']);
                                 $objPHPExcel->getActiveSheet()->setCellValue('E'.$row,$foo['account_id']);
-                                
+                                $col=6;
                                 foreach($foo['copy'] as $cpy){
-                                    
-                                    $objPHPExcel->getActiveSheet()->setCellValue('D'.$row,$foo['mail_p_office']);
-                                    $objPHPExcel->getActiveSheet()->setCellValue('D'.$row,$foo['mail_p_office']);
+                                     $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, $cpy['pjy']);
+                                     $col=$col+1;;
+                                      $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, $cpy['org']);
+       
+        $col++;
+//                                    
+//                                    $objPHPExcel->getActiveSheet()->setCellValue('D'.$row,$foo['mail_p_office']);
+//                                    $objPHPExcel->getActiveSheet()->setCellValue('D'.$row,$foo['mail_p_office']);
                                 }
                                 
                                 $row++ ;

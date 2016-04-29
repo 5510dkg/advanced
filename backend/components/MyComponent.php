@@ -2,6 +2,7 @@
 namespace backend\components;
 use Yii;
 use yii\base\Component;
+use DateTime;
 
 Class MyComponent extends Component{
     
@@ -41,6 +42,28 @@ return $dt;
 //for($i=0;$i<count($dt);$i++) {
 //	echo $dt[$i]."<br>";
 //}
+}
+
+
+public function getSunday($startdate,$enddate) {
+    $out='';
+    $out[]=$startdate;
+    $startweek=date("W",strtotime($startdate));
+    $endweek=date("W",strtotime($enddate));
+    $year=date("Y",strtotime($startdate));
+    for($i=$startweek;$i<=$endweek;$i++) {
+        $result= MyComponent::getWeek($i,$year);
+        if($result>$startdate&&$result<$enddate) {
+            $out[]=$result;
+        }
+    }
+    $out[]=$enddate;
+    return $out;
+}
+public function getWeek($week, $year) {
+  $dto = new DateTime();
+  $result = $dto->setISODate($year, $week, 0)->format('Y-m-d');
+  return $result;
 }
     
 } 

@@ -105,14 +105,29 @@ class Agency extends \yii\db\ActiveRecord
                  $out[$id]['mail_street_address']=$row['mail_street_address'];
                  $out[$id]['mail_p_office']=$row['mail_p_office'];
                  $out[$id]['account_id']=$row['account_id'];
-                 $out[$id]['copy']=$this->getdata($id,$from_dt,$to_date);
+                 if($row['route_id']==1){
+                     $out[$id]['copy']=$this->getorddata($id,$from_dt,$to_date);
+                 }
+                 elseif($row['route_id']==2){
+                      $out[$id]['copy']=$this->getregddata($id,$from_dt,$to_date);
+                 }
+                 elseif($row['route_id']==3){
+                      $out[$id]['copy']=$this->getvppdata($id,$from_dt,$to_date);
+                 }
+                 elseif($row['route_id']==5){
+                      $out[$id]['copy']=$this->getraildata($id,$from_dt,$to_date);
+                 }
+                 else{
+                      $out[$id]['copy']=$this->getdata($id,$from_dt,$to_date);
+                 }
+                 
+                 
                
              }
              return $out;
              // print_r($out);exit;
         
     }
-    
     /*
      * get data
      */
@@ -127,6 +142,83 @@ class Agency extends \yii\db\ActiveRecord
                  
                  $out[$i]['pjy']=$row['pachjanya'];
                  $out[$i]['org']=$row['organiser'];
+            $i++; }
+             return $out;
+            // print_r($out);exit;
+        
+    }
+    /*
+     * get data
+     */
+    public function getorddata($id,$from_dt,$to_date){
+        $out='';
+        $query = (new \yii\db\Query())->select('*')->from('ordinary_posted_data')->where(['between', 'date',$from_dt, $to_date])->andWhere(['agency_id'=>$id])->groupBy('date')->orderBy('date ASC');
+             $command = $query->createCommand();
+             $data = $command->queryAll();
+             
+              $i=1;
+             foreach($data as $row) {
+                 
+                 $out[$i]['pjy']=$row['pjy'];
+                 $out[$i]['org']=$row['org'];
+            $i++; }
+             return $out;
+            // print_r($out);exit;
+        
+    }
+    /*
+     * get data
+     */
+    public function getregddata($id,$from_dt,$to_date){
+        $out='';
+        $query = (new \yii\db\Query())->select('*')->from('registered_posted_data')->where(['between', 'date',$from_dt, $to_date])->andWhere(['agency_id'=>$id])->orderBy('date ASC');
+             $command = $query->createCommand();
+             $data = $command->queryAll();
+             
+              $i=1;
+             foreach($data as $row) {
+                 
+                 $out[$i]['pjy']=$row['pjy'];
+                 $out[$i]['org']=$row['org'];
+            $i++; }
+             return $out;
+            // print_r($out);exit;
+        
+    }
+    /*
+     * get data
+     */
+    public function getvppdata($id,$from_dt,$to_date){
+        $out='';
+        $query = (new \yii\db\Query())->select('*')->from('vpp_posted_data')->where(['between', 'date',$from_dt, $to_date])->andWhere(['agency_id'=>$id])->orderBy('date ASC');
+             $command = $query->createCommand();
+             $data = $command->queryAll();
+             
+              $i=1;
+             foreach($data as $row) {
+                 
+                 $out[$i]['pjy']=$row['pjy'];
+                 $out[$i]['org']=$row['org'];
+            $i++; }
+             return $out;
+            // print_r($out);exit;
+        
+    }
+    
+    /*
+     * get data
+     */
+    public function getraildata($id,$from_dt,$to_date){
+        $out='';
+        $query = (new \yii\db\Query())->select('*')->from('railway_posted_data')->where(['between', 'date',$from_dt, $to_date])->andWhere(['agency_id'=>$id])->orderBy('date ASC');
+             $command = $query->createCommand();
+             $data = $command->queryAll();
+             
+              $i=1;
+             foreach($data as $row) {
+                 
+                 $out[$i]['pjy']=$row['pjy'];
+                 $out[$i]['org']=$row['org'];
             $i++; }
              return $out;
             // print_r($out);exit;
