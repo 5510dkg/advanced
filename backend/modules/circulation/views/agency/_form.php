@@ -575,7 +575,7 @@ use kartik\typeahead\Typeahead;
     </div>
     <div class="box-body">
         <div class="col-lg-6">
-             <?= $form->field($model, 'title')->dropDownList(['SH.'=>'SH.','SMT'=>'SMT','M/S'=>'M/S'])?>
+             <?= $form->field($model, 'title')->dropDownList(['SH.'=>'SH.','SMT'=>'SMT','M/S'=>'M/S','MRS'=>'MRS','DR'=>'DR','PROF'=>'PROF'])?>
                 <?= $form->field($model, 'name')->textInput(['maxlength'=>'60']) ?>
                 
                  <?= $form->field($model,'agency_type')->dropDownList([ 'Select agency type'=>'','Single' => 'Single', 'Combined' => 'Combined' ]);?>
