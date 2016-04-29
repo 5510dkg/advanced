@@ -560,12 +560,15 @@ class AgencyController extends Controller
             $model->addRule('from_date','required');
             $model->addRule('to_date','required');
             if($model->load(Yii::$app->request->post())){
+                  $params=Yii::$app->request->post();
+                   $model->load($params);
                                 $objPHPExcel = new \PHPExcel();
                  
                 $sheet=0;
                             $agency=new Agency();
-                            $data=$agency->get_all_excel_record();
-                  
+                            
+                            $data=$agency->get_all_excel_record($model->from_date,$model->to_date);
+                            
                             $objPHPExcel->setActiveSheetIndex($sheet);
                           
                             $foos = [

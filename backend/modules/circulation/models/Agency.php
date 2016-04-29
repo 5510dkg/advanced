@@ -7,7 +7,7 @@ use backend\modules\settings\models\State;
 use backend\modules\settings\models\District;
 
 use Yii;
-
+ini_set('memory_limit', '-1');
 /**
  * This is the model class for table "agency".
  *
@@ -96,12 +96,44 @@ class Agency extends \yii\db\ActiveRecord
              $query = (new \yii\db\Query())->select('*')->from('agency');
              $command = $query->createCommand();
              $data = $command->queryAll();
-             $titles = '';
+             
              foreach($data as $row) {
-                 $titles .= $row['name'] . ', ';
+                 
+                 $id= $row['id'];
+                 $out[$id]['name']=$row['name'];
+                 $out[$id]['mobile_no']=$row['name'];
+                 $out[$id]['mail_street_address']=$row['name'];
+                 $out[$id]['mail_p_office']=$row['name'];
+                 $out[$id]['account_id']=$row['account_id'];
+                 $out[$id]['copy']=$this->getdata($id,$from_dt,$to_date);
+               
+                 
              }
+             return $out;
+             // print_r($out);exit;
         
     }
+    
+    /*
+     * get data
+     */
+    public function getdata($id,$from_dt,$to_date){
+        $out='';
+        $query = (new \yii\db\Query())->select('*')->from('agency_copies_records')->where(['between', 'date',$from_dt, $to_date])->andWhere(['agency_id'=>$id])->orderBy('date ASC');
+             $command = $query->createCommand();
+             $data = $command->queryAll();
+             
+              $i=1;
+             foreach($data as $row) {
+                 
+                 $out[$i]['pjy']=$row['pachjanya'];
+                 $out[$i]['org']=$row['organiser'];
+            $i++; }
+             return $out;
+            // print_r($out);exit;
+        
+    }
+    
     
     /**
      * @inheritdoc
