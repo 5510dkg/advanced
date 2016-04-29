@@ -93,7 +93,8 @@ class Agency extends \yii\db\ActiveRecord
      */
     public function get_all_excel_record($from_dt,$to_date,$state=NULL,$po=NULL){
              
-             $query = (new \yii\db\Query())->select('*')->from('agency');
+             $query = (new \yii\db\Query())->select('*,_delivery_methods.name as rname,agency.id as id,agency.name as name')->from('agency')->innerJoin('_delivery_methods',
+                     '_delivery_methods.id=agency.route_id');
              $command = $query->createCommand();
              $data = $command->queryAll();
              
@@ -105,6 +106,7 @@ class Agency extends \yii\db\ActiveRecord
                  $out[$id]['mail_street_address']=$row['mail_street_address'];
                  $out[$id]['mail_p_office']=$row['mail_p_office'];
                  $out[$id]['account_id']=$row['account_id'];
+                 $out[$id]['rname']=$row['rname'];
                  if($row['route_id']==1){
                      $out[$id]['copy']=$this->getorddata($id,$from_dt,$to_date);
                  }
