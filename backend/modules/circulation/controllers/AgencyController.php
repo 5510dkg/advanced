@@ -568,7 +568,7 @@ class AgencyController extends Controller
                 $sheet=0;
                             $agency=new Agency();
                             
-                            $data=$agency->get_all_excel_record($model->from_date,$model->to_date);
+                            $data=$agency->get_all_excel_record($model->from_date,$model->to_date,$model->state,$model->post_office);
                             //print_r($data);exit;
                             $objPHPExcel->setActiveSheetIndex($sheet);
                             $start = new DateTime($model->from_date);

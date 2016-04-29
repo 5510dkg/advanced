@@ -95,6 +95,11 @@ class Agency extends \yii\db\ActiveRecord
              
              $query = (new \yii\db\Query())->select('*,_delivery_methods.name as rname,agency.id as id,agency.name as name')->from('agency')->innerJoin('_delivery_methods',
                      '_delivery_methods.id=agency.route_id');
+             $query->andFilterWhere([
+            'mail_state_id' => $state,
+            'mail_p_office' => $po,
+          
+        ]);
              $command = $query->createCommand();
              $data = $command->queryAll();
              
