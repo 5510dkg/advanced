@@ -88,7 +88,7 @@ class Agency extends \yii\db\ActiveRecord
         return $scenarios;
     }
     
-    /*
+     /*
      * excel file creation for weekly supply
      */
     public function get_all_excel_record($from_dt,$to_date,$state=NULL,$po=NULL){
@@ -107,7 +107,6 @@ class Agency extends \yii\db\ActiveRecord
                  $out[$id]['account_id']=$row['account_id'];
                  $out[$id]['copy']=$this->getdata($id,$from_dt,$to_date);
                
-                 
              }
              return $out;
              // print_r($out);exit;
