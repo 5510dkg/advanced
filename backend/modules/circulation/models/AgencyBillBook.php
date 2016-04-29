@@ -330,6 +330,14 @@ class AgencyBillBook extends \yii\db\ActiveRecord
         
     }
     
+    public function getPrintdetailsmonth($month,$agency_id){
+         $query = (new \yii\db\Query())->select(['*,discount as discount,price_per_piece as unitprice,DATE_FORMAT(issue_date,"%M-%Y") as months,DATE_FORMAT(issue_date,"%d-%b-%y") as date,agency.id as agencyid,agency.name as name,agency_bill_book.pjy as pjy,agency_bill_book.org as org,total_copies,total_price,discounted_amt,final_total'])->from('agency_bill_book')->innerJoin('agency','agency.id=agency_bill_book.agency_id')->where(['DATE_FORMAT(issue_date,"%Y-%m")'=>$month,'agency_id'=>$agency_id]);
+             $command = $query->createCommand();
+             return $data = $command->queryAll();
+            // $titles = '';
+        
+    }
+    
     
     public function getAgency() {
         return $this->hasone(Agency::classname(),['id'=>'agency_id']);
