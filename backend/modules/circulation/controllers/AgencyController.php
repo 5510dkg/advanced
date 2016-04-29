@@ -568,9 +568,10 @@ class AgencyController extends Controller
                             $agency=new Agency();
                             
                             $data=$agency->get_all_excel_record($model->from_date,$model->to_date);
-                            
+                            //print_r($data);exit;
                             $objPHPExcel->setActiveSheetIndex($sheet);
                           
+                            
                             $foos = [
                                     ['firstname'=>'John',
                                     'lastname'=>'Doe'],
@@ -583,16 +584,30 @@ class AgencyController extends Controller
                         $objPHPExcel->getActiveSheet()->getColumnDimension('A')->setWidth(20);
                         $objPHPExcel->getActiveSheet()->getColumnDimension('B')->setWidth(20);
 
-                        $objPHPExcel->getActiveSheet()->setTitle('xxx')                     
-                         ->setCellValue('A1', 'Firstname')
-                         ->setCellValue('B1', 'Lastname');
+                        $objPHPExcel->getActiveSheet()->setTitle('AgencySupplysheet')                     
+                         ->setCellValue('A1', 'Agency Name')
+                         ->setCellValue('B1', 'Mobile Number')
+                         ->setCellValue('C1', 'Street Address')
+                         ->setCellValue('D1', 'Post Office')
+                         ->setCellValue('E1', 'Supply Id')
+                         ->setCellValue('F1', 'Lastname');
 
                      $row=2;
 
-                            foreach ($foos as $foo) {  
+                            foreach ($data as $foo) {  
 
-                                $objPHPExcel->getActiveSheet()->setCellValue('A'.$row,$foo['firstname']); 
-                                $objPHPExcel->getActiveSheet()->setCellValue('B'.$row,$foo['lastname']);
+                                $objPHPExcel->getActiveSheet()->setCellValue('A'.$row,$foo['name']); 
+                                $objPHPExcel->getActiveSheet()->setCellValue('B'.$row,$foo['mobile_no']);
+                                $objPHPExcel->getActiveSheet()->setCellValue('C'.$row,$foo['mail_street_address']);
+                                $objPHPExcel->getActiveSheet()->setCellValue('D'.$row,$foo['mail_p_office']);
+                                $objPHPExcel->getActiveSheet()->setCellValue('E'.$row,$foo['account_id']);
+                                
+                                foreach($foo['copy'] as $cpy){
+                                    
+                                    $objPHPExcel->getActiveSheet()->setCellValue('D'.$row,$foo['mail_p_office']);
+                                    $objPHPExcel->getActiveSheet()->setCellValue('D'.$row,$foo['mail_p_office']);
+                                }
+                                
                                 $row++ ;
                             }
 

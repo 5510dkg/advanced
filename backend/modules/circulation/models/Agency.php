@@ -101,9 +101,9 @@ class Agency extends \yii\db\ActiveRecord
                  
                  $id= $row['id'];
                  $out[$id]['name']=$row['name'];
-                 $out[$id]['mobile_no']=$row['name'];
-                 $out[$id]['mail_street_address']=$row['name'];
-                 $out[$id]['mail_p_office']=$row['name'];
+                 $out[$id]['mobile_no']=$row['mobile_no'];
+                 $out[$id]['mail_street_address']=$row['mail_street_address'];
+                 $out[$id]['mail_p_office']=$row['mail_p_office'];
                  $out[$id]['account_id']=$row['account_id'];
                  $out[$id]['copy']=$this->getdata($id,$from_dt,$to_date);
                
