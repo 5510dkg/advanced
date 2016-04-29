@@ -165,7 +165,12 @@ class Agency extends \yii\db\ActiveRecord
              
               $i=1;
              foreach($data as $row) {
-                 
+                 if($row['pjy']=='' || $row['pjy']==NULL){
+                     $row['pjy']=0;
+                 }
+                 if($row['org']=='' || $row['org']==NULL){
+                     $row['org']=0;
+                 }
                  $out[$i]['pjy']=$row['pjy'];
                  $out[$i]['org']=$row['org'];
             $i++; }
@@ -178,13 +183,18 @@ class Agency extends \yii\db\ActiveRecord
      */
     public function getregddata($id,$from_dt,$to_date){
         $out='';
-        $query = (new \yii\db\Query())->select('*')->from('registered_posted_data')->where(['between', 'date',$from_dt, $to_date])->andWhere(['agency_id'=>$id])->orderBy('date ASC');
+        $query = (new \yii\db\Query())->select('*')->from('registered_posted_data')->where(['between', 'date',$from_dt, $to_date])->andWhere(['agency_id'=>$id])->groupBy('date')->orderBy('date ASC');
              $command = $query->createCommand();
              $data = $command->queryAll();
              
               $i=1;
              foreach($data as $row) {
-                 
+                 if($row['pjy']=='' || $row['pjy']==NULL){
+                     $row['pjy']=0;
+                 }
+                 if($row['org']=='' || $row['org']==NULL){
+                     $row['org']=0;
+                 }
                  $out[$i]['pjy']=$row['pjy'];
                  $out[$i]['org']=$row['org'];
             $i++; }
@@ -197,13 +207,18 @@ class Agency extends \yii\db\ActiveRecord
      */
     public function getvppdata($id,$from_dt,$to_date){
         $out='';
-        $query = (new \yii\db\Query())->select('*')->from('vpp_posted_data')->where(['between', 'date',$from_dt, $to_date])->andWhere(['agency_id'=>$id])->orderBy('date ASC');
+        $query = (new \yii\db\Query())->select('*')->from('vpp_posted_data')->where(['between', 'date',$from_dt, $to_date])->andWhere(['agency_id'=>$id])->groupBy('date')->orderBy('date ASC');
              $command = $query->createCommand();
              $data = $command->queryAll();
              
               $i=1;
              foreach($data as $row) {
-                 
+                 if($row['pjy']=='' || $row['pjy']==NULL){
+                     $row['pjy']=0;
+                 }
+                 if($row['org']=='' || $row['org']==NULL){
+                     $row['org']=0;
+                 }
                  $out[$i]['pjy']=$row['pjy'];
                  $out[$i]['org']=$row['org'];
             $i++; }
@@ -217,13 +232,18 @@ class Agency extends \yii\db\ActiveRecord
      */
     public function getraildata($id,$from_dt,$to_date){
         $out='';
-        $query = (new \yii\db\Query())->select('*')->from('railway_posted_data')->where(['between', 'date',$from_dt, $to_date])->andWhere(['agency_id'=>$id])->orderBy('date ASC');
+        $query = (new \yii\db\Query())->select('*')->from('railway_posted_data')->where(['between', 'date',$from_dt, $to_date])->andWhere(['agency_id'=>$id])->groupBy('date')->orderBy('date ASC');
              $command = $query->createCommand();
              $data = $command->queryAll();
              
               $i=1;
              foreach($data as $row) {
-                 
+                 if($row['pjy']=='' || $row['pjy']==NULL){
+                     $row['pjy']=0;
+                 }
+                 if($row['org']=='' || $row['org']==NULL){
+                     $row['org']=0;
+                 }
                  $out[$i]['pjy']=$row['pjy'];
                  $out[$i]['org']=$row['org'];
             $i++; }
