@@ -618,7 +618,7 @@ class AgencyController extends Controller
                                 $objPHPExcel->getActiveSheet()->setCellValue('C'.$row,$foo['mail_street_address']);
                                 $objPHPExcel->getActiveSheet()->setCellValue('D'.$row,$foo['mail_p_office']);
                                 $objPHPExcel->getActiveSheet()->setCellValue('E'.$row,$foo['account_id']);
-                                 $objPHPExcel->getActiveSheet()->setCellValue('E'.$row,$foo['rname']);
+                                 $objPHPExcel->getActiveSheet()->setCellValue('F'.$row,$foo['rname']);
                                 $col=6;
                                 foreach($foo['copy'] as $cpy){
                                      $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, $cpy['pjy']);
