@@ -43,7 +43,7 @@ $this->title='Weekly Supply Download';
                             'autoclose' => true,
                             'format' => 'yyyy-mm-dd',
                             'daysOfWeekDisabled'=> [1,2,3,4,5,6],
-                           // 'startDate'=>date('Y-m-d'),
+                            'endDate'=>date('Y-m-d'),
                         ]
                         ]); ?>
             </div>
