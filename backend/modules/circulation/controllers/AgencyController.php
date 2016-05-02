@@ -17,6 +17,7 @@ use yii\base\DynamicModel;
 use yii\data\ActiveDataProvider;
 use yii\data\SqlDataProvider;
 use DateTime;
+use yii\helpers\Json;
 
 /**
  * AgencyController implements the CRUD actions for Agency model.
@@ -654,41 +655,50 @@ class AgencyController extends Controller
      * agency search form for update address
      */    
     public function actionSearchaddress(){
-        $model = new DynamicModel([
-                'name', 'account_id', 'mail_pincode','state'
-            ]);
-            $model->addRule('name', 'string',['max'=>90]);
-            $model->addRule('account_id', 'string',['max'=>90]);
-            $model->addRule('mail_pincode', 'string',['max'=>90]);
-            $model->addRule('state', 'string',['max'=>90]);
-       
+//        $model = new DynamicModel([
+//                'name', 'account_id', 'mail_pincode','state'
+//            ]);
+//            $model->addRule('name', 'string',['max'=>90]);
+//            $model->addRule('account_id', 'string',['max'=>90]);
+//            $model->addRule('mail_pincode', 'string',['max'=>90]);
+//            $model->addRule('state', 'string',['max'=>90]);
+//       
+//
+//            if($model->load(Yii::$app->request->post())){
+//                        // do somenthing with model
+//                            $params=Yii::$app->request->post();
+//                           // print_r($params);exit;
+//                            $query = Agency::find();
+//                            $dataProvider = new ActiveDataProvider([
+//                                'query' => $query,
+//                            ]);
+//                            $model->load($params);
+//                           
+//                                
+//                $query->andFilterWhere(['like', 'name', $model->name]);
+//                $query->andFilterWhere(['like', 'account_id', $model->account_id]);
+//                $query->andFilterWhere(['like', 'mail_pincode', $model->mail_pincode]);
+//                $query->andFilterWhere(['mail_state_id'=>$model->state]);
+//                
+//            return $this->render('updateaddress',
+//                            [
+//                             'list'=>$dataProvider,
+//                             'model'=>$model,
+//                            'data'=>$this->actionAgencylist()
+//                            ]);
+//        }
+//        return $this->render('searchaddress', ['model'=>$model,
+//            'data'=>$this->actionAgencylist(),
+//            ]);
+           $searchModel = new \backend\modules\circulation\models\Agencyview();
+            $dataProvider = $searchModel->search(Yii::$app->request->get());
 
-            if($model->load(Yii::$app->request->post())){
-                        // do somenthing with model
-                            $params=Yii::$app->request->post();
-                           // print_r($params);exit;
-                            $query = Agency::find();
-                            $dataProvider = new ActiveDataProvider([
-                                'query' => $query,
-                            ]);
-                            $model->load($params);
-                           
-                                
-                $query->andFilterWhere(['like', 'name', $model->name]);
-                $query->andFilterWhere(['like', 'account_id', $model->account_id]);
-                $query->andFilterWhere(['like', 'mail_pincode', $model->mail_pincode]);
-                $query->andFilterWhere(['mail_state_id'=>$model->state]);
-                
-            return $this->render('updateaddress',
-                            [
-                             'list'=>$dataProvider,
-                             'model'=>$model,
-                            'data'=>$this->actionAgencylist()
-                            ]);
-        }
-        return $this->render('searchaddress', ['model'=>$model,
-            'data'=>$this->actionAgencylist(),
-            ]);
+            return $this->render('viewsearch', [
+                'dataProvider' => $dataProvider,
+                'searchModel' => $searchModel,
+                'data'=>$this->actionAgencylist(),
+                ]);
+        
     }
     
      public function actionWeekly(){
@@ -730,41 +740,52 @@ class AgencyController extends Controller
      * Search list for update address
      */
     public function actionSearchcopies(){
-        $model = new DynamicModel([
-                'name', 'account_id', 'mail_pincode','state'
-            ]);
-            $model->addRule('name', 'string',['max'=>90]);
-            $model->addRule('account_id', 'string',['max'=>90]);
-            $model->addRule('mail_pincode', 'string',['max'=>90]);
-            $model->addRule('state', 'string',['max'=>90]);
-       
+//        $model = new DynamicModel([
+//                'name', 'account_id', 'mail_pincode','state'
+//            ]);
+//            $model->addRule('name', 'string',['max'=>90]);
+//            $model->addRule('account_id', 'string',['max'=>90]);
+//            $model->addRule('mail_pincode', 'string',['max'=>90]);
+//            $model->addRule('state', 'string',['max'=>90]);
+//       
+//
+//            if($model->load(Yii::$app->request->post())){
+//                        // do somenthing with model
+//                            $params=Yii::$app->request->post();
+//                           // print_r($params);exit;
+//                            $query = Agency::find();
+//                            $dataProvider = new ActiveDataProvider([
+//                                'query' => $query,
+//                            ]);
+//                            $model->load($params);
+//                           
+//                                
+//                $query->andFilterWhere(['like', 'name', $model->name]);
+//                $query->andFilterWhere(['like', 'account_id', $model->account_id]);
+//                $query->andFilterWhere(['like', 'mail_pincode', $model->mail_pincode]);
+//                $query->andFilterWhere(['mail_state_id'=>$model->state]);
+//                
+//            return $this->render('updatecopies',
+//                            [
+//                             'list'=>$dataProvider,
+//                             'model'=>$model,
+//                            'data'=>$this->actionAgencylist()
+//                            ]);
+//        }
+//        return $this->render('searchcopies', ['model'=>$model,
+//            'data'=>$this->actionAgencylist(),
+//            ]);
+        
+          $searchModel = new \backend\modules\circulation\models\Agencyview();
+            $dataProvider = $searchModel->search(Yii::$app->request->get());
 
-            if($model->load(Yii::$app->request->post())){
-                        // do somenthing with model
-                            $params=Yii::$app->request->post();
-                           // print_r($params);exit;
-                            $query = Agency::find();
-                            $dataProvider = new ActiveDataProvider([
-                                'query' => $query,
-                            ]);
-                            $model->load($params);
-                           
-                                
-                $query->andFilterWhere(['like', 'name', $model->name]);
-                $query->andFilterWhere(['like', 'account_id', $model->account_id]);
-                $query->andFilterWhere(['like', 'mail_pincode', $model->mail_pincode]);
-                $query->andFilterWhere(['mail_state_id'=>$model->state]);
-                
-            return $this->render('updatecopies',
-                            [
-                             'list'=>$dataProvider,
-                             'model'=>$model,
-                            'data'=>$this->actionAgencylist()
-                            ]);
-        }
-        return $this->render('searchcopies', ['model'=>$model,
-            'data'=>$this->actionAgencylist(),
-            ]);
+            return $this->render('viewsupply', [
+                'dataProvider' => $dataProvider,
+                'searchModel' => $searchModel,
+                'data'=>$this->actionAgencylist(),
+                ]);
+        
+        
     }
     /*
      * Search list for update address
@@ -810,41 +831,50 @@ class AgencyController extends Controller
      * Search list for update address
      */
     public function actionSearchdelivery(){
-        $model = new DynamicModel([
-                'name', 'account_id', 'mail_pincode','state'
-            ]);
-            $model->addRule('name', 'string',['max'=>90]);
-            $model->addRule('account_id', 'string',['max'=>90]);
-            $model->addRule('mail_pincode', 'string',['max'=>90]);
-            $model->addRule('state', 'string',['max'=>90]);
-       
+//        $model = new DynamicModel([
+//                'name', 'account_id', 'mail_pincode','state'
+//            ]);
+//            $model->addRule('name', 'string',['max'=>90]);
+//            $model->addRule('account_id', 'string',['max'=>90]);
+//            $model->addRule('mail_pincode', 'string',['max'=>90]);
+//            $model->addRule('state', 'string',['max'=>90]);
+//       
+//
+//            if($model->load(Yii::$app->request->post())){
+//                        // do somenthing with model
+//                            $params=Yii::$app->request->post();
+//                           // print_r($params);exit;
+//                            $query = Agency::find();
+//                            $dataProvider = new ActiveDataProvider([
+//                                'query' => $query,
+//                            ]);
+//                            $model->load($params);
+//                           
+//                                
+//                $query->andFilterWhere(['like', 'name', $model->name]);
+//                $query->andFilterWhere(['like', 'account_id', $model->account_id]);
+//                $query->andFilterWhere(['like', 'mail_pincode', $model->mail_pincode]);
+//                $query->andFilterWhere(['mail_state_id'=>$model->state]);
+//                
+//            return $this->render('updatedelivery',
+//                            [
+//                             'list'=>$dataProvider,
+//                             'model'=>$model,
+//                            'data'=>$this->actionAgencylist()
+//                            ]);
+//        }
+//        return $this->render('searchdelivery', ['model'=>$model,
+//            'data'=>$this->actionAgencylist(),
+//            ]);
+        
+        $searchModel = new \backend\modules\circulation\models\Agencyview();
+            $dataProvider = $searchModel->search(Yii::$app->request->get());
 
-            if($model->load(Yii::$app->request->post())){
-                        // do somenthing with model
-                            $params=Yii::$app->request->post();
-                           // print_r($params);exit;
-                            $query = Agency::find();
-                            $dataProvider = new ActiveDataProvider([
-                                'query' => $query,
-                            ]);
-                            $model->load($params);
-                           
-                                
-                $query->andFilterWhere(['like', 'name', $model->name]);
-                $query->andFilterWhere(['like', 'account_id', $model->account_id]);
-                $query->andFilterWhere(['like', 'mail_pincode', $model->mail_pincode]);
-                $query->andFilterWhere(['mail_state_id'=>$model->state]);
-                
-            return $this->render('updatedelivery',
-                            [
-                             'list'=>$dataProvider,
-                             'model'=>$model,
-                            'data'=>$this->actionAgencylist()
-                            ]);
-        }
-        return $this->render('searchdelivery', ['model'=>$model,
-            'data'=>$this->actionAgencylist(),
-            ]);
+            return $this->render('viewroute', [
+                'dataProvider' => $dataProvider,
+                'searchModel' => $searchModel,
+                'data'=>$this->actionAgencylist(),
+                ]);
     }
     
     /*
@@ -929,6 +959,19 @@ class AgencyController extends Controller
         $out[] = $d['mail_p_office'];
     }
     return $out;
+}
+  public function actionPo() {
+    $query = new \yii\db\Query;
+    
+    $query->select('mail_p_office')
+        ->from('agency')->orderBy('mail_p_office');
+    $command = $query->createCommand();
+    $data = $command->queryAll();
+    $out = [];
+    foreach ($data as $d) {
+        $out[] = $d['mail_p_office'];
+    }
+    echo Json::encode($out);
 }
     
     

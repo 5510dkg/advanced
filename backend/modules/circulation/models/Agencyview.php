@@ -13,7 +13,7 @@ class Agencyview extends Agency
     {
         // only fields in rules() are searchable
         return [
-            [[ 'name', 'account_id', 'mail_pincode','mail_state_id','status'], 'string','max' => 110],
+            [[ 'name', 'account_id','mail_p_office', 'mail_pincode','mail_state_id','status'], 'string','max' => 110],
             
         ];
     }
@@ -37,13 +37,14 @@ class Agencyview extends Agency
            // echo 'hii';exit;
             return $dataProvider;
         }
-//        echo $this->name;
+       // echo $this->mail_p_office;
 //        $this->mail_state_id;
 //                print_r($params);exit;
-//        echo 'hii';exit;
+       // echo 'hii';exit;
         // adjust the query by adding the filters
         
          $query->andFilterWhere(['like', 'name', $this->name]);
+         $query->andFilterWhere(['like', 'mail_p_office', $this->mail_p_office]);
                 $query->andFilterWhere(['like', 'account_id', $this->account_id]);
                 $query->andFilterWhere(['like', 'mail_pincode', $this->mail_pincode]);
                 $query->andFilterWhere(['mail_state_id'=>$this->mail_state_id]);
