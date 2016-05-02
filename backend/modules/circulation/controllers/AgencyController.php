@@ -635,7 +635,7 @@ class AgencyController extends Controller
                             }
 
                     header('Content-Type: application/vnd.ms-excel');
-                    $filename = "MyExcelReport_".date("d-m-Y-His").".xls";
+                    $filename = "Agecny_supply_sheet".date("d-m-Y-His").".xls";
                     header('Content-Disposition: attachment;filename='.$filename .' ');
                     header('Cache-Control: max-age=0');
                     $objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
