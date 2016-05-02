@@ -37,10 +37,10 @@ class Agencyview extends Agency
            // echo 'hii';exit;
             return $dataProvider;
         }
-       // echo $this->mail_p_office;
+        echo $this->mail_p_office;
 //        $this->mail_state_id;
 //                print_r($params);exit;
-       // echo 'hii';exit;
+        echo 'hii';exit;
         // adjust the query by adding the filters
         
          $query->andFilterWhere(['like', 'name', $this->name]);

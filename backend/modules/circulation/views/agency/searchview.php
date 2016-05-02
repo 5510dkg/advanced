@@ -46,20 +46,8 @@ $data=  \backend\modules\circulation\controllers\AgencyController::actionAgencyl
             <div class="col-md-4">
                   <?= $form->field($model, 'mail_pincode')->label('Pin Code') ?>
             </div>
-            <div class="col-md-4">
-               <label class="control-label">Select Country</label>
-<?=  Typeahead::widget([
-    'name' => 'mail_p_office',
-    'options' => ['placeholder' => 'Filter as you type ...'],
-    'scrollable' => true,
-    'pluginOptions' => ['highlight'=>true],
-    'dataset' => [
-        [
-            'prefetch' => Url::to(['agency/po']),
-            'limit' => 10
-        ]
-    ]
-]);?>
+              <div class="col-md-4">
+                  <?= $form->field($model, 'mail_p_office')->label('Post Office') ?>
             </div>
             
             <div class="col-md-4">
