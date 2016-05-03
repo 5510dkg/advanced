@@ -709,10 +709,10 @@ class AgencyController extends Controller
 //        return $this->render('searchaddress', ['model'=>$model,
 //            'data'=>$this->actionAgencylist(),
 //            ]);
+           
            $searchModel = new \backend\modules\circulation\models\Agencyview();
-            $dataProvider = $searchModel->search(Yii::$app->request->get());
-
-            return $this->render('viewsearch', [
+           $dataProvider = $searchModel->search(Yii::$app->request->get());
+           return $this->render('viewsearch', [
                 'dataProvider' => $dataProvider,
                 'searchModel' => $searchModel,
                 'data'=>$this->actionAgencylist(),
