@@ -184,6 +184,8 @@ class AgencyController extends Controller
             *   Process for non-ajax request
             */
             if ($model->load($request->post()) && $model->save()) {
+                
+                
                   $bookrecord=new AgencyCopiesRecords();
                         $bookrecord->agency_id=$model->id;
                         $bookrecord->date=date("Y-m-d");
@@ -303,6 +305,7 @@ class AgencyController extends Controller
             *   Process for non-ajax request
             */
             if ($model->load($request->post()) && $model->save()) {
+               
                 
                   $bookrecord=new AgencyCopiesRecords();
                         $bookrecord->agency_id=$model->id;
