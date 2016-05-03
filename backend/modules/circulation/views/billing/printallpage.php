@@ -22,6 +22,7 @@ $this->title='Bill';
         <div class="row">
             <div class="col-md-3">
    <?php $form = ActiveForm::begin(); ?>
+                <?php $last=date("Y-m", strtotime("first day of previous month")); ?>
         <?= $form->field($model, 'month')->widget(
     DatePicker::className(), [  
                                 'clientOptions' => [
@@ -29,6 +30,8 @@ $this->title='Bill';
                                 'format'=> "yyyy-mm",
                                 'viewMode'=> "months", 
                                 'minViewMode'=> "months",
+                                'startDate'=>$last,
+                                    
         ]
         ]);?></div>
         

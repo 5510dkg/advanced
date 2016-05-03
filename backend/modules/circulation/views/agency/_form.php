@@ -700,6 +700,7 @@ use kartik\typeahead\Typeahead;
                                                                             'autoclose' => true,
                                                                             'format' => 'yyyy-mm-dd',
                                                                             'startDate'=>date('Y-m-d'),
+                                                                             'daysOfWeekDisabled'=> [1,2,3,4,5,6],
                                                                         ]
                         ]); ?>
              <?= $form->field($model,'commission')->textInput(['maxlength'=>true])->hint('Please do not use % sign')?>
