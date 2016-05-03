@@ -13,7 +13,7 @@ use dosamigos\datepicker\DatePicker;
         </div>
     </div>
     <div class="box-body">
-        <h4><i> Have You Submitted All Receipts In the Last Month...?</i></h4>
+        <h4><i> Have You Submitted All Receipts And Credit Notes In the Last Month...?</i></h4>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <button class="btn btn-lg btn-success" id="Y">Yes</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;
