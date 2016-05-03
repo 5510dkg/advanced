@@ -35,6 +35,6 @@ $this->title='Agency Management';
 </div>
 <div class="row" style="margin-top: 10px;">
 <div class="col-sm-3">
-     <?=Html::a('Download weekly',['/circulation/agency/weeklysupply'],['class'=>'btn btn-success btn-lg btn-block'])?>  
+     <?=Html::a('Download weekly Supply',['/circulation/agency/weeklysupply'],['class'=>'btn btn-success btn-lg btn-block'])?>  
 </div>
 </div>

@@ -37,9 +37,9 @@ use yii\helpers\Html;
                         
                 </div> 
 <?php } ?>
-<?php // if(Yii::$app->user->can('search-bill')){ ?>
-<!--<div class="col-lg-4">-->
-                        <?php //echo Html::a('Print Bill',['/circulation/billing/print'],['class'=>'btn btn-success btn-lg btn-block'])?>  
+<?php if(Yii::$app->user->can('search-bill')){ ?>
+<div class="col-lg-4">
+                        <?php echo Html::a('Print All Bills',['/circulation/billing/print'],['class'=>'btn btn-success btn-lg btn-block'])?>  
                         
-                <!--</div>--> 
-<?php// } ?>
+                </div> 
+<?php } ?>
