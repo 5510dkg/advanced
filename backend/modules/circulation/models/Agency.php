@@ -451,6 +451,19 @@ class Agency extends \yii\db\ActiveRecord
         return $this->hasone(\backend\modules\settings\models\DeliveryMethods::classname(),['id'=>'route_id']);
     }
     
+    public function getDistrictid($name){
+        
+               $query = (new \yii\db\Query())->select(['id'])->from('_district')->where(['like','name',$name]);
+             $command = $query->createCommand();
+             $data = $command->queryAll();
+             $titles = '';
+             foreach($data as $row) {
+                 $titles = $row['id'];
+             }
+             
+             return $titles;
+    }
+    
     public function getDistricts()
     {
         return $this->hasone(District::classname(),['id'=>'add_district_id']);

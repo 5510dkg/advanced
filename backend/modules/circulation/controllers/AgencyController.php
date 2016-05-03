@@ -487,7 +487,15 @@ class AgencyController extends Controller
                   $agency->mail_p_office      =$rowData[0][13];
                   $agency->mail_country_id    =$rowData[0][14];
                   $agency->mail_state_id      =$rowData[0][15];
-                  $agency->mail_district_id   =$rowData[0][16];
+                  
+                  $distname=$agency->getDistrictid($rowData[0][16]);
+                  if($distname!=''||$distname!=NULL){
+                      $agency->mail_district_id   =$distname;
+                      
+                  }else{
+                     $agency->mail_district_id='11111';  
+                  }
+                 
                   $agency->mail_pincode       =$rowData[0][17];
                   $agency->panchjanya         =$rowData[0][18];
                   $agency->organiser          =$rowData[0][19];
@@ -496,7 +504,15 @@ class AgencyController extends Controller
                   $agency->add_p_office       =$rowData[0][22];
                   $agency->add_country_id     =$rowData[0][23];
                   $agency->add_state_id       =$rowData[0][24];
-                  $agency->add_district_id    =$rowData[0][25];
+                  $distnames=$agency->getDistrictid($rowData[0][25]);
+                  if($distnames!=''||$distnames!=NULL){
+                      $agency->add_district_id   =$distnames;
+                      
+                  }else{
+                     $agency->add_district_id='11111';  
+                  }
+                 ;
+                  
                   $agency->add_pincode        =$rowData[0][26];
                   $agency->commission         =$rowData[0][27];
                   $agency->issue_start_date   =$rowData[0][28];
