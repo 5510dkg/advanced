@@ -20,6 +20,10 @@ $this->title='Weekly Supply Download';
         <div class="row">
              <?php $form = ActiveForm::begin(); ?>
             <div class="col-md-4"> 
+                <?php 
+                $date=date("Y-m-d");
+$dt= date( "Y-m-d", strtotime( "$date +14 days" ) );
+                ?>
              <?= $form->field($model, 'from_date')->widget( DatePicker::className(), [
                             // inline too, not bad
                             'inline' => false, 
@@ -29,7 +33,7 @@ $this->title='Weekly Supply Download';
                             'autoclose' => true,
                             'format' => 'yyyy-mm-dd',
                             'daysOfWeekDisabled'=> [1,2,3,4,5,6],
-                           // 'startDate'=>date('Y-m-d'),
+                            'endDate'=>$dt,
                         ]
                         ]); ?>
             </div>
