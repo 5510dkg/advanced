@@ -187,8 +187,8 @@ use yii\helpers\Html;
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img src="<?= $directoryAsset ?>/img/user.jpg" class="img-circle"
-                                 alt="User Image"/>
+<!--                            <img src="<?php// echo  $directoryAsset ?>/img/user.jpg" class="img-circle"
+                                 alt="User Image"/>-->
 
                             <p>
                                 <?=Yii::$app->user->identity->name?> 

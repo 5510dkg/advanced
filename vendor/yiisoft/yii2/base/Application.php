@@ -93,7 +93,7 @@ abstract class Application extends Module
     /**
      * @var string the application name.
      */
-    public $name = 'BPDL';
+    public $name = 'My Application';
     /**
      * @var string the version of this application.
      */
@@ -195,7 +195,7 @@ abstract class Application extends Module
     public function __construct($config = [])
     {
         Yii::$app = $this;
-        $this->setInstance($this);
+        static::setInstance($this);
 
         $this->state = self::STATE_BEGIN;
 

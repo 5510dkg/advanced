@@ -827,6 +827,11 @@ class AgencyController extends Controller
             'data'=>$this->actionAgencylist(),
             ]);
     }
+    
+    
+    
+    
+    
     /*
      * Search list for update address
      */
@@ -973,6 +978,38 @@ class AgencyController extends Controller
     }
     echo Json::encode($out);
 }
+
+public function actionPostoffice($term)
+    {
+        if (Yii::$app->request->isAjax) {
+
+            $results = [];
+
+            if (is_numeric($term)) {
+                /** @var Tag $model */
+                $model = Agency::findOne(['mail_p_office' => $term]);
+
+                if ($model) {
+                    $results[] = [
+                        'id' => $model['mail_p_office'],
+                        'label' => $model['mail_p_office'],
+                    ];
+                }
+            } else {
+
+                $q = addslashes($term);
+
+                foreach(Agency::find()->where("(`mail_p_office` like '%{$q}%')")->all() as $model) {
+                    $results[] = [
+                        'id' => $model['mail_p_office'],
+                        'label' => $model['mail_p_office'],
+                    ];
+                }
+            }
+
+            echo Json::encode($results);
+        }
+    }
     
     
     /** 

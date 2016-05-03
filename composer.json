@@ -28,7 +28,8 @@
         "johnitvn/yii2-rbac-plus": "*",
 	"kartik-v/yii2-widget-typeahead": "*",
         "dmstr/yii2-adminlte-asset": "2.*",
-        "kartik-v/yii2-export": "@dev"
+        "kartik-v/yii2-export": "@dev",
+	"keygenqt/yii2-autocomplete-ajax": "@dev"
 
     },
     "require-dev": {

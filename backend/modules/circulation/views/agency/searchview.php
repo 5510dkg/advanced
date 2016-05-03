@@ -4,9 +4,11 @@ use yii\helpers\Html;
 use kartik\typeahead\Typeahead;
 use dosamigos\datepicker\DatePicker;
 use yii\helpers\Url;
+use keygenqt\autocompleteAjax\AutocompleteAjax;
 
 $this->title='Agency|Search';
 $data=  \backend\modules\circulation\controllers\AgencyController::actionAgencylist();
+
 ?>
 
 <div class=" box box-default">
@@ -47,7 +49,11 @@ $data=  \backend\modules\circulation\controllers\AgencyController::actionAgencyl
                   <?= $form->field($model, 'mail_pincode')->label('Pin Code') ?>
             </div>
               <div class="col-md-4">
-                  <?= $form->field($model, 'mail_p_office')->label('Post Office') ?>
+                  <?= $form->field($model, 'mail_p_office')->widget(AutocompleteAjax::classname(), [
+    'multiple' => false,
+    'url' => ['agency/postoffice'],
+    'options' => ['placeholder' => 'Post office']
+]) ?>
             </div>
             
             <div class="col-md-4">
