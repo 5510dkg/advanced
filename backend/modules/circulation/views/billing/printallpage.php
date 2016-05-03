@@ -30,7 +30,7 @@ $this->title='Bill';
                                 'format'=> "yyyy-mm",
                                 'viewMode'=> "months", 
                                 'minViewMode'=> "months",
-                                'startDate'=>$last,
+                                'endDate'=>$last,
                                     
         ]
         ]);?></div>
