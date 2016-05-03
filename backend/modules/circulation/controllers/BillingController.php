@@ -43,7 +43,8 @@ Class BillingController extends Controller{
         $dates=$request->post('date1');
         $dd=$request->post('date');
         $prices=$request->post('price');
-       // print_r($dates);exit;
+     //   print_r($prices);echo '<br/>';
+     //  print_r($dates);exit;
         $record=$model->get_records($dd);
         if($record=='0'){
         $alldate=Yii::$app->mycomponent->calsunday($dd);
@@ -66,8 +67,15 @@ Class BillingController extends Controller{
                     $model->pjy=$val['panchjanya'];
                     $model->org=$val['organiser'];
                     $model->total_copies=$val['panchjanya']+$val['organiser'];
+                    //echo $date;
+                   //print_r($dates);
+                    //$k=array_search($date, $dates,TRUE);
+                    
+                    //echo $k;exit;
+                   // $r=in_array($date, $dates);
+                    //echo $r;exit;
                     if(in_array($date, $dates)){
-                        $key = array_search($date, $dates); 
+                    $key = array_search($date, $dates); 
                     $model->price_per_piece=$prices[$key];
                     $price=$prices[$key];
                     }
