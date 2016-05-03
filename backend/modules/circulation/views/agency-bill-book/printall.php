@@ -4,11 +4,15 @@ ini_set('max_execution_time', 6000);
 use backend\modules\circulation\models\AgencyBillBook;
 use backend\modules\settings\models\State;
 use backend\modules\settings\models\District;
+
 //$agency_id=Yii::$app->request->get('agency_id');
 //$month=Yii::$app->request->get('month');
 $agency=new AgencyBillBook();
-echo $month;exit;
-$data=$agency->getPrintdetailsmonth($month);
+$allcount=$agency->allagencies();
+//echo $month;exit;
+foreach($allcount as $ag){
+    //print_r($ag);exit;
+$data=$agency->getPrintdetailsmonth($month,$ag);
 print_r($data);exit;
 
 $i=1;$r=1;?>
@@ -141,4 +145,4 @@ border-collapse: collapse; font-size:10px;">
 	
 	</div>
 
-
+<?php }?>

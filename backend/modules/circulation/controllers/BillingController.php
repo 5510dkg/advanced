@@ -43,7 +43,7 @@ Class BillingController extends Controller{
         $dates=$request->post('date1');
         $dd=$request->post('date');
         $prices=$request->post('price');
-        //print_r($dates);exit;
+       // print_r($dates);exit;
         $record=$model->get_records($dd);
         if($record=='0'){
         $alldate=Yii::$app->mycomponent->calsunday($dd);

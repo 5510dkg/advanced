@@ -7,17 +7,22 @@ use backend\modules\settings\models\District;
 //$agency_id=Yii::$app->request->get('agency_id');
 //$month=Yii::$app->request->get('month');
 $agency=new AgencyBillBook();
-$datas=$agency->getPrintdetailsmonth($month);
+$allcount=$agency->allagencies();
+//echo $month;exit;
+foreach($allcount as $ag){
+   // print_r($ag);exit;
+$data=$agency->getPrintdetailsmonth($month,$ag);
+
 //print_r($data);exit;
 
 $i=1;$r=1;?>
-<?php foreach($datas as $data){ ?>
+
 	<div style="margin-left: 25px;margin-bottom: 40px;margin-right: -30px; width: 100%;float: left; height: 300px;">
             <div style="height: 130px; width: 100%; border: none;">
                 <img src="images/header.jpg"/>
             </div>
             <div style="width: 100%;height: 15px;">
-             Code:&nbsp;&nbsp;&nbsp;&nbsp;<?=$data['account_id']?> 
+             Code:&nbsp;&nbsp;&nbsp;&nbsp;<?=$data[0]['account_id']?> 
              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -31,20 +36,20 @@ $i=1;$r=1;?>
             </div>
             <div style="width: 40%;margin-left: 120px; float: left; ">
                 <br/>
-                <?=$data['name'];?><br/>
-                <?=$data['add_house_no']?><br/>
-                <?=$data['add_street_address']?><br/>
-                <?=$data['add_p_office']?> &nbsp;&nbsp;&nbsp;&nbsp;<?=$data['add_pincode']?>,<br/>
-                <?php $state= State::getName($data['add_state_id']) ?>
-                <?php $district=  District::getName($data['add_district_id']) ?>
+                <?=$data[0]['name'];?><br/>
+                <?=$data[0]['add_house_no']?><br/>
+                <?=$data[0]['add_street_address']?><br/>
+                <?=$data[0]['add_p_office']?> &nbsp;&nbsp;&nbsp;&nbsp;<?=$data[0]['add_pincode']?>,<br/>
+                <?php $state= State::getName($data[0]['add_state_id']) ?>
+                <?php $district=  District::getName($data[0]['add_district_id']) ?>
                 <?=$district[0]['name'];?>,
                 <?=$state[0]['name'];?><br/>
                 
             </div>
             <div style="width: 40%;margin-left:30px; float: left; ">
                 <br/>
-                 <?=$data['months']?><br/>
-                 Security Amt: Rs: &nbsp;&nbsp;<?=$data['security_amt']?>/=
+                 <?=$data[0]['months']?><br/>
+                 Security Amt: Rs: &nbsp;&nbsp;<?=$data[0]['security_amt']?>/=
                 <br/>
                 
             </div><br/>
@@ -58,9 +63,9 @@ $i=1;$r=1;?>
                     <th>UNIT PRICE</th>
                 </tr>
                 <?php foreach ($data as $row):?>
-                <tr><?php echo '<pre>';  
-                print_r($row);
-                echo '</pre>';exit;
+                <tr><?php //echo '<pre>';  
+               // print_r($row);
+               // echo '</pre>';exit;
                 ?>
                     <td><?=$row['issue_date']?></td>
                     <td><?=$row['pjy']?></td>
@@ -142,6 +147,6 @@ border-collapse: collapse; font-size:10px;">
             
 	
 	</div>
-<?php }?>
+<?php }
 
 

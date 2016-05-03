@@ -129,7 +129,17 @@ class AgencyBillBook extends \yii\db\ActiveRecord
         
         
     }
-    
+    public function allagencies(){
+         $query = (new \yii\db\Query())->select(['*'])->from('agency')->where(['status' =>'Active']);
+             $command = $query->createCommand();
+             $data = $command->queryAll();
+             $titles = '';
+             $inc=1;
+             foreach($data as $row) {
+                 $out[]=$row['id'];
+             }
+             return $out;
+    }
     public function get_all_agencies($date){
           $query = (new \yii\db\Query())->select(['*'])->from('agency')->where(['status' =>'Active']);
              $command = $query->createCommand();
