@@ -66,7 +66,7 @@ use dosamigos\datepicker\DatePicker;
                             <?=$form->field($model, 'po')->dropDownList([''=>'Please Select','1'=>'State','2'=>'District','3'=>'Post Office','4'=>'Panchjanya Only','5'=>'Organiser Only'])->label(false);?>
                         </td>
                         <td>
-                            <?=$form->field($model, 'copy')->dropDownList([''=>'Please Select','1'=>'Panchjanya Only','2'=>'Organiser Only'])->label(false);?>
+                            <?=$form->field($model, 'copy')->dropDownList([''=>'Please Select',' '=>'Combine Labels','1'=>'Panchjanya Only','2'=>'Organiser Only'])->label(false);?>
                         </td>
                         <td>
                             <?=$form->field($model, 'train')->dropDownList([''=>'Please Select','1'=>'Train '])->label(false);?>
@@ -91,7 +91,7 @@ use dosamigos\datepicker\DatePicker;
                             <?=$form->field($model, 'po1')->dropDownList([''=>'Please Select','1'=>'State','2'=>'District','3'=>'Post Office','4'=>'Panchjanya Only','5'=>'Organiser Only'])->label(false);?>
                         </td>
                         <td>
-                            <?=$form->field($model, 'copy1')->dropDownList([''=>'Please Select','1'=>'Panchjanya Only','2'=>'Organiser Only'])->label(false);?>
+                            <?=$form->field($model, 'copy1')->dropDownList([''=>'Please Select',' '=>'Combine Labels','1'=>'Panchjanya Only','2'=>'Organiser Only'])->label(false);?>
                         </td>
                         
                     </tr>
@@ -114,7 +114,7 @@ use dosamigos\datepicker\DatePicker;
                             <?=$form->field($model, 'po2')->dropDownList([''=>'Please Select','1'=>'State','2'=>'District','3'=>'Post Office','4'=>'Panchjanya Only','5'=>'Organiser Only'])->label(false);?>
                         </td>
                         <td>
-                            <?=$form->field($model, 'copy2')->dropDownList([''=>'Please Select','1'=>'Panchjanya Only','2'=>'Organiser Only'])->label(false);?>
+                            <?=$form->field($model, 'copy2')->dropDownList([''=>'Please Select',' '=>'Combine Labels','1'=>'Panchjanya Only','2'=>'Organiser Only'])->label(false);?>
                         </td>
                     </tr>
                     <tr>
@@ -136,7 +136,7 @@ use dosamigos\datepicker\DatePicker;
                             <?=$form->field($model, 'po3')->dropDownList([''=>'Please Select','1'=>'State','2'=>'District','3'=>'Post Office','4'=>'Panchjanya Only','5'=>'Organiser Only'])->label(false);?>
                         </td>
                         <td>
-                            <?=$form->field($model, 'copy3')->dropDownList([''=>'Please Select','1'=>'Panchjanya Only','2'=>'Organiser Only'])->label(false);?>
+                            <?=$form->field($model, 'copy3')->dropDownList([''=>'Please Select',' '=>'Combine Labels','1'=>'Panchjanya Only','2'=>'Organiser Only'])->label(false);?>
                         </td>
                         
                     </tr>
