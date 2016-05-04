@@ -32,11 +32,7 @@ use yii\helpers\Html;
                         <i class="fa fa-desktop fa-fw"></i>IT
                     </a>
                 </li>
-                  <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-certificate fa-fw"></i>PRODUCTION
-                    </a>
-                </li>
+               
                 <?php } ?> 
                   <?php if(Yii::$app->user->identity->department_id=='2'){ ?> 
                       <li class="dropdown">

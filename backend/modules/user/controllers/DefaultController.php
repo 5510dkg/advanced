@@ -16,10 +16,16 @@ use yii\data\ActiveDataProvider;
 use Yii;
 use kartik\mpdf\Pdf;
 
+
 class DefaultController extends Controller
 {
+    
     public function actionIndex()
     {
+       
+        
+        
+        
         return $this->render('index');
     }
     
