@@ -118,7 +118,8 @@ class Agency extends \yii\db\ActiveRecord
                  elseif($row['route_id']==2){
                       $out[$id]['copy']=$this->getregddata($id,$from_dt,$to_date);
                  }
-                 elseif($row['route_id']==3){
+                 elseif($row['route_id']==4){
+                   
                       $out[$id]['copy']=$this->getvppdata($id,$from_dt,$to_date);
                  }
                  elseif($row['route_id']==5){
@@ -140,14 +141,14 @@ class Agency extends \yii\db\ActiveRecord
      */
     public function getdata($id,$from_dt,$to_date){
         $out='';
-        $query = (new \yii\db\Query())->select('*')->from('agency_copies_records')->where(['between', 'date',$from_dt, $to_date])->andWhere(['agency_id'=>$id])->orderBy('date ASC');
+        $query = (new \yii\db\Query())->select('*')->from('agency')->Where(['id'=>$id])->orderBy('id ASC');
              $command = $query->createCommand();
              $data = $command->queryAll();
              
               $i=1;
              foreach($data as $row) {
                  
-                 $out[$i]['pjy']=$row['pachjanya'];
+                 $out[$i]['pjy']=$row['panchjanya'];
                  $out[$i]['org']=$row['organiser'];
             $i++; }
              return $out;
@@ -221,7 +222,9 @@ class Agency extends \yii\db\ActiveRecord
                  }
                  $out[$i]['pjy']=$row['pjy'];
                  $out[$i]['org']=$row['org'];
-            $i++; }
+            $i++;
+            }
+           
              return $out;
             // print_r($out);exit;
         

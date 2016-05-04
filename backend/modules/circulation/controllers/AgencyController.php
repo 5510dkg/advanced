@@ -589,7 +589,9 @@ class AgencyController extends Controller
                             $agency=new Agency();
                             
                             $data=$agency->get_all_excel_record($model->from_date,$model->to_date,$model->state,$model->post_office);
-                            //print_r($data);exit;
+//                            echo '<pre>';
+//                            print_r($data);
+//                            echo '</pre>';exit;
                             $objPHPExcel->setActiveSheetIndex($sheet);
                             $start = new DateTime($model->from_date);
                             $end = new DateTime($model->to_date);
@@ -640,6 +642,13 @@ class AgencyController extends Controller
                                 $objPHPExcel->getActiveSheet()->setCellValue('E'.$row,$foo['account_id']);
                                  $objPHPExcel->getActiveSheet()->setCellValue('F'.$row,$foo['rname']);
                                 $col=6;
+//                                if($foo['copy']!='' || $foo['copy']!= NULL){
+//                                    $foo['copy'][0]['pjy']='0';
+//                                    $foo['copy'][0]['org']='0';
+//                                    $foo['copy'][1]['pjy']='0';
+//                                    $foo['copy'][1]['org']='0';
+//                                }
+                                
                                 foreach($foo['copy'] as $cpy){
                                      $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($col, $row, $cpy['pjy']);
                                      $col=$col+1;;
