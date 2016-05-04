@@ -37,7 +37,7 @@ $ow=$model->orgweight();
 
 $i=1;$r=1;
 foreach ($data as $key => $value) {
-        if($value->pjy==0 && $value->org==0 ){
+        if($value->pjy==0 && $value->org==0){
             
         }
         else{

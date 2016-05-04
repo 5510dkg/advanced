@@ -31,6 +31,10 @@ if($cpy==2){
 
 $i=1;$r=1;
 foreach ($data as $key => $value) {
+         if($value->pjy==0 && $value->org==0){
+            
+        }
+        else{
 	if(($value->pjy)>($value->org)){ $k=$value->pjy;}else{ $k=$value->org;}
 	if($cpy==1){ 
             $sum=$value->pjy;
@@ -108,5 +112,5 @@ foreach ($data as $key => $value) {
 	<div style="height: 40px;"><div><strong><?=$data;?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?=$r.'/'.$j?></strong></div></div>
 	</div>
 
-<?php $value->pjy=abs($value->pjy-$value->bundle_size); } }
+<?php $value->pjy=abs($value->pjy-$value->bundle_size); } }}
 //echo $data->_attributes['id'];
