@@ -37,6 +37,10 @@ $ow=$model->orgweight();
 
 $i=1;$r=1;
 foreach ($data as $key => $value) {
+        if($value->pjy==0 && $value->org==0 ){
+            
+        }
+        else{
 	if(($value->pjy)>($value->org)){ $k=$value->pjy;}else{ $k=$value->org;}
 	//$sum=$value->pjy+$value->org;
         if($cpy==1){ 
@@ -122,7 +126,7 @@ foreach ($data as $key => $value) {
 
 <?php $value->pjy=abs($value->pjy-$value->bundle_size);
       //if($org=!0 && $value->org!=0){$value->org=abs($value->org-$value->bundle_size); }
-                } }?>
+        }   } }?>
 
 
 <script>
