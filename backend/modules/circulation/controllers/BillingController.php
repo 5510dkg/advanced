@@ -74,16 +74,21 @@ Class BillingController extends Controller{
                     //echo $k;exit;
                    // $r=in_array($date, $dates);
                     //echo $r;exit;
-                    if(in_array($date, $dates)){
-                    $key = array_search($date, $dates); 
+                    $dts = array_map(function($piece){
+                            return (string) $piece;
+                        }, $dates);
+                       // print_r($dts);exit;
+                    if(in_array($date, $dts)){
+                    $key = array_search($date, $dts); 
                     $model->price_per_piece=$prices[$key];
                     $price=$prices[$key];
                     }
-                    else
+                    else 
                     {
                         $price='15';
                       $model->price_per_piece='15'; 
                     }
+                    //echo $model->price_per_piece;exit;
                     $tot=$val['panchjanya']+$val['organiser'];
                     $price=($val['panchjanya']+$val['organiser'])*$price;
                     $model->total_price=$price;
