@@ -63,33 +63,93 @@ foreach ($data as $key => $value) {
 Jhandewalan, N.D-55. <?php if(($value->pjy)>($value->org)){ echo 'PANCHJANYA';}else{echo "ORGANISER";} ?></p>
 	</div>
             <?php
-                $sum=$sum-$value->bundle_size;
-                if($value->pjy >= $value->bundle_size){
-                    $org=0;
-                    $pjy=$value->bundle_size;
+          
+             
+                
+              
+                if($sum>=$value->bundle_size && $value->pjy>$value->bundle_size){
+                   $pjy=$value->bundle_size;
+                   $org=0;
+                  // echo 'one'.'<br/>';
+                }elseif($sum>=$value->bundle_size && $value->pjy<$value->bundle_size && $value->bundle_size <=($value->pjy+$value->org)){
                     
-                }elseif($value->pjy!=0 && $value->pjy<$value->bundle_size){
                     $pjy=$value->pjy;
-                }
-                else{
-                    $pjy=0;
-                }
-                if($value->org >= $value->bundle_size){
-                    $pjy=0;
-                    $org=$value->bundle_size;
+                    $minus=$value->bundle_size-$value->pjy;
+                    $org=$minus;
                     
-                }elseif($value->org!=0 && $value->org<$value->bundle_size){
+                }elseif($sum>=$value->bundle_size && $value->pjy<$value->bundle_size && $value->bundle_size >($value->pjy+$value->org)){
+                    $pjy=$value->pjy;
                     $org=$value->org;
-                }else{
-                    $org=0;
-                }
-                if(($pjy+$org)>=$value->bundle_size){
-                    $org=0;
-                }else{
+                    
+                }elseif($sum<$value->bundle_size){
+                    $pjy=$value->pjy;
                     $org=$value->org;
                 }
+                //for org
+                elseif($sum>=$value->bundle_size && $value->org>$value->bundle_size){
+                   $org=$value->bundle_size;
+                   $pjy=0;
+                }elseif($sum>=$value->bundle_size && $value->org<$value->bundle_size && $value->bundle_size <=($value->pjy+$value->org)){
+                    
+                    $org=$value->pjy;
+                    $minus=$value->bundle_size-$value->org;
+                    $pjy=$value->org-$minus;
+                }elseif($sum>=$value->bundle_size && $value->org<$value->bundle_size && $value->bundle_size >($value->pjy+$value->org)){
+                    $pjy=$value->pjy;
+                    $org=$value->org;
+                    
+                }elseif($sum<$value->bundle_size){
+                    $pjy=$value->pjy;
+                    $org=$value->org;
+                }
+                
+//                if($value->pjy >= $value->bundle_size){
+//                    $org=0;
+//                    $pjy=$value->bundle_size;
+//               //  echo 'in first';
+//                    
+//                }elseif($value->pjy!=0 && $value->pjy<$value->bundle_size){
+//                    $pjy=$value->pjy;
+//                   // echo 'in second'.'<br/>';
+//                   // echo $pjy.'1';
+//                }
+//                else{
+//                    $pjy=$value->pjy;
+//                   // echo 'in third';
+//                  //  echo $pjy.'1';
+//                }
+//                if($value->org >= $value->bundle_size && $value->pjy==0){
+//                    
+//                    $org=$value->bundle_size;
+//                 //   echo 'in fourth'.'<br/>';
+//                 //   echo $pjy.'2';
+//  
+//                    
+//                }elseif($value->org!=0 && $value->org<$value->bundle_size){
+//                    $org=$value->org;
+//                  //  echo 'in fifth';
+//
+//                }else{
+//                  //  echo 'in 6';
+//                    $org=0;
+//                }
+//                if(($pjy+$org)>=$value->bundle_size){
+//                    $org=0;
+//                   // echo 'in 7';
+//                }else{
+//                       // echo 'in 8';
+//                    $org=$value->org;
+//                }
                 ?>
              <?php
+//              if($value->agency_id=='86'){
+//                echo $sum;
+//                echo '<br/>';
+//                echo $value->pjy;
+//                echo '<br/>';
+//                echo $pjy.'<br/>';
+//                echo $org;exit;
+//            }
                 $total=($pjy*$pw)+($org*$ow);
                 ?>
 	<div style="height: 15px">
@@ -123,5 +183,11 @@ Jhandewalan, N.D-55. <?php if(($value->pjy)>($value->org)){ echo 'PANCHJANYA';}e
 	<div style="height: 50px;"><div><strong><?=$data?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $r.'/'.$j?></strong></div></div>
 	</div>
 
-        <?php $value->pjy=abs($value->pjy-$value->bundle_size); } } }
+        <?php
+        $sum=$sum-$value->bundle_size;
+        $value->pjy=$value->pjy-$pjy;
+        $value->org=$value->org-$org;
+        
+        
+         } } }
 //echo $data->_attributes['id'];
