@@ -27,6 +27,7 @@
             </div>
         </form>-->
         <!-- /.search form -->
+        
        <?php if(Yii::$app->user->identity->role_group_id=='1'){$homeurl='/admin/';?>
        <?= dmstr\widgets\Menu::widget(
             [

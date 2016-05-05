@@ -18,7 +18,7 @@ $this->title='Home';
             <div class="icon">
               <i class="fa fa-bars"></i>
             </div>
-            <a href="index.php?r=circulation%2Fagency%2Fsearchview&Agencyview%5Bname%5D=&Agencyview%5Bmail_state_id%5D=&Agencyview%5Baccount_id%5D=&Agencyview%5Bmail_pincode%5D=&Agencyview%5Bmail_p_office%5D=&Agencyview%5Bstatus%5D=Active" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="index.php?r=circulation%2Fagency%2Fsearchview&Agencyview%5Bname%5D=&Agencyview%5Bmail_state_id%5D=&Agencyview%5Baccount_id%5D=&Agencyview%5Bmail_pincode%5D=&Agencyview%5Bmail_p_office%5D=&Agencyview%5Bstatus%5D=Active" class="small-box-footer">View Detail <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -37,7 +37,7 @@ $this->title='Home';
             <div class="icon">
               <i class="fa fa-times"></i>
             </div>
-            <a href="index.php?r=circulation%2Fagency%2Fsearchview&Agencyview%5Bname%5D=&Agencyview%5Bmail_state_id%5D=&Agencyview%5Baccount_id%5D=&Agencyview%5Bmail_pincode%5D=&Agencyview%5Bmail_p_office%5D=&Agencyview%5Bstatus%5D=Active&Agencyview%5Bname%5D=&Agencyview%5Bmail_state_id%5D=&Agencyview%5Baccount_id%5D=&Agencyview%5Bmail_pincode%5D=&Agencyview%5Bmail_p_office%5D=&Agencyview%5Bstatus%5D=Inactive" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="index.php?r=circulation%2Fagency%2Fsearchview&Agencyview%5Bname%5D=&Agencyview%5Bmail_state_id%5D=&Agencyview%5Baccount_id%5D=&Agencyview%5Bmail_pincode%5D=&Agencyview%5Bmail_p_office%5D=&Agencyview%5Bstatus%5D=Active&Agencyview%5Bname%5D=&Agencyview%5Bmail_state_id%5D=&Agencyview%5Baccount_id%5D=&Agencyview%5Bmail_pincode%5D=&Agencyview%5Bmail_p_office%5D=&Agencyview%5Bstatus%5D=Inactive" class="small-box-footer">View Detail <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -59,7 +59,7 @@ $this->title='Home';
             <div class="icon">
               <i class="fa fa-plus"></i>
             </div>
-            <a href="index.php?r=circulation%2Fagency%2Fsearchview&Agencyview%5Bname%5D=&Agencyview%5Bmail_state_id%5D=&Agencyview%5Baccount_id%5D=&Agencyview%5Bmail_pincode%5D=&Agencyview%5Bmail_p_office%5D=&Agencyview%5Bstatus%5D=Active" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="index.php?r=circulation%2Fagency%2Fsearchview&Agencyview%5Bname%5D=&Agencyview%5Bmail_state_id%5D=&Agencyview%5Baccount_id%5D=&Agencyview%5Bmail_pincode%5D=&Agencyview%5Bmail_p_office%5D=&Agencyview%5Bstatus%5D=Active" class="small-box-footer">View Detail <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -78,8 +78,8 @@ $this->title='Home';
             <div class="icon">
               <i class="fa fa-minus"></i>
             </div>
-            <a href="index.php?r=circulation%2Fagency%2Fsearchview&Agencyview%5Bname%5D=&Agencyview%5Bmail_state_id%5D=&Agencyview%5Baccount_id%5D=&Agencyview%5Bmail_pincode%5D=&Agencyview%5Bmail_p_office%5D=&Agencyview%5Bstatus%5D=Inactive" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="index.php?r=circulation%2Fagency%2Fsearchview&Agencyview%5Bname%5D=&Agencyview%5Bmail_state_id%5D=&Agencyview%5Baccount_id%5D=&Agencyview%5Bmail_pincode%5D=&Agencyview%5Bmail_p_office%5D=&Agencyview%5Bstatus%5D=Inactive" class="small-box-footer">View Detail <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
-      </div>
+      </div> 
