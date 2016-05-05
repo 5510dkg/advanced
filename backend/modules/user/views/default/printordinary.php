@@ -109,7 +109,7 @@ foreach ($data as $key => $value) {
                 
                 
 	</div>
-	<div style="height: 40px;"><div><strong><?=$data;?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?=$r.'/'.$j?></strong></div></div>
+	<div style="height: 40px;"><div><strong><?=$data;?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?=$r.'/'.$j?></strong></div></div>
 	</div>
 
 <?php $value->pjy=abs($value->pjy-$value->bundle_size); } }}
